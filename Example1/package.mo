@@ -6,9 +6,9 @@ annotation(preferredView = "info",
     LinearAnalysis(version="1.0.1"),
       Modelica(version="4.0.0"),
       Modelica_LinearSystems2(version="2.4.0"),
-      OpenIPSL(version="3.1.0-dev"),
       DataFiles(version="1.1.0"),
-      DymolaCommands(version="1.16")),
+      DymolaCommands(version="1.16"),
+      OpenIPSL(version="3.0.1")),
   version="3",
   Documentation(info="<html>
 <p><br>This package contains the power system models used in the paper &quot;PSS performance monitoring and PSS redesign based on system identification techniques&quot; by Xavier Bombois and Luigi Vanfretti, submitted for review to the International Journal of Electric Power and Energy Systems (Elsevier) in June 2022.</p>

@@ -2,26 +2,26 @@ within Example1.Interfaces;
 partial model OutputsInterfaceWEfdAndAVRout
 public
   Modelica.Blocks.Interfaces.RealOutput Vt
-    annotation (Placement(transformation(extent={{140,70},{160,90}}),
-        iconTransformation(extent={{140,70},{160,90}})));
+    annotation (Placement(transformation(extent={{200,150},{220,170}}),
+        iconTransformation(extent={{200,150},{220,170}})));
   Modelica.Blocks.Interfaces.RealOutput Q
-    annotation (Placement(transformation(extent={{140,-10},{160,10}}),
-        iconTransformation(extent={{140,-10},{160,10}})));
+    annotation (Placement(transformation(extent={{200,70},{220,90}}),
+        iconTransformation(extent={{200,70},{220,90}})));
   Modelica.Blocks.Interfaces.RealOutput P
-    annotation (Placement(transformation(extent={{140,30},{160,50}}),
-        iconTransformation(extent={{140,30},{160,50}})));
+    annotation (Placement(transformation(extent={{200,110},{220,130}}),
+        iconTransformation(extent={{200,110},{220,130}})));
   Modelica.Blocks.Interfaces.RealOutput w
-    annotation (Placement(transformation(extent={{140,-50},{160,-30}}),
-        iconTransformation(extent={{140,-50},{160,-30}})));
+    annotation (Placement(transformation(extent={{200,-10},{220,10}}),
+        iconTransformation(extent={{200,-10},{220,10}})));
   Modelica.Blocks.Interfaces.RealOutput delta
-    annotation (Placement(transformation(extent={{140,-90},{160,-70}}),
-        iconTransformation(extent={{140,-90},{160,-70}})));
+    annotation (Placement(transformation(extent={{200,-90},{220,-70}}),
+        iconTransformation(extent={{200,-90},{220,-70}})));
   Modelica.Blocks.Interfaces.RealOutput AVRin annotation (Placement(
-        transformation(extent={{140,-128},{160,-108}}),
-        iconTransformation(extent={{140,-130},{160,-110}})));
+        transformation(extent={{200,-130},{220,-110}}),
+        iconTransformation(extent={{200,-130},{220,-110}})));
   Modelica.Blocks.Interfaces.RealOutput AVRout annotation (Placement(
-        transformation(extent={{140,-160},{160,-140}}),
-        iconTransformation(extent={{140,-160},{160,-140}})));
+        transformation(extent={{200,-170},{220,-150}}),
+        iconTransformation(extent={{200,-170},{220,-150}})));
   annotation (
     experiment(
       StopTime=10,
@@ -33,6 +33,6 @@ public
     Documentation(info="<html>
 <p>This is a partial model for inheritance, outputs need to be coupled with the simulation model at the equation level.</p>
 </html>"),
-    Diagram(coordinateSystem(extent={{-140,-160},{140,140}})),
-    Icon(coordinateSystem(extent={{-140,-160},{140,140}})));
+    Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
+    Icon(coordinateSystem(extent={{-200,-200},{200,200}})));
 end OutputsInterfaceWEfdAndAVRout;

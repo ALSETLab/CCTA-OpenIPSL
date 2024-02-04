@@ -1,6 +1,6 @@
 within Example1.Base.Systems;
-model testgridIO
-  "gridIO special test model, made by stripping the interfaces manually after the model was verified to work with the interfaces."
+model testergridIO
+  "Power gris model with input/output interfaces and modifications for simulation and linearization"
   extends Base.Networks.BasePFnFault(
     pf(
       redeclare record Bus = PFData.Data.BusData.PF_Bus_10,
@@ -59,15 +59,8 @@ model testgridIO
   parameter Real K0=200 "regulator gain" annotation (Dialog(group="AVR"));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-152,-8},{-132,12}})));
-  extends Modelica.Icons.Example;
-
-  Modelica.Blocks.Sources.Pulse    pulse(
-    amplitude=0.01,
-    width=50,
-    period=0.1,
-    nperiod=1,
-    startTime=5)
-    annotation (Placement(transformation(extent={{-20,-80},{0,-60}})));
+  Modelica.Blocks.Sources.Constant const1(k=0)
+    annotation (Placement(transformation(extent={{-12,-78},{8,-58}})));
 protected
   parameter Real S_b=SysData.S_b;
 equation
@@ -90,7 +83,7 @@ equation
           {-131,2}}, color={0,0,127}));
   connect(G1.uvsAVR, const.y) annotation (Line(points={{-100,-12},{-110,-12},{-110,
           -2},{-131,-2},{-131,2}}, color={0,0,127}));
-  connect(pulse.y, load.u) annotation (Line(points={{1,-70},{12,-70},{12,-66.7},
+  connect(const1.y, load.u) annotation (Line(points={{9,-68},{12,-68},{12,-66.7},
           {17.14,-66.7}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}}), graphics={
@@ -101,12 +94,37 @@ equation
           fillPattern=FillPattern.None,
           lineThickness=1)}),
     Icon(coordinateSystem(extent={{-200,-200},{200,200}}), graphics={Rectangle(
-          extent={{-200,200},{200,100}},
+          extent={{-200,-200},{200,200}},
           lineColor={28,108,200},
           fillColor={170,213,255},
           fillPattern=FillPattern.Solid), Text(
-          extent={{-200,200},{200,100}},
+          extent={{-200,82},{200,-80}},
           textColor={28,108,200},
-          textString="gridIO")}),
-              experiment(StopTime=10, __Dymola_Algorithm="Dassl"));
-end testgridIO;
+          textString="%name")}),
+    experiment(
+      StopTime=20,
+      Interval=0.0001,
+      Tolerance=1e-06,
+      __Dymola_fixedstepsize=0.0001,
+      __Dymola_Algorithm="Dassl"),
+    __Dymola_experimentSetupOutput,
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>June 24, 2022</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Luigi Vanfretti</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>luigi.vanfretti@gmail.com</p></td>
+</tr>
+</table>
+</html>"));
+end testergridIO;

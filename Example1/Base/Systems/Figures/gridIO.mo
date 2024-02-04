@@ -1,6 +1,5 @@
-within Example1.Base.Systems;
-model gridIO
-  "Power gris model with input/output interfaces and modifications for simulation and linearization"
+within Example1.Base.Systems.Figures;
+model gridIO "For figure only"
   extends Base.Networks.BasePFnFault(
     pf(
       redeclare record Bus = PFData.Data.BusData.PF_Bus_10,
@@ -16,7 +15,7 @@ model gridIO
     fault(
       R=Modelica.Constants.eps,
           t1=Modelica.Constants.inf, t2=Modelica.Constants.inf));
-  extends Example1.Interfaces.OutputsInterfaceWEfdAndAVRout;
+
   import Modelica.Constants.pi;
   Plants.GenIO G1(
     P_0=pf.machines.PG1,
@@ -32,15 +31,6 @@ model gridIO
     vfmax=vfmax,
     vfmin=vfmin,
     K0=K0) annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
-  Modelica.Blocks.Interfaces.RealInput uPSS
-    annotation (Placement(transformation(extent={{-240,160},{-200,200}}),
-        iconTransformation(extent={{-240,160},{-200,200}})));
-  Modelica.Blocks.Interfaces.RealInput uPm
-    annotation (Placement(transformation(extent={{-242,40},{-202,80}}),
-        iconTransformation(extent={{-242,40},{-202,80}})));
-  Modelica.Blocks.Interfaces.RealInput uPload annotation (Placement(
-        transformation(extent={{-240,-80},{-200,-40}}),
-        iconTransformation(extent={{-240,-80},{-200,-40}})));
 
   OpenIPSL.Electrical.Branches.PwLine line_4(
     R=Modelica.Constants.eps,
@@ -60,9 +50,6 @@ model gridIO
     "Type of opening (1: removes both ends at same time, 2: removes sending end, 3: removes receiving end)"     annotation (Dialog(group="Line Removal Parameters"));
   parameter Real Kw=9.5 "Stabilizer gain (pu/pu)" annotation (Dialog(group="PSS"));
   parameter Real Tw=1.41 "Wash-out time constant (s)" annotation (Dialog(group="PSS"));
-  Modelica.Blocks.Interfaces.RealInput uvs annotation (Placement(
-        transformation(extent={{-240,-200},{-200,-160}}), iconTransformation(
-          extent={{-240,-200},{-200,-160}})));
   parameter Real T1=0 "First stabilizer time constant (s)" annotation (Dialog(group="PSS"));
   parameter Real T2=0 "Second stabilizer time constant (s)" annotation (Dialog(group="PSS"));
   parameter Real T3=0 "Third stabilizer time constant (s)" annotation (Dialog(group="PSS"));
@@ -70,6 +57,28 @@ model gridIO
   parameter Real vfmax=7.0 "max lim." annotation (Dialog(group="AVR"));
   parameter Real vfmin=-6.40 "min lim." annotation (Dialog(group="AVR"));
   parameter Real K0=200 "regulator gain" annotation (Dialog(group="AVR"));
+public
+  Modelica.Blocks.Interfaces.RealOutput Vt
+    annotation (Placement(transformation(extent={{-120,-60},{-100,-40}}),
+        iconTransformation(extent={{200,150},{220,170}})));
+  Modelica.Blocks.Interfaces.RealOutput P
+    annotation (Placement(transformation(extent={{-100,-60},{-80,-40}}),
+        iconTransformation(extent={{200,110},{220,130}})));
+  Modelica.Blocks.Interfaces.RealOutput Q
+    annotation (Placement(transformation(extent={{-80,-60},{-60,-40}}),
+        iconTransformation(extent={{200,70},{220,90}})));
+  Modelica.Blocks.Interfaces.RealOutput w
+    annotation (Placement(transformation(extent={{-120,-80},{-100,-60}}),
+        iconTransformation(extent={{200,-10},{220,10}})));
+  Modelica.Blocks.Interfaces.RealOutput delta
+    annotation (Placement(transformation(extent={{-100,-80},{-80,-60}}),
+        iconTransformation(extent={{200,-90},{220,-70}})));
+  Modelica.Blocks.Interfaces.RealOutput AVRin annotation (Placement(
+        transformation(extent={{-80,-80},{-60,-60}}),
+        iconTransformation(extent={{200,-130},{220,-110}})));
+  Modelica.Blocks.Interfaces.RealOutput AVRout annotation (Placement(
+        transformation(extent={{-60,-80},{-40,-60}}),
+        iconTransformation(extent={{200,-170},{220,-150}})));
 protected
   parameter Real S_b=SysData.S_b;
 equation
@@ -80,29 +89,81 @@ equation
   Q = G1.machine.Q;
   AVRin = G1.feedbackAVR.y; // AVR input, error signal to the avr
   AVRout = G1.avr.vf; // AVR output, Efd
-  connect(load.u, uPload) annotation (Line(points={{17.14,-66.7},{-22,-66.7},{
-          -22,-60},{-220,-60}}, color={0,0,127}));
-  connect(G1.uPSS, uPSS) annotation (Line(points={{-112,6},{-122,6},{-122,180},
-          {-220,180}},
-                color={0,0,127}));
   connect(G1.pwPin, B1.p)
     annotation (Line(points={{-89,0},{-80,0}}, color={0,0,255}));
   connect(line_4.n, line_1.n)
     annotation (Line(points={{39.1,8},{39.1,20}}, color={0,0,255}));
   connect(line_4.p, line_1.p)
     annotation (Line(points={{22.9,8},{22.9,20}}, color={0,0,255}));
-  connect(G1.upm, uPm) annotation (Line(points={{-112,-6},{-136,-6},{-136,60},{
-          -222,60}},      color={0,0,127}));
-  connect(G1.uvsAVR, uvs) annotation (Line(points={{-100,-12},{-100,-180},{-220,
-          -180}},       color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,200}}), graphics={
+    Diagram(coordinateSystem(extent={{-140,-100},{120,50}}),  graphics={
           Rectangle(
-          extent={{12,28},{54,2}},
+          extent={{12,26},{54,0}},
           lineColor={238,46,47},
           fillColor={244,125,35},
           fillPattern=FillPattern.None,
-          lineThickness=1)}),
+          lineThickness=1),
+                         Text(
+          extent={{-132,-2},{-114,-8}},
+          lineColor={0,0,117},
+          textString="uPm"),
+                         Text(
+          extent={{-132,10},{-114,4}},
+          lineColor={0,0,117},
+          textString="uPSS"),
+                         Text(
+          extent={{-110,-14},{-92,-20}},
+          lineColor={0,0,117},
+          textString="uvs"),
+                         Text(
+          extent={{-4,-64},{14,-70}},
+          lineColor={0,0,117},
+          textString="uPload"),
+        Rectangle(
+          extent={{-126,-36},{-34,-80}},
+          lineColor={28,108,200},
+          fillColor={170,213,255},
+          fillPattern=FillPattern.None),
+                         Text(
+          extent={{-58,-42},{-40,-48}},
+          lineColor={129,174,225},
+          textString="Outputs",
+          textStyle={TextStyle.Bold}),
+        Rectangle(
+          extent={{-6,-62},{18,-72}},
+          lineColor={0,140,72},
+          fillColor={170,213,255},
+          fillPattern=FillPattern.None),
+                         Text(
+          extent={{-4,-54},{14,-60}},
+          lineColor={0,140,72},
+          textStyle={TextStyle.Bold},
+          textString="Input"),
+        Rectangle(
+          extent={{-132,12},{-110,-10}},
+          lineColor={0,140,72},
+          fillColor={170,213,255},
+          fillPattern=FillPattern.None),
+        Rectangle(
+          extent={{-108,-10},{-92,-22}},
+          lineColor={0,140,72},
+          fillColor={170,213,255},
+          fillPattern=FillPattern.None),
+                         Text(
+          extent={{-130,20},{-112,14}},
+          lineColor={0,140,72},
+          textStyle={TextStyle.Bold},
+          textString="Inputs"),
+                         Text(
+          extent={{-108,-24},{-90,-30}},
+          lineColor={0,140,72},
+          textStyle={TextStyle.Bold},
+          textString="Input"),
+                         Text(
+          extent={{-8,28},{10,22}},
+          lineColor={238,46,47},
+          textStyle={TextStyle.Bold},
+          textString="Line Trip")}),
     Icon(coordinateSystem(extent={{-200,-200},{200,200}}), graphics={Rectangle(
           extent={{-200,-200},{200,200}},
           lineColor={28,108,200},

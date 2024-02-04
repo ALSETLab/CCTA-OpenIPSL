@@ -1,31 +1,31 @@
 within Example1.Base.Networks;
 partial model Base "Partial model containing the network elements"
   import Modelica.Constants.pi;
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transf(
     Sn=2220000000,
     V_b=400000,
     Vn=400000,
     rT=0.0,
     xT=0.15,
-    m=1.0)  annotation (Placement(transformation(extent={{-68,-10},{-48,10}})));
+    m=1.0) annotation (Placement(transformation(extent={{-68,-10},{-48,10}})));
   OpenIPSL.Electrical.Branches.PwLine line_1(
-    R=0,
-    G=0,
-    B=0,
+    R=Modelica.Constants.eps,
+    G=Modelica.Constants.eps,
+    B=Modelica.Constants.eps,
     X=0.5) annotation (Placement(transformation(extent={{22,14},{40,26}})));
   OpenIPSL.Electrical.Branches.PwLine line_2(
-    R=0,
-    G=0,
-    B=0,
+    R=Modelica.Constants.eps,
+    G=Modelica.Constants.eps,
+    B=Modelica.Constants.eps,
     X=0.93/2)
     annotation (Placement(transformation(extent={{-2,-46},{16,-34}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b=2220000000,
                                                          fn=60)
     annotation (Placement(transformation(extent={{46,-80},{100,-60}})));
   OpenIPSL.Electrical.Branches.PwLine line_3(
-    R=0,
-    G=0,
-    B=0,
+    R=Modelica.Constants.eps,
+    G=Modelica.Constants.eps,
+    B=Modelica.Constants.eps,
     X=0.93/2,
     opening=1)
     annotation (Placement(transformation(extent={{44,-46},{62,-34}})));
@@ -50,8 +50,8 @@ equation
   connect(line_2.p, line_1.p) annotation (Line(points={{-1.1,-40},{-10,-40},
           {-10,20},{22.9,20}},
                          color={0,0,255}));
-  connect(transformer.n, B2.p) annotation (Line(points={{-47,0},{-30,0}},
-                                               color={0,0,255}));
+  connect(transf.n, B2.p)
+    annotation (Line(points={{-47,0},{-30,0}}, color={0,0,255}));
   connect(B2.p, line_1.p) annotation (Line(points={{-30,0},{-10,0},{-10,20},
           {22.9,20}}, color={0,0,255}));
   connect(line_1.n, B3.p) annotation (Line(points={{39.1,20},{70,20},{70,0},
@@ -62,7 +62,7 @@ equation
     annotation (Line(points={{28,-40},{44.9,-40}}, color={0,0,255}));
   connect(B4.p, line_2.n)
     annotation (Line(points={{28,-40},{15.1,-40}}, color={0,0,255}));
-  connect(B1.p, transformer.p)
+  connect(B1.p, transf.p)
     annotation (Line(points={{-80,0},{-69,0}}, color={0,0,255}));
   annotation ( preferredView = "diagram",
     Diagram(coordinateSystem(extent={{-140,-100},{120,100}},

@@ -2,7 +2,7 @@ within Example1.Base.Networks.Tests;
 model testBase "Tes model for Base network"
   extends Modelica.Icons.Example;
   extends Base(SysData(S_b=2220000000, fn=60));
-  Plants.infBus infiniteBus1(
+  Plants.inf infiniteBus1(
     P_0=100000000,
     Q_0=25000000,
     v_0=1.5,
