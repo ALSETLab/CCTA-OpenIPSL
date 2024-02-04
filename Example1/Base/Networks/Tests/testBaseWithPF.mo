@@ -26,4 +26,5 @@ equation
     annotation (Line(points={{-87,0},{-80,0}}, color={0,0,255}));
   connect(const.y, load_ExtInput.u) annotation (Line(points={{1,-70},{12,-70},{
           12,-66.7},{17.14,-66.7}}, color={0,0,127}));
+annotation(preferredView = "diagram");
 end testBaseWithPF;

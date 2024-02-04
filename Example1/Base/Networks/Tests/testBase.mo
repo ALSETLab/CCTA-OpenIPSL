@@ -13,4 +13,5 @@ model testBase "Tes model for Base network"
 equation
   connect(infiniteBus1.pwPin, B1.p)
     annotation (Line(points={{-87,0},{-80,0}}, color={0,0,255}));
+annotation(preferredView = "diagram");
 end testBase;

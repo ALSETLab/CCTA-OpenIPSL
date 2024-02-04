@@ -1,5 +1,5 @@
 within Example1.Base.Networks;
-partial model BaseWithPF "Partial SMIB Model with power flow records"
+partial model BaseWithPF "Partial SMIB Model with power flow data, system data block and a load."
   extends Base(
     B2(v_0=pf.bus.V2, angle_0=pf.bus.A2),
     B1(v_0=pf.bus.V1, angle_0=pf.bus.A1),
@@ -29,4 +29,7 @@ equation
     annotation (Line(points={{22,-64},{22,-40},{15.1,-40}}, color={0,0,255}));
   connect(infiniteBus.pwPin, B3.p)
     annotation (Line(points={{93,0},{82,0}}, color={0,0,255}));
+  annotation (Documentation(info="<html>
+<p>Extended model that contains power flow data, SysData and a load.</p>
+</html>", preferredView = "diagram"));
 end BaseWithPF;

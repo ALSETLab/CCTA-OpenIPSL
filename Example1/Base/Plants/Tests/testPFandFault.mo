@@ -32,9 +32,11 @@ equation
           6},{-131,6}}, color={0,0,127}));
   connect(gen.uvsAVR, const.y) annotation (Line(points={{-102,-12},{-102,-22},{
           -124,-22},{-124,6},{-131,6}}, color={0,0,127}));
+
   annotation (experiment(
       StopTime=10,
       __Dymola_NumberOfIntervals=5000,
       __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Dassl"));
+      __Dymola_Algorithm="Dassl"),
+           preferredView = "diagram");
 end testPFandFault;

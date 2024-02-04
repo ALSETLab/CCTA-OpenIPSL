@@ -64,7 +64,7 @@ equation
     annotation (Line(points={{28,-40},{15.1,-40}}, color={0,0,255}));
   connect(B1.p, transformer.p)
     annotation (Line(points={{-80,0},{-69,0}}, color={0,0,255}));
-  annotation (
+  annotation ( preferredView = "diagram",
     Diagram(coordinateSystem(extent={{-140,-100},{120,100}},
           preserveAspectRatio=false)),
     Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
@@ -78,11 +78,11 @@ equation
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
+<td><p>SMIB with Reference to PSAT, d_kundur2.mdl, PSAT</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>June 24, 2022</p></td>
+<td><p>2024/2/3</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>

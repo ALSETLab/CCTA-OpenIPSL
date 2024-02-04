@@ -22,4 +22,5 @@ equation
           8,-66.7},{17.14,-66.7}}, color={0,0,127}));
   connect(infiniteBus2.pwPin, B1.p)
     annotation (Line(points={{-91,0},{-80,0}}, color={0,0,255}));
+annotation(preferredView = "diagram");
 end testPFandFault;
