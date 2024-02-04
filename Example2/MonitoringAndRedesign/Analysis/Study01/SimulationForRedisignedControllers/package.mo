@@ -1,0 +1,4 @@
+within Example2.MonitoringAndRedesign.Analysis.Study01;
+package SimulationForRedisignedControllers
+  extends Modelica.Icons.ExamplesPackage;
+end SimulationForRedisignedControllers;

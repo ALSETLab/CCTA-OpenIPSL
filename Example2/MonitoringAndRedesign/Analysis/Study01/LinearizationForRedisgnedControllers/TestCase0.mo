@@ -1,0 +1,24 @@
+within Example2.MonitoringAndRedesign.Analysis.Study01.LinearizationForRedisgnedControllers;
+model TestCase0
+  extends Modelica.Icons.Example;
+  Case0 case0_1
+    annotation (Placement(transformation(extent={{-20,-38},{60,42}})));
+  Modelica.Blocks.Sources.Constant     const(k=0)
+    annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
+equation
+  connect(const.y, case0_1.uPm) annotation (Line(points={{-65,0},{-42,0},{-42,
+          34},{-29.6,34}}, color={0,0,127}));
+  connect(case0_1.uPSS, case0_1.uPm) annotation (Line(points={{-28,18},{-36,18},
+          {-36,0},{-42,0},{-42,34},{-29.6,34}}, color={0,0,127}));
+  connect(case0_1.uVsAVR, case0_1.uPm) annotation (Line(points={{-28,2},{-42,2},
+          {-42,34},{-29.6,34}}, color={0,0,127}));
+  connect(case0_1.uLoadB7, case0_1.uPm) annotation (Line(points={{-28,-14},{-42,
+          -14},{-42,34},{-29.6,34}}, color={0,0,127}));
+  connect(case0_1.uLoadB9, case0_1.uPm) annotation (Line(points={{-27.2,-30},{
+          -34,-30},{-34,-34},{-42,-34},{-42,34},{-29.6,34}}, color={0,0,127}));
+  annotation (experiment(
+      StopTime=1320,
+      __Dymola_NumberOfIntervals=50000,
+      Tolerance=1e-12,
+      __Dymola_Algorithm="Dassl"));
+end TestCase0;
