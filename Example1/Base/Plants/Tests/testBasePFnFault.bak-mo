@@ -1,0 +1,37 @@
+within Example1.Base.Plants.Tests;
+model testBasePFnFault "Tes model for BaseWithPF network and fault block"
+  extends Modelica.Icons.Example;
+  extends Networks.BasePFnFault;
+  Generator_AVR_PSS_w3Inputs
+                infiniteBus1(
+    P_0=100000000,
+    Q_0=25000000,
+    v_0=1.5,
+    angle_0=0.26179938779915) annotation (Placement(transformation(
+        extent={{10,10},{-10,-10}},
+        rotation=180,
+        origin={-98,0})));
+  Modelica.Blocks.Sources.Constant const(k=0)
+    annotation (Placement(transformation(extent={{-20,-80},{0,-60}})));
+  Modelica.Blocks.Sources.Constant const1(k=0) annotation (Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=270,
+        origin={-120,30})));
+equation
+  connect(infiniteBus1.pwPin, B1.p)
+    annotation (Line(points={{-87,0},{-80,0}}, color={0,0,255}));
+  connect(const.y, load_ExtInput.u) annotation (Line(points={{1,-70},{12,-70},{12,
+          -66.7},{17.14,-66.7}}, color={0,0,127}));
+  connect(const1.y, infiniteBus1.uPSS)
+    annotation (Line(points={{-120,19},{-120,6},{-110,6}}, color={0,0,127}));
+  connect(infiniteBus1.upm, const1.y) annotation (Line(points={{-110,-6},{-114,
+          -6},{-114,-4},{-120,-4},{-120,19}}, color={0,0,127}));
+  connect(infiniteBus1.uvsAVR, const1.y) annotation (Line(points={{-98,-12},{
+          -98,-22},{-120,-22},{-120,19}}, color={0,0,127}));
+  annotation (experiment(
+      StopTime=10,
+      Tolerance=1e-06,
+      __Dymola_fixedstepsize=0.0001,
+      __Dymola_Algorithm="Dassl"));
+end testBasePFnFault;

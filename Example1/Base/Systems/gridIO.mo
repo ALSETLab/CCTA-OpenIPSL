@@ -1,0 +1,149 @@
+within Example1.Base.Systems;
+model gridIO
+  "Power gris model with input/output interfaces and modifications for simulation and linearization"
+  extends Base.Networks.BasePFnFault(
+    pf(
+      redeclare record Bus = PFData.Data.BusData.PF_Bus_10,
+      redeclare record Loads = PFData.Data.LoadData.PF_Loads_10,
+      redeclare record Trafos = PFData.Data.TrafoData.PF_Trafos_10,
+      redeclare record Machines = PFData.Data.MachineData.PF_Machines_10),
+    line_1(
+      R=Modelica.Constants.eps,
+           X=3.25,
+      G=Modelica.Constants.eps,
+      B=Modelica.Constants.eps),
+    line_2(t1=Modelica.Constants.inf),
+    fault(
+      R=Modelica.Constants.eps,
+          t1=Modelica.Constants.inf, t2=Modelica.Constants.inf));
+  extends Example1.Interfaces.OutputsInterfaceWEfdAndAVRout;
+  import Modelica.Constants.pi;
+  Plants.Generator_AVR_PSS_w3Inputs G1(
+    P_0=pf.machines.PG1,
+    Q_0=pf.machines.QG1,
+    v_0=pf.bus.V1,
+    angle_0=pf.bus.A1,
+    Kw=Kw,
+    Tw=Tw,
+    T1=T1,
+    T2=T2,
+    T3=T3,
+    T4=T4,
+    vfmax=vfmax,
+    vfmin=vfmin,
+    K0=K0) annotation (Placement(transformation(extent={{-120,-8},{-100,12}})));
+  Modelica.Blocks.Interfaces.RealInput uPSS
+    annotation (Placement(transformation(extent={{-180,100},{-140,140}}),
+        iconTransformation(extent={{-180,100},{-140,140}})));
+  Modelica.Blocks.Interfaces.RealInput uPm
+    annotation (Placement(transformation(extent={{-180,20},{-140,60}})));
+  Modelica.Blocks.Interfaces.RealInput uPload annotation (Placement(
+        transformation(extent={{-180,-80},{-140,-40}}),
+        iconTransformation(extent={{-180,-80},{-140,-40}})));
+
+  OpenIPSL.Electrical.Branches.PwLine line_4(
+    R=Modelica.Constants.eps,
+    G=Modelica.Constants.eps,
+    B=Modelica.Constants.eps,
+    X=3.25/5.5,
+    t1=t1,
+    t2=t2,
+    opening=opening)
+           annotation (Placement(transformation(extent={{22,2},{40,14}})));
+  parameter Modelica.Units.SI.Time t1=Modelica.Constants.inf
+    "Time of line removal" annotation (Dialog(group="Line Removal Parameters"));
+  parameter Modelica.Units.SI.Time t2=Modelica.Constants.inf
+    "Line re-insertion time"
+    annotation (Dialog(group="Line Removal Parameters"));
+  parameter Integer opening=1
+    "Type of opening (1: removes both ends at same time, 2: removes sending end, 3: removes receiving end)"     annotation (Dialog(group="Line Removal Parameters"));
+  parameter Real Kw=9.5 "Stabilizer gain (pu/pu)" annotation (Dialog(group="PSS"));
+  parameter Real Tw=1.41 "Wash-out time constant (s)" annotation (Dialog(group="PSS"));
+  Modelica.Blocks.Interfaces.RealInput uvs annotation (Placement(
+        transformation(extent={{-178,-140},{-138,-100}})));
+  parameter Real T1=0 "First stabilizer time constant (s)" annotation (Dialog(group="PSS"));
+  parameter Real T2=0 "Second stabilizer time constant (s)" annotation (Dialog(group="PSS"));
+  parameter Real T3=0 "Third stabilizer time constant (s)" annotation (Dialog(group="PSS"));
+  parameter Real T4=0 "Fourth stabilizer time constant (s)" annotation (Dialog(group="PSS"));
+  parameter Real vfmax=7.0 "max lim." annotation (Dialog(group="AVR"));
+  parameter Real vfmin=-6.40 "min lim." annotation (Dialog(group="AVR"));
+  parameter Real K0=200 "regulator gain" annotation (Dialog(group="AVR"));
+protected
+  parameter Real S_b=SysData.S_b;
+equation
+  w = G1.machine.w;
+  delta = G1.machine.delta;
+  Vt = G1.machine.v;
+  P = G1.machine.P;
+  Q = G1.machine.Q;
+  AVRin = G1.feedbackAVR.y; // AVR input, error signal to the avr
+  AVRout = G1.avr.vf; // AVR output, Efd
+  connect(load_ExtInput.u, uPload) annotation (Line(points={{17.14,-66.7},
+          {-22,-66.7},{-22,-60},{-160,-60}},   color={0,0,127}));
+  connect(G1.uPSS, uPSS) annotation (Line(points={{-122,8},{-122,8},{-122,120},
+          {-160,120}},
+                color={0,0,127}));
+  connect(G1.pwPin, B1.p)
+    annotation (Line(points={{-99,2},{-90,2},{-90,0},{-80,0}},
+                                               color={0,0,255}));
+  connect(line_4.n, line_1.n)
+    annotation (Line(points={{39.1,8},{39.1,20}}, color={0,0,255}));
+  connect(line_4.p, line_1.p)
+    annotation (Line(points={{22.9,8},{22.9,20}}, color={0,0,255}));
+  connect(G1.upm, uPm) annotation (Line(points={{-122,-4},{-136,-4},{-136,40},{
+          -160,40}},      color={0,0,127}));
+  connect(G1.uvsAVR, uvs) annotation (Line(points={{-110,-10},{-110,-120},{-158,
+          -120}},       color={0,0,127}));
+  annotation (
+    Diagram(coordinateSystem(extent={{-140,-160},{140,140}}), graphics={
+          Rectangle(
+          extent={{12,28},{54,2}},
+          lineColor={238,46,47},
+          fillColor={244,125,35},
+          fillPattern=FillPattern.None,
+          lineThickness=1)}),
+    Icon(coordinateSystem(extent={{-140,-180},{140,140}}), graphics={
+        Rectangle(extent={{-140,140},{140,-180}}, lineColor={28,108,200}),
+        Text(
+          extent={{-140,60},{140,-80}},
+          lineColor={28,108,200},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="Nonlinear
+Model
+AVR+PSS
+
+"),     Text(
+          extent={{-138,-40},{142,-100}},
+          lineColor={238,46,47},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="%name
+")}),
+    experiment(
+      StopTime=20,
+      Interval=0.0001,
+      Tolerance=1e-06,
+      __Dymola_fixedstepsize=0.0001,
+      __Dymola_Algorithm="Dassl"),
+    __Dymola_experimentSetupOutput,
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>June 24, 2022</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Luigi Vanfretti</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p>luigi.vanfretti@gmail.com</p></td>
+</tr>
+</table>
+</html>"));
+end gridIO;
