@@ -25,5 +25,5 @@ equation
           {-37,18}}, color={0,0,127}));
   connect(grid.uvs, zero.y) annotation (Line(points={{-22,-16},{-32,-16},{-32,
           18},{-37,18}}, color={0,0,127}));
-  annotation (experiment(StopTime=10, __Dymola_Algorithm="Dassl"));
+  annotation (experiment(StopTime=30, __Dymola_Algorithm="Dassl"));
 end testGridIOasBlock;

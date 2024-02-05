@@ -1,9 +1,5 @@
 within Example1.Analysis;
 package LinearAnalysis
-  package CustomComponents
-      extends Modelica.Icons.VariantsPackage;
-
-  end CustomComponents;
 
   package CustomFunctions
     extends Modelica.Icons.FunctionsPackage;
@@ -410,8 +406,8 @@ package LinearAnalysis
     connect(AVRout, demultiplex2_2.y7[1]) annotation (Line(points={{210,-160},{
             98,-160},{98,-23.6},{90,-23.6}},  color={0,0,127}));
     annotation (
-      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},{
-              180,100}})),
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,
+              200}})),
       Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},
               {140,100}}),                                 graphics={
           Text(
@@ -436,14 +432,14 @@ package LinearAnalysis
             textString="y0",
             fontSize=24),
           Text(
-            extent={{40,20},{50,4}},
+            extent={{30,20},{40,4}},
             lineColor={238,46,47},
             fillPattern=FillPattern.VerticalCylinder,
             fillColor={255,0,0},
             fontSize=24,
             textString="y"),
           Text(
-            extent={{-80,80},{0,60}},
+            extent={{-92,90},{-12,70}},
             lineColor={85,170,255},
             fillPattern=FillPattern.HorizontalCylinder,
             fillColor={28,108,200},
@@ -480,4 +476,144 @@ They have to be rearranged based on the order provided by the linearization func
 <p><br>See the associated function to run: &quot;LinearizeAndCompare&quot;.</p>
 </html>"));
   end LinearModelGeneral;
+
+  package Figures
+    "These models are not to be used for any purpose other than presenting figures in documentation."
+    extends Modelica.Icons.InternalPackage;
+    model LinearModelGeneral
+      "Simulate the linearized model obtained by running the function \"LinearizeAndCompare\"."
+      extends Example1.Utilities.Icons.FunctionDependentExample;
+    //  extends Example1.Interfaces.OutputsInterfaceWEfdAndAVRout;
+      // The following definitions are very important to couple the linear model
+      // to the linearization of the nonlinear model and the simulation
+      parameter Real[:] y0=vector(DataFiles.readMATmatrix("MyData.mat", "y0_beforedist")) annotation (Evaluate=false);
+      // The following has to be imported in order to be able to interpret and manipulate the StateSpace types
+      import Modelica_LinearSystems2.StateSpace;
+      parameter StateSpace ss=StateSpace.Import.fromFile("MyData.mat", "ABCD");
+      parameter Integer ny=size(ss.C, 1);
+      inner Modelica_LinearSystems2.Controller.SampleClock sampleClock
+        annotation (Placement(transformation(extent={{-40,-24},{-20,-12}})));
+      Modelica.Blocks.Routing.Multiplex4 multiplex4_2(n1=1, n2=1)
+        annotation (Placement(transformation(extent={{-76,-8},{-56,12}})));
+      Example1.CustomComponents.DeMultiplex7 demultiplex2_7
+        annotation (Placement(transformation(extent={{30,-24},{70,16}})));
+      Modelica.Blocks.Math.Add addy[ny]
+        annotation (Placement(transformation(extent={{-4,-14},{16,6}})));
+      Modelica.Blocks.Sources.Constant y0_initial[ny](k=y0)      annotation (
+          Placement(transformation(
+            extent={{-5,-5},{5,5}},
+            rotation=90,
+            origin={-9,-29})));
+      Modelica_LinearSystems2.Controller.StateSpace stateSpace(system=ss)
+        annotation (Placement(transformation(extent={{-40,-8},{-20,12}})));
+      Modelica.Blocks.Sources.RealExpression
+                                       PSSchange
+        annotation (Placement(transformation(extent={{-120,6},{-100,26}})));
+      Modelica.Blocks.Sources.RealExpression
+                                       Pmchange
+        annotation (Placement(transformation(extent={{-120,-8},{-100,12}})));
+      Modelica.Blocks.Sources.Step     Ploadchange(
+        height=0.1,
+        offset=0,
+        startTime=30.5)                                 annotation (Placement(
+            transformation(extent={{-120,-28},{-100,-8}})));
+      Modelica.Blocks.Sources.RealExpression
+                                       AVRchange      annotation (Placement(
+            transformation(extent={{-120,-54},{-100,-34}})));
+    equation
+      connect(addy.y,demultiplex2_7. u)
+        annotation (Line(points={{17,-4},{26,-4}},               color={0,0,127}));
+      connect(Pmchange.y,multiplex4_2. u2[1]) annotation (Line(points={{-99,2},
+              {-92,2},{-92,5},{-78,5}},color={0,0,127}));
+      connect(y0_initial.y, addy.u2)
+        annotation (Line(points={{-9,-23.5},{-9,-10},{-6,-10}},
+                                                           color={0,0,127}));
+      connect(multiplex4_2.y, stateSpace.u)
+        annotation (Line(points={{-55,2},{-42,2}}, color={0,0,127}));
+      connect(stateSpace.y, addy.u1)
+        annotation (Line(points={{-19,2},{-6,2}},color={0,0,127}));
+      connect(PSSchange.y,multiplex4_2. u1[1]) annotation (Line(points={{-99,16},
+              {-86,16},{-86,11},{-78,11}},       color={0,0,127}));
+      connect(Ploadchange.y,multiplex4_2. u3[1]) annotation (Line(points={{-99,-18},
+              {-94,-18},{-94,-1},{-78,-1}},          color={0,0,127}));
+      connect(AVRchange.y, multiplex4_2.u4[1]) annotation (Line(points={{-99,-44},
+              {-90,-44},{-90,-7},{-78,-7}},          color={0,0,127}));
+      annotation (
+        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,200}})),
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-125,-50},
+                {100,30}}),                                  graphics={
+            Text(
+              extent={{-60,22},{-40,2}},
+              lineColor={238,46,47},
+              fillPattern=FillPattern.VerticalCylinder,
+              fillColor={255,0,0},
+              fontSize=24,
+              textString="du"),
+            Text(
+              extent={{-20,22},{0,2}},
+              lineColor={238,46,47},
+              fillPattern=FillPattern.VerticalCylinder,
+              fillColor={255,0,0},
+              textString="dy",
+              fontSize=24),
+            Text(
+              extent={{-18,-26},{-2,-46}},
+              lineColor={238,46,47},
+              fillPattern=FillPattern.VerticalCylinder,
+              fillColor={255,0,0},
+              textString="y0",
+              fontSize=24),
+            Text(
+              extent={{12,22},{32,2}},
+              lineColor={238,46,47},
+              fillPattern=FillPattern.VerticalCylinder,
+              fillColor={255,0,0},
+              fontSize=24,
+              textString="y"),
+            Text(
+              extent={{76,18},{96,10}},
+              textColor={0,0,127},
+              textString="Vt",
+              horizontalAlignment=TextAlignment.Left),
+            Text(
+              extent={{76,10},{96,2}},
+              textColor={0,0,127},
+              textString="Q",
+              horizontalAlignment=TextAlignment.Left),
+            Text(
+              extent={{76,2},{96,-6}},
+              textColor={0,0,127},
+              textString="P",
+              horizontalAlignment=TextAlignment.Left),
+            Text(
+              extent={{76,-4},{96,-12}},
+              textColor={0,0,127},
+              textString="w",
+              horizontalAlignment=TextAlignment.Left),
+            Text(
+              extent={{76,-10},{96,-18}},
+              textColor={0,0,127},
+              textString="delta",
+              horizontalAlignment=TextAlignment.Left),
+            Text(
+              extent={{76,-18},{96,-26}},
+              textColor={0,0,127},
+              textString="AVRin",
+              horizontalAlignment=TextAlignment.Left),
+            Text(
+              extent={{76,-24},{96,-32}},
+              textColor={0,0,127},
+              textString="AVRout",
+              horizontalAlignment=TextAlignment.Left)}),
+        experiment(
+          StopTime=15,
+          __Dymola_NumberOfIntervals=1000,
+          __Dymola_Algorithm="Dassl"),
+        Documentation(info="<html>
+<p>DO NOT try to run this model on it&apos;s own! </p>
+<p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
+<p><br>See the associated function to run: &quot;LinearizeAndCompare&quot;.</p>
+</html>"));
+    end LinearModelGeneral;
+  end Figures;
 end LinearAnalysis;
