@@ -241,28 +241,28 @@ package LinearAnalysis
           transformation(extent={{100,-130},{120,-110}}),
           iconTransformation(extent={{100,-90},{120,-70}})));
   equation
-    connect(Plant.Vt, Vt) annotation (Line(points={{42.8571,25},{72.4286,25},{
+    connect(Plant.Vt, Vt) annotation (Line(points={{42,32},{72.4286,32},{
             72.4286,80},{110,80}},  color={0,0,127}));
-    connect(Plant.P, P) annotation (Line(points={{42.8571,15},{86,15},{86,40},{
-            110,40}},  color={0,0,127}));
-    connect(Q, Plant.Q) annotation (Line(points={{110,0},{76,0},{76,5},{42.8571,
-            5}},         color={0,0,127}));
-    connect(w, Plant.w) annotation (Line(points={{110,-40},{84,-40},{84,-5},{
-            42.8571,-5}}, color={0,0,127}));
+    connect(Plant.P, P) annotation (Line(points={{42,24},{86,24},{86,40},{110,
+            40}},      color={0,0,127}));
+    connect(Q, Plant.Q) annotation (Line(points={{110,0},{76,0},{76,16},{42,16}},
+                         color={0,0,127}));
+    connect(w, Plant.w) annotation (Line(points={{110,-40},{84,-40},{84,0},{42,
+            0}},          color={0,0,127}));
     connect(delta, Plant.delta) annotation (Line(points={{110,-80},{68,-80},{68,
-            -15},{42.8571,-15}},    color={0,0,127}));
-    connect(Plant.uvs, uvsAVR) annotation (Line(points={{-45.1429,-25},{
-            -77.5714,-25},{-77.5714,-80},{-120,-80}}, color={0,0,127}));
-    connect(Plant.uPload, uPload) annotation (Line(points={{-45.7143,-10},{
-            -78.8572,-10},{-78.8572,-20},{-120,-20}}, color={0,0,127}));
-    connect(Plant.uPm, uPm) annotation (Line(points={{-45.7143,15},{-77.8572,15},
-            {-77.8572,20},{-120,20}},     color={0,0,127}));
-    connect(Plant.uPSS, uPSS) annotation (Line(points={{-45.7143,35},{-76.8572,
-            35},{-76.8572,80},{-120,80}},          color={0,0,127}));
-    connect(Plant.AVRin, AVRin) annotation (Line(points={{42.8571,-25},{62,-25},
-            {62,-100},{110,-100}},      color={0,0,127}));
+            -16},{42,-16}},         color={0,0,127}));
+    connect(Plant.uvs, uvsAVR) annotation (Line(points={{-44,-36},{-77.5714,-36},
+            {-77.5714,-80},{-120,-80}},               color={0,0,127}));
+    connect(Plant.uPload, uPload) annotation (Line(points={{-44,-12},{-78.8572,
+            -12},{-78.8572,-20},{-120,-20}},          color={0,0,127}));
+    connect(Plant.uPm, uPm) annotation (Line(points={{-44.4,12},{-77.8572,12},{
+            -77.8572,20},{-120,20}},      color={0,0,127}));
+    connect(Plant.uPSS, uPSS) annotation (Line(points={{-44,36},{-76.8572,36},{
+            -76.8572,80},{-120,80}},               color={0,0,127}));
+    connect(Plant.AVRin, AVRin) annotation (Line(points={{42,-24},{62,-24},{62,
+            -100},{110,-100}},          color={0,0,127}));
     connect(AVRout, Plant.AVRout) annotation (Line(points={{110,-120},{50,-120},
-            {50,-32.5},{42.8571,-32.5}},       color={0,0,127}));
+            {50,-32},{42,-32}},                color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
           coordinateSystem(preserveAspectRatio=false, extent={{-100,-140},
               {100,100}})));
@@ -306,28 +306,28 @@ package LinearAnalysis
           transformation(extent={{100,-130},{120,-110}}),
           iconTransformation(extent={{100,-90},{120,-70}})));
   equation
-    connect(Plant.uPSS, PSSchange.y) annotation (Line(points={{-45.7143,35},{
-            -62.8572,35},{-62.8572,46},{-79,46}}, color={0,0,127}));
-    connect(Plant.uPm, Pmchange.y) annotation (Line(points={{-45.7143,15},{-62,
-            15},{-62,16},{-79,16}},     color={0,0,127}));
-    connect(Plant.uPload, Ploadchange.y) annotation (Line(points={{-45.7143,-10},
-            {-62.8572,-10},{-62.8572,-16},{-79,-16}},      color={0,0,127}));
-    connect(Plant.Vt, Vt) annotation (Line(points={{42.8571,25},{72.4286,25},{
+    connect(Plant.uPSS, PSSchange.y) annotation (Line(points={{-44,36},{
+            -62.8572,36},{-62.8572,46},{-79,46}}, color={0,0,127}));
+    connect(Plant.uPm, Pmchange.y) annotation (Line(points={{-44.4,12},{-62,12},
+            {-62,16},{-79,16}},         color={0,0,127}));
+    connect(Plant.uPload, Ploadchange.y) annotation (Line(points={{-44,-12},{
+            -62.8572,-12},{-62.8572,-16},{-79,-16}},       color={0,0,127}));
+    connect(Plant.Vt, Vt) annotation (Line(points={{42,32},{72.4286,32},{
             72.4286,80},{110,80}},  color={0,0,127}));
-    connect(Plant.P, P) annotation (Line(points={{42.8571,15},{73.4286,15},{
-            73.4286,40},{110,40}}, color={0,0,127}));
-    connect(Plant.Q, Q) annotation (Line(points={{42.8571,5},{76,5},{76,0},{110,
-            0}},     color={0,0,127}));
-    connect(Plant.w, w) annotation (Line(points={{42.8571,-5},{73.4286,-5},{
-            73.4286,-40},{110,-40}}, color={0,0,127}));
-    connect(Plant.delta, delta) annotation (Line(points={{42.8571,-15},{72.4286,
-            -15},{72.4286,-80},{110,-80}},         color={0,0,127}));
+    connect(Plant.P, P) annotation (Line(points={{42,24},{73.4286,24},{73.4286,
+            40},{110,40}},         color={0,0,127}));
+    connect(Plant.Q, Q) annotation (Line(points={{42,16},{76,16},{76,0},{110,0}},
+                     color={0,0,127}));
+    connect(Plant.w, w) annotation (Line(points={{42,0},{73.4286,0},{73.4286,
+            -40},{110,-40}},         color={0,0,127}));
+    connect(Plant.delta, delta) annotation (Line(points={{42,-16},{72.4286,-16},
+            {72.4286,-80},{110,-80}},              color={0,0,127}));
     connect(AVRchange.y, Plant.uvs) annotation (Line(points={{-79,-54},{-64,-54},
-            {-64,-25},{-45.1429,-25}},      color={0,0,127}));
+            {-64,-36},{-44,-36}},           color={0,0,127}));
     connect(AVRin, Plant.AVRin) annotation (Line(points={{110,-100},{62,-100},{
-            62,-25},{42.8571,-25}},  color={0,0,127}));
+            62,-24},{42,-24}},       color={0,0,127}));
     connect(AVRout, Plant.AVRout) annotation (Line(points={{110,-120},{52,-120},
-            {52,-32.5},{42.8571,-32.5}},       color={0,0,127}));
+            {52,-32},{42,-32}},                color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
           coordinateSystem(preserveAspectRatio=false, extent={{-100,-140},
               {100,100}})),
@@ -394,26 +394,28 @@ package LinearAnalysis
     connect(AVRchange.y, multiplex4_2.u4[1]) annotation (Line(points={{
             -99,-60},{-90,-60},{-90,-9},{-78,-9}}, color={0,0,127}));
     connect(demultiplex2_2.y1[1], Vt) annotation (Line(points={{90,18},{98,18},
-            {98,80},{150,80}}, color={0,0,127}));
+            {98,160},{210,160}},
+                               color={0,0,127}));
     connect(demultiplex2_2.y2[1], Q) annotation (Line(points={{90,10.8},{132,
-            10.8},{132,0},{150,0}}, color={0,0,127}));
-    connect(P, demultiplex2_2.y3[1]) annotation (Line(points={{150,40},{120,
-            40},{120,3.6},{90,3.6}}, color={0,0,127}));
-    connect(w, demultiplex2_2.y4[1]) annotation (Line(points={{150,-40},{130,
-            -40},{130,-3.6},{90,-3.6}}, color={0,0,127}));
-    connect(delta, demultiplex2_2.y5[1]) annotation (Line(points={{150,-80},{
+            10.8},{132,80},{210,80}},
+                                    color={0,0,127}));
+    connect(P, demultiplex2_2.y3[1]) annotation (Line(points={{210,120},{120,
+            120},{120,3.6},{90,3.6}},color={0,0,127}));
+    connect(w, demultiplex2_2.y4[1]) annotation (Line(points={{210,0},{130,0},{
+            130,-3.6},{90,-3.6}},       color={0,0,127}));
+    connect(delta, demultiplex2_2.y5[1]) annotation (Line(points={{210,-80},{
             118,-80},{118,-10.8},{90,-10.8}}, color={0,0,127}));
-    connect(AVRin, demultiplex2_2.y6[1]) annotation (Line(points={{150,-118},
-            {106,-118},{106,-18},{90,-18}}, color={0,0,127}));
-    connect(AVRout, demultiplex2_2.y7[1]) annotation (Line(points={{150,-150},
-            {98,-150},{98,-23.6},{90,-23.6}}, color={0,0,127}));
+    connect(AVRin, demultiplex2_2.y6[1]) annotation (Line(points={{210,-120},{
+            106,-120},{106,-18},{90,-18}},  color={0,0,127}));
+    connect(AVRout, demultiplex2_2.y7[1]) annotation (Line(points={{210,-160},{
+            98,-160},{98,-23.6},{90,-23.6}},  color={0,0,127}));
     annotation (
       Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},{
               180,100}})),
       Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},
               {140,100}}),                                 graphics={
           Text(
-            extent={{-58,24},{-44,4}},
+            extent={{-58,34},{-44,14}},
             lineColor={238,46,47},
             fillPattern=FillPattern.VerticalCylinder,
             fillColor={255,0,0},

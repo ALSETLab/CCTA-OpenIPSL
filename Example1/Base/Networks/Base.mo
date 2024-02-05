@@ -21,7 +21,7 @@ partial model Base "Partial model containing the network elements"
     annotation (Placement(transformation(extent={{-2,-46},{16,-34}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b=2220000000,
                                                          fn=60)
-    annotation (Placement(transformation(extent={{46,-80},{100,-60}})));
+    annotation (Placement(transformation(extent={{46,-84},{100,-64}})));
   OpenIPSL.Electrical.Branches.PwLine line_3(
     R=Modelica.Constants.eps,
     G=Modelica.Constants.eps,
@@ -43,9 +43,6 @@ partial model Base "Partial model containing the network elements"
   OpenIPSL.Electrical.Buses.Bus    B4(
     V_b=400)
           annotation (Placement(transformation(extent={{18,-50},{38,-30}})));
-
-protected
-  parameter Real S_b=SysData.S_b;
 equation
   connect(line_2.p, line_1.p) annotation (Line(points={{-1.1,-40},{-10,-40},
           {-10,20},{22.9,20}},

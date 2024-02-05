@@ -14,8 +14,6 @@ partial model BaseWithPF "Partial SMIB Model with power flow data, system data b
     t1=Modelica.Constants.inf,
     d_t=Modelica.Constants.eps)
     annotation (Placement(transformation(extent={{16,-76},{28,-64}})));
-  PFData.PFScenarios pf
-    annotation (Placement(transformation(extent={{80,-58},{100,-38}})));
   Plants.inf inf(
     P_0=pf.machines.PG2,
     Q_0=pf.machines.QG2,
@@ -24,6 +22,9 @@ partial model BaseWithPF "Partial SMIB Model with power flow data, system data b
         extent={{10,10},{-10,-10}},
         rotation=0,
         origin={104,0})));
+  PFData.PFScenarios pf
+    annotation (Placement(transformation(extent={{80,-58},{100,-38}})),
+      choicesAllMatching=true);
 equation
   connect(load.p, line_2.n)
     annotation (Line(points={{22,-64},{22,-40},{15.1,-40}}, color={0,0,255}));

@@ -1,12 +1,12 @@
 within Example1.Base.Systems;
 model gridIO
-  "Power gris model with input/output interfaces and modifications for simulation and linearization"
+  "Power grid model with input/output interfaces and modifications for simulation and linearization"
   extends Base.Networks.BasePFnFault(
     pf(
-      redeclare record Bus = PFData.Data.BusData.PF_Bus_10,
-      redeclare record Loads = PFData.Data.LoadData.PF_Loads_10,
-      redeclare record Trafos = PFData.Data.TrafoData.PF_Trafos_10,
-      redeclare record Machines = PFData.Data.MachineData.PF_Machines_10),
+      redeclare record Bus = Bus,
+      redeclare record Loads = Loads,
+      redeclare record Trafos = Trafos,
+      redeclare record Machines = Machines),
     line_1(
       R=Modelica.Constants.eps,
            X=3.25,
@@ -14,8 +14,10 @@ model gridIO
       B=Modelica.Constants.eps),
     line_2(t1=Modelica.Constants.inf),
     fault(
-      R=Modelica.Constants.eps,
-          t1=Modelica.Constants.inf, t2=Modelica.Constants.inf));
+      R=Rfault,
+      X=Xfault,
+      t1=t1fault,
+      t2=t2fault));
   extends Example1.Interfaces.OutputsInterfaceWEfdAndAVRout;
   import Modelica.Constants.pi;
   Plants.GenIO G1(
@@ -51,13 +53,21 @@ model gridIO
     t2=t2,
     opening=opening)
            annotation (Placement(transformation(extent={{22,2},{40,14}})));
-  parameter Modelica.Units.SI.Time t1=Modelica.Constants.inf
+  parameter Modelica.Units.SI.Time t1=0.5
     "Time of line removal" annotation (Dialog(group="Line Removal Parameters"));
-  parameter Modelica.Units.SI.Time t2=Modelica.Constants.inf
+  parameter Modelica.Units.SI.Time t2=0.57
     "Line re-insertion time"
     annotation (Dialog(group="Line Removal Parameters"));
   parameter Integer opening=1
     "Type of opening (1: removes both ends at same time, 2: removes sending end, 3: removes receiving end)"     annotation (Dialog(group="Line Removal Parameters"));
+  parameter OpenIPSL.Types.Time t1fault=Modelica.Constants.inf
+    "Start time of the fault" annotation (Dialog(group="Fault Parameters"));
+  parameter OpenIPSL.Types.Time t2fault=Modelica.Constants.inf
+    "End time of the fault" annotation (Dialog(group="Fault Parameters"));
+  parameter OpenIPSL.Types.PerUnit Rfault=Modelica.Constants.eps "Resistance"
+    annotation (Dialog(group="Fault Parameters"));
+  parameter OpenIPSL.Types.PerUnit Xfault=1e-5 "Reactance"
+    annotation (Dialog(group="Fault Parameters"));
   parameter Real Kw=9.5 "Stabilizer gain (pu/pu)" annotation (Dialog(group="PSS"));
   parameter Real Tw=1.41 "Wash-out time constant (s)" annotation (Dialog(group="PSS"));
   Modelica.Blocks.Interfaces.RealInput uvs annotation (Placement(
@@ -70,8 +80,15 @@ model gridIO
   parameter Real vfmax=7.0 "max lim." annotation (Dialog(group="AVR"));
   parameter Real vfmin=-6.40 "min lim." annotation (Dialog(group="AVR"));
   parameter Real K0=200 "regulator gain" annotation (Dialog(group="AVR"));
-protected
-  parameter Real S_b=SysData.S_b;
+  replaceable record Bus = PFData.Data.BusData.PF_Bus_10 constrainedby
+    PFData.Data.BusData.Bus_Template annotation (choicesAllMatching=true, Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
+  replaceable record Loads = PFData.Data.LoadData.PF_Loads_10 constrainedby
+    PFData.Data.LoadData.Loads_Template annotation (choicesAllMatching=true, Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
+  replaceable record Trafos = PFData.Data.TrafoData.PF_Trafos_10 constrainedby
+    PFData.Data.TrafoData.Trafos_Template annotation (choicesAllMatching=true, Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
+  replaceable record Machines = PFData.Data.MachineData.PF_Machines_10
+    constrainedby PFData.Data.MachineData.Machines_Template annotation (
+      choicesAllMatching=true, Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
 equation
   w = G1.machine.w;
   delta = G1.machine.delta;
@@ -80,10 +97,10 @@ equation
   Q = G1.machine.Q;
   AVRin = G1.feedbackAVR.y; // AVR input, error signal to the avr
   AVRout = G1.avr.vf; // AVR output, Efd
-  connect(load.u, uPload) annotation (Line(points={{17.14,-66.7},{-22,-66.7},{
-          -22,-60},{-220,-60}}, color={0,0,127}));
-  connect(G1.uPSS, uPSS) annotation (Line(points={{-112,6},{-122,6},{-122,180},
-          {-220,180}},
+  connect(load.u, uPload) annotation (Line(points={{17.14,-66.7},{-22,-66.7},{-22,
+          -60},{-220,-60}}, color={0,0,127}));
+  connect(G1.uPSS, uPSS) annotation (Line(points={{-112,6},{-122,6},{-122,180},{
+          -220,180}},
                 color={0,0,127}));
   connect(G1.pwPin, B1.p)
     annotation (Line(points={{-89,0},{-80,0}}, color={0,0,255}));
@@ -91,8 +108,8 @@ equation
     annotation (Line(points={{39.1,8},{39.1,20}}, color={0,0,255}));
   connect(line_4.p, line_1.p)
     annotation (Line(points={{22.9,8},{22.9,20}}, color={0,0,255}));
-  connect(G1.upm, uPm) annotation (Line(points={{-112,-6},{-136,-6},{-136,60},{
-          -222,60}},      color={0,0,127}));
+  connect(G1.upm, uPm) annotation (Line(points={{-112,-6},{-136,-6},{-136,60},{-222,
+          60}},           color={0,0,127}));
   connect(G1.uvsAVR, uvs) annotation (Line(points={{-100,-12},{-100,-180},{-220,
           -180}},       color={0,0,127}));
   annotation (

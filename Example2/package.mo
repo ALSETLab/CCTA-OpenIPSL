@@ -2,11 +2,11 @@ within ;
 package Example2
 annotation (uses(
     Modelica(version="4.0.0"),
-    OpenIPSL(version="3.1.0-dev"),
     PSSMonitoringRedesign(version="3"),
     DataFiles(version="1.1.0"),
     Modelica_LinearSystems2(version="2.4.0"),
-      DymolaCommands(version="1.16")),         Icon(graphics={
+      DymolaCommands(version="1.16"),
+      OpenIPSL(version="3.0.1")),              Icon(graphics={
         Rectangle(
           lineColor={0,140,72},
           fillColor={170,255,85},
