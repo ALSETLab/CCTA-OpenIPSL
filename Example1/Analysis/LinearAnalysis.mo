@@ -55,6 +55,7 @@ package LinearAnalysis
       Advanced.Translation.SparseActivateIntegrator :=false;
       Advanced.Translation.SparseActivateSystems :=false;
       Modelica.Utilities.Streams.print("Sparse options disabled.");
+      OutputCPUtime :=false; // disable cpu time output so it doesn't scre up the sizes of the outputs
       // Start the linearization process
       Modelica.Utilities.Streams.print("Linearization and Nonlinear Model Comparison is starting...");
       // Compute and display the ABCD matrices, etc
@@ -163,6 +164,7 @@ package LinearAnalysis
       Advanced.Translation.SparseActivateIntegrator :=false;
       Advanced.Translation.SparseActivateSystems :=false;
       Modelica.Utilities.Streams.print("Sparse options disabled.");
+      OutputCPUtime :=false; // disable cpu time output so it doesn't scre up the sizes of the outputs
       // Start the linearization process
       Modelica.Utilities.Streams.print("Linearization and Nonlinear Model Comparison is starting...");
       // Compute and display the ABCD matrices, etc
@@ -353,7 +355,7 @@ package LinearAnalysis
     Example1.CustomComponents.DeMultiplex7 demultiplex2_2
       annotation (Placement(transformation(extent={{48,-20},{88,20}})));
     Modelica.Blocks.Math.Add addy[ny]
-      annotation (Placement(transformation(extent={{6,-16},{26,4}})));
+      annotation (Placement(transformation(extent={{6,-10},{26,10}})));
     Modelica.Blocks.Sources.Constant Pmchange(k=0)
       annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
     Modelica.Blocks.Sources.Constant y0_initial[ny](k=y0)      annotation (
@@ -374,15 +376,16 @@ package LinearAnalysis
           transformation(extent={{-120,-70},{-100,-50}})));
   equation
     connect(addy.y, demultiplex2_2.u)
-      annotation (Line(points={{27,-6},{28,-6},{28,0},{44,0}}, color={0,0,127}));
+      annotation (Line(points={{27,0},{44,0}},                 color={0,0,127}));
     connect(Pmchange.y,multiplex4_2. u2[1]) annotation (Line(points={{-99,0},
             {-92,0},{-92,3},{-78,3}},color={0,0,127}));
     connect(y0_initial.y, addy.u2)
-      annotation (Line(points={{0,-21},{0,-12},{4,-12}}, color={0,0,127}));
+      annotation (Line(points={{0,-21},{0,-6},{4,-6}},   color={0,0,127}));
     connect(multiplex4_2.y, stateSpace.u)
       annotation (Line(points={{-55,0},{-42,0}}, color={0,0,127}));
     connect(stateSpace.y, addy.u1)
-      annotation (Line(points={{-19,0},{4,0}}, color={0,0,127}));
+      annotation (Line(points={{-19,0},{-8,0},{-8,6},{4,6}},
+                                               color={0,0,127}));
     connect(PSSchange.y,multiplex4_2. u1[1]) annotation (Line(points={{-99,30},
             {-92,30},{-92,9},{-78,9}},         color={0,0,127}));
     connect(Ploadchange.y,multiplex4_2. u3[1]) annotation (Line(points={{-99,-30},
