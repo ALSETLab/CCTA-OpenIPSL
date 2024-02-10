@@ -22,7 +22,7 @@ partial model BaseWithPF "Partial SMIB Model with power flow data, system data b
         extent={{10,10},{-10,-10}},
         rotation=0,
         origin={104,0})));
-  PFData.PFScenarios pf
+  PFData.PFScenarios pf "Specify power flow data to derive star values"
     annotation (Placement(transformation(extent={{80,-58},{100,-38}})),
       choicesAllMatching=true);
 equation
