@@ -293,7 +293,12 @@ package LinearAnalysis
       offset=0,
       startTime=30.5)                                 annotation (Placement(
           transformation(extent={{-100,-26},{-80,-6}})));
-    Example1.Base.Systems.gridIO Plant(t1=0.5, opening=1)
+    Example1.Base.Systems.gridIO Plant(t1=0.5, opening=1,
+      redeclare record Bus = Example1.PFData.Data.BusData.PF_Bus_0,
+      redeclare record Loads = Example1.PFData.Data.LoadData.PF_Loads_0,
+      redeclare record Trafos = Example1.PFData.Data.TrafoData.PF_Trafos_0,
+      redeclare record Machines =
+          Example1.PFData.Data.MachineData.PF_Machines_0)
       annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
     Modelica.Blocks.Sources.Constant AVRchange(k=0)
       annotation (Placement(transformation(extent={{-100,-64},{-80,-44}})));

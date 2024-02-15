@@ -3,10 +3,11 @@ model testgridIO
   "gridIO special test model, made by stripping the interfaces manually after the model was verified to work with the interfaces."
   extends Base.Networks.BasePFnFault(
     pf(
-      redeclare record Bus = PFData.Data.BusData.PF_Bus_10,
-      redeclare record Loads = PFData.Data.LoadData.PF_Loads_10,
-      redeclare record Trafos = PFData.Data.TrafoData.PF_Trafos_10,
-      redeclare record Machines = PFData.Data.MachineData.PF_Machines_10),
+      redeclare record Bus = Example1.PFData.Data.BusData.PF_Bus_10,
+      redeclare record Loads = Example1.PFData.Data.LoadData.PF_Loads_10,
+      redeclare record Trafos = Example1.PFData.Data.TrafoData.PF_Trafos_10,
+      redeclare record Machines =
+          Example1.PFData.Data.MachineData.PF_Machines_10),
     line_1(
       R=Modelica.Constants.eps,
            X=3.25,

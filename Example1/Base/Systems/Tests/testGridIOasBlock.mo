@@ -5,7 +5,11 @@ model testGridIOasBlock "Test the gridIO model"
     t1=7.5,
     t2=Modelica.Constants.inf,
     t1fault=0.5,
-    t2fault=0.57)
+    t2fault=0.57,
+    redeclare record Bus = Example1.PFData.Data.BusData.PF_Bus_12,
+    redeclare record Loads = Example1.PFData.Data.LoadData.PF_Loads_12,
+    redeclare record Trafos = Example1.PFData.Data.TrafoData.PF_Trafos_12,
+    redeclare record Machines = Example1.PFData.Data.MachineData.PF_Machines_12)
     annotation (Placement(transformation(extent={{-20,-18},{20,22}})));
   Modelica.Blocks.Sources.Pulse    pulse(
     amplitude=1,

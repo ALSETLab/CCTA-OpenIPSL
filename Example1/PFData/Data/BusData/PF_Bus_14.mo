@@ -2,13 +2,13 @@ within Example1.PFData.Data.BusData;
 record PF_Bus_14
 extends Example1.PFData.Data.BusData.Bus_Template(
     V1=1.0000000,
-    A1=30.0202366,
+    A1=Modelica.Units.Conversions.from_deg(30.0202366),
     V2=0.9701921,
-    A2=20.5357915,
+    A2=Modelica.Units.Conversions.from_deg(20.5357915),
     V3=1.0000000,
-    A3=0.0000000,
+    A3=Modelica.Units.Conversions.from_deg(0.0000000),
     V4=0.9692740,
-    A4=9.5579028);
+    A4=Modelica.Units.Conversions.from_deg(9.5579028));
 
 // Bus: 'B1' (PV bus)
 
