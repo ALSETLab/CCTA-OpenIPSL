@@ -29,6 +29,25 @@ package Utilities
 <p>See the associated function to run.</p>
 </html>"));
     end FunctionDependentExample;
+
+    model ModelForLinearization "This model is used for linearization."
+      annotation (Icon(graphics={
+            Ellipse(
+              lineColor={0,140,72},
+              fillColor={213,255,170},
+              fillPattern=FillPattern.Solid,
+              extent={{-100,-100},{100,100}},
+              lineThickness=1),
+            Text(
+              lineColor={0,140,72},
+              extent={{-100,-50},{100,50}},
+              textString="Lin")}), Documentation(info="<html>
+<p><b><span style=\"font-size: 24pt;\">f+m Example</span></b></p>
+<p>DO NOT try to run this model on it&apos;s own! </p>
+<p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
+<p>See the associated function to run.</p>
+</html>"));
+    end ModelForLinearization;
   end Icons;
 
   package SetupSolverSettings

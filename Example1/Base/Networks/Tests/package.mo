@@ -1,7 +1,7 @@
 within Example1.Base.Networks;
-package Tests "Test models for base networks"
+package Tests "Test models for base network models."
   extends Modelica.Icons.ExamplesPackage;
   annotation (Documentation(info="<html>
-<p><span style=\"font-family: Courier New;\">Models to test the base clases.</span></p>
+<p>Models to test the base clases.</p>
 </html>"));
 end Tests;

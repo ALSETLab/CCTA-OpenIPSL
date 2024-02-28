@@ -22,5 +22,7 @@ equation
           {17.14,-66.7}}, color={0,0,127}));
   connect(infiniteBus2.pwPin, B1.p)
     annotation (Line(points={{-91,0},{-80,0}}, color={0,0,255}));
-annotation(preferredView = "diagram");
+annotation(preferredView = "diagram", Documentation(info="<html>
+<p>Tests <span style=\"font-family: Courier New;\">Example1.Base.Networks.BasePFnFault</span></p>
+</html>"));
 end testPFandFault;

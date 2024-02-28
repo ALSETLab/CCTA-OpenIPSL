@@ -13,5 +13,7 @@ model testBase "Tes model for Base network"
 equation
   connect(infiniteBus1.pwPin, B1.p)
     annotation (Line(points={{-87,0},{-80,0}}, color={0,0,255}));
-annotation(preferredView = "diagram");
+annotation(preferredView = "diagram", Documentation(info="<html>
+<p>Tests <span style=\"font-family: Courier New;\">Example1.Base.Networks.Base</span></p>
+</html>"));
 end testBase;

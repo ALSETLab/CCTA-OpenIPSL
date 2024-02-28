@@ -31,6 +31,6 @@ equation
   connect(inf.pwPin, B3.p)
     annotation (Line(points={{93,0},{82,0}}, color={0,0,255}));
   annotation (Documentation(info="<html>
-<p>Extended model that contains power flow data, SysData and a load.</p>
+<p>Extended model that contains power flow data (see the pf <span style=\"font-family: Courier New;\">record</span>) and a load with an <span style=\"font-family: Courier New;\">RealInput</span> interface.</p>
 </html>", preferredView = "diagram"));
 end BaseWithPF;

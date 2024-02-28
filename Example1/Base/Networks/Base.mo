@@ -1,5 +1,6 @@
 within Example1.Base.Networks;
-partial model Base "Partial model containing the network elements"
+partial model Base
+  "Partial model containing basic network elements and SysData component"
   import Modelica.Constants.pi;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transf(
     Sn=2220000000,
@@ -73,13 +74,14 @@ equation
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<p><br>Base network <span style=\"font-family: Courier New;\">partial</span> model, it includes the network components and a <span style=\"font-family: Courier New;\">SysData</span> component.</p>
+<table cellspacing=\"0\" cellpadding=\"2\" border=\"1\" width=\"100%\"><tr>
 <td><p>Reference</p></td>
 <td><p>SMIB with Reference to PSAT, d_kundur2.mdl, PSAT</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>2024/2/3</p></td>
+<td><p>2024/2/28</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>

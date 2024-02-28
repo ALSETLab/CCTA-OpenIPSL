@@ -1,6 +1,5 @@
 within Example1.Base.Plants.Figures;
-model GenIO
-  "Generator with AVR and PSS and input/output interfaces for linearization"
+model GenIO "GenIO for documentation/paper figure"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400000,
@@ -153,23 +152,6 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{
             100,75}})),
     Documentation(info="<html>
-<p>Model includes inputs using interfaces using input blocks from Modelica.Blocks.Interfaces.RealInput and output interfaces using blocks from Modelica.Blocks.Interfaces.RealOuput.</p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p><br><br>Reference</p></td>
-<td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td><p>June 24, 2022</p></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Luigi Vanfretti</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p>luigi.vanfretti@gmail.com</p></td>
-</tr>
-</table>
+<p>Do not use for simulation purposes, created only to generate a figure for documentation/papers.</p>
 </html>"));
 end GenIO;

@@ -31,7 +31,7 @@ class Copyright "Copyright"
           fillPattern=FillPattern.Solid)}),
     Documentation(info="<html>
 <p><span style=\"font-family: Courier New;\">(c) 2024. All rights reserved.</span></p>
-<p><span style=\"font-family: Courier New;\">Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY.</span></p>
+<p><span style=\"font-family: Courier New;\">Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</span></p>
 </html>"));
 
 end Copyright;

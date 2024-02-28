@@ -10,7 +10,7 @@ annotation(preferredView = "info",
       OpenIPSL(version="3.0.1")),
   version="3",
   Documentation(info="<html>
-<p><br>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; by Luigi Vanfretti, submitted for review to the IEEE CCTA 2024.</p>
+<p><br>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; by Luigi Vanfretti and Chrisopher R. Laughman, submitted for review to the IEEE CCTA 2024.</p>
 <p>The models have the following dependencies:</p>
 <ul>
 <li>Modelica Standard Library v.4.0.0, </li>
@@ -20,9 +20,9 @@ annotation(preferredView = "info",
 <li>LinearAnalysis v1.0.1, </li>
 <li>OpenIPSL v.3.0.1</li>
 </ul>
-<p><br>Developed and tested with Dymola 2024X under MS Windows 11.</p>
-<p><br>The models were originally developed using similar component models and parameters as the single-machine infinite bus model used in the Example 13.2 of the book &apos;P. Kundur, Power System Stability and Control, McGraw-Hill Education, 1994.&apos;, but implemented using the OpenIPSL library.</p>
-<p><br>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA.</p>
+<p><br>The models were developed and tested with Dymola 2024X under MS Windows 11.</p>
+<p><br>The models were originally developed using similar component models and parameters as the single-machine infinite bus model used in the Example 13.2 of the book &apos;P. Kundur, Power System Stability and Control, McGraw-Hill Education, 1994.&apos;,  pp. 864-869, implemented using the OpenIPSL library.</p>
+<p><br>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</p>
 </html>"),
     Icon(graphics={
         Rectangle(

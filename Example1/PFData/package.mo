@@ -1,5 +1,5 @@
 within Example1;
-package PFData
+package PFData "Records with power flow data to simulate various scenarios."
   extends Modelica.Icons.RecordsPackage;
 
 annotation (Icon(graphics={             Text(
