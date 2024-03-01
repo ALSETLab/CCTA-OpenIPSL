@@ -278,4 +278,48 @@ Click on the \"Plant\" block to specify controller parameters.",
         __Dymola_fixedstepsize=0.01,
         __Dymola_Algorithm="Dassl"));
   end C2_fail_conditions;
+  annotation (Icon(graphics={
+        Rectangle(
+          fillColor={239,46,49},
+          fillPattern=FillPattern.Solid,
+          extent={{-100,-100},{100,100}},
+          radius=25,
+          lineColor={127,22,22},
+          lineThickness=1),
+      Rectangle(
+        origin={0,35.149},
+        fillColor={255,255,255},
+        extent={{-30.0,-20.1488},{30.0,20.1488}},
+          lineColor={255,255,255},
+          lineThickness=1),
+      Rectangle(
+        origin={0,-34.851},
+        fillColor={255,255,255},
+        extent={{-30.0,-20.1488},{30.0,20.1488}},
+          lineColor={255,255,255},
+          lineThickness=1),
+      Line(
+        origin={-51.25,-2},
+        points={{21.25,-35.0},{-13.75,-35.0},{-13.75,35.0},{6.25,35.0}},
+          color={255,255,255},
+          thickness=1),
+      Polygon(
+        origin={-40,35},
+        pattern=LinePattern.None,
+        points={{10.0,0.0},{-5.0,5.0},{-5.0,-5.0}},
+          lineColor={255,255,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+      Line(
+        origin={51.25,0},
+        points={{-21.25,35.0},{13.75,35.0},{13.75,-35.0},{-6.25,-35.0}},
+          color={255,255,255},
+          thickness=1),
+      Polygon(
+        origin={40,-35},
+        pattern=LinePattern.None,
+        points={{-10.0,0.0},{5.0,5.0},{5.0,-5.0}},
+          lineColor={255,255,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid)}),preferredView = "info");
 end RedesignedControllerVerification;

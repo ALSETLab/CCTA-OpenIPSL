@@ -1,5 +1,6 @@
 within Example1.CustomComponents;
 model TimedInputInjection
+  "Model to inject a designed signal on specified time points."
   extends Modelica.Blocks.Interfaces.SO;
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
@@ -80,5 +81,5 @@ equation
           color={255,0,0},
           smooth=Smooth.Bezier,
           origin={-10,-2.1},
-          rotation=90)}));
+          rotation=90)}),preferredView="diagram");
 end TimedInputInjection;

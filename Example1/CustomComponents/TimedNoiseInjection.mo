@@ -1,5 +1,5 @@
 within Example1.CustomComponents;
-model TimedNoiseInjection
+model TimedNoiseInjection "Model to inject noise on specified time points."
   extends Modelica.Blocks.Interfaces.SO;
   Modelica.Blocks.Noise.NormalNoise normalNoise(samplePeriod=1/60, sigma=0.0577)
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
@@ -50,10 +50,5 @@ equation
               -67},{40,-20},{50,-20},{50,-29},{58,-29},{58,-95},{68,-95}},
           color={28,108,200},
           thickness=0.5)}),
-    experiment(
-      StopTime=1320,
-      Interval=60,
-      Tolerance=1e-06,
-      __Dymola_fixedstepsize=0.01,
-      __Dymola_Algorithm="Dassl"));
+    preferredView="diagram");
 end TimedNoiseInjection;

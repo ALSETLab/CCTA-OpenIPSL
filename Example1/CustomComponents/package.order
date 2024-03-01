@@ -1,5 +1,6 @@
-DeMultiplex7
 TimedNoiseInjection
 TimedInputInjection
 InputData
-Tests
+DeMultiplex7
+EventTriggerSnapshot
+TestCustomComponents

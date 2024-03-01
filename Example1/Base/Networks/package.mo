@@ -4,5 +4,5 @@ package Networks "Partial network models."
 
   annotation (Documentation(info="<html>
 <p>Partial network models</p>
-</html>"));
+</html>"),preferredView = "info");
 end Networks;

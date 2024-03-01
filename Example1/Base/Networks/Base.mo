@@ -69,10 +69,7 @@ equation
     experiment(
       StopTime=10,
       Interval=0.0001,
-      Tolerance=1e-006,
-      __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput,
+      Tolerance=1e-006),
     Documentation(info="<html>
 <p><br>Base network <span style=\"font-family: Courier New;\">partial</span> model, it includes the network components and a <span style=\"font-family: Courier New;\">SysData</span> component.</p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\" width=\"100%\"><tr>
@@ -92,5 +89,5 @@ equation
 <td><p>luigi.vanfretti@gmail.com</p></td>
 </tr>
 </table>
-</html>"));
+</html>"),preferredView = "diagram");
 end Base;

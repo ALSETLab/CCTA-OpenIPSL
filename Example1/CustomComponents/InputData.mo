@@ -1,7 +1,7 @@
 within Example1.CustomComponents;
 model InputData
   extends Modelica.Blocks.Interfaces.MO;
-extends Modelica.Icons.RecordsPackage;
+
   Modelica.Blocks.Sources.CombiTimeTable inputData(table=[15,
         0.001583221336242; 15.0166668981514,0.00099566500314943;
         15.0333337963027,0.000534871658365496; 15.0500006944541,
@@ -42415,6 +42415,34 @@ extends Modelica.Icons.RecordsPackage;
 equation
   connect(inputData.y, y)
     annotation (Line(points={{11,0},{110,0}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
+                                Rectangle(
+        extent={{-100,-100},{100,100}},
+        lineColor={0,0,127},
+        fillColor={255,255,255},
+        fillPattern=FillPattern.Solid), Text(
+        extent={{-150,150},{150,110}},
+        textString="%name",
+        textColor={0,0,255}),
+    Polygon(lineColor={192,192,192},
+      fillColor={192,192,192},
+      fillPattern=FillPattern.Solid,
+      points={{-80,90},{-88,68},{-72,68},{-80,90}}),
+    Line(points={{-80,68},{-80,-80}},
+      color={192,192,192}),
+    Line(points={{-90,-70},{82,-70}},
+      color={192,192,192}),
+    Polygon(lineColor={192,192,192},
+      fillColor={192,192,192},
+      fillPattern=FillPattern.Solid,
+      points={{90,-70},{68,-62},{68,-78},{90,-70}}),
+    Rectangle(lineColor={255,255,255},
+      fillColor={255,215,136},
+      fillPattern=FillPattern.Solid,
+      extent={{-48,-50},{2,70}}),
+    Line(points={{-48,-50},{-48,70},{52,70},{52,-50},{-48,-50},{-48,-20},{52,-20},
+              {52,10},{-48,10},{-48,40},{52,40},{52,70},{2,70},{2,-51}})}),
+                                                                 Diagram(
+        coordinateSystem(preserveAspectRatio=false)),
+           preferredView="diagram");
 end InputData;

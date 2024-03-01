@@ -72,7 +72,7 @@ package LinearAnalysis
 <p><span style=\"font-family: Courier New;\">[A,B,C,D,xName,uName,yName] = tloadlin(&apos;dslin.mat&apos;)</span></p>
 <p>Add to the MATLAB workspace the directory and sub-directories under: <span style=\"font-family: Courier New;\">C:\\Program Files\\Dymola 2024x\\Mfiles</span></p>
 <p>In addition, the file <span style=\"font-family: Courier New;\">MyData.mat</span> contains the <span style=\"font-family: Courier New;\">y0</span> vector, which corresponds to the output vector at the point in time where linearization is performed.</p>
-</html>"));
+</html>"),    preferredView = "info");
     end LinearizeSimple;
 
     function LinearizeAndCompare
@@ -222,7 +222,7 @@ package LinearAnalysis
 <li><span style=\"font-family: Courier New;\">dslin.mat</span> contains the linear model obtained at the specified point for lineariation.</li>
 <li>The obtained linear model can be used in any other environment. The linear model is available in the file, <span style=\"font-family: Courier New;\">dslin.mat</span>. It can be loaded in MATLAB using the Dymola function <span style=\"font-family: Courier New;\">[A,B,C,D,xName,uName,yName] = tloadlin(&apos;dslin.mat&apos;)</span></li>
 </ul>
-</html>"));
+</html>"),    preferredView="info");
     end LinearizeAndCompare;
 
     annotation (Documentation(info="<html>
@@ -231,7 +231,7 @@ package LinearAnalysis
 <li>Simple linearization workflow: <span style=\"font-family: Courier New;\">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeSimple</span></li>
 <li>Extended linearization workflow: <span style=\"font-family: Courier New;\">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare</span></li>
 </ul>
-</html>"));
+</html>"),  preferredView = "info");
   end CustomFunctions;
 
   model NonlinModel_for_Linearization "Non-linear model for linearization"
@@ -298,7 +298,12 @@ package LinearAnalysis
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
               -140},{100,100}})),                                  Diagram(
           coordinateSystem(preserveAspectRatio=false, extent={{-100,-140},{100,
-              100}})),
+              100}}), graphics={Text(
+            extent={{-100,-120},{100,-140}},
+            textColor={238,46,47},
+            horizontalAlignment=TextAlignment.Left,
+            textString="Note: 
+Click on \"Documentation\" to see the intended usage of this block.")}),
       Documentation(info="<html>
 <p>This is a model is used to perform linearization using the inputs and outputs defined in the top layer.</p>
 <p>In <i><b>automated analysis</b></i>, it is used by the following functions:</p>
@@ -361,7 +366,7 @@ package LinearAnalysis
 <p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delta&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 <p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVRin&nbsp;&nbsp;9.49999900968&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 <p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AVRout&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
-</html>"));
+</html>"),  preferredView="diagram");
   end NonlinModel_for_Linearization;
 
   model NonlinModel_for_NonlinExperiment "Non-linear model for simulation"
@@ -431,19 +436,20 @@ package LinearAnalysis
             {52,-32},{42,-32}},                color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
           coordinateSystem(preserveAspectRatio=false, extent={{-100,-140},
-              {100,100}})),
+              {100,100}}), graphics={Text(
+            extent={{-100,-120},{100,-140}},
+            textColor={238,46,47},
+            horizontalAlignment=TextAlignment.Left,
+            textString="Note: 
+Click on \"Documentation\" to see the intended usage of this block.")}),
       experiment(
-        StopTime=40,
-        __Dymola_NumberOfIntervals=10000,
-        Tolerance=1e-06,
-        __Dymola_fixedstepsize=0.01,
-        __Dymola_Algorithm="Dassl"),
+        StopTime=40),
       Documentation(info="<html>
 <p>This is a model is used to perform nonlinear time-simulations by specifying a change in the inputs through sources. The default simulation is a load change modeled with a step source called <span style=\"font-family: Courier New;\">Ploadchange</span>.</p>
 <p>In automated analysis, it is used by the following function: <span style=\"font-family: Courier New;\">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare. </span>The function will use this model and the<span style=\"font-family: Courier New;\"> Example1.Analysis.LinearAnalysis.NonlinModel_for_Linearization </span>model to automatically perform linearization, simulation and comparison of the linear and non-linear models.</p>
 <p><i><b>Individual Usage:</b></i></p>
 <p>To use this model on its own to perform a simulation, right click on the model and select &quot;Simulation Model&quot;. Then go to the Simulation tab and click on &quot;Simulate&quot;.</p>
-</html>"));
+</html>"),  preferredView="diagram");
   end NonlinModel_for_NonlinExperiment;
 
   model LinearModelGeneral
@@ -518,10 +524,9 @@ package LinearAnalysis
     connect(AVRout, demultiplex2_2.y7[1]) annotation (Line(points={{210,-160},{
             98,-160},{98,-23.6},{90,-23.6}},  color={0,0,127}));
     annotation (
-      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,
-              200}})),
-      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},
-              {140,100}}),                                 graphics={
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},{200,160}})),
+      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},{200,
+              160}}),                                      graphics={
           Text(
             extent={{-58,34},{-44,14}},
             lineColor={238,46,47},
@@ -573,28 +578,28 @@ They have to be rearranged based on the order provided by the linearization func
             color={0,0,255},
             thickness=0.5,
             arrow={Arrow.None,Arrow.Filled},
-            smooth=Smooth.Bezier),
-          Text(
-            extent={{-100,-100},{84,-160}},
-            lineColor={238,46,47},
-            textString="Note: This model can only be run by excecuting the function \"LinearizeAndCompare\"
-")}), experiment(
-        StopTime=15,
-        __Dymola_NumberOfIntervals=1000,
-        __Dymola_Algorithm="Dassl"),
+            smooth=Smooth.Bezier),   Text(
+            extent={{-120,-120},{80,-140}},
+            textColor={238,46,47},
+            horizontalAlignment=TextAlignment.Left,
+            textString="Note: 
+Click on \"Documentation\" to see the intended usage of this block.
+This model can only be run by excecuting the function \"LinearizeAndCompare\".")}),
+      experiment(
+        StopTime=15),
       Documentation(info="<html>
 <p>This is a generic linear model who&apos;s </p>
 <p>DO NOT try to run this model on it&apos;s own! </p>
 <p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
 <p><br>See the associated function to run: &quot;LinearizeAndCompare&quot;.</p>
-</html>"));
+</html>"),  preferredView="diagram");
   end LinearModelGeneral;
 
   package Figures
     "These models are not to be used for any purpose other than presenting figures in documentation."
     extends Modelica.Icons.InternalPackage;
     model LinearModelGeneral
-      "Simulate the linearized model obtained by running the function \"LinearizeAndCompare\"."
+      "These models are not to be used for any purpose other than presenting figures in documentation."
       extends Example1.Utilities.Icons.FunctionDependentExample;
     //  extends Example1.Interfaces.OutputsInterfaceWEfdAndAVRout;
       // The following definitions are very important to couple the linear model
@@ -718,19 +723,25 @@ They have to be rearranged based on the order provided by the linearization func
               textColor={0,0,127},
               textString="AVRout",
               horizontalAlignment=TextAlignment.Left)}),
-        experiment(
-          StopTime=15,
-          __Dymola_NumberOfIntervals=1000,
-          __Dymola_Algorithm="Dassl"),
         Documentation(info="<html>
-<p>DO NOT try to run this model on it&apos;s own! </p>
-<p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
-<p><br>See the associated function to run: &quot;LinearizeAndCompare&quot;.</p>
-</html>"));
+<p>Contains models whose visual appearance has been modified for documentation or publications.</p>
+<p>Do not use for simulation purposes.</p>
+</html>"),    preferredView="info");
     end LinearModelGeneral;
     annotation (Documentation(info="<html>
 <p><span style=\"font-family: Arial;\">Contains models whose visual appearance has been modified for documentation or publications.</span></p>
 <p><span style=\"font-family: Arial;\">Do not use for simulation purposes.</span></p>
-</html>"));
+</html>"),  preferredView="info");
   end Figures;
+  annotation(preferredView = "info", Icon(graphics={Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,140,72},
+          lineThickness=1,
+          fillColor={213,255,170},
+          fillPattern=FillPattern.Solid,
+          radius=25),
+        Text(
+          lineColor={0,140,72},
+          extent={{-100,-48},{100,52}},
+          textString="Lin")}));
 end LinearAnalysis;

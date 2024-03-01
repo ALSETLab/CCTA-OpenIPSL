@@ -7,5 +7,5 @@ annotation (Icon(graphics={             Text(
         lineColor={28,108,200},
         textString="PFlow")}), Documentation(info="<html>
 <p>This subpackage contains power flow data records to initialize the simulation models.</p>
-</html>"));
+</html>"), preferredView = "info");
 end PFData;

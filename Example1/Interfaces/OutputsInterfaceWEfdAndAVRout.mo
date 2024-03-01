@@ -34,5 +34,6 @@ public
 <p>This is a partial model for inheritance, outputs need to be coupled with the simulation model at the equation level.</p>
 </html>"),
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
-    Icon(coordinateSystem(extent={{-200,-200},{200,200}})));
+    Icon(coordinateSystem(extent={{-200,-200},{200,200}})),
+               preferredView = "diagram");
 end OutputsInterfaceWEfdAndAVRout;

@@ -4,5 +4,5 @@ package Interfaces "Partial models for output interfaces."
 
   annotation (Documentation(info="<html>
 <p>Partial models for output interfaces.</p>
-</html>"));
+</html>"),preferredView = "info");
 end Interfaces;

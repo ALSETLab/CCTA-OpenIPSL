@@ -27,7 +27,7 @@ package Utilities
 <p>DO NOT try to run this model on it&apos;s own! </p>
 <p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
 <p>See the associated function to run.</p>
-</html>"));
+</html>"),    preferredView="info");
     end FunctionDependentExample;
 
     model ModelForLinearization "This model is used for linearization."
@@ -46,8 +46,11 @@ package Utilities
 <p>DO NOT try to run this model on it&apos;s own! </p>
 <p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
 <p>See the associated function to run.</p>
-</html>"));
+</html>"),    preferredView="info");
     end ModelForLinearization;
+    annotation (Documentation(info="<html>
+<p>Frequently used custom icons.</p>
+</html>"),  preferredView="info");
   end Icons;
 
   package SetupSolverSettings
@@ -89,23 +92,14 @@ package Utilities
           Rectangle(
             lineColor={128,128,128},
             extent={{-100,-100},{100,100}},
-            radius=25.0),
-            Text(
-              textColor={128,128,128},
-              extent={{-90,-90},{90,90}},
-              textString="f"),
-                     Rectangle(
-            extent={{-76,80},{78,-82}},
-            lineColor={28,108,200},
-            fillColor={255,170,213},
-            fillPattern=FillPattern.Solid), Text(
-            extent={{-100,78},{100,-64}},
+            radius=25.0),                   Text(
+            extent={{-100,68},{100,-74}},
             textColor={28,108,200},
             textString="Sim
-Run")}));
+Run")}),  preferredView="info");
   end SetupSolverSettings;
 
-  package DAEMode
+  package DAEMode "Enable or disable DAE Mode"
     function DAEModeOn "Turns on DAE Mode"
       extends Modelica.Icons.Function;
     algorithm
@@ -133,48 +127,46 @@ Run")}));
           Rectangle(
             lineColor={128,128,128},
             extent={{-100,-100},{100,100}},
-            radius=25.0),
-            Text(
-              textColor={128,128,128},
-              extent={{-90,-90},{90,90}},
-              textString="f"),
-                     Rectangle(
-            extent={{-76,80},{78,-82}},
-            lineColor={28,108,200},
-            fillColor={170,213,255},
-            fillPattern=FillPattern.Solid), Text(
-            extent={{-122,60},{78,-82}},
+            radius=25.0),                   Text(
+            extent={{-66,50},{62,-40}},
             textColor={28,108,200},
             textString="DAE
-          Mode")}));
+Mode")}),  preferredView="info");
   end DAEMode;
 
-  model EventTriggerSnapshot
-    "Trigger snapshot saving at specific points of the simulation"
-    Real x;
-  equation
-    x = time;
-    when x >= 1230 then
-      Dymola.Simulation.TriggerResultSnapshot();
-    elsewhen x>=1245 then
-      Dymola.Simulation.TriggerResultSnapshot();
-    end when;
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false),
-          graphics={
-          Polygon(points={{-54,86},{-54,86}}, lineColor={28,108,200}),
-          Polygon(
-            points={{-60,80},{60,80},{80,40},{80,-40},{60,-80},{-60,-80},
-                {-80,-40},{-80,40},{-60,80}},
-            lineColor={28,108,200},
-            smooth=Smooth.Bezier,
-            fillColor={170,213,255},
-            fillPattern=FillPattern.CrossDiag),
-          Text(
-            extent={{-80,40},{80,-20}},
-            lineColor={28,108,200},
-            fillColor={170,213,255},
-            fillPattern=FillPattern.CrossDiag,
-            textString="%name")}),                                 Diagram(
-          coordinateSystem(preserveAspectRatio=false)));
-  end EventTriggerSnapshot;
+  package PlotDownsample "Downsample plotting, enable or disable"
+
+    function downsamplePlottingON "Enable flag for downsampling"
+      extends Modelica.Icons.Function;
+    algorithm
+      Advanced.Beta.Plot.DownsampleLimit :=4;
+      Modelica.Utilities.Streams.print("Plotting downsampling is enabled.");
+    end downsamplePlottingON;
+
+    function downsamplePlottingOFF "Disable flag for downsampling"
+      extends Modelica.Icons.Function;
+    algorithm
+      Advanced.Beta.Plot.DownsampleLimit := 0;
+      Modelica.Utilities.Streams.print("Plotting downsampling is disabled.");
+    end downsamplePlottingOFF;
+    annotation (Icon(graphics={
+          Rectangle(
+            lineColor={200,200,200},
+            fillColor={248,248,248},
+            fillPattern=FillPattern.HorizontalCylinder,
+            extent={{-100,-100},{100,100}},
+            radius=25.0),
+          Rectangle(
+            lineColor={128,128,128},
+            extent={{-100,-100},{100,100}},
+            radius=25.0),              Line(
+            points={{-76,-58},{-26,28},{32,-40},{70,52}},
+            color={0,86,134},
+            thickness=0.5,
+            smooth=Smooth.Bezier)}),preferredView="info");
+  end PlotDownsample;
+  annotation (Documentation(info="<html>
+<p>This package contains several utility packages, comprised mostly of functions that enable or disable certain functionalities of Dymola.</p>
+<p>Also included are some of the customized icons that are frequently extended from.</p>
+</html>"), preferredView="info");
 end Utilities;

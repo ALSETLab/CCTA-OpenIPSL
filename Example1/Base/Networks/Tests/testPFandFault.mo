@@ -24,5 +24,10 @@ equation
     annotation (Line(points={{-91,0},{-80,0}}, color={0,0,255}));
 annotation(preferredView = "diagram", Documentation(info="<html>
 <p>Tests <span style=\"font-family: Courier New;\">Example1.Base.Networks.BasePFnFault</span></p>
-</html>"));
+</html>"),
+    experiment(
+      StopTime=1215,
+      Interval=0.0001,
+      Tolerance=1e-06,
+      __Dymola_Algorithm="Dassl"));
 end testPFandFault;

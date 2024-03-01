@@ -1,4 +1,4 @@
-within Example1.CustomComponents.Tests;
+within Example1.CustomComponents.TestCustomComponents;
 model TestNoise "Test the TimedNoiseInjection block"
   extends Modelica.Icons.Example;
   TimedNoiseInjection              timedNoiseInjection annotation (

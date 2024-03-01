@@ -10,5 +10,5 @@ package Analysis "Simulation and linearization models."
 <li>ExcitationInputSimulations: shows how to introduce different types of input signals and perform simulations using the nonlinear model.</li>
 <li>RedesignedControllerVerification: simulation scenarios without additional input signals that aim to verify the response of the designed controller to a large load disturbance.</li>
 </ul>
-</html>"));
+</html>"),preferredView = "info");
 end Analysis;

@@ -1,4 +1,4 @@
-within Example1.CustomComponents.Tests;
+within Example1.CustomComponents.TestCustomComponents;
 model TestTimedInput "Test the TimedInputInjection block"
   extends Modelica.Icons.Example;
   TimedInputInjection timedInputInjection

@@ -27,8 +27,8 @@ annotation(preferredView = "info",
     Icon(graphics={
         Rectangle(
           lineColor={255,0,0},
-          fillColor={127,0,0},
-          fillPattern=FillPattern.HorizontalCylinder,
+          fillColor={157,0,0},
+          fillPattern=FillPattern.Solid,
           extent={{-100,-100},{100,100}},
           radius=25),
         Rectangle(
