@@ -1,5 +1,6 @@
 within Example1.Analysis;
 package RedesignedControllerVerification
+  "Simulations to verify the new control designs to failure"
   model C0_fail_conditions
 
     extends Modelica.Icons.Example;

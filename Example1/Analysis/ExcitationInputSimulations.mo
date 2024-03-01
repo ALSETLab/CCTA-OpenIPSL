@@ -1,5 +1,6 @@
 within Example1.Analysis;
 package ExcitationInputSimulations
+  "Example nonlinear time simulations with different input signals"
 
   model noInputs
     extends Modelica.Icons.Example;
