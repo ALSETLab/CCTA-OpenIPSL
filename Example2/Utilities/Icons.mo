@@ -1,29 +1,52 @@
 within Example2.Utilities;
 package Icons
   extends Modelica.Icons.IconsPackage;
-  package FunctionDependentExample
+
+  model FunctionDependentExample
     "f+m = for this model, a function drives the simulation of the model"
-    annotation (Icon(graphics={
+    annotation (Icon(coordinateSystem(extent={{-200,-200},{200,200}}),
+                     graphics={
           Ellipse(
             lineColor={108,88,49},
             fillColor={213,255,170},
             fillPattern=FillPattern.Solid,
-            extent={{-100,-100},{100,100}}),
+            extent={{-200,-200},{198,200}}),
           Polygon(lineColor={0,0,255},
                   fillColor={105,193,102},
                   pattern=LinePattern.None,
                   fillPattern=FillPattern.Solid,
-                  points={{-28,66},{72,6},{-28,-54},{-28,66}}),
+                  points={{30,-40},{228,-140},{30,-242},{30,-40}},
+            origin={-140,-110},
+            rotation=90),
           Text(
             lineColor={0,140,72},
-            extent={{-80,-60},{80,60}},
+            extent={{-74,-192},{86,-72}},
             textString="f+m")}), Documentation(info="<html>
 <p><b><span style=\"font-size: 24pt;\">f+m Example</span></b></p>
 <p>DO NOT try to run this model on it&apos;s own! </p>
 <p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
 <p>See the associated function to run.</p>
-</html>"));
+</html>"),  preferredView="info");
   end FunctionDependentExample;
+
+  model ModelForLinearizationBis "This model is used for linearization."
+    annotation (Icon(graphics={
+          Ellipse(
+            lineColor={0,140,72},
+            fillColor={213,255,170},
+            fillPattern=FillPattern.Solid,
+            extent={{-100,-100},{100,100}},
+            lineThickness=1),
+          Text(
+            lineColor={0,140,72},
+            extent={{-100,-50},{100,50}},
+            textString="Lin")}), Documentation(info="<html>
+<p><b><span style=\"font-size: 24pt;\">f+m Example</span></b></p>
+<p>DO NOT try to run this model on it&apos;s own! </p>
+<p>Models with this icon will not simulate on their own, instead they work together with a function that populates certain parameters in the model and perform other operations.</p>
+<p>See the associated function to run.</p>
+</html>"),  preferredView="info");
+  end ModelForLinearizationBis;
 
   partial model ModelForLinearization
     "nonlin4lin = for this model, you need to provide inputs or use it as is for linearization"

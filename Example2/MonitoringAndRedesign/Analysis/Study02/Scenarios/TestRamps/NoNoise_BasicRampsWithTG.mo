@@ -41,9 +41,11 @@ equation
   connect(PSSchange.y, plant.uPSS) annotation (Line(points={{0,37},{2,37},{2,8.4},{37.32,8.4}}, color={0,0,127}));
   connect(plant.uPm, plant.uLoad9) annotation (Line(points={{37.6,16.8},{-28,16},{-28,-16.8},{37.32,-16.8}}, color={0,0,127}));
   connect(sum1.y, sampler.u) annotation (Line(points={{-113,24},{-96,24},{-96,70},{-88,70}}, color={0,0,127}));
-  connect(rampPm_and_uL9.y, sum1.u[1]) annotation (Line(points={{-153,70},{-146,70},{-146,23.3333},{-136,23.3333}}, color={0,0,127}));
+  connect(rampPm_and_uL9.y, sum1.u[1]) annotation (Line(points={{-153,70},{-146,
+          70},{-146,23.3333},{-136,23.3333}},                                                                       color={0,0,127}));
   connect(rampPm_and_uL1.y, sum1.u[2]) annotation (Line(points={{-155,26},{-155,24},{-136,24}}, color={0,0,127}));
-  connect(rampPm_and_uL2.y, sum1.u[3]) annotation (Line(points={{-157,-10},{-150,-10},{-150,24.6667},{-136,24.6667}}, color={0,0,127}));
+  connect(rampPm_and_uL2.y, sum1.u[3]) annotation (Line(points={{-157,-10},{
+          -150,-10},{-150,24.6667},{-136,24.6667}},                                                                   color={0,0,127}));
   connect(plant.uAVRin, AVRchange.y) annotation (Line(points={{37.32,0},{-80,0},{-80,19}}, color={0,0,127}));
   annotation (
         experiment(
