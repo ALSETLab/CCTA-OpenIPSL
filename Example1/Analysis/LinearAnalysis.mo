@@ -743,5 +743,16 @@ This model can only be run by excecuting the function \"LinearizeAndCompare\".")
         Text(
           lineColor={0,140,72},
           extent={{-100,-48},{100,52}},
-          textString="Lin")}));
+          textString="Lin")}),
+    Documentation(info="<html>
+<p>To perform automated analysis the following function is provided:</p>
+<p><span style=\"font-family: Courier New;\">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare </span></p>
+<p><i><b>Usage</b></i></p>
+<ol>
+<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
+<li>Modify any of the input parameters or strings, if needed or desired. Leave the default parameters on first use.</li>
+<li>Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</li>
+<li>Go back to the function&apos;s own window and click on &quot;Close&quot;.</li>
+</ol>
+</html>"));
 end LinearAnalysis;

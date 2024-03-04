@@ -1,7 +1,60 @@
 within Example1.Analysis;
 package RedesignedControllerVerification
-  "Simulations to verify the new control designs to failure"
-  model C0_fail_conditions
+  "Controller verification simulation examples."
+
+  function C012_simulate_plot_compare
+    "Simulates and plots the response of three models with different control designs."
+    extends Modelica.Icons.Function;
+    input String modelname1 = "Example1.Analysis.RedesignedControllerVerification.C0_8cycles" "Model name - default controller";
+    input String modelname2 = "Example1.Analysis.RedesignedControllerVerification.C1_8cycles" "Model name - controller re-design 1";
+    input String modelname3 = "Example1.Analysis.RedesignedControllerVerification.C2_8cycles" "Model name - controller re-design 2";
+
+  algorithm
+    // turn of DAE mode et al
+    Example1.Utilities.SetupSolverSettings.On();
+    // Simulate the model
+    simulateModel(
+    modelname1,
+    stopTime=1260,
+    numberOfIntervals=20000,
+    tolerance=1e-03,
+    resultFile="C0_8cycles");
+    // Simulate the model
+    simulateModel(
+    modelname2,
+    stopTime=1260,
+    numberOfIntervals=20000,
+    tolerance=1e-03,
+    resultFile="C1_8cycles");
+    // Simulate the model
+    simulateModel(
+    modelname3,
+    stopTime=1260,
+    numberOfIntervals=20000,
+    tolerance=1e-03,
+    resultFile="C2_8cycles");
+    // Plot
+  removePlots(false);
+  Advanced.FilenameInLegend :=true;
+  Advanced.FilesToKeep :=10;
+  createPlot(id=1, position={40, 40, 826, 766}, y={"Vt"}, range={1240.0, 1260.0, 0.8500000000000001, 1.05}, autoscale=false, grid=true, filename="C0_8cycles.mat", subPlot=101, colors={{28,108,200}}, timeUnit="s", displayUnits={"1"});
+  createPlot(id=1, position={40, 40, 826, 766}, y={"w"}, range={1240.0, 1260.0, 0.994, 1.006}, autoscale=false, grid=true, subPlot=102, colors={{28,108,200}}, timeUnit="s", displayUnits={"1"});
+  createPlot(id=1, position={40, 40, 826, 766}, y={"Vt"}, range={1240.0, 1260.0, 0.8500000000000001, 1.05}, erase=false, autoscale=false, grid=true, filename="C1_8cycles.mat", subPlot=101, colors={{238,46,47}}, timeUnit="s", displayUnits={"1"});
+  createPlot(id=1, position={40, 40, 826, 766}, y={"w"}, range={1240.0, 1260.0, 0.994, 1.006}, erase=false, autoscale=false, grid=true, subPlot=102, colors={{238,46,47}}, timeUnit="s", displayUnits={"1"});
+  createPlot(id=1, position={40, 40, 826, 766}, y={"Vt"}, range={1240.0, 1260.0, 0.8500000000000001, 1.05}, erase=false, autoscale=false, grid=true, filename="C2_8cycles.mat", subPlot=101, colors={{0,140,72}}, timeUnit="s", displayUnits={"1"});
+  createPlot(id=1, position={40, 40, 826, 766}, y={"w"}, range={1240.0, 1260.0, 0.994, 1.006}, erase=false, autoscale=false, grid=true, subPlot=102, colors={{0,140,72}}, timeUnit="s", displayUnits={"1"});
+    annotation (Documentation(info="<html>
+<p><i><b><span style=\"font-family: Arial;\">Usage</span></b></i></p>
+<ol>
+<li><span style=\"font-family: Arial;\">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
+<li><span style=\"font-family: Arial;\">Leave the default model names without change, these correspond to the three models within the package.</span></li>
+<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
+<li><span style=\"font-family: Arial;\">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span></li>
+</ol>
+</html>"));
+  end C012_simulate_plot_compare;
+
+  model C0_8cycles "Default controller with kw=9.5 and tw=1.41."
 
     extends Modelica.Icons.Example;
     Modelica.Blocks.Interfaces.RealOutput Vt
@@ -25,9 +78,7 @@ package RedesignedControllerVerification
     Modelica.Blocks.Sources.Constant Pmchange(k=0)
       annotation (Placement(transformation(extent={{-100,6},{-80,26}})));
     Example1.Base.Systems.gridIO Plant(
-      t1=0.5,
-      Kw=12.6924,
-      Tw=0.5602)
+      t1=0.5, t2=Modelica.Constants.inf)
       annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
     inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
           false)
@@ -42,16 +93,16 @@ package RedesignedControllerVerification
         Placement(transformation(extent={{-160,2},{-140,22}})));
     Modelica.Blocks.Math.Add uload annotation (Placement(transformation(
             extent={{-120,-22},{-100,-2}})));
-    Modelica.Blocks.Sources.Pulse uloaddist(
-      amplitude=1.3275,
-      width=100,
-      period=22/60,
-      nperiod=1,
-      offset=0,
-      startTime=1245) annotation (Placement(transformation(extent={{
-              -160,-40},{-140,-20}})));
     Modelica.Blocks.Sources.Constant uARVinput(k=0) annotation (
         Placement(transformation(extent={{-102,-50},{-82,-30}})));
+    Modelica.Blocks.Sources.Pulse uloaddist(
+      amplitude=1.25,
+      width=100,
+      period=8/60,
+      nperiod=1,
+      offset=0,
+      startTime=1245) annotation (Placement(transformation(extent={{-160,-40},{-140,
+              -20}})));
   equation
     connect(Plant.uPSS, PSSchange.y) annotation (Line(points={{-44,36},{
             -62.8572,36},{-62.8572,46},{-79,46}},      color={0,0,127}));
@@ -73,12 +124,12 @@ package RedesignedControllerVerification
             {52,-32},{42,-32}},                   color={0,0,127}));
     connect(uload.u1, loadnoise.y) annotation (Line(points={{-122,-6},{
             -132,-6},{-132,12},{-139,12}}, color={0,0,127}));
-    connect(uloaddist.y, uload.u2) annotation (Line(points={{-139,-30},
-            {-132,-30},{-132,-18},{-122,-18}}, color={0,0,127}));
     connect(uload.y, Plant.uPload) annotation (Line(points={{-99,-12},{-72.5,
             -12},{-72.5,-12},{-44,-12}},          color={0,0,127}));
     connect(uARVinput.y, Plant.uvs) annotation (Line(points={{-81,-40},{-64,-40},
             {-64,-36},{-44,-36}},                color={0,0,127}));
+    connect(uloaddist.y, uload.u2) annotation (Line(points={{-139,-30},{-132,-30},
+            {-132,-18},{-122,-18}}, color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
           coordinateSystem(preserveAspectRatio=false, extent={{-100,
               -140},{100,100}}), graphics={Text(
@@ -88,13 +139,14 @@ package RedesignedControllerVerification
 Click on the \"Plant\" block to specify controller parameters.",
             horizontalAlignment=TextAlignment.Left)}),
       experiment(
-        StopTime=1320,
+        StopTime=1260,
         __Dymola_NumberOfIntervals=20000,
+        Tolerance=1e-05,
         __Dymola_fixedstepsize=0.01,
         __Dymola_Algorithm="Dassl"),preferredView="diagram");
-  end C0_fail_conditions;
+  end C0_8cycles;
 
-  model C1_fail_conditions
+  model C1_8cycles "Re-designed controller 1 with k2=22.4455 and tw=0.5217."
 
     extends Modelica.Icons.Example;
     Modelica.Blocks.Interfaces.RealOutput Vt
@@ -119,6 +171,7 @@ Click on the \"Plant\" block to specify controller parameters.",
       annotation (Placement(transformation(extent={{-100,6},{-80,26}})));
     Example1.Base.Systems.gridIO Plant(
       t1=0.5,
+      t2=Modelica.Constants.inf,
       Kw=22.4455,
       Tw=0.5217)
       annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
@@ -136,9 +189,9 @@ Click on the \"Plant\" block to specify controller parameters.",
     Modelica.Blocks.Math.Add uload annotation (Placement(transformation(
             extent={{-120,-22},{-100,-2}})));
     Modelica.Blocks.Sources.Pulse uloaddist(
-      amplitude=1.3275,
+      amplitude=1.25,
       width=100,
-      period=25/60,
+      period=8/60,
       nperiod=1,
       offset=0,
       startTime=1245) annotation (Placement(transformation(extent={{
@@ -185,9 +238,9 @@ Click on the \"Plant\" block to specify controller parameters.",
         __Dymola_NumberOfIntervals=20000,
         __Dymola_fixedstepsize=0.01,
         __Dymola_Algorithm="Dassl"),preferredView="diagram");
-  end C1_fail_conditions;
+  end C1_8cycles;
 
-  model C2_fail_conditions
+  model C2_8cycles "Re-designed controller 2 with kw=12.6924 and tw=0.5602."
 
     extends Modelica.Icons.Example;
     Modelica.Blocks.Interfaces.RealOutput Vt
@@ -221,6 +274,7 @@ Click on the \"Plant\" block to specify controller parameters.",
           iconTransformation(extent={{100,-90},{120,-70}})));
     Example1.Base.Systems.gridIO Plant(
       t1=0.5,
+      t2=Modelica.Constants.inf,
       Kw=12.6924,
       Tw=0.5602)
       annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
@@ -228,16 +282,16 @@ Click on the \"Plant\" block to specify controller parameters.",
         Placement(transformation(extent={{-160,2},{-140,22}})));
     Modelica.Blocks.Math.Add uload annotation (Placement(transformation(
             extent={{-120,-22},{-100,-2}})));
-    Modelica.Blocks.Sources.Pulse uloaddist(
-      amplitude=1.3275,
-      width=100,
-      period=24/60,
-      nperiod=1,
-      offset=0,
-      startTime=1245) annotation (Placement(transformation(extent={{
-              -160,-40},{-140,-20}})));
     Modelica.Blocks.Sources.Constant uARVinput(k=0) annotation (
         Placement(transformation(extent={{-102,-50},{-82,-30}})));
+    Modelica.Blocks.Sources.Pulse uloaddist(
+      amplitude=1.25,
+      width=100,
+      period=8/60,
+      nperiod=1,
+      offset=0,
+      startTime=1245) annotation (Placement(transformation(extent={{-160,-40},{-140,
+              -20}})));
   equation
     connect(Plant.uPSS, PSSchange.y) annotation (Line(points={{-44,36},{-62.8572,36},
             {-62.8572,46},{-79,46}},                   color={0,0,127}));
@@ -259,12 +313,12 @@ Click on the \"Plant\" block to specify controller parameters.",
             -32},{42,-32}},                       color={0,0,127}));
     connect(uload.u1, loadnoise.y) annotation (Line(points={{-122,-6},{
             -132,-6},{-132,12},{-139,12}}, color={0,0,127}));
-    connect(uloaddist.y, uload.u2) annotation (Line(points={{-139,-30},
-            {-132,-30},{-132,-18},{-122,-18}}, color={0,0,127}));
     connect(uload.y, Plant.uPload) annotation (Line(points={{-99,-12},{-72.5,-12},
             {-72.5,-12},{-44,-12}},               color={0,0,127}));
     connect(uARVinput.y, Plant.uvs) annotation (Line(points={{-81,-40},{-64,-40},{
             -64,-36},{-44,-36}},                 color={0,0,127}));
+    connect(uloaddist.y, uload.u2) annotation (Line(points={{-139,-30},{-134,-30},
+            {-134,-18},{-122,-18}}, color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
           coordinateSystem(preserveAspectRatio=false, extent={{-100,
               -140},{100,100}}), graphics={Text(
@@ -278,7 +332,7 @@ Click on the \"Plant\" block to specify controller parameters.",
         __Dymola_NumberOfIntervals=20000,
         __Dymola_fixedstepsize=0.01,
         __Dymola_Algorithm="Dassl"),preferredView="diagram");
-  end C2_fail_conditions;
+  end C2_8cycles;
   annotation (Icon(graphics={
         Rectangle(
           fillColor={239,46,49},
@@ -322,5 +376,16 @@ Click on the \"Plant\" block to specify controller parameters.",
         points={{-10.0,0.0},{5.0,5.0},{5.0,-5.0}},
           lineColor={255,255,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid)}),preferredView = "info");
+          fillPattern=FillPattern.Solid)}),preferredView = "info",
+    Documentation(info="<html>
+<p><span style=\"font-family: Arial;\">To compare the different control designs the following function is provided:</span></p>
+<p><span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare</span></p>
+<p><i><b><span style=\"font-family: Arial;\">Usage</span></b></i></p>
+<ol>
+<li><span style=\"font-family: Arial;\">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
+<li><span style=\"font-family: Arial;\">Leave the default model names without change, these correspond to the three models within the package.</span></li>
+<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
+<li><span style=\"font-family: Arial;\">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span></li>
+</ol>
+</html>"));
 end RedesignedControllerVerification;
