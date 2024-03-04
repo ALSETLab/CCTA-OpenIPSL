@@ -1,5 +1,5 @@
 ﻿// Load OpenIPSL
-openModel("C:\Users\vanfretti\Documents\Github\OpenIPSL\OpenIPSL\package.order")
+openModel("C:\Users\vanfretti\Documents\Github\OpenIPSL\OpenIPSL\package.mo")
 // Load the models
 openModel("C:\Users\vanfretti\Documents\Github\CCTA-OpenIPSL\Example1\package.mo")
 openModel("C:\Users\vanfretti\Documents\Github\CCTA-OpenIPSL\Example2\package.mo")
