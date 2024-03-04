@@ -1,6 +1,6 @@
 within Example2.MonitoringAndRedesign.Analysis.Study01.SimulationForRedisignedControllers;
 model Case03
-  extends BaseInputs(redeclare ParametrizedRedisgnedControllers.Case3
+  extends Base(      redeclare ParametrizedRedisgnedControllers.Case3
       nonlinModel(t1=0.1));
     extends Modelica.Icons.Example;
 

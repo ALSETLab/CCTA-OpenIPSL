@@ -1,6 +1,5 @@
 within Example2.MonitoringAndRedesign.Analysis.Study01.SimulationForRedisignedControllers;
-partial model BaseInputs
-  "Interface with inputs to drive the nonlinear simulation"
+partial model Base "Interface with inputs to drive the nonlinear simulation"
   extends Example2.Utilities.Icons.PartialExample;
   Modelica.Blocks.Sources.Constant PSSchange(k=0)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},
@@ -54,4 +53,4 @@ annotation(experiment(
 <p>This is a partial model from where the four cases below inherit from.</p>
 <p>As a partial model, it cannot be simulated on its own.</p>
 </html>"),preferredView="info");
-end BaseInputs;
+end Base;
