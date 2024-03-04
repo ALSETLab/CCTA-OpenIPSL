@@ -1,6 +1,7 @@
-within Example2.MonitoringAndRedesign.Analysis.Study01;
-model NonlinModelForLinearization
-  extends Example2.Utilities.Icons.ModelForLinearization;
+within Example2.MonitoringAndRedesign.Analysis.Study01.ParametrizedRedisgnedControllers;
+model Base "Controller with Kundur's book parameters"
+  extends Example2.Utilities.Icons.PartialExample;
+
   Modelica.Blocks.Interfaces.RealInput uPm
     annotation (Placement(transformation(extent={{-144,60},{-104,100}})));
   Modelica.Blocks.Interfaces.RealInput uPSS
@@ -11,7 +12,17 @@ model NonlinModelForLinearization
     annotation (Placement(transformation(extent={{-140,-60},{-100,-20}})));
   Modelica.Blocks.Interfaces.RealInput uLoadB9
     annotation (Placement(transformation(extent={{-138,-100},{-98,-60}})));
-  Base.Systems.Study01.PlantTripIO plantTripIO(t1=361) annotation (Placement(transformation(extent={{-12,-22},{32,22}})));
+  .Example2.MonitoringAndRedesign.Base.Systems.Study01.PlantTripIO plantTripIO(
+    t1=t1,
+    vsmax=cntrlData.vsmax,
+    vsmin=cntrlData.vsmin,
+    Kw=cntrlData.Kw,
+    Tw=cntrlData.Tw,
+    T1=cntrlData.T1,
+    T2=cntrlData.T2,
+    T3=cntrlData.T3,
+    T4=cntrlData.T4)
+    annotation (Placement(transformation(extent={{-12,-22},{32,22}})));
   Modelica.Blocks.Interfaces.RealOutput Vt
     annotation (Placement(transformation(extent={{100,50},{120,70}})));
   Modelica.Blocks.Interfaces.RealOutput P
@@ -26,6 +37,9 @@ model NonlinModelForLinearization
     annotation (Placement(transformation(extent={{100,-30},{120,-10}})));
   Modelica.Blocks.Interfaces.RealOutput AVRin
     annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
+  replaceable Study01.ControllerData.CntrlDataTemplate cntrlData constrainedby
+    Study01.ControllerData.CntrlDataTemplate                                                                            annotation (Placement(transformation(extent={{78,-98},{98,-78}})));
+  parameter OpenIPSL.Types.Time t1=361;
 equation
   connect(plantTripIO.Vt, Vt) annotation (Line(
       points={{78.2,26.4},{78.2,60},{110,60}},
@@ -76,5 +90,5 @@ equation
       color={0,0,127},
       smooth=Smooth.Bezier));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
-end NonlinModelForLinearization;
+        coordinateSystem(preserveAspectRatio=false)), preferredView = "diagram");
+end Base;

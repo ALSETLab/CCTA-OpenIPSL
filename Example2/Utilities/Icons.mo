@@ -2,6 +2,21 @@ within Example2.Utilities;
 package Icons
   extends Modelica.Icons.IconsPackage;
 
+  model PartialExample
+    annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
+          Ellipse(lineColor={0,140,72},
+                  fillColor={255,255,255},
+                  fillPattern = FillPattern.Solid,
+                  extent={{-100,-100},{100,100}}), Polygon(
+            points={{-60,20},{-20,60},{20,60},{60,20},{60,-20},{20,-60},{-20,
+                -60},{-60,-20},{-60,20}},
+            lineColor={127,0,0},
+            fillColor={238,46,47},
+            fillPattern=FillPattern.Solid,
+            lineThickness=1)}), Diagram(coordinateSystem(preserveAspectRatio=
+              false)));
+  end PartialExample;
+
   model FunctionDependentExample
     "f+m = for this model, a function drives the simulation of the model"
     annotation (Icon(coordinateSystem(extent={{-200,-200},{200,200}}),

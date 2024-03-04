@@ -1,6 +1,13 @@
 within Example2.MonitoringAndRedesign.Analysis.Study01.ControllerRedesignSimulationTests;
 model RedesignTesting
   extends Modelica.Icons.Example;
+  Base.Systems.Study01.PlantTripIO plantTripIO(
+    Kw=117.0647,
+    Tw=1.3520,
+    T1=Modelica.Constants.small,
+    T2=Modelica.Constants.small,
+    T3=Modelica.Constants.small,
+    T4=Modelica.Constants.small) annotation (Placement(transformation(extent={{-64,8},{-36,36}})));
   Modelica.Blocks.Sources.Constant PSSchange(k=0)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},
         rotation=270,
@@ -11,13 +18,6 @@ model RedesignTesting
         origin={-150,70})));
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Base.Systems.Study01.PlantTripIO plantTripIO(
-    Kw=117.0647,
-    Tw=1.3520,
-    T1=Modelica.Constants.small,
-    T2=Modelica.Constants.small,
-    T3=Modelica.Constants.small,
-    T4=Modelica.Constants.small) annotation (Placement(transformation(extent={{-64,8},{-36,36}})));
   Modelica.Blocks.Sources.Constant const1(k=0)
     annotation (Placement(transformation(extent={{-228,-180},{-208,-160}})));
   CustomComponents.TimedNoiseInjection uL7_timedNoiseInjection(

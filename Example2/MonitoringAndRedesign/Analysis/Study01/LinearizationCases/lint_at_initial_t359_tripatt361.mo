@@ -1,4 +1,4 @@
-within Example2.MonitoringAndRedesign.Analysis.Study01;
+within Example2.MonitoringAndRedesign.Analysis.Study01.LinearizationCases;
 function lint_at_initial_t359_tripatt361
 
 algorithm

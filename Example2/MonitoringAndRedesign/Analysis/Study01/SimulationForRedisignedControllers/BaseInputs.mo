@@ -1,7 +1,7 @@
 within Example2.MonitoringAndRedesign.Analysis.Study01.SimulationForRedisignedControllers;
 partial model BaseInputs
   "Interface with inputs to drive the nonlinear simulation"
-  extends Modelica.Icons.Example;
+  extends Example2.Utilities.Icons.PartialExample;
   Modelica.Blocks.Sources.Constant PSSchange(k=0)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},
         rotation=270,
@@ -26,8 +26,9 @@ partial model BaseInputs
     annotation (Placement(transformation(extent={{-80,-70},{-60,-50}})));
   Modelica.Blocks.Sources.Constant     uL9_timedNoiseInjection1(k=0)
     annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
-  replaceable Study01.LinearizationForRedisgnedControllers.Case0 nonlinModel(t1=0.1) constrainedby
-    Study01.LinearizationForRedisgnedControllers.Base                                                                                                annotation (Placement(transformation(extent={{20,-40},{100,38}})));
+  replaceable ParametrizedRedisgnedControllers.Case0 nonlinModel(t1=0.1)
+    constrainedby ParametrizedRedisgnedControllers.Base
+    annotation (Placement(transformation(extent={{20,-40},{100,38}})));
 equation
   connect(pulse.y,add. u2) annotation (Line(points={{-59,-60},{-44,-60},{-44,-36}},
                  color={0,0,127}));
@@ -49,5 +50,8 @@ annotation(experiment(
       StopTime=120,
       __Dymola_NumberOfIntervals=5000,
       Tolerance=0.001,
-      __Dymola_Algorithm="Dassl"));
+      __Dymola_Algorithm="Dassl"), Documentation(info="<html>
+<p>This is a partial model from where the four cases below inherit from.</p>
+<p>As a partial model, it cannot be simulated on its own.</p>
+</html>"),preferredView="info");
 end BaseInputs;

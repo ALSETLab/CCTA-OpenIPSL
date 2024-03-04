@@ -1,4 +1,4 @@
-within Example2.MonitoringAndRedesign.Analysis.Study01;
+within Example2.MonitoringAndRedesign.Analysis.Study01.LinearizationCases;
 model NonlinModelForLinearizationTwoOutputs
   extends Example2.Utilities.Icons.ModelForLinearization;
   Modelica.Blocks.Interfaces.RealInput uPm
