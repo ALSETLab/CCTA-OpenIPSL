@@ -378,14 +378,23 @@ Click on the \"Plant\" block to specify controller parameters.",
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid)}),preferredView = "info",
     Documentation(info="<html>
-<p><span style=\"font-family: Arial;\">To compare the different control designs the following function is provided:</span></p>
+<p>This package is configured to simulate the response to an 8-cycle load disturbance and to compare the default PSS control design with the two redesigned controllers presented in [2]. </p>
+<ul>
+<li>Default/original design: <span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C0_8cycles,</span>is configured to simulate the default PSS control design with <img src=\"modelica://Example1/Resources/Images/equations/equation-clBCuWQf.png\" alt=\"k_w = 9.5\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-RmsQjcZ0.png\" alt=\"t_w = 1.41\"/> sec. </li>
+<li>Re-design 1: <span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C1_8cycles</span>. This design was obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-6GfUUJy2.png\" alt=\"gamma = 0.025\"/>, resulting in parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-uRaInKme.png\" alt=\"k_w = 22.4455\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-b4mgrEyi.png\" alt=\"t_w = 0.5217\"/> sec.</li>
+<li>Re-design 2: <span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C2_8cycles</span>. This design was obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-xYLZp3n1.png\" alt=\"gamma = 0.05\"/>, resulting in parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-Tv6HYrxI.png\" alt=\"k_w = 12.6924\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-QwYVSX78.png\" alt=\"t_w = 0.5602\"/> sec. </li>
+</ul>
+<p><br>To compare the different control designs the following function is provided:</p>
 <p><span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare</span></p>
-<p><i><b><span style=\"font-family: Arial;\">Usage</span></b></i></p>
+<p>Executing this function results in a plot of the terminal voltage and speed similar to that in Fig. 10 of [2], with the main difference being that the random load has been removed to speed up the simulations. Note that the all three cases above are simulated, so if a change is made in one of them, it should be also applied to the others so that running the function gives a plot for useful comparisons.</p>
+<p><br><i><b>Usage of the </b></i><span style=\"font-family: Courier New;\">*.C012_simulate_plot_compare</span><i><b> function:</b></i></p>
 <ol>
-<li><span style=\"font-family: Arial;\">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
-<li><span style=\"font-family: Arial;\">Leave the default model names without change, these correspond to the three models within the package.</span></li>
-<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
-<li><span style=\"font-family: Arial;\">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span></li>
+<li><ol>
+<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
+<li>Leave the default model names without change, these correspond to the three models within the package.</li>
+<li>Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</li>
+<li>Go back to the function&apos;s own window and click on &quot;Close&quot;.</li>
+</ol></li>
 </ol>
 </html>"));
 end RedesignedControllerVerification;
