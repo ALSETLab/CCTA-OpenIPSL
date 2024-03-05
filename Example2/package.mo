@@ -93,7 +93,10 @@ annotation (uses(
 <li>OpenIPSL v.3.0.1</li>
 </ul>
 <p><br>Developed and tested with Dymola 2024X under MS Windows 11.</p>
-<p><br>The models were originally developed using similar component models and parameters as the single-machine infinite bus model used in the Example 13.2 of the book &apos;P. Kundur, Power System Stability and Control, McGraw-Hill Education, 1994.&apos;, but implemented using the OpenIPSL library.</p>
+<p><br>The models were originally developed using similar component models and parameters as the 11-bus 4-machine 2-area power grid model presented in [A]&nbsp;and in the Example 12.6 of [B], but instead implemented using the OpenIPSL library.</p>
+<p><br><i>References:</i></p>
+<p>[A] M. Klein, G. J. Rogers and P. Kundur, &quot;A fundamental study of inter-area oscillations in power systems,&quot; in IEEE Transactions on Power Systems, vol. 6, no. 3, pp. 914-921, Aug. 1991, doi: 10.1109/59.119229</p>
+<p>[B]  P. Kundur, Power System Stability and Control, McGraw-Hill Education, 1994.</p>
 <p><br>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA.</p>
 </html>"));
 end Example2;
