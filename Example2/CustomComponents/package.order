@@ -1,13 +1,8 @@
 DeMultiplex7
-EventTriggerSnapshot
-EventTriggerSnapshotScenario
 InputData
 InputDataCaseB
 MultiRamp
 PSSChangeParam
-rSweepFreq
-storeforinitial
-Test_rsweep
 TestNoise
 TestTimedInput
 TestTimedInputInjection
@@ -15,7 +10,6 @@ TestTimedMultiRamp
 TimedInjection
 TimedInjectionOnOff
 TimedInjectionOnOffTableData
-TimedInjectionOnOffVariablefreqSine
 TimedInputInjection
 TimedInputInjection_CaseB
 TimedInputInjectionOnOff

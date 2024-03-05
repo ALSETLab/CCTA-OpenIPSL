@@ -77,6 +77,5 @@ equation
       Tolerance=1e-03,
       __Dymola_Algorithm="Dassl"),
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
-      __Dymola_selections={Selection(name="MySelection", match={MatchVariable(name="plant.Vt", newName="Vt"),MatchVariable(name="plant.Q", newName="Q"),MatchVariable(name="plant.P",newName="P"),MatchVariable(name="plant.w",newName="w"),MatchVariable(name="plant.AVRin",newName="u"),MatchVariable(name="plant.AVRout",newName="AVRout"),MatchVariable(name="timedMultiRamp.y",newName="rampY"),MatchVariable(name="plant.Load9.P",newName="Pload"),MatchVariable(name="r.y",newName="r"),MatchVariable(name="plant.g1.pss.vs",newName="pssy"),MatchVariable(name="ramping.y",newName="rampingy")})});
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram");
 end RampingRandomLoadAndInput;

@@ -64,5 +64,5 @@ equation
       Tolerance=1e-06,
       __Dymola_Algorithm="Dassl"),
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})));
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram");
 end Ramping;

@@ -1,4 +1,4 @@
-within Example2.CustomComponents;
+within Example2.Utilities.UtilityComponents;
 model EventTriggerSnapshot
   "Trigger snapshot saving at specific points of the simulation"
   Real x;

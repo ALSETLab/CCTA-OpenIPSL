@@ -1,4 +1,4 @@
-within Example2.CustomComponents;
+within Example2.Utilities.Functions;
 function storeforinitial
   extends Modelica.Icons.Function;
   input String dsName="dsin.txt" "file name to assign to dsName in exportInitial";

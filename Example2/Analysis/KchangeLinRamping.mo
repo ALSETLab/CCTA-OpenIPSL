@@ -57,14 +57,13 @@ equation
   connect(plant.w, w) annotation (Line(points={{160,2},{186,2},{186,0},{210,0}},
                                                                  color={0,0,127}));
   connect(add.u1, zeroInputs.y) annotation (Line(points={{-114,-128},{-138,-128},{-138,80},{-158,80}}, color={0,0,127}));
-                                                            //,
-//      __Dymola_selections={Selection(name="MySelection", match={MatchVariable(name="plant.Vt", newName="Vt"),MatchVariable(name="plant.Q", newName="Q"),MatchVariable(name="plant.P",newName="P"),MatchVariable(name="plant.w",newName="w"),MatchVariable(name="plant.AVRin",newName="u"),MatchVariable(name="plant.AVRout",newName="AVRout"),MatchVariable(name="timedMultiRamp.y",newName="rampY"),MatchVariable(name="plant.Load9.P",newName="Pload"),MatchVariable(name="r.y",newName="r"),MatchVariable(name="plant.g1.pss.vs",newName="pssy"),MatchVariable(name="ramping.y",newName="rampingy")})});
   connect(plant.uLoad7, uLoad7) annotation (Line(points={{35.2,-22},{-112,-22},{-112,-40},{-220,-40}}, color={0,0,127}));
   connect(plant.uPm, ramping.y) annotation (Line(
       points={{36,50},{0,50},{0,96}},
       color={238,46,47},
       thickness=1));
+
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})));
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram");
 end KchangeLinRamping;

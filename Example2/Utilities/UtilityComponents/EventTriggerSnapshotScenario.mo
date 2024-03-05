@@ -1,5 +1,6 @@
-within Example2.CustomComponents;
-model EventTriggerSnapshotScenario "Trigger snapshot saving at specific points of the simulation"
+within Example2.Utilities.UtilityComponents;
+model EventTriggerSnapshotScenario
+  "Trigger snapshot saving at specific points of the simulation"
 
   Real x "Copy of the time variable for checking timings for snapshots";
 
