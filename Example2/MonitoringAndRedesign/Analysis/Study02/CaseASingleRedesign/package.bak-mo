@@ -1,0 +1,5 @@
+within Example2.MonitoringAndRedesign.Analysis.Study02;
+package CaseASingleRedesign "In this package, the redesign has one been done for one operating point and applied at all the new ones."
+  extends Modelica.Icons.ExamplesPackage;
+
+end CaseASingleRedesign;

@@ -133,11 +133,7 @@ package Icons
                   fillColor={28,108,200},
                   pattern=LinePattern.None,
                   fillPattern=FillPattern.Solid,
-                  points={{-38,62},{62,2},{-38,-58},{-38,62}}),
-          Text(
-            lineColor={28,108,200},
-            extent={{-96,-136},{104,-16}},
-            textString="NL4LIN")}),
+                  points={{-38,62},{62,2},{-38,-58},{-38,62}})}),
                                  Documentation(info="<html>
 <p><b><span style=\"font-size: 24pt;\">f+m Example</span></b></p>
 <p>DO NOT try to run this model on it&apos;s own! </p>
@@ -159,10 +155,6 @@ package Icons
                   fillPattern=FillPattern.Solid,
                   points={{-58,40},{0,-2},{-58,-42},{-58,40}},
             lineThickness=1),
-          Text(
-            lineColor={28,108,200},
-            extent={{-96,-136},{104,-16}},
-            textString="SIM&LIN"),
           Polygon(lineColor={215,215,215},
                   fillColor={0,140,72},
                   fillPattern=FillPattern.Solid,
