@@ -54,6 +54,6 @@ equation
               experiment(
       StopTime=1320,
       Interval=0.01,
-      Tolerance=1e-06,
+      Tolerance=1e-03,
       __Dymola_Algorithm="Dassl"));
 end LoadAndInput;

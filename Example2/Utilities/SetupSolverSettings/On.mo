@@ -9,7 +9,8 @@ algorithm
   Advanced.SparseActivate :=true;
   Advanced.Translation.SparseActivateIntegrator :=true;
   Advanced.Translation.SparseActivateSystems :=true;
-  Advanced.SparseMaximumDensity :=3;
-  Advanced.SparseMinimumStates :=25;
+  Advanced.SparseMaximumDensity := 25;
+  Advanced.SparseMinimumStates := 50;
   Modelica.Utilities.Streams.print("Sparse options enabled.");
+  Advanced.NumberOfCores := 12;
 end On;

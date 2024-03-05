@@ -144,7 +144,7 @@ package PSSRedesign
             experiment(
           StopTime=4050,
           __Dymola_NumberOfIntervals=5000,
-          Tolerance=1e-06,
+          Tolerance=1e-03,
           __Dymola_Algorithm="Dassl"),
         Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
         Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
