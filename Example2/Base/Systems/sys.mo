@@ -357,38 +357,10 @@ has \"t1\" propagated.",
       StopTime=600,
       __Dymola_NumberOfIntervals=10000,
       __Dymola_Algorithm="Dassl"),
-    Icon(graphics={Text(
-          extent={{-98,80},{102,40}},
-          textColor={0,140,72},
-          textString="Detuned with TG"),
+    Icon(coordinateSystem(extent={{-140,-140},{140,140}}),
+         graphics={
         Rectangle(
-          extent={{-90,28},{10,-32}},
-          lineColor={28,108,200},
-          fillColor={195,208,218},
-          fillPattern=FillPattern.Solid),
-        Rectangle(
-          extent={{-8,2},{92,-58}},
-          lineColor={28,108,200},
-          fillColor={211,225,236},
-          fillPattern=FillPattern.Solid),
-        Text(
-          extent={{-90,28},{-66,2}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Italic},
-          textString="g1"),
-        Text(
-          extent={{-8,2},{16,-24}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Italic},
-          textString="g3"),
-        Text(
-          extent={{-100,-98},{100,-140}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="G1: Seq.PSS"),
-        Text(
-          extent={{-100,-140},{100,-182}},
-          textColor={217,67,180},
-          textStyle={TextStyle.Bold},
-          textString="G3: PSS")}));
+          lineColor={200,200,200},
+          extent={{-140,-140},{140,140}},
+          radius=25.0)}));
 end sys;
