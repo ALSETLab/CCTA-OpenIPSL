@@ -1,5 +1,5 @@
 within Example2.Base.Systems;
-model sys "This model includes a pss \"container\" with 4 sub-structures"
+model sys "Power system model with input/output interfaces"
   extends Example2.Utilities.Icons.ModelForLinearization;
   extends Example2.Interfaces.OutputsInterfaceWEfdAndAVRoutSmall;
   parameter Real r=0.0001;
@@ -16,7 +16,7 @@ model sys "This model includes a pss \"container\" with 4 sub-structures"
     annotation (Placement(transformation(extent={{-320,-80},{-280,-40}}), iconTransformation(extent={{-182,-80},{-142,-40}})));
   Modelica.Blocks.Interfaces.RealInput uLoad9
     annotation (Placement(transformation(extent={{-320,-140},{-280,-100}}), iconTransformation(extent={{-182,-140},{-142,-100}})));
-  replaceable Data.PF2 PF_results constrainedby Data.PF2
+  replaceable Data.PF0 PF_results constrainedby Data.PF0
     annotation (Placement(transformation(extent={{0,-114},{20,-94}})));
   OpenIPSL.Electrical.Buses.Bus bus1
     annotation (Placement(transformation(extent={{-230,6},{-210,26}})));
@@ -64,13 +64,14 @@ model sys "This model includes a pss \"container\" with 4 sub-structures"
     pss4_Kw=pss4_Kw,
     pss4_Tw=pss4_Tw,
     pss5_Kw=pss5_Kw,
-    pss5_Tw=pss5_Tw)                    annotation (Placement(transformation(extent={{-268,10},{-234,140}})));
-  Plants.G2 g2_sexs(
+    pss5_Tw=pss5_Tw)                    annotation (Placement(transformation(extent={{-240,60},
+            {-212,90}})));
+  Plants.G2 g2(
     v_0=PF_results.voltages.V2,
     angle_0=PF_results.voltages.A2,
     P_0=PF_results.machines.P2_1,
     Q_0=PF_results.machines.Q2_1)
-    annotation (Placement(transformation(extent={{-254,-20},{-242,-8}})));
+    annotation (Placement(transformation(extent={{-248,-24},{-228,-4}})));
   Plants.G3 g3(
     v_0=PF_results.voltages.V3,
     angle_0=PF_results.voltages.A3,
@@ -81,7 +82,7 @@ model sys "This model includes a pss \"container\" with 4 sub-structures"
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={268,16})));
-  Plants.G4 g4_sexs(
+  Plants.G4 g4(
     v_0=PF_results.voltages.V4,
     angle_0=PF_results.voltages.A4,
     P_0=PF_results.machines.P4_1,
@@ -242,10 +243,11 @@ equation
   Q = g1.g1.Q;
   AVRin = g1.AVRinput_meas; // AVR input, error signal to the avr
   AVRout = g1.AVRoutput_meas; // AVR output, Efd
-  connect(g1.pwPin,bus1. p) annotation (Line(points={{-232.3,75},{-230,75},{
-          -230,16},{-220,16}},
+  connect(g1.pwPin,bus1. p) annotation (Line(points={{-210.6,75},{-198,75},{
+          -198,32},{-238,32},{-238,16},{-220,16}},
                 color={0,0,255}));
-  connect(g2_sexs.pwPin, bus2.p) annotation (Line(points={{-241.4,-14},{-220,-14}}, color={0,0,255}));
+  connect(g2.pwPin, bus2.p)
+    annotation (Line(points={{-227,-14},{-220,-14}}, color={0,0,255}));
   connect(Line5_6.n,bus6. p) annotation (Line(points={{-151,16},{-140,16}},
                 color={0,0,255}));
   connect(Line5_6.p,bus5. p) annotation (Line(points={{-169,16},{-180,16}},
@@ -271,7 +273,8 @@ equation
     annotation (Line(points={{160,16},{171,16}}, color={0,0,255}));
   connect(Line10_11.n,bus11. p) annotation (Line(points={{189,16},{200,16}},
                 color={0,0,255}));
-  connect(g4_sexs.pwPin, bus4.p) annotation (Line(points={{261.4,-24},{240,-24}}, color={0,0,255}));
+  connect(g4.pwPin, bus4.p)
+    annotation (Line(points={{261.4,-24},{240,-24}}, color={0,0,255}));
   connect(g3.pwPin,bus3. p)
     annotation (Line(points={{261.4,16},{240,16}}, color={0,0,255}));
   connect(pwFault.p,bus8. p)
@@ -313,23 +316,15 @@ equation
   connect(Line6_7_A2.n, bus7.p) annotation (Line(points={{-79,6},{-74,6},{-74,
           16},{-60,16}}, color={0,0,255}));
   connect(g1.uPm, uPm) annotation (Line(
-      points={{-279.9,101},{-276,101},{-276,120},{-298,120}},
+      points={{-249.8,81},{-249.8,82},{-270,82},{-270,120},{-298,120}},
       color={0,0,127},
       smooth=Smooth.Bezier));
   connect(g1.uPSS, uPSS) annotation (Line(
-      points={{-279.9,75},{-279.9,72},{-274,72},{-274,60},{-300,60}},
+      points={{-249.8,75},{-249.8,76},{-274,76},{-274,60},{-300,60}},
       color={0,0,127},
       smooth=Smooth.Bezier));
   connect(g1.uVsAVR, uAVRin) annotation (Line(
-      points={{-279.9,49},{-279.9,54},{-274,54},{-274,0},{-300,0}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
-  connect(uLoad7, Load7.u) annotation (Line(
-      points={{-300,-60},{-84,-60},{-84,-19.85},{-75.34,-19.85}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
-  connect(uLoad9, Load9.u) annotation (Line(
-      points={{-300,-120},{-104,-120},{-104,-76},{77.15,-76},{77.15,-19.85}},
+      points={{-249.8,69},{-249.8,2},{-274,2},{-274,0},{-300,0}},
       color={0,0,127},
       smooth=Smooth.Bezier));
   connect(Line9_10_A0.p, bus9.p) annotation (Line(points={{129,16},{60,16}}, color={0,0,255}));
@@ -338,19 +333,21 @@ equation
   connect(bus6.p, Line5_2B.n) annotation (Line(points={{-140,16},{-140,-38},{-148,-38},{-148,-44},{-157,-44}}, color={0,0,255}));
   connect(Line5_2.n, Line5_2B.p) annotation (Line(points={{-197,-14},{-192,-14},
           {-192,-38},{-184,-38},{-184,-44},{-175,-44}},                                                                       color={0,0,255}));
+  connect(uLoad9, Load9.u) annotation (Line(points={{-300,-120},{106,-120},{106,
+          -19.85},{77.15,-19.85}}, color={0,0,127}));
+  connect(uLoad7, Load7.u) annotation (Line(points={{-300,-60},{-100,-60},{-100,
+          -19.85},{-75.34,-19.85}}, color={0,0,127}));
     annotation (Dialog(group="Line Trip Parameters"),
                preferredView = diagram,
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-280,-140},{280,140}}),
                     graphics={Text(
-          extent={{-58,130},{222,96}},
+          extent={{-200,-88},{-100,-108}},
           textColor={238,46,47},
-          textString="In this setup, these two lines can be removed by choosing which one has \"t1\" propagated."),
-                                                             Line(
-          points={{-58,96},{-86,10}},
-          color={238,46,47},
-          thickness=1,
-          arrow={Arrow.None,Arrow.Filled}),                  Line(
-          points={{-64,98},{-154,-42}},
+          textString="Note: In this setup, this line can be
+removed by choosing which one
+has \"t1\" propagated.",
+          horizontalAlignment=TextAlignment.Left),           Line(
+          points={{-168,-80},{-168,-52}},
           color={238,46,47},
           thickness=1,
           arrow={Arrow.None,Arrow.Filled})}),

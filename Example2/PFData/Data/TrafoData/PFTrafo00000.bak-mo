@@ -1,0 +1,5 @@
+within Example2.PFData.Data.TrafoData;
+record PFTrafo00000 "Record for power flow solutions in trafos - Id 00000"
+extends Example2.PFData.Data.TrafoData.TrafoTemplate;
+
+end PFTrafo00000;

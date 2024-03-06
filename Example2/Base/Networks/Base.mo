@@ -5,7 +5,7 @@ partial model Base
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
   parameter Real percent = 0.75;
-  replaceable Data.PF2 PF_results constrainedby Data.PF2
+  replaceable Data.PF0 PF_results constrainedby Data.PF0
     annotation (Placement(transformation(extent={{0,-114},{20,-94}})));
   OpenIPSL.Electrical.Buses.Bus bus1
     annotation (Placement(transformation(extent={{-230,6},{-210,26}})));
@@ -144,24 +144,7 @@ partial model Base
     "Start time of the fault" annotation (Dialog(group="Bus Fault Parameters"));
   parameter OpenIPSL.Types.Time t2busfault=Modelica.Constants.inf
     "End time of the fault" annotation (Dialog(group="Bus Fault Parameters"));
-  parameter Real t1pssin=0 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
-  parameter Real t2pssin=30 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
-  parameter Real t3pssin=60 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
-  parameter Real t4pssin=90 "Stop time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
-  parameter Real t5pssin=120 "Stop time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
-  parameter Real t6pssStop=Modelica.Constants.inf "Stop time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
-  parameter OpenIPSL.Types.PerUnit pss_vsmax=0.2 "Max stabilizer output signal" annotation (Dialog(tab="PSS Parameters", group="All PSS's Limits"));
-  parameter OpenIPSL.Types.PerUnit pss_vsmin=-0.2 "Min stabilizer output signal" annotation (Dialog(tab="PSS Parameters", group="All PSS's Limits"));
-  parameter Real pss1_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 1"));
-  parameter OpenIPSL.Types.Time pss1_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 1"));
-  parameter Real pss2_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 2"));
-  parameter OpenIPSL.Types.Time pss2_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 2"));
-  parameter Real pss3_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 3"));
-  parameter OpenIPSL.Types.Time pss3_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 3"));
-  parameter Real pss4_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 4"));
-  parameter OpenIPSL.Types.Time pss4_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 4"));
-  parameter Real pss5_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
-  parameter OpenIPSL.Types.Time pss5_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+
   OpenIPSL.Electrical.Branches.PwLine Line5_2B(
     G=0,
     R=0,

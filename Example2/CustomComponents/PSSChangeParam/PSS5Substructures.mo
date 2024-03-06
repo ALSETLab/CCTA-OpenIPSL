@@ -191,13 +191,13 @@ equation
         Text(
           extent={{-40,20},{-16,-6}},
           textColor={28,108,200},
-          textString="3",
-          textStyle={TextStyle.Italic}),
+          textStyle={TextStyle.Italic},
+          textString="..."),
         Text(
           extent={{-20,0},{4,-26}},
           textColor={28,108,200},
-          textString="4",
-          textStyle={TextStyle.Italic}),
+          textStyle={TextStyle.Italic},
+          textString="5"),
         Text(
           extent={{-100,-58},{100,-100}},
           textColor={28,108,200},

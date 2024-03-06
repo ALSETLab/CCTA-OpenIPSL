@@ -1,5 +1,5 @@
 within Example2.Base.Data;
-record PF2 "Power flow data record, designed for test system assembled with PSSE models"
+record PF0 "Power flow data record, Case 00"
   import Modelica.Constants.pi;
   extends Support.PF_TwoAreas(
     voltages(
@@ -40,4 +40,4 @@ record PF2 "Power flow data record, designed for test system assembled with PSSE
       PL9_1=1767000000,
       QL9_1=-230200000));
 
-end PF2;
+end PF0;

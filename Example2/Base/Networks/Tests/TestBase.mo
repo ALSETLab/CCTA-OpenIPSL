@@ -13,7 +13,7 @@ model TestBase "Tests the base network model"
     angle_0=PF_results.voltages.A2,
     P_0=PF_results.machines.P2_1,
     Q_0=PF_results.machines.Q2_1)
-    annotation (Placement(transformation(extent={{-248,-38},{-236,-26}})));
+    annotation (Placement(transformation(extent={{-248,-20},{-236,-8}})));
   Plants.inf g3(
     v_0=PF_results.voltages.V3,
     angle_0=PF_results.voltages.A3,
@@ -37,8 +37,8 @@ model TestBase "Tests the base network model"
 equation
   connect(g1.pwPin, bus1.p)
     annotation (Line(points={{-227,16},{-220,16}}, color={0,0,255}));
-  connect(g2.pwPin, bus2.p) annotation (Line(points={{-235.4,-32},{-230,-32},{-230,
-          -14},{-220,-14}}, color={0,0,255}));
+  connect(g2.pwPin, bus2.p) annotation (Line(points={{-235.4,-14},{-220,-14}},
+                            color={0,0,255}));
   connect(g3.pwPin, bus3.p)
     annotation (Line(points={{249.4,16},{240,16}}, color={0,0,255}));
   connect(bus4.p, g4.pwPin)

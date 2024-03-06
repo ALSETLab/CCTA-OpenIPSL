@@ -1,0 +1,8 @@
+within Example2.PFData.Data.LoadData;
+record PFLoad00001 "Record for power flow solutions in loads - Id 00001"
+  extends Example2.PFData.Data.LoadData.LoadTemplate(
+      PL7=967000000,
+      QL7=-84700000,
+      PL9=1767000000,
+      QL9=-230200000);
+end PFLoad00001;
