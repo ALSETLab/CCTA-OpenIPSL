@@ -1,5 +1,5 @@
 within Example2.Base.Networks;
-model Base
+partial model Base
   "Base network model, 11-buses, loads, and power flow data"
   parameter Real r=0.0001;
   parameter Real x=0.001;

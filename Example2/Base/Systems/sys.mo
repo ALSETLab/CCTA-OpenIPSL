@@ -1,6 +1,5 @@
 within Example2.Base.Systems;
-model SysDtunedG14sstPSSTGRevG3plusPSS
-  "This model includes a pss \"container\" with 4 sub-structures"
+model sys "This model includes a pss \"container\" with 4 sub-structures"
   extends Example2.Utilities.Icons.ModelForLinearization;
   extends Example2.Interfaces.OutputsInterfaceWEfdAndAVRoutSmall;
   parameter Real r=0.0001;
@@ -395,4 +394,4 @@ equation
           textColor={217,67,180},
           textStyle={TextStyle.Bold},
           textString="G3: PSS")}));
-end SysDtunedG14sstPSSTGRevG3plusPSS;
+end sys;

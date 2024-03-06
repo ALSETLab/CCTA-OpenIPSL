@@ -2,7 +2,7 @@ within Example2.Analysis;
 model RampingRandomLoadAndInput
   "Model to perform blind estimation with default controller and re-design"
   extends Modelica.Icons.Example;
-  Example2.Base.Systems.SysDtunedG14sstPSSTGRevG3plusPSS plant(
+  Example2.Base.Systems.sys plant(
     g1(Rdroop=0.025),
     t2pssin=1200,
     t3pssin=2100,
