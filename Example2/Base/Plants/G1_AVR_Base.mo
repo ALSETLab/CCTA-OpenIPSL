@@ -1,7 +1,8 @@
 within Example2.Base.Plants;
 partial model G1_AVR_Base
   "900MVA generation unit, composed of machine and exciter, connected to bus 1"
-  extends Example2.Base.Plants.Generator;
+  //extends Example2.Base.Plants.Generator;
+  extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g1(
     Tpd0=8,
     Tppd0=0.03,
@@ -37,7 +38,7 @@ partial model G1_AVR_Base
 
 equation
   connect(g1.p, pwPin)
-    annotation (Line(points={{72,0},{100,0}}, color={0,0,255}));
+    annotation (Line(points={{72,0},{110,0}}, color={0,0,255}));
   connect(sEXS.EFD, g1.EFD) annotation (Line(points={{17,-12},{28,-12}},
                 color={0,0,127}));
   connect(sEXS.EFD0, g1.EFD0) annotation (Line(points={{-5,-16},{-18,-16},{-18,

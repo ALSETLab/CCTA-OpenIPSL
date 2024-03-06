@@ -1,22 +1,10 @@
-within Example2.Base.Systems;
-model SysDtunedG14sstPSSTGRevG3plusPSS
-  "This model includes a pss \"container\" with 4 sub-structures"
-  extends Example2.Utilities.Icons.ModelForLinearization;
-  extends Example2.Interfaces.OutputsInterfaceWEfdAndAVRoutSmall;
+within Example2.Base.Networks;
+model Base
+  "Base network model, 11-buses, loads, and power flow data"
   parameter Real r=0.0001;
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
   parameter Real percent = 0.75;
-  Modelica.Blocks.Interfaces.RealInput uPm
-    annotation (Placement(transformation(extent={{-318,100},{-278,140}}), iconTransformation(extent={{-180,100},{-140,140}})));
-  Modelica.Blocks.Interfaces.RealInput uPSS
-    annotation (Placement(transformation(extent={{-320,40},{-280,80}}), iconTransformation(extent={{-182,40},{-142,80}})));
-  Modelica.Blocks.Interfaces.RealInput uAVRin "Feedback input"
-    annotation (Placement(transformation(extent={{-320,-20},{-280,20}}), iconTransformation(extent={{-182,-20},{-142,20}})));
-  Modelica.Blocks.Interfaces.RealInput uLoad7
-    annotation (Placement(transformation(extent={{-320,-80},{-280,-40}}), iconTransformation(extent={{-182,-80},{-142,-40}})));
-  Modelica.Blocks.Interfaces.RealInput uLoad9
-    annotation (Placement(transformation(extent={{-320,-140},{-280,-100}}), iconTransformation(extent={{-182,-140},{-142,-100}})));
   replaceable Data.PF2 PF_results constrainedby Data.PF2
     annotation (Placement(transformation(extent={{0,-114},{20,-94}})));
   OpenIPSL.Electrical.Buses.Bus bus1
@@ -41,55 +29,6 @@ model SysDtunedG14sstPSSTGRevG3plusPSS
     annotation (Placement(transformation(extent={{150,6},{170,26}})));
   OpenIPSL.Electrical.Buses.Bus bus11
     annotation (Placement(transformation(extent={{190,6},{210,26}})));
-  Plants.G1_AVR5substructuresPSSGov_IO_rev
-                      g1(
-    v_0=PF_results.voltages.V1,
-    angle_0=PF_results.voltages.A1,
-    P_0=PF_results.machines.P1_1,
-    Q_0=PF_results.machines.Q1_1,
-    T3g=Modelica.Constants.small,
-    t1pssin=t1pssin,
-    t2pssin=t2pssin,
-    t3pssin=t3pssin,
-    t4pssin=t4pssin,
-    t5pssin=t5pssin,
-    t6pssStop=t6pssStop,
-    pss_vsmax=pss_vsmax,
-    pss_vsmin=pss_vsmin,
-    pss1_Kw=pss1_Kw,
-    pss1_Tw=pss1_Tw,
-    pss2_Kw=pss2_Kw,
-    pss2_Tw=pss2_Tw,
-    pss3_Kw=pss3_Kw,
-    pss3_Tw=pss3_Tw,
-    pss4_Kw=pss4_Kw,
-    pss4_Tw=pss4_Tw,
-    pss5_Kw=pss5_Kw,
-    pss5_Tw=pss5_Tw)                    annotation (Placement(transformation(extent={{-268,10},{-234,140}})));
-  Plants.G2 g2_sexs(
-    v_0=PF_results.voltages.V2,
-    angle_0=PF_results.voltages.A2,
-    P_0=PF_results.machines.P2_1,
-    Q_0=PF_results.machines.Q2_1)
-    annotation (Placement(transformation(extent={{-254,-20},{-242,-8}})));
-  Plants.G3 g3(
-    v_0=PF_results.voltages.V3,
-    angle_0=PF_results.voltages.A3,
-    P_0=PF_results.machines.P3_1,
-    Q_0=PF_results.machines.Q3_1,
-    Rdroop=0.025,
-    tGTypeII(T3=Modelica.Constants.small)) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=180,
-        origin={268,16})));
-  Plants.G4 g4_sexs(
-    v_0=PF_results.voltages.V4,
-    angle_0=PF_results.voltages.A4,
-    P_0=PF_results.machines.P4_1,
-    Q_0=PF_results.machines.Q4_1) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=180,
-        origin={268,-24})));
   OpenIPSL.Electrical.Branches.PwLine Line5_6(
     R=r*25,
     X=x*25,
@@ -236,17 +175,6 @@ model SysDtunedG14sstPSSTGRevG3plusPSS
     X=0.01667*(5/4)*percent,
     B=0) annotation (Placement(transformation(extent={{-176,-42},{-156,-22}})));
 equation
-  w = g1.g1.SPEED;
-  delta = g1.g1.ANGLE;
-  Vt = g1.g1.ETERM;
-  P = g1.g1.P;
-  Q = g1.g1.Q;
-  AVRin = g1.AVRinput_meas; // AVR input, error signal to the avr
-  AVRout = g1.AVRoutput_meas; // AVR output, Efd
-  connect(g1.pwPin,bus1. p) annotation (Line(points={{-232.3,75},{-230,75},{
-          -230,16},{-220,16}},
-                color={0,0,255}));
-  connect(g2_sexs.pwPin, bus2.p) annotation (Line(points={{-241.4,-14},{-220,-14}}, color={0,0,255}));
   connect(Line5_6.n,bus6. p) annotation (Line(points={{-151,16},{-140,16}},
                 color={0,0,255}));
   connect(Line5_6.p,bus5. p) annotation (Line(points={{-169,16},{-180,16}},
@@ -272,9 +200,6 @@ equation
     annotation (Line(points={{160,16},{171,16}}, color={0,0,255}));
   connect(Line10_11.n,bus11. p) annotation (Line(points={{189,16},{200,16}},
                 color={0,0,255}));
-  connect(g4_sexs.pwPin, bus4.p) annotation (Line(points={{261.4,-24},{240,-24}}, color={0,0,255}));
-  connect(g3.pwPin,bus3. p)
-    annotation (Line(points={{261.4,16},{240,16}}, color={0,0,255}));
   connect(pwFault.p,bus8. p)
     annotation (Line(points={{0,-22.3333},{0,16}},        color={0,0,255}));
   connect(bus1.p,Line5_1. p)
@@ -313,26 +238,6 @@ equation
           16},{-60,16}}, color={0,0,255}));
   connect(Line6_7_A2.n, bus7.p) annotation (Line(points={{-79,6},{-74,6},{-74,
           16},{-60,16}}, color={0,0,255}));
-  connect(g1.uPm, uPm) annotation (Line(
-      points={{-279.9,101},{-276,101},{-276,120},{-298,120}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
-  connect(g1.uPSS, uPSS) annotation (Line(
-      points={{-279.9,75},{-279.9,72},{-274,72},{-274,60},{-300,60}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
-  connect(g1.uVsAVR, uAVRin) annotation (Line(
-      points={{-279.9,49},{-279.9,54},{-274,54},{-274,0},{-300,0}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
-  connect(uLoad7, Load7.u) annotation (Line(
-      points={{-300,-60},{-84,-60},{-84,-19.85},{-75.34,-19.85}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
-  connect(uLoad9, Load9.u) annotation (Line(
-      points={{-300,-120},{-104,-120},{-104,-76},{77.15,-76},{77.15,-19.85}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
   connect(Line9_10_A0.p, bus9.p) annotation (Line(points={{129,16},{60,16}}, color={0,0,255}));
   connect(Line5_2A.p, Line5_2B.p) annotation (Line(points={{-175,-32},{-184,-32},{-184,-44},{-175,-44}}, color={0,0,255}));
   connect(Line5_2A.n, Line5_2B.n) annotation (Line(points={{-157,-32},{-148,-32},{-148,-44},{-157,-44}}, color={0,0,255}));
@@ -360,39 +265,5 @@ equation
     experiment(
       StopTime=600,
       __Dymola_NumberOfIntervals=10000,
-      __Dymola_Algorithm="Dassl"),
-    Icon(graphics={Text(
-          extent={{-98,80},{102,40}},
-          textColor={0,140,72},
-          textString="Detuned with TG"),
-        Rectangle(
-          extent={{-90,28},{10,-32}},
-          lineColor={28,108,200},
-          fillColor={195,208,218},
-          fillPattern=FillPattern.Solid),
-        Rectangle(
-          extent={{-8,2},{92,-58}},
-          lineColor={28,108,200},
-          fillColor={211,225,236},
-          fillPattern=FillPattern.Solid),
-        Text(
-          extent={{-90,28},{-66,2}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Italic},
-          textString="g1"),
-        Text(
-          extent={{-8,2},{16,-24}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Italic},
-          textString="g3"),
-        Text(
-          extent={{-100,-98},{100,-140}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="G1: Seq.PSS"),
-        Text(
-          extent={{-100,-140},{100,-182}},
-          textColor={217,67,180},
-          textStyle={TextStyle.Bold},
-          textString="G3: PSS")}));
-end SysDtunedG14sstPSSTGRevG3plusPSS;
+      __Dymola_Algorithm="Dassl"));
+end Base;

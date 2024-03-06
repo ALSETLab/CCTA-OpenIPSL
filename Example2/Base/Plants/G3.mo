@@ -1,6 +1,7 @@
-within Example2.Base.Groups.PSSE.TgAVRPSS;
-model G3 "900MVA generation unit, composed of machine and exciter, connected to bus 3"
-  extends Support.Generator;
+within Example2.Base.Plants;
+model G3
+  "900MVA generation unit, composed of machine and exciter, connected to bus 3"
+  extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g3(
     Tpd0=8,
     Tppd0=0.03,
@@ -55,7 +56,7 @@ model G3 "900MVA generation unit, composed of machine and exciter, connected to 
     T4=5.4)
            annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
 equation
-  connect(g3.p, pwPin) annotation (Line(points={{72,0},{100,0}},
+  connect(g3.p, pwPin) annotation (Line(points={{72,0},{110,0}},
                color={0,0,255}));
   connect(sEXS.EFD, g3.EFD) annotation (Line(points={{17,-12},{28,-12}},
                               color={0,0,127}));

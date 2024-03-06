@@ -1,4 +1,4 @@
 within Example2.Base;
-package Plants
+package Networks
   extends Modelica.Icons.BasesPackage;
-end Plants;
+end Networks;

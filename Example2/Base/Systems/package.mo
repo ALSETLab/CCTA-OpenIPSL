@@ -1,4 +1,4 @@
 within Example2.Base;
 package Systems
-  extends Modelica.Icons.VariantsPackage;
+  extends Modelica.Icons.BasesPackage;
 end Systems;

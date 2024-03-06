@@ -1,6 +1,7 @@
-within Example2.Base.Groups.PSSE.AVR;
-model G2_sexs "900MVA generation unit, composed of machine and exciter, connected to bus 2"
-  extends Support.Generator;
+within Example2.Base.Plants;
+model G2
+  "900MVA generation unit, composed of machine and exciter, connected to bus 2"
+  extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g2(
     Tpd0=8,
     Tppd0=0.03,
@@ -38,7 +39,7 @@ equation
   connect(g2.PMECH, g2.PMECH0) annotation (Line(points={{28,12},{20,12},{20,30},
           {80,30},{80,10},{74,10}}, color={0,0,127}));
   connect(g2.p, pwPin)
-    annotation (Line(points={{72,0},{100,0}}, color={0,0,255}));
+    annotation (Line(points={{72,0},{110,0}}, color={0,0,255}));
   connect(g2.EFD, sEXS.EFD) annotation (Line(points={{28,-12},{17,-12}}, color={0,0,127}));
   connect(sEXS.EFD0, g2.EFD0) annotation (Line(points={{-5,-16},{-18,-16},{-18,-68},{80,-68},{80,-10},{74,-10}}, color={0,0,127}));
   connect(non_active_inputs.y, sEXS.VUEL) annotation (Line(points={{19,-50},{2,-50},{2,-23}}, color={0,0,127}));
@@ -54,4 +55,4 @@ equation
 <li><strong>Exciter</strong>: ESDC1A, a DC-type excitation system model, from PSSE.</li>
 </ul>
 </html>"));
-end G2_sexs;
+end G2;
