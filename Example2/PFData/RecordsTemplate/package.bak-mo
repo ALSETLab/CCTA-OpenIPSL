@@ -1,5 +1,0 @@
-within Example2.PFData;
-package RecordsTemplate "Contains the templates to organize the data"
-  extends Modelica.Icons.RecordsPackage;
-
-end RecordsTemplate;

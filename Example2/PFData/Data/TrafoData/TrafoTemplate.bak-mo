@@ -1,5 +1,0 @@
-within Example2.PFData.Data.TrafoData;
-partial record TrafoTemplate
-  "Record template for power flow solutions in transformers"
-
-end TrafoTemplate;

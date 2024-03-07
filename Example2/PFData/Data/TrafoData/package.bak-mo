@@ -1,5 +1,0 @@
-within Example2.PFData.Data;
-package TrafoData "Records with power flow solutions for machines"
-  extends Modelica.Icons.RecordsPackage;
-
-end TrafoData;
