@@ -1,5 +1,5 @@
 within Example1.Base.Networks.Tests;
-model testPFandFault
+model testPFandFault "Test model for Example1.Base.Networks.BasePFnFault"
   extends Modelica.Icons.Example;
   extends Example1.Base.Networks.BasePFnFault;
   Modelica.Blocks.Sources.Pulse    pulse(

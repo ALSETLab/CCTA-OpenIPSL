@@ -1,7 +1,7 @@
 within Example2.Base.Data;
 record PF0 "Power flow data record, Case 00"
   import Modelica.Constants.pi;
-  extends Support.PF_TwoAreas(
+  extends PF_TwoAreas(
     voltages(
       V1=1.03,
       A1=0.35378975855,

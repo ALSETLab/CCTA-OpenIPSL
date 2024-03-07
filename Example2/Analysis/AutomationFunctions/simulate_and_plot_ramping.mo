@@ -18,4 +18,15 @@ algorithm
   Advanced.FilesToKeep :=10;
   createPlot(id=2, position={158, 148, 744, 455}, y={"plant.P"}, range={0.0, 70.0, 6.800000000000001, 8.4}, grid=true, filename="Ramping.mat", colors={{28,108,200}}, timeUnit="min", displayUnits={"1"});
 
+  annotation (Documentation(info="<html>
+<p><i><b>Usage:</b></i></p>
+<ol>
+<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
+<li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
+<li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
+</ol>
+<p><br><i><b>Sample Output:</b></i></p>
+<p>Running the function will result in the following plot.</p>
+<p><img src=\"modelica://Example2/Resources/simulate_and_plot_ramping.png\"/></p>
+</html>"));
 end simulate_and_plot_ramping;

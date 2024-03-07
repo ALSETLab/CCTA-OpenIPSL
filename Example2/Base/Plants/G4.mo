@@ -1,6 +1,6 @@
 within Example2.Base.Plants;
 model G4
-  "900MVA generation unit, composed of machine and exciter, connected to bus 4"
+  "Generator unit model for g4 - 900MVA generation unit, composed of machine and exciter"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENSAL(
     Tpd0=8,
@@ -49,10 +49,10 @@ equation
   connect(gENSAL.XADIFD, sEXS.XADIFD) annotation (Line(points={{74,-18},{78,-18},{78,-32},{12,-32},{12,-23}}, color={0,0,127}));
   annotation (
     Documentation(info="<html>
-<p>900MVA generation unit connected to bus 4, and composed of the following component models:</p>
+<p>900MVA generation unit composed of the following component models:</p>
 <ul>
-<li><strong>Machine</strong>: GENROU, a round rotor synchronous generator model, from PSSE.</li>
-<li><strong>Exciter</strong>: ESDC1A, a DC-type excitation system model, from PSSE.</li>
+<li>Machine: GENROU, a round rotor synchronous generator model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Machines.PSSE.GENROU</span></li>
+<li>Exciter: SEXS, a simplified excitation system model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSSE.ES.SEXS</span></li>
 </ul>
 </html>"));
 end G4;

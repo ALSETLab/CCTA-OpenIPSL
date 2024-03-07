@@ -1,6 +1,6 @@
 within Example2;
 partial class Readme
-  "Summary of modeling and simulation aspects to use this package."
+  "Summary of modeling and simulation aspects to used in this package."
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Ellipse(
@@ -22,7 +22,7 @@ partial class Readme
           extent={{-12.5,-12.5},{12.5,12.5}})}),
                             Documentation(info="<html>
 <p>The model included here was originally developed using similar component models and parameters as the 11-bus 4-machine 2-area power grid model presented in [4] and in the Example 12.6 of [5], but instead implemented using the OpenIPSL library. The starting point for development was the implementation included in OpenIPSL, which can be found under: <span style=\"font-family: Courier New;\">OpenIPSL.Examples.TwoAreas.Two_Areas_PSSE_AVR</span></p>
-<p>It has been substantially modified to meet the needs of the work in [4]-[5]. These differences are mainly in how the generator units where modeled, some of which are summarized below.</p>
+<p>It has been substantially modified to meet the needs of the work in [1]-[3]. These differences are mainly in how the generator units where modeled, some of which are summarized below.</p>
 <p>First, we note that the following components from OpenIPSL are used to build the individual power plant models (also known as generator units):</p>
 <ul>
 <li>Machine: GENROU - round rotor generator model with quadratic saturation, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Machines.PSSE.GENROU</span></li>
@@ -33,7 +33,7 @@ partial class Readme
 <p>These components are used to build the generator unit models for g1, g2, g3 and g4, shown in the figure below. You can also refer to the diagram layer of <span style=\"font-family: Courier New;\">Example2.Base.Systems.sys. </span>Each of the generator units are built as follows:</p>
 <p><img src=\"modelica://Example2/Resources/sys.png\"/></p>
 <ul>
-<li>Generator g1,<span style=\"font-family: Courier New;\"> Example2.Base.Plants.G1_AVR5substructuresPSSGov_IO_rev</span>, includes a turbine and governor system (TGTypeII), an excitation system (SEXS) and a specialized custom PSS. The PSS component is composed internally by five different PSS models (PSSTypeII). The output of each of them is enabled or disabled through a TimedInputInjectionOnOff component such that only the output of one of them is injected. This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for example.</li>
+<li>Generator g1,<span style=\"font-family: Courier New;\"> Example2.Base.Plants.G1</span>, includes a turbine and governor system (TGTypeII), an excitation system (SEXS) and a specialized custom PSS. The PSS component is composed internally by five different PSS models (PSSTypeII). The output of each of them is enabled or disabled through a TimedInputInjectionOnOff component such that only the output of one of them is injected. This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for example.</li>
 <li>Generator g2, <span style=\"font-family: Courier New;\">Example2.Base.Plants.G2</span>, includes a SEXS excitation system, no turbine governor are included.</li>
 <li>Generator g3, <span style=\"font-family: Courier New;\">Example2.Base.Plants.G3</span>,includes a turbine and governor system (TypeII), an excitation system (SEXS) and a PSS (PSSType II).</li>
 <li>Generator g4, <span style=\"font-family: Courier New;\">Example2.Base.Plants.G4</span>, is configured just as g2.</li>

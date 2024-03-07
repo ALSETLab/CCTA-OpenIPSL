@@ -1,6 +1,6 @@
 within Example2.Base.Plants;
 model G3
-  "900MVA generation unit, composed of machine and exciter, connected to bus 3"
+  "Generator unit model for g3 - 900MVA generation unit, composed of machine, exciter, pss and turbine & governor system"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g3(
     Tpd0=8,
@@ -77,10 +77,13 @@ equation
   connect(pss.vSI, g3.SPEED) annotation (Line(points={{-62,-10},{-78,-10},{-78,42},{84,42},{84,14},{74,14}}, color={0,0,127}));
   annotation (
     Documentation(info="<html>
-<p>900MVA generation unit connected to bus 3, and composed of the following component models:</p>
+
+<p>900MVA generation unit composed of the following component models:</p>
 <ul>
-<li><strong>Machine</strong>: GENROU, a round rotor synchronous generator model, from PSSE.</li>
-<li><strong>Exciter</strong>: SEXS, a simplified excitation system model, from PSSE.</li>
+<li>Machine: GENROU, a round rotor synchronous generator model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Machines.PSSE.GENROU</span></li>
+<li>Exciter: SEXS, a simplified excitation system model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSSE.ES.SEXS</span></li>
+<li>Turbine and governor system: TGTypeII - simplified model including transient grain, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeII</span></li>
+<li>Power System Stabilizer: PSSTypeII - single input stabilizer, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</span></li>
 </ul>
 </html>"));
 end G3;

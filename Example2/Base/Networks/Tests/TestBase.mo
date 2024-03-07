@@ -47,5 +47,7 @@ equation
           {-75.34,-19.85}}, color={0,0,127}));
   connect(const1.y, Load9.u) annotation (Line(points={{117,-40},{138,-40},{138,-19.85},
           {77.15,-19.85}}, color={0,0,127}));
-  annotation (experiment(StopTime=10));
+  annotation (experiment(StopTime=10),preferredView="diagram",
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-280,-140},{280,
+            140}})));
 end TestBase;

@@ -2,10 +2,10 @@ within Example2.Base.Systems;
 model sys "Power system model with input/output interfaces"
   extends Example2.Utilities.Icons.ModelForLinearization;
   extends Example2.Interfaces.OutputsInterfaceWEfdAndAVRoutSmall;
-  parameter Real r=0.0001;
-  parameter Real x=0.001;
-  parameter Real b=0.00175*0.5;
-  parameter Real percent = 0.75;
+  parameter Real r=0.0001 "Common resistance value propagated to several line components";
+  parameter Real x=0.001 "Common reactance value propagated to several line components";
+  parameter Real b=0.00175*0.5 "Common suceptance value propagated to several line components";
+  parameter Real percent = 0.75 "Scaling value used to modify parameters of several line components";
   Modelica.Blocks.Interfaces.RealInput uPm
     annotation (Placement(transformation(extent={{-318,100},{-278,140}}), iconTransformation(extent={{-180,100},{-140,140}})));
   Modelica.Blocks.Interfaces.RealInput uPSS
@@ -40,8 +40,7 @@ model sys "Power system model with input/output interfaces"
     annotation (Placement(transformation(extent={{150,6},{170,26}})));
   OpenIPSL.Electrical.Buses.Bus bus11
     annotation (Placement(transformation(extent={{190,6},{210,26}})));
-  Plants.G1_AVR5substructuresPSSGov_IO_rev
-                      g1(
+  Plants.G1 g1(
     v_0=PF_results.voltages.V1,
     angle_0=PF_results.voltages.A1,
     P_0=PF_results.machines.P1_1,
@@ -64,8 +63,8 @@ model sys "Power system model with input/output interfaces"
     pss4_Kw=pss4_Kw,
     pss4_Tw=pss4_Tw,
     pss5_Kw=pss5_Kw,
-    pss5_Tw=pss5_Tw)                    annotation (Placement(transformation(extent={{-240,60},
-            {-212,90}})));
+    pss5_Tw=pss5_Tw)
+    annotation (Placement(transformation(extent={{-240,60},{-212,90}})));
   Plants.G2 g2(
     v_0=PF_results.voltages.V2,
     angle_0=PF_results.voltages.A2,
@@ -195,7 +194,7 @@ model sys "Power system model with input/output interfaces"
     X=x*10*(1 - percent),
     G=0,
     B=b*10) annotation (Placement(transformation(extent={{-128,6},{-108,26}})));
-  parameter OpenIPSL.Types.Time t1=Modelica.Constants.inf;
+  parameter OpenIPSL.Types.Time t1=Modelica.Constants.inf "Time for removal of Line5_2B" annotation (Dialog(group="Line Removal Parameters"));
 
   parameter OpenIPSL.Types.PerUnit R=0 "Resistance"
     annotation (Dialog(group="Bus Fault Parameters"));
@@ -236,11 +235,12 @@ model sys "Power system model with input/output interfaces"
     X=0.01667*(5/4)*percent,
     B=0) annotation (Placement(transformation(extent={{-176,-42},{-156,-22}})));
 equation
-  w = g1.g1.SPEED;
-  delta = g1.g1.ANGLE;
-  Vt = g1.g1.ETERM;
-  P = g1.g1.P;
-  Q = g1.g1.Q;
+  // Assign outputs to g1 variables
+  w = g1.g1.SPEED; // Machine speed
+  delta = g1.g1.ANGLE; // Machine angle
+  Vt = g1.g1.ETERM; // Terminal voltage mangitude
+  P = g1.g1.P; // Active power
+  Q = g1.g1.Q; // Reactive power
   AVRin = g1.AVRinput_meas; // AVR input, error signal to the avr
   AVRout = g1.AVRoutput_meas; // AVR output, Efd
   connect(g1.pwPin,bus1. p) annotation (Line(points={{-210.6,75},{-198,75},{
@@ -338,7 +338,7 @@ equation
   connect(uLoad7, Load7.u) annotation (Line(points={{-300,-60},{-100,-60},{-100,
           -19.85},{-75.34,-19.85}}, color={0,0,127}));
     annotation (Dialog(group="Line Trip Parameters"),
-               preferredView = diagram,
+               preferredView = "diagram",
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-280,-140},{280,140}}),
                     graphics={Text(
           extent={{-200,-88},{-100,-108}},
@@ -352,6 +352,17 @@ has \"t1\" propagated.",
           thickness=1,
           arrow={Arrow.None,Arrow.Filled})}),
     Documentation(info="<html>
+<p>This is the main model used for simulation and linearization purposes. See usage in the examples under <a href=\"modelica://Example2.Analysis\">Example2.Analysis</a>.</p>
+<p>See more information under <a href=\"modelica://Example2.Readme\">Example2.Readme</a>.</p>
+<p>In the text layer, under the equation section, the following assignments to the output interface () are made to link g1 variables to the outputs:</p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;<span style=\"color: #006400;\">//&nbsp;Assign&nbsp;outputs&nbsp;to&nbsp;g1&nbsp;variables</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;w&nbsp;=&nbsp;g1.g1.SPEED;<span style=\"color: #006400;\">&nbsp;//&nbsp;Machine&nbsp;speed</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;delta&nbsp;=&nbsp;g1.g1.ANGLE;<span style=\"color: #006400;\">&nbsp;//&nbsp;Machine&nbsp;angle</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;Vt&nbsp;=&nbsp;g1.g1.ETERM;<span style=\"color: #006400;\">&nbsp;//&nbsp;Terminal&nbsp;voltage&nbsp;mangitude</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;P&nbsp;=&nbsp;g1.g1.P;<span style=\"color: #006400;\">&nbsp;//&nbsp;Active&nbsp;power</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;Q&nbsp;=&nbsp;g1.g1.Q;<span style=\"color: #006400;\">&nbsp;//&nbsp;Reactive&nbsp;power</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;AVRin&nbsp;=&nbsp;g1.AVRinput_meas;<span style=\"color: #006400;\">&nbsp;//&nbsp;AVR&nbsp;input,&nbsp;error&nbsp;signal&nbsp;to&nbsp;the&nbsp;avr</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;AVRout&nbsp;=&nbsp;g1.AVRoutput_meas;<span style=\"color: #006400;\">&nbsp;//&nbsp;AVR&nbsp;output,&nbsp;Efd</span></p>
 </html>"),
     experiment(
       StopTime=600,

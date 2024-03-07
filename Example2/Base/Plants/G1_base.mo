@@ -1,7 +1,6 @@
 within Example2.Base.Plants;
-partial model G1_AVR_Base
-  "900MVA generation unit, composed of machine and exciter, connected to bus 1"
-  //extends Example2.Base.Plants.Generator;
+partial model G1_base
+  "Base model for g1 - 900MVA generation unit, composed of machine and exciter"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g1(
     Tpd0=8,
@@ -54,10 +53,10 @@ equation
           78,-32},{14,-32},{14,-23}}, color={0,0,127}));
   annotation (preferredView = diagram,
     Documentation(info="<html>
-<p>900MVA generation unit connected to bus 1, and composed of the following component models:</p>
+<p>Partial model of a 900MVA generation unit composed of the following component models:</p>
 <ul>
-<li><strong>Machine</strong>: GENROU, a round rotor synchronous generator model, from PSSE.</li>
-<li><strong>Exciter</strong>: SEXS, a simplified excitation system model, from PSSE.</li>
+<li>Machine: GENROU, a round rotor synchronous generator model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Machines.PSSE.GENROU</span></li>
+<li>Exciter: SEXS, a simplified excitation system model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSSE.ES.SEXS</span></li>
 </ul>
 </html>"));
-end G1_AVR_Base;
+end G1_base;

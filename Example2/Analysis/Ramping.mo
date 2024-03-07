@@ -1,5 +1,6 @@
 within Example2.Analysis;
 model Ramping
+  "Model for simulation used to illustrate how ramping is applied to move the system to multiple operating points."
   extends Modelica.Icons.Example;
   Example2.Base.Systems.sys plant(
     g1(Rdroop=0.025),
@@ -67,5 +68,8 @@ equation
       Tolerance=1e-06,
       __Dymola_Algorithm="Dassl"),
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram");
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram",
+    Documentation(info="<html>
+<p>This model illustrates how ramping is applied to move the system to multiple operating points.</p><p>To simulate this model and plot the results, execute the function <a href=\"Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping\">Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a> , which sets up the adequate solver settings to minimize run time.</p>
+</html>"));
 end Ramping;

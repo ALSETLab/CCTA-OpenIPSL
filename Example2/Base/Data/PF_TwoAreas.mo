@@ -1,5 +1,6 @@
-within Example2.Base.Support;
-partial record PF_TwoAreas "Template data record used to store power flow results for initialization of power networks"
+within Example2.Base.Data;
+partial record PF_TwoAreas
+  "Template data record used to store power flow results for initialization"
   record Voltages "Template data record for voltage magnitudes and angles"
     // Bus number 1
     parameter Real V1;

@@ -1,6 +1,6 @@
 within Example2.Base.Data;
 record PF1 "Power flow data record, Case 01"
-  extends Support.PF_TwoAreas(
+  extends PF_TwoAreas(
     voltages(
       V1=1.02999997139,
       A1=0.68800303338,
@@ -39,6 +39,5 @@ record PF1 "Power flow data record, Case 01"
       PL9_1=1567000000,
       QL9_1=-223126708.9844));
   annotation (Documentation(info="<html>
-<p>Not working</p>
 </html>"));
 end PF1;

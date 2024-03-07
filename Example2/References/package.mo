@@ -13,6 +13,6 @@ annotation(preferredView="info", Documentation(info="<html>
 <p>[4] M. Klein, G. J. Rogers and P. Kundur, &quot;A fundamental study of inter-area oscillations in power systems,&quot; in IEEE Transactions on Power Systems, vol. 6, no. 3, pp. 914-921, Aug. 1991, doi: 10.1109/59.119229</p>
 <p>[5] P. Kundur, Power System Stability and Control, McGraw-Hill Education, 1994.</p>
 <p>Please refer to the publications above for more information.</p>
-<p><i>If you use these models, please cite the papers listed above.</i></p>
+<p><i>If you use these models, please cite the papers [1-3] listed above.</i></p>
 </html>"));
 end References;

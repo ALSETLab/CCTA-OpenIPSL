@@ -1,6 +1,7 @@
 within Example2.Base.Plants;
-model G1_AVR5substructuresPSSGov_IO_rev "This model includes a pss \"container\" with 5 sub-structures, each of which is activated/deactivated at specific points in time"
-  extends Example2.Base.Plants.G1_AVR_Base;
+model G1
+  "Generator unit model for g1 - Extends G1_base, adds a turbine and governor system and a custom PSS"
+  extends Example2.Base.Plants.G1_base;
   Modelica.Blocks.Interfaces.RealInput uPSS annotation (Placement(
         transformation(extent={{-180,-10},{-160,10}}), iconTransformation(
           extent={{-180,-10},{-160,10}})));
@@ -172,5 +173,14 @@ equation
         Line(points={{-160,0},{-140,0}}, color={108,88,49}),
         Line(points={{-160,-40},{-134,-40}}, color={108,88,49})}),
                                                                  Diagram(
-        coordinateSystem(extent={{-160,-100},{140,80}})));
-end G1_AVR5substructuresPSSGov_IO_rev;
+        coordinateSystem(extent={{-160,-100},{140,80}})),
+    Documentation(info="<html>
+<p>900MVA generation unit composed of the following component models:</p>
+<ul>
+<li>Machine: GENROU, a round rotor synchronous generator model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Machines.PSSE.GENROU</span></li>
+<li>Exciter: SEXS, a simplified excitation system model, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSSE.ES.SEXS</span></li>
+<li>Turbine and governor system: TGTypeII - simplified model including transient grain, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeII</span></li>
+<li>Power System Stabilizer: PSSTypeII - single input stabilizer, <span style=\"font-family: Courier New;\">OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</span></li>
+</ul>
+</html>"));
+end G1;

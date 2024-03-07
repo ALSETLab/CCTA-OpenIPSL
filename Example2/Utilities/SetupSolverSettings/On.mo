@@ -1,6 +1,8 @@
 within Example2.Utilities.SetupSolverSettings;
-function On "Turns on DAE Mode"
+function On
+  "Setups up the solver settings, enabling flags that include options on DAE and Sparsity"
   extends Modelica.Icons.Function;
+  input Integer corenum = 12 "Number of processor cores to use";
 algorithm
   Advanced.Define.DAEsolver := true;
   Modelica.Utilities.Streams.print("DAE Mode is turned on.");
@@ -12,5 +14,7 @@ algorithm
   Advanced.SparseMaximumDensity := 25;
   Advanced.SparseMinimumStates := 50;
   Modelica.Utilities.Streams.print("Sparse options enabled.");
-  Advanced.NumberOfCores := 12;
+  Advanced.NumberOfCores := corenum;
+  Modelica.Utilities.Streams.print("If available, the following number of cores will be used:" + String(corenum));
+annotation(preferredView="text");
 end On;

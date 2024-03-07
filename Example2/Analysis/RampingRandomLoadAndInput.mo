@@ -49,24 +49,24 @@ model RampingRandomLoadAndInput
         extent={{-20,-20},{20,20}},
         origin={0,122})));
 equation
-  connect(zeroInputs.y, plant.uPSS) annotation (Line(points={{-100,80},{-26,80},{-26,24},{33.2,24}},
-                                                                                                  color={0,0,127}));
-  connect(uL7.y, plant.uLoad7) annotation (Line(points={{-95.9,-57},{-95.9,-60},{-80,-60},{-80,-24},{33.2,-24}},
-                                                                                                     color={0,0,127}));
+  connect(zeroInputs.y, plant.uPSS) annotation (Line(points={{-100,80},{-26,80},
+          {-26,17.1429},{51.7143,17.1429}},                                                       color={0,0,127}));
+  connect(uL7.y, plant.uLoad7) annotation (Line(points={{-95.9,-57},{-95.9,-60},
+          {-80,-60},{-80,-17.1429},{51.7143,-17.1429}},                                              color={0,0,127}));
   connect(rampingLoad.y,add. u2) annotation (Line(
       points={{-137,-167},{-124,-167},{-124,-152},{-114,-152}},
       color={238,46,47},
       thickness=1));
   connect(add.y, plant.uLoad9) annotation (Line(
-      points={{-68,-140},{-46,-140},{-46,-48},{33.2,-48}},
+      points={{-68,-140},{-46,-140},{-46,-34.2857},{51.7143,-34.2857}},
       color={0,140,72},
       thickness=1));
   connect(r.y, plant.uAVRin) annotation (Line(
-      points={{-96.64,-1},{-96.64,0},{33.2,0}},
+      points={{-96.64,-1},{-96.64,0},{51.7143,0}},
       color={217,67,180},
       thickness=1));
   connect(ramping.y, plant.uPm) annotation (Line(
-      points={{0,100},{0,48},{34,48}},
+      points={{0,100},{0,34.2857},{52.2857,34.2857}},
       color={238,46,47},
       thickness=1));
   connect(add.u1, zeroInputs.y) annotation (Line(points={{-114,-128},{-150,-128},{-150,-102},{-60,-102},{-60,80},{-100,80}}, color={0,0,127}));
@@ -77,5 +77,10 @@ equation
       Tolerance=1e-03,
       __Dymola_Algorithm="Dassl"),
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram");
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram",
+    Documentation(info="<html>
+<p>Main model used for simulation in [1] and [2]. </p>
+<p>To reproduce the results in Fig. 4 of [2], execute the function <a href=\"Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs\">Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</a> , which sets up the adequate solver settings to minimize run time.</p>
+<p>Please note that running this model takes substantial time compared to example <a href=\"Example2.Analysis.Ramping\">Example2.Analysis.Ramping</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden. </p>
+</html>"));
 end RampingRandomLoadAndInput;

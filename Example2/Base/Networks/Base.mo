@@ -228,7 +228,7 @@ equation
   connect(Line5_2.n, Line5_2B.p) annotation (Line(points={{-197,-14},{-192,-14},
           {-192,-38},{-184,-38},{-184,-44},{-175,-44}},                                                                       color={0,0,255}));
     annotation (Dialog(group="Line Trip Parameters"),
-               preferredView = diagram,
+               preferredView = "diagram",
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-280,-140},{280,140}}),
                     graphics={Text(
           extent={{-58,130},{222,96}},
