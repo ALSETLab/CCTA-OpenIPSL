@@ -66,7 +66,5 @@ equation
     experiment(
       StopTime=1320,
       Interval=60,
-      Tolerance=1e-06,
-      __Dymola_fixedstepsize=0.01,
-      __Dymola_Algorithm="Dassl"));
+      Tolerance=1e-06),preferredView="diagram");
 end TimedNoiseInjection;

@@ -67,7 +67,5 @@ partial record PF_TwoAreas
   Voltages voltages;
   Machines machines;
   Loads loads;
-  annotation (Documentation(info="<html>
-
-</html>"));
+annotation(preferredView="text");
 end PF_TwoAreas;

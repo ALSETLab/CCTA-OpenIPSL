@@ -125,8 +125,5 @@ equation
           extent={{-17,-12},{17,12}},
           radius=5.0)}),
     experiment(
-      StopTime=1320,
-      __Dymola_NumberOfIntervals=10000,
-      Tolerance=1e-06,
-      __Dymola_Algorithm="Dassl"));
+      StopTime=1320),preferredView="diagram");
 end TimedInputInjectionB;

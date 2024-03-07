@@ -40,5 +40,5 @@ equation
         Text(
           extent={{-100,140},{100,100}},
           textColor={28,108,200},
-          textString="%name")}));
+          textString="%name")}),preferredView="diagram");
 end TimedInjection;

@@ -73,5 +73,5 @@ equation
         Line(points={{100,18},{60,18},{10,2}}, color={0,0,127}),
         Line(points={{100,-18},{60,-18},{10,-2}}, color={0,0,127}),
         Line(points={{100,-120},{60,-120},{-2,-4}},
-                                                 color={0,0,127})}));
+                                                 color={0,0,127})}),preferredView="diagram");
 end DeMultiplex7;

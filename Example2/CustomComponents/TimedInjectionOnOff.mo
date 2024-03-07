@@ -143,5 +143,5 @@ equation
           color={255,170,255},
           smooth=Smooth.Bezier,
           origin={-4,19.9},
-          rotation=90)}));
+          rotation=90)}),preferredView="diagram");
 end TimedInjectionOnOff;

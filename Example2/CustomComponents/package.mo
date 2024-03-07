@@ -4,5 +4,5 @@ package CustomComponents
 
   annotation (Documentation(info="<html>
 <p><span style=\"font-family: Arial;\">Auxiliary custom components developed for simulation and linearization purposes.</span></p>
-</html>"));
+</html>"),preferredView="info");
 end CustomComponents;

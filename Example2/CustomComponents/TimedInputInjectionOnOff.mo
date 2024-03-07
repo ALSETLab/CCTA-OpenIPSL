@@ -113,11 +113,8 @@ equation
           fillColor={215,215,215},
           lineThickness=1)}),
     experiment(
-      StopTime=1320,
-      __Dymola_NumberOfIntervals=10000,
-      Tolerance=1e-06,
-      __Dymola_Algorithm="Dassl"),
+      StopTime=1320),
     Documentation(info="<html>
 <p>Outputs a signal &quot;y&quot;, which is a copy of the input signal &quot;u&quot;, during a user-defined time period defined by parameters t_start and t_stop, otherwise it outputs zero.</p>
-</html>"));
+</html>"),preferredView="diagram");
 end TimedInputInjectionOnOff;

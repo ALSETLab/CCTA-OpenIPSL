@@ -95,5 +95,5 @@ annotation (uses(
 </ul>
 <p><br>Developed and tested with Dymola 2024X under MS Windows 11.</p>
 <p>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA.</p>
-</html>"));
+</html>"),preferredView="info");
 end Example2;

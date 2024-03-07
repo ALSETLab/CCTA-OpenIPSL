@@ -82,5 +82,5 @@ equation
 <p>Main model used for simulation in [1] and [2]. </p>
 <p>To reproduce the results in Fig. 4 of [2], execute the function <a href=\"Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs\">Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</a> , which sets up the adequate solver settings to minimize run time.</p>
 <p>Please note that running this model takes substantial time compared to example <a href=\"Example2.Analysis.Ramping\">Example2.Analysis.Ramping</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden. </p>
-</html>"));
+</html>"),preferredView="diagram");
 end RampingRandomLoadAndInput;

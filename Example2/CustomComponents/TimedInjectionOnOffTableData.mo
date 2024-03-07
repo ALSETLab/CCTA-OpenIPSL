@@ -2906,7 +2906,5 @@ equation
           fillPattern=FillPattern.Solid,
           extent={{-17,-12},{17,12}},
           radius=5.0)}),  experiment(
-      StopTime=3900,
-      __Dymola_NumberOfIntervals=5000,
-      __Dymola_Algorithm="Dassl"));
+      StopTime=3900),preferredView="diagram");
 end TimedInjectionOnOffTableData;

@@ -39872,5 +39872,5 @@ equation
           origin={0,-5},
           points={{0,45},{0,-75}},
           color={64,64,64})}),                                   Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
+        coordinateSystem(preserveAspectRatio=false)),preferredView="diagram");
 end InputDataB;

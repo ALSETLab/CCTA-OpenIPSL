@@ -78,7 +78,5 @@ equation
           extent={{-100,140},{100,100}},
           textColor={28,108,200},
           textString="%name")}), experiment(
-      StopTime=3900,
-      __Dymola_NumberOfIntervals=5000,
-      __Dymola_Algorithm="Dassl"));
+      StopTime=3900),preferredView="diagram");
 end TimedMultiRamp;
