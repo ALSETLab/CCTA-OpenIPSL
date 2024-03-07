@@ -33,7 +33,7 @@ algorithm
 <p><img src=\"modelica://Example2/Resources/simulate_and_plot_inputs.png\"/></p>
 <p><i><b>Note:</b></i></p>
 <p>Please observe that running this function involves simulating the <a href=\"modelica://Example2.Analysis.RampingRandomLoadAndInput\">Example2.Analysis.RampingRandomLoadAndInput</a> model, which takes subtantially more time compared to example&nbsp;<a href=\"modelica://Example2.Analysis.Ramping\">Example2.Analysis.Ramping</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden.</p>
-<p>This function calls the <a href=\"Example2.Utilities.SetupSolverSettings.On\">Example2.Utilities.SetupSolverSettings.On</a> function that configures several flags to improve simulation speed, however, even by enabling these features, the simulation is time consuming. </p>
+<p>This function calls the <a href=\"modelica://Example2.Utilities.SetupSolverSettings.On\">Example2.Utilities.SetupSolverSettings.On</a> function that configures several flags to improve simulation speed, however, even by enabling these features, the simulation is time consuming. </p>
 <p>For example, running the model using a computer with an 13th Gen Intel(R) Core(TM) i9-13900K, 3.00 GHz, processor and 128 GB DDR4 RAM, setup to use 12 cores, gave the following metrics:</p>
 <p style=\"margin-left: 60px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Integration terminated successfully at T = 4050</span></p>
 <p style=\"margin-left: 90px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">CPU-time for integration : 1.14e+03 seconds</span></p>
@@ -55,5 +55,5 @@ algorithm
 <p>Looking at the first two lines of the metrics shows that running the model for 67.5 min (4050 sec.) took 19 min (1.14e+03 sec.). </p>
 <p>Naturally, using a computer with a weaker processor and lower memory will lead to longer run times.</p>
 <p>Recall that the purpose of this simulation is to use it as input for system identification purposes as explained in [2]. If this is not necessary for your purposes, it is recommended that you run instead the function <a href=\"modelica://Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping\">Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a>, which takes substantially less time to execute.</p>
-</html>"));
+</html>"),preferredView="info");
 end simulate_and_plot_inputs;

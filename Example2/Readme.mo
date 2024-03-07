@@ -44,12 +44,6 @@ partial class Readme
 <p><img src=\"modelica://Example2/Resources/simulate_and_plot_ramping.png\"/></p>
 <p>Observe that the plot above is very similar to that in Fig. 4 of [2]. To reproduce the results in Fig. 4 of [2], execute the function <span style=\"font-family: Courier New;\">Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</span> , which runs the model <span style=\"font-family: Courier New;\">Example2.Analysis.RampingRandomLoadAndInput</span>.</p>
 <p><span style=\"color: #ee2e2f;\">Please note that running this model takes substantial time</span> compared to the &quot;Ramping&quot; example, the reason is that both random load and probing signals are added to the simulation which results in an additional computation burden. </p>
-<p>An additional function, Example2.Analysis.AutomationFunctions.linearize_KchangeLinRamping, allows to linearize the model at any point in time while at the same time running the same simulation scenario as in the &quot;Ramping&quot; example above. This function uses the Modelica_Linear</p>
-<p><i><b>Usage of the *.simulate_and_plot_ramping function:</b></i></p>
-<ol>
-<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
-<li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
-<li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
-</ol>
+<p>An additional function, <span style=\"font-family: Courier New;\">Example2.Analysis.AutomationFunctions.linearize_KchangeLinRamping</span>, allows to linearize the model at any point in time while at the same time running the same simulation scenario as in the &quot;Ramping&quot; example above. Running the function outputs a linear model </p>
 </html>"),preferredView="info");
 end Readme;

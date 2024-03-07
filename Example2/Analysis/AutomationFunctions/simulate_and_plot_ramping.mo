@@ -28,5 +28,5 @@ algorithm
 <p><br><i><b>Sample Output:</b></i></p>
 <p>Running the function will result in the following plot.</p>
 <p><img src=\"modelica://Example2/Resources/simulate_and_plot_ramping.png\"/></p>
-</html>"));
+</html>"),preferredView="info");
 end simulate_and_plot_ramping;

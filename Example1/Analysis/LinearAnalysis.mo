@@ -67,8 +67,8 @@ package LinearAnalysis
       Modelica.Math.Vectors.toString(y0out,name="y0 = ",significantDigits=24);
       annotation(__Dymola_interactive=true, Documentation(info="<html>
 <p>This function linearizes the non-linear model at any point in time specified by the user. </p>
-<p>Tesults are displayed in the Commands Window.</p>
-<p>The obtained linear model can be used in any other environment. The linear model is available in the file, dslin.mat. It can be loaded in MATLAB using the Dymola function:</p>
+<p>The results are displayed in the Commands Window.</p>
+<p>The obtained linear model can be used in any other environment. The linear model is available in the file, <span style=\"font-family: Courier New;\">dslin.mat</span>, that will appear under your Dymola working directory. It can be loaded in MATLAB using the Dymola function:</p>
 <p><span style=\"font-family: Courier New;\">[A,B,C,D,xName,uName,yName] = tloadlin(&apos;dslin.mat&apos;)</span></p>
 <p>Add to the MATLAB workspace the directory and sub-directories under: <span style=\"font-family: Courier New;\">C:\\Program Files\\Dymola 2024x\\Mfiles</span></p>
 <p>In addition, the file <span style=\"font-family: Courier New;\">MyData.mat</span> contains the <span style=\"font-family: Courier New;\">y0</span> vector, which corresponds to the output vector at the point in time where linearization is performed.</p>
