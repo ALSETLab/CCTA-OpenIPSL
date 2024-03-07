@@ -1,5 +1,6 @@
 within Example2.CustomComponents;
 model TimedInjection
+  "Outputs \"y\", the same as the input signal \"u\" at a user-specified time, otherwise it outputs zero."
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{0,-40},{20,-20}})));
   Modelica.Blocks.Sources.ContinuousClock clock annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Logical.GreaterEqualThreshold gEThreshold(threshold=timedinjection_threshold)

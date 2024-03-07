@@ -1,5 +1,5 @@
 within Example2.CustomComponents;
-model InputDataCaseB
+model InputDataB "Multisine Input Signal - Case B"
   extends Modelica.Blocks.Interfaces.MO;
 // extends Modelica.Icons.RecordsPackage;
   Modelica.Blocks.Sources.CombiTimeTable inputData(table=[60,0.144213147167878;
@@ -39846,7 +39846,7 @@ equation
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
         Rectangle(
           lineColor={200,200,200},
-          fillColor={248,248,248},
+          fillColor={213,170,255},
           fillPattern=FillPattern.HorizontalCylinder,
           extent={{-100,-100},{100,100}},
           radius=25.0),
@@ -39873,4 +39873,4 @@ equation
           points={{0,45},{0,-75}},
           color={64,64,64})}),                                   Diagram(
         coordinateSystem(preserveAspectRatio=false)));
-end InputDataCaseB;
+end InputDataB;

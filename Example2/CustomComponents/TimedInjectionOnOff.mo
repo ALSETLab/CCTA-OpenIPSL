@@ -82,10 +82,14 @@ equation
       points={{-2.2,-80},{22,-80},{22,0.75},{32,0.75}},
       color={0,0,127},
       smooth=Smooth.Bezier));
-  connect(injectionAt_tB_tC.u1, u) annotation (Line(points={{-42.52,67.8},{-96,67.8},{-96,0},{-110,0}}, color={0,0,127}));
-  connect(injectionAt_tD_tE.u1, u) annotation (Line(points={{-42.52,19.8},{-96,19.8},{-96,0},{-110,0}}, color={0,0,127}));
-  connect(injectionAt_tF_tG.u1, u) annotation (Line(points={{-42.52,-30.2},{-96,-30.2},{-96,0},{-110,0}}, color={0,0,127}));
-  connect(injectionAt_tF_tG1.u1, u) annotation (Line(points={{-42.52,-78.2},{-96,-78.2},{-96,0},{-110,0}}, color={0,0,127}));
+  connect(injectionAt_tB_tC.u, u) annotation (Line(points={{-43.6,66},{-96,66},
+          {-96,0},{-110,0}}, color={0,0,127}));
+  connect(injectionAt_tD_tE.u, u) annotation (Line(points={{-43.6,18},{-96,18},
+          {-96,0},{-110,0}}, color={0,0,127}));
+  connect(injectionAt_tF_tG.u, u) annotation (Line(points={{-43.6,-32},{-96,-32},
+          {-96,0},{-110,0}}, color={0,0,127}));
+  connect(injectionAt_tF_tG1.u, u) annotation (Line(points={{-43.6,-80},{-96,
+          -80},{-96,0},{-110,0}}, color={0,0,127}));
   annotation (Icon(graphics={   Rectangle(
         extent={{-100,-100},{100,100}},
         lineColor={0,0,127},

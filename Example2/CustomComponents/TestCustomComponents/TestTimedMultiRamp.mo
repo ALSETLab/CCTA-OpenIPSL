@@ -1,5 +1,6 @@
-within Example2.CustomComponents;
+within Example2.CustomComponents.TestCustomComponents;
 model TestTimedMultiRamp
+  "Tests the \"TimedMultiRamp\" block"
 
   parameter Real tramp1_duration=150 annotation (Dialog(tab="Default Ramp Values"));
   parameter Real tramp1_start=150 annotation (Dialog(tab="Default Ramp Values"));
@@ -14,7 +15,7 @@ model TestTimedMultiRamp
   parameter Real tramp4_start=3150 annotation (Dialog(tab="Default Ramp Values"));
 
   extends Modelica.Icons.Example;
-  TimedMultiRamp timedMultiRamp(
+  TimedMultiRamp timedmultiRampA(
     rampA_duration=tramp1_duration,
     rampA_startTime=tramp1_start,
     rampB_duration=tramp2_duration,
@@ -25,14 +26,15 @@ model TestTimedMultiRamp
     rampD_height=-0.015,
     rampD_duration=tramp4_duration,
     rampD_startTime=tramp4_start,
-    timedinjection_threshold=0) annotation (Placement(transformation(extent={{-60,-20},{-20,20}})));
+    timedinjection_threshold=0)
+    annotation (Placement(transformation(extent={{-60,20},{-20,60}})));
 
-  TimedMultiRamp timedMultiRamp1 annotation (Placement(transformation(extent={{-60,-72},{-22,-34}})));
+  TimedMultiRamp timedmultiRampB
+    annotation (Placement(transformation(extent={{-60,-60},{-22,-22}})));
   annotation (Diagram(graphics={Text(
-          extent={{-72,64},{66,38}},
+          extent={{-70,-68},{68,-94}},
           textColor={238,46,47},
-          textString="Ramp Parameters Specified in the Text Layer")}), experiment(
-      StopTime=3900,
-      __Dymola_NumberOfIntervals=5000,
-      __Dymola_Algorithm="Dassl"));
+          textString="Note: Ramp Parameters for multiRampA have been Specified in the Text Layer")}),
+                                                                       experiment(
+      StopTime=3900),preferredView="diagram");
 end TestTimedMultiRamp;

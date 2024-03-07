@@ -1,5 +1,6 @@
 within Example2.CustomComponents;
 model TimedInputInjectionOnOff
+  "Injects the signal specified at the input for a user-specified time period, otherwise outputs zero."
   extends Modelica.Blocks.Interfaces.SO;
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
@@ -20,8 +21,9 @@ model TimedInputInjectionOnOff
   parameter Real k=1 "Scaling Factor - Gain value multiplied with input signal";
   parameter Real t_start=60 "Start time of the injection";
   parameter Real t_stop=1260 "Stop time of the injection";
-  Modelica.Blocks.Interfaces.RealInput u1
-                         "Input signal connector" annotation (Placement(transformation(extent={{-140,-20},{-100,20}}), iconTransformation(extent={{-134,-10},{-94,30}})));
+  Modelica.Blocks.Interfaces.RealInput u "Input signal connector" annotation (
+      Placement(transformation(extent={{-140,-20},{-100,20}}),
+        iconTransformation(extent={{-140,-20},{-100,20}})));
 equation
   connect(clock.y, greaterThreshold.u)
     annotation (Line(points={{-79,-20},{-62,-20}},
@@ -45,7 +47,7 @@ equation
       points={{-9,14},{-4,14},{-4,-6},{-8,-6},{-8,-12},{-2,-12}},
       color={0,0,127},
       smooth=Smooth.Bezier));
-  connect(gain.u, u1) annotation (Line(
+  connect(gain.u, u) annotation (Line(
       points={{-32,14},{-94,14},{-94,0},{-120,0}},
       color={0,0,127},
       smooth=Smooth.Bezier));
@@ -88,10 +90,34 @@ equation
           color={255,0,0},
           smooth=Smooth.Bezier,
           origin={-10,-2.1},
-          rotation=90)}),
+          rotation=90),
+        Rectangle(
+          lineColor={200,200,200},
+          fillColor={248,248,248},
+          fillPattern=FillPattern.HorizontalCylinder,
+          extent={{-76,-88},{2,-12}},
+          radius=25.0),              Line(
+          points={{-64,-68},{-46,-32},{-28,-58},{-10,-26}},
+          color={0,86,134},
+          thickness=0.5,
+          smooth=Smooth.Bezier),
+        Polygon(
+          points={{-96,-40},{-76,-50},{-96,-60},{-96,-40}},
+          lineColor={200,200,200},
+          fillPattern=FillPattern.Solid,
+          fillColor={0,86,134}),
+        Polygon(
+          points={{4,-40},{24,-50},{4,-60},{4,-40}},
+          lineColor={0,86,134},
+          fillPattern=FillPattern.Solid,
+          fillColor={215,215,215},
+          lineThickness=1)}),
     experiment(
       StopTime=1320,
       __Dymola_NumberOfIntervals=10000,
       Tolerance=1e-06,
-      __Dymola_Algorithm="Dassl"));
+      __Dymola_Algorithm="Dassl"),
+    Documentation(info="<html>
+<p>Outputs a signal &quot;y&quot;, which is a copy of the input signal &quot;u&quot;, during a user-defined time period defined by parameters t_start and t_stop, otherwise it outputs zero.</p>
+</html>"));
 end TimedInputInjectionOnOff;

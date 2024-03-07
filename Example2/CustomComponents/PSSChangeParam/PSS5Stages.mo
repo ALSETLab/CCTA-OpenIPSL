@@ -1,5 +1,6 @@
 within Example2.CustomComponents.PSSChangeParam;
-model PSS4Substructures
+model PSS5Stages
+  "PSS Model with 5 different stages that have different parameters triggered at different times"
   OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pSS1(
     vsmax=pss1_vsmax,
     vsmin=pss1_vsmin,
@@ -13,9 +14,9 @@ model PSS4Substructures
   parameter Real t1 = 0 "Start time of the injection" annotation (Dialog(group="PSS 1 Output Timing "));
   parameter Real t2 = 30 "Start time of the injection" annotation (Dialog(group="PSS 2 Output Timing "));
   parameter Real t3 = 60 "Start time of the injection" annotation (Dialog(group="PSS 3 Output Timing "));
-  parameter Real t4 = 90
-                        "Stop time of the injection" annotation (Dialog(group="PSS 4 Output Timing"));
-  parameter Real t5 = Modelica.Constants.inf "Stop time of the injection" annotation (Dialog(group="PSS 4 Output Timing"));
+  parameter Real t4 = 90 "Start time of the injection" annotation (Dialog(group="PSS 4 Output Timing"));
+  parameter Real t5 = 120 "Stop time of the injection" annotation (Dialog(group="PSS 5 Output Timing"));
+  parameter Real t6 = Modelica.Constants.inf "Stop time of the injection" annotation (Dialog(group="PSS 5 Output Timing"));
   // Define PSS parameters for propagation
   // PSS 1
   parameter OpenIPSL.Types.PerUnit pss1_vsmax=0.2 "Max stabilizer output signal" annotation (Dialog(tab="PSS Parameters", group="PSS 1"));
@@ -71,7 +72,21 @@ model PSS4Substructures
                                                                                                  annotation (Dialog(tab="PSS Parameters", group="PSS 4"));
   parameter OpenIPSL.Types.Time pss4_T4=Modelica.Constants.small "Fourth stabilizer time constant"
                                                                                                   annotation (Dialog(tab="PSS Parameters", group="PSS 4"));
-
+  // PSS 5
+  parameter OpenIPSL.Types.PerUnit pss5_vsmax=0.2 "Max stabilizer output signal" annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter OpenIPSL.Types.PerUnit pss5_vsmin=-0.2 "Min stabilizer output signal"
+                                                                                 annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter Real pss5_Kw=5 "Stabilizer gain [pu/pu]"
+                                                    annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter OpenIPSL.Types.Time pss5_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter OpenIPSL.Types.Time pss5_T1=Modelica.Constants.small "First stabilizer time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter OpenIPSL.Types.Time pss5_T2=Modelica.Constants.small "Second stabilizer time constant"
+                                                                                                  annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter OpenIPSL.Types.Time pss5_T3=Modelica.Constants.small "Third stabilizer time constant"
+                                                                                                 annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter OpenIPSL.Types.Time pss5_T4=Modelica.Constants.small "Fourth stabilizer time constant"
+                                                                                                  annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  // stop defining parameters
   OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pSS2(
     vsmax=pss2_vsmax,
     vsmin=pss2_vsmin,
@@ -108,22 +123,41 @@ model PSS4Substructures
         t4) annotation (Placement(transformation(extent={{-20,-30},{0,-10}})));
   Example2.CustomComponents.TimedInputInjectionOnOff t4_t5(t_start=t4, t_stop=
         t5) annotation (Placement(transformation(extent={{-20,-60},{0,-40}})));
-  Modelica.Blocks.Math.Sum out(nin=4) annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+  Modelica.Blocks.Math.Sum out(nin=5) annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Modelica.Blocks.Interfaces.RealOutput vs "PSS4Substructures Output" annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pSS5(
+    vsmax=pss5_vsmax,
+    vsmin=pss5_vsmin,
+    Kw=pss5_Kw,
+    Tw=pss5_Tw,
+    T1=pss5_T1,
+    T2=pss5_T2,
+    T3=pss5_T3,
+    T4=pss5_T4) annotation (Placement(transformation(extent={{-60,-90},{-40,-70}})));
+  TimedInputInjectionOnOff t5_t6(t_start=t5, t_stop=t6) annotation (Placement(transformation(extent={{-20,-90},{0,-70}})));
 equation
   connect(pSS2.vSI, vSI) annotation (Line(points={{-61.8,31},{-94,31},{-94,0},{-120,0}}, color={0,0,127}));
   connect(pSS1.vSI, vSI) annotation (Line(points={{-61.8,69},{-94,69},{-94,0},{-120,0}}, color={0,0,127}));
   connect(pSS3.vSI, vSI) annotation (Line(points={{-62,-18},{-94,-18},{-94,0},{-120,0}}, color={0,0,127}));
   connect(pSS4.vSI, vSI) annotation (Line(points={{-62,-48},{-94,-48},{-94,0},{-120,0}}, color={0,0,127}));
-  connect(t1_t2.u1, pSS1.vs) annotation (Line(points={{-21.4,69},{-41.1,69}},                 color={0,0,127}));
-  connect(pSS3.vs, t3_t4.u1) annotation (Line(points={{-39,-18},{-38,-19},{-21.4,-19}}, color={0,0,127}));
-  connect(pSS4.vs, t4_t5.u1) annotation (Line(points={{-39,-48},{-38,-49},{-21.4,-49}}, color={0,0,127}));
-  connect(pSS2.vs, t2_t3.u1) annotation (Line(points={{-41.1,31},{-21.4,31}}, color={0,0,127}));
-  connect(t1_t2.y, out.u[1]) annotation (Line(points={{1,68},{8,68},{8,-0.75},{18,-0.75}}, color={0,0,127}));
-  connect(t2_t3.y, out.u[2]) annotation (Line(points={{1,30},{8,30},{8,-2},{18,-2},{18,-0.25}}, color={0,0,127}));
-  connect(t3_t4.y, out.u[3]) annotation (Line(points={{1,-20},{6,-20},{6,-2},{8,-2},{8,0.25},{18,0.25}}, color={0,0,127}));
-  connect(t4_t5.y, out.u[4]) annotation (Line(points={{1,-50},{6,-50},{6,2},{18,2},{18,0.75}}, color={0,0,127}));
-  connect(out.y, vs) annotation (Line(points={{41,0},{110,0}}, color={0,0,127}));
+  connect(t1_t2.u, pSS1.vs)
+    annotation (Line(points={{-21.4,69},{-41.1,69}}, color={0,0,127}));
+  connect(pSS3.vs, t3_t4.u) annotation (Line(points={{-39,-18},{-38,-19},{-21.4,
+          -19}}, color={0,0,127}));
+  connect(pSS4.vs, t4_t5.u) annotation (Line(points={{-39,-48},{-38,-49},{-21.4,
+          -49}}, color={0,0,127}));
+  connect(pSS2.vs, t2_t3.u)
+    annotation (Line(points={{-41.1,31},{-21.4,31}}, color={0,0,127}));
+  connect(t1_t2.y, out.u[1]) annotation (Line(points={{1,68},{8,68},{8,-0.8},{18,-0.8}},   color={0,0,127}));
+  connect(t2_t3.y, out.u[2]) annotation (Line(points={{1,30},{8,30},{8,-2},{18,-2},{18,-0.4}},  color={0,0,127}));
+  connect(t3_t4.y, out.u[3]) annotation (Line(points={{1,-20},{6,-20},{6,-2},{8,-2},{8,0},{18,0}},       color={0,0,127}));
+  connect(t4_t5.y, out.u[4]) annotation (Line(points={{1,-50},{6,-50},{6,2},{18,2},{18,0.4}},  color={0,0,127}));
+  connect(out.y, vs) annotation (Line(points={{41,0},{110,0}}, color={0,0,127},
+      thickness=1));
+  connect(pSS5.vSI, vSI) annotation (Line(points={{-62,-80},{-94,-80},{-94,0},{-120,0}}, color={0,0,127}));
+  connect(pSS5.vs, t5_t6.u) annotation (Line(points={{-39,-80},{-38,-79},{-21.4,
+          -79}}, color={0,0,127}));
+  connect(t5_t6.y, out.u[5]) annotation (Line(points={{1,-80},{8,-80},{8,0.8},{18,0.8}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
@@ -163,13 +197,13 @@ equation
         Text(
           extent={{-40,20},{-16,-6}},
           textColor={28,108,200},
-          textString="3",
-          textStyle={TextStyle.Italic}),
+          textStyle={TextStyle.Italic},
+          textString="..."),
         Text(
           extent={{-20,0},{4,-26}},
           textColor={28,108,200},
-          textString="4",
-          textStyle={TextStyle.Italic}),
+          textStyle={TextStyle.Italic},
+          textString="5"),
         Text(
           extent={{-100,-58},{100,-100}},
           textColor={28,108,200},
@@ -178,5 +212,11 @@ equation
         Text(
           extent={{-98,140},{100,100}},
           textColor={28,108,200},
-          textString="%name")}),                                 Diagram(coordinateSystem(preserveAspectRatio=false)));
-end PSS4Substructures;
+          textString="%name")}),                                 Diagram(coordinateSystem(preserveAspectRatio=false)),preferredView="diagram",
+    Documentation(info="<html>
+<p>Specialized custom PSS model with Five Stages </p>
+<p>This PSS is comprised of four different PSS models (PSSTypeII) internally. </p>
+<p>The output of each of them is enabled or disabled through a <a href=\"Example2.CustomComponents.TimedInputInjectionOnOff\">Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
+<p>This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</p>
+</html>"));
+end PSS5Stages;

@@ -1,26 +1,27 @@
-within Example1.CustomComponents.TestCustomComponents;
-model TestNoise "Test the TimedNoiseInjection block"
+within Example2.CustomComponents.TestCustomComponents;
+model TestTimedNoiseInjection
+  "Tests the \"TimedNoiseInjection\" block"
   extends Modelica.Icons.Example;
-  TimedNoiseInjection              timedNoiseInjection annotation (
-      Placement(transformation(extent={{-90,-2},{-70,18}})));
-  Modelica.Blocks.Math.Add3 add3_1(k3=-1)
+  Example2.CustomComponents.TimedNoiseInjection timedNoiseInjection(threshold=60)
+    annotation (Placement(transformation(extent={{-90,-2},{-70,18}})));
+  Modelica.Blocks.Math.Add3 add3_1
                                annotation (Placement(transformation(
           extent={{-50,-10},{-30,10}})));
   Modelica.Blocks.Sources.Pulse pulseup(
-    amplitude=0.4,
+    amplitude=1,
     width=100,
     period=1/60,
     nperiod=1,
     offset=0,
-    startTime=1290) annotation (Placement(transformation(extent={{-90,-34},{-70,
+    startTime=600)  annotation (Placement(transformation(extent={{-90,-34},{-70,
             -14}})));
   Modelica.Blocks.Sources.Pulse pulsedown(
-    amplitude=0.4,
+    amplitude=-1,
     width=100,
     period=1/60,
     nperiod=1,
     offset=0,
-    startTime=1290 + 2*3/60) annotation (Placement(transformation(
+    startTime=600 + 2*3/60)  annotation (Placement(transformation(
           extent={{-90,-74},{-70,-54}})));
   Modelica.Blocks.Interfaces.RealOutput y1
                           "Connector of Real output signal"
@@ -37,5 +38,5 @@ equation
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)),
     experiment(
-      StopTime=1320),preferredView="diagram");
-end TestNoise;
+      StopTime=1200),preferredView="diagram");
+end TestTimedNoiseInjection;

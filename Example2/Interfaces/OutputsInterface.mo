@@ -1,6 +1,5 @@
 within Example2.Interfaces;
-partial model OutputsInterfaceWEfdAndAVRoutSmall
-  "Partial models for output interfaces"
+partial model OutputsInterface "Partial models for output interfaces"
 public
   Modelica.Blocks.Interfaces.RealOutput Vt "Terminal voltage manginte"
     annotation (Placement(transformation(extent={{280,110},{300,130}}),
@@ -30,4 +29,4 @@ public
 </html>"),
     Diagram(coordinateSystem(extent={{-140,-140},{140,140}})),
     Icon(coordinateSystem(extent={{-140,-140},{140,140}})));
-end OutputsInterfaceWEfdAndAVRoutSmall;
+end OutputsInterface;

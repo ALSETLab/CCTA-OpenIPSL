@@ -1,5 +1,5 @@
 within Example2.CustomComponents;
-package PSSChangeParam "PSS Model with 4 different submodels that have different parameters triggered at different times"
+package PSSChangeParam "PSS Model with 4 or 5 different stages that have different parameters triggered at different times"
   extends Modelica.Icons.Package;
   annotation (Icon(graphics={
         Rectangle(
@@ -35,16 +35,21 @@ package PSSChangeParam "PSS Model with 4 different submodels that have different
         Text(
           extent={{-40,20},{-16,-6}},
           textColor={28,108,200},
-          textString="3",
-          textStyle={TextStyle.Italic}),
+          textStyle={TextStyle.Italic},
+          textString="..."),
         Text(
           extent={{-20,0},{4,-26}},
           textColor={28,108,200},
-          textString="4",
-          textStyle={TextStyle.Italic}),
+          textStyle={TextStyle.Italic},
+          textString="n"),
         Text(
           extent={{-100,-58},{100,-100}},
           textColor={28,108,200},
           textString="PSS",
-          textStyle={TextStyle.Bold})}));
+          textStyle={TextStyle.Bold})}), Documentation(info="<html>
+<p>Specialized custom PSS models. </p>
+<p>The PSS components in this package are composed internally by four or five different PSS models (PSSTypeII) internally. </p>
+<p>The output of each of them is enabled or disabled through a <a href=\"Example2.CustomComponents.TimedInputInjectionOnOff\">Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
+<p>This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</p>
+</html>"));
 end PSSChangeParam;

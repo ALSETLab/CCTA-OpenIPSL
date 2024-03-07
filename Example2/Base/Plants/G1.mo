@@ -11,7 +11,7 @@ model G1
             -160,50}})));
   Modelica.Blocks.Math.Feedback feedbackInputPSS
     annotation (Placement(transformation(extent={{-140,-10},{-120,10}})));
-  CustomComponents.PSSChangeParam.PSS5Substructures pss(
+  CustomComponents.PSSChangeParam.PSS5Stages pss(
     t1=t1pssin,
     t2=t2pssin,
     t3=t3pssin,

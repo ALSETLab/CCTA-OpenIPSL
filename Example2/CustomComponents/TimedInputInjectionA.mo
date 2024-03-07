@@ -1,5 +1,5 @@
 within Example2.CustomComponents;
-model TimedInputInjection
+model TimedInputInjectionA
   extends Modelica.Blocks.Interfaces.SO;
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
@@ -16,7 +16,7 @@ model TimedInputInjection
   Modelica.Blocks.Logical.GreaterEqualThreshold inputOff(threshold=t_stop)
              annotation (Placement(transformation(extent={{-60,40},{
             -40,60}})));
-  InputData MultisineData
+  InputDataA MultisineData
     annotation (Placement(transformation(extent={{-58,4},{-38,24}})));
   Modelica.Blocks.Math.Gain gain(k=k)
     annotation (Placement(transformation(extent={{-30,4},{-10,24}})));
@@ -89,10 +89,44 @@ equation
           color={255,0,0},
           smooth=Smooth.Bezier,
           origin={-10,-2.1},
-          rotation=90)}),
+          rotation=90),
+        Rectangle(
+          lineColor={200,200,200},
+          fillColor={255,170,213},
+          fillPattern=FillPattern.HorizontalCylinder,
+          extent={{-98,-98},{2,2}},
+          radius=25.0),
+        Rectangle(
+          origin={-67,-42},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0),
+        Rectangle(
+          origin={-31,-42},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0),
+        Rectangle(
+          origin={-31,-68},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0),
+        Rectangle(
+          origin={-67,-68},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0)}),
     experiment(
       StopTime=1320,
       __Dymola_NumberOfIntervals=10000,
       Tolerance=1e-06,
       __Dymola_Algorithm="Dassl"));
-end TimedInputInjection;
+end TimedInputInjectionA;

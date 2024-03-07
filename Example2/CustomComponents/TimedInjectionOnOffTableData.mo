@@ -2807,13 +2807,17 @@ equation
       color={0,0,127},
       smooth=Smooth.Bezier));
   connect(r_tB_tC.y, rampA.u) annotation (Line(points={{-62.6,68},{-46,68}}, color={0,0,127}));
-  connect(rampA.y, injectionAt_tB_tC.u1) annotation (Line(points={{-23,68},{-22,67.8},{-2.52,67.8}}, color={0,0,127}));
+  connect(rampA.y, injectionAt_tB_tC.u)
+    annotation (Line(points={{-23,68},{-22,66},{-3.6,66}}, color={0,0,127}));
   connect(r_tD_tE.y, rampB.u) annotation (Line(points={{-64.6,20},{-44,20}}, color={0,0,127}));
-  connect(rampB.y, injectionAt_tD_tE.u1) annotation (Line(points={{-21,20},{-20,19.8},{-2.52,19.8}}, color={0,0,127}));
+  connect(rampB.y, injectionAt_tD_tE.u)
+    annotation (Line(points={{-21,20},{-20,18},{-3.6,18}}, color={0,0,127}));
   connect(r_tF_tG.y, rampC.u) annotation (Line(points={{-62.6,-30},{-44,-30}}, color={0,0,127}));
-  connect(rampC.y, injectionAt_tF_tG.u1) annotation (Line(points={{-21,-30},{-20,-30.2},{-2.52,-30.2}}, color={0,0,127}));
+  connect(rampC.y, injectionAt_tF_tG.u) annotation (Line(points={{-21,-30},{-20,
+          -32},{-3.6,-32}}, color={0,0,127}));
   connect(r_tH_tI.y, rampD.u) annotation (Line(points={{-62.6,-80},{-46,-80}}, color={0,0,127}));
-  connect(rampD.y, injectionAt_tH_tI.u1) annotation (Line(points={{-23,-80},{-22,-80.2},{-2.52,-80.2}}, color={0,0,127}));
+  connect(rampD.y, injectionAt_tH_tI.u) annotation (Line(points={{-23,-80},{-22,
+          -82},{-3.6,-82}}, color={0,0,127}));
   annotation (Icon(graphics={   Rectangle(
         extent={{-100,-100},{100,100}},
         lineColor={0,0,127},
@@ -2867,7 +2871,41 @@ equation
           color={255,170,255},
           smooth=Smooth.Bezier,
           origin={-4,19.9},
-          rotation=90)}), experiment(
+          rotation=90),
+        Rectangle(
+          lineColor={200,200,200},
+          fillColor={36,138,255},
+          fillPattern=FillPattern.Solid,
+          extent={{-96,-98},{2,2}},
+          radius=25.0),
+        Rectangle(
+          origin={-67,-42},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0),
+        Rectangle(
+          origin={-67,-68},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0),
+        Rectangle(
+          origin={-31,-68},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0),
+        Rectangle(
+          origin={-31,-42},
+          lineColor={64,64,64},
+          fillColor={255,215,136},
+          fillPattern=FillPattern.Solid,
+          extent={{-17,-12},{17,12}},
+          radius=5.0)}),  experiment(
       StopTime=3900,
       __Dymola_NumberOfIntervals=5000,
       __Dymola_Algorithm="Dassl"));

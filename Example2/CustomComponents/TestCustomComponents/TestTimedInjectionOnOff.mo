@@ -1,5 +1,6 @@
-within Example2.CustomComponents;
-model TestTimedInputInjection
+within Example2.CustomComponents.TestCustomComponents;
+model TestTimedInjectionOnOff
+  "Tests the model \"TimedInjectionOnOff\""
   extends Modelica.Icons.Example;
 
   parameter Real talpha = 0 "start of the scenario";
@@ -53,11 +54,16 @@ model TestTimedInputInjection
 
   parameter Real tI_start = tH_start + tH_duration;
   parameter Real tI_duration = t5p0;
-  TimedInjectionOnOff rout(timedinjection_threshold=0) annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  Modelica.Blocks.Sources.Sine sine(amplitude=1, f=1) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
-  Modelica.Blocks.Math.Gain gain(k=1) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+  TimedInjectionOnOff timedInjectionOnOff(timedinjection_threshold=0)
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
+  Modelica.Blocks.Sources.Sine sine(amplitude=1, f=1) annotation (Placement(transformation(extent={{-40,-10},
+            {-20,10}})));
+  Modelica.Blocks.Math.Gain gain(k=1) annotation (Placement(transformation(extent={{20,-10},
+            {40,10}})));
 equation
-  connect(sine.y, rout.u) annotation (Line(points={{-69,0},{-11,0}}, color={0,0,127}));
-  connect(gain.u, rout.y) annotation (Line(points={{38,0},{11.6,0}}, color={0,0,127}));
-  annotation (experiment(StopTime=3900, __Dymola_Algorithm="Dassl"));
-end TestTimedInputInjection;
+  connect(sine.y, timedInjectionOnOff.u)
+    annotation (Line(points={{-19,0},{-11,0}}, color={0,0,127}));
+  connect(gain.u, timedInjectionOnOff.y)
+    annotation (Line(points={{18,0},{11.6,0}}, color={0,0,127}));
+  annotation (experiment(StopTime=3900),preferredView="diagram");
+end TestTimedInjectionOnOff;

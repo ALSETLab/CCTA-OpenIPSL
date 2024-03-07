@@ -1,5 +1,6 @@
 within Example2.CustomComponents;
 model TimedNoiseInjection
+  "Model to inject normal noise at a time equal or greater than a user-defined threshold."
   extends Modelica.Blocks.Interfaces.SO;
   Modelica.Blocks.Noise.NormalNoise normalNoise(
     samplePeriod=samplePeriod,

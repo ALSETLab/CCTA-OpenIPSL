@@ -1,7 +1,7 @@
 within Example2.Base.Systems;
 model sys "Power system model with input/output interfaces"
   extends Example2.Utilities.Icons.ModelForLinearization;
-  extends Example2.Interfaces.OutputsInterfaceWEfdAndAVRoutSmall;
+  extends Example2.Interfaces.OutputsInterface;
   parameter Real r=0.0001 "Common resistance value propagated to several line components";
   parameter Real x=0.001 "Common reactance value propagated to several line components";
   parameter Real b=0.00175*0.5 "Common suceptance value propagated to several line components";

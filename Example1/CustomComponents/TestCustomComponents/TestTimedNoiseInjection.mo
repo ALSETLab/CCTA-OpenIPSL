@@ -1,8 +1,8 @@
-within Example2.CustomComponents;
-model TestNoise
+within Example1.CustomComponents.TestCustomComponents;
+model TestTimedNoiseInjection "Test the TimedNoiseInjection block"
   extends Modelica.Icons.Example;
-  Example2.CustomComponents.TimedNoiseInjection timedNoiseInjection
-    annotation (Placement(transformation(extent={{-90,-2},{-70,18}})));
+  TimedNoiseInjection              timedNoiseInjection annotation (
+      Placement(transformation(extent={{-90,-2},{-70,18}})));
   Modelica.Blocks.Math.Add3 add3_1(k3=-1)
                                annotation (Placement(transformation(
           extent={{-50,-10},{-30,10}})));
@@ -37,7 +37,5 @@ equation
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)),
     experiment(
-      StopTime=1320,
-      __Dymola_NumberOfIntervals=5000,
-      __Dymola_Algorithm="Dassl"));
-end TestNoise;
+      StopTime=1320),preferredView="diagram");
+end TestTimedNoiseInjection;
