@@ -23,7 +23,7 @@ model RampingRandomLoadAndInput
     pss4_Tw=0.380100702453755,
     pss5_Kw=47.627315837430373,
     pss5_Tw=0.380100702453755)
-    annotation (Placement(transformation(extent={{58,-40},{138,40}})));
+    annotation (Placement(transformation(extent={{60,-40},{140,40}})));
   Modelica.Blocks.Sources.Constant zeroInputs(k=0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=0,
@@ -50,23 +50,23 @@ model RampingRandomLoadAndInput
         origin={0,122})));
 equation
   connect(zeroInputs.y, plant.uPSS) annotation (Line(points={{-100,80},{-26,80},
-          {-26,17.1429},{51.7143,17.1429}},                                                       color={0,0,127}));
+          {-26,17.1429},{53.7143,17.1429}},                                                       color={0,0,127}));
   connect(uL7.y, plant.uLoad7) annotation (Line(points={{-95.9,-57},{-95.9,-60},
-          {-80,-60},{-80,-17.1429},{51.7143,-17.1429}},                                              color={0,0,127}));
+          {-80,-60},{-80,-17.1429},{53.7143,-17.1429}},                                              color={0,0,127}));
   connect(rampingLoad.y,add. u2) annotation (Line(
       points={{-137,-167},{-124,-167},{-124,-152},{-114,-152}},
       color={238,46,47},
       thickness=1));
   connect(add.y, plant.uLoad9) annotation (Line(
-      points={{-68,-140},{-46,-140},{-46,-34.2857},{51.7143,-34.2857}},
+      points={{-68,-140},{-46,-140},{-46,-34.2857},{53.7143,-34.2857}},
       color={0,140,72},
       thickness=1));
   connect(r.y, plant.uAVRin) annotation (Line(
-      points={{-96.64,-1},{-96.64,0},{51.7143,0}},
+      points={{-96.64,-1},{-96.64,0},{53.7143,0}},
       color={217,67,180},
       thickness=1));
   connect(ramping.y, plant.uPm) annotation (Line(
-      points={{0,100},{0,34.2857},{52.2857,34.2857}},
+      points={{0,100},{0,34.2857},{54.2857,34.2857}},
       color={238,46,47},
       thickness=1));
   connect(add.u1, zeroInputs.y) annotation (Line(points={{-114,-128},{-150,-128},{-150,-102},{-60,-102},{-60,80},{-100,80}}, color={0,0,127}));

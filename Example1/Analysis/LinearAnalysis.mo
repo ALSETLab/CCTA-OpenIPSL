@@ -524,7 +524,8 @@ Click on \"Documentation\" to see the intended usage of this block.")}),
     connect(AVRout, demultiplex2_2.y7[1]) annotation (Line(points={{210,-160},{
             98,-160},{98,-23.6},{90,-23.6}},  color={0,0,127}));
     annotation (
-      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},{200,160}})),
+      Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,
+              200}})),
       Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-160},{200,
               160}}),                                      graphics={
           Text(

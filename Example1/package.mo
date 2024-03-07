@@ -21,7 +21,6 @@ annotation(preferredView = "info",
 <li>OpenIPSL v.3.0.1</li>
 </ul>
 <p><br>The models were developed and tested with Dymola 2024X under MS Windows 11.</p>
-<p><br>The models were originally developed using similar component models and parameters as the single-machine infinite bus model used in the Example 13.2 of the book &apos;P. Kundur, Power System Stability and Control, McGraw-Hill Education, 1994.&apos;,  pp. 864-869, implemented using the OpenIPSL library.</p>
 <p><br>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</p>
 </html>"),
     Icon(graphics={
