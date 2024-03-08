@@ -1,1 +1,6 @@
+title: Documentation for models in the CCTA-OpenIPSL Repository
+logo: /Assets/img/logo.svg
+description: Provides documentation about the Modelica models for the paper '"Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL"
 theme: jekyll-theme-minimal
+show_download: true
+
