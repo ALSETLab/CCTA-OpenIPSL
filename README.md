@@ -21,8 +21,8 @@ Obtain a copy of Dymola from [Dassault Systems](https://discover.3ds.com/free-tr
 ## Documentation 
 The documentation for each of the models is embedded within the "info" layer of the modelica models. Using Dymola, the following documentation was automatically produced:
 
-- Documentation for Example 1 can be found [here](./Example1/help/Example1.html)
-- Documentation for Example 2 can be found [here](./Example2/help/Example2.html)
+- Documentation for Example 1 can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/Example1/help/Example1.html)
+- Documentation for Example 2 can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/Example2/help/Example2.html)
 
 For further information on the models uses and applications, please refer to the following publications:
 
