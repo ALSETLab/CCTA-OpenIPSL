@@ -40,7 +40,7 @@ While using these models would require some familiarity with Modelica and Dymola
    ![Dymola Load](./Assets/img/dym_load.png)
    ![Select package.mo from the directory](./Assets/img/dym_load_openipsl.png)
    This will load OpenIPSL on Dymola's `Projects` browser as shown below:
-   ![OpenIPSL in Dymola](./Assets/img/dym_load_openipsl.png)
+   ![OpenIPSL in Dymola](./Assets/img/dym_packagebrowswer_openipsl.png)
    5. Repeat step 4, but instead, navigate to the directory `C:\Users\myUserName\Documents\Dymola\CCTA-OpenIPSL-1.0.0\Example1`, select the file `package.mo` and click on `Open`. This will load the package, `Example1` in Dymola's `Projects` browser as shown below.
    ![OpenIPSL in Dymola](./Assets/img/dym_packagebrowswer_example1.png)
    6. Repeat step 5, but instead, `C:\Users\myUserName\Documents\Dymola\CCTA-OpenIPSL-1.0.0\Example2`, select the file `package.mo` and click on `Open`. This will load the package, `Example2` in Dymola's `Projects` browser as shown below.
