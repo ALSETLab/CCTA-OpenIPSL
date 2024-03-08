@@ -68,7 +68,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Trigger snapshot saving at specific points of the simulation</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE DymolaAnnotationSelection<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -88,13 +87,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <p>This model can be added to a model containing the model Example2.Base.Systems.sys, which is instantiated as &quot;plant&quot;.</p>
 <p>Alternatively the annotation above can be copy/pasted to a model containing Example2.Base.Systems.sys, which should be instantiated as plant.</p>
 
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">model</span> DymolaAnnotationSelection
-  <span class="ModelicaComment">&quot;Add to a model the selections with Dymola-specific annotations&quot;</span>
-
-<span class="ModelicaKeyword">end </span>DymolaAnnotationSelection;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE EventTriggerSnapshotScenario<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -106,120 +98,43 @@ pre {white-space: pre; overflow-x : hidden;}
 </p>
 <h3>Parameters</h3>
 <table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td>Real</td><td>talpha</td><td>0</td><td>start of the scenario</td></tr>
-<tr><td>Real</td><td>t2p5</td><td>150</td><td>Ramping interval (default 2.5 min)</td></tr>
-<tr><td>Real</td><td>t5p0</td><td>300</td><td>Probing interval (default 5.0 min)</td></tr>
-<tr><td>Real</td><td>tnin_start</td><td>talpha + t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tnin_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tA_start</td><td>tramp1_start + tramp1_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tA_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tB_start</td><td>tA_start + tA_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tB_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tC_start</td><td>tB_start + tB_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tC_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tbeta</td><td>tramp2_start + tramp2_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tD_start</td><td>tbeta + t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tD_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tE_start</td><td>tD_start + tD_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tE_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tgamma</td><td>tramp3_start + tramp3_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tF_start</td><td>tgamma + t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tF_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tG_start</td><td>tF_start + tF_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tG_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tdelta</td><td>tramp4_start + tramp4_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tH_start</td><td>tdelta + t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tH_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tI_start</td><td>tH_start + tH_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tI_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Default Ramp Values</td></tr>
-<tr><td>Real</td><td>tramp1_start</td><td>t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tramp1_duration</td><td>tnin_start + tnin_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tramp2_start</td><td>tC_start + tC_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tramp2_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tramp3_start</td><td>tE_start + tE_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tramp3_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tramp4_start</td><td>tG_start + tG_duration</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>tramp4_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>talpha</td><td>start of the scenario</td></tr>
+<tr><td>t2p5</td><td>Ramping interval (default 2.5 min)</td></tr>
+<tr><td>t5p0</td><td>Probing interval (default 5.0 min)</td></tr>
+<tr><td>tnin_start</td><td>&nbsp;</td></tr>
+<tr><td>tnin_duration</td><td>&nbsp;</td></tr>
+<tr><td>tA_start</td><td>&nbsp;</td></tr>
+<tr><td>tA_duration</td><td>&nbsp;</td></tr>
+<tr><td>tB_start</td><td>&nbsp;</td></tr>
+<tr><td>tB_duration</td><td>&nbsp;</td></tr>
+<tr><td>tC_start</td><td>&nbsp;</td></tr>
+<tr><td>tC_duration</td><td>&nbsp;</td></tr>
+<tr><td>tbeta</td><td>&nbsp;</td></tr>
+<tr><td>tD_start</td><td>&nbsp;</td></tr>
+<tr><td>tD_duration</td><td>&nbsp;</td></tr>
+<tr><td>tE_start</td><td>&nbsp;</td></tr>
+<tr><td>tE_duration</td><td>&nbsp;</td></tr>
+<tr><td>tgamma</td><td>&nbsp;</td></tr>
+<tr><td>tF_start</td><td>&nbsp;</td></tr>
+<tr><td>tF_duration</td><td>&nbsp;</td></tr>
+<tr><td>tG_start</td><td>&nbsp;</td></tr>
+<tr><td>tG_duration</td><td>&nbsp;</td></tr>
+<tr><td>tdelta</td><td>&nbsp;</td></tr>
+<tr><td>tH_start</td><td>&nbsp;</td></tr>
+<tr><td>tH_duration</td><td>&nbsp;</td></tr>
+<tr><td>tI_start</td><td>&nbsp;</td></tr>
+<tr><td>tI_duration</td><td>&nbsp;</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Default Ramp Values</td></tr>
+<tr><td>tramp1_start</td><td>&nbsp;</td></tr>
+<tr><td>tramp1_duration</td><td>&nbsp;</td></tr>
+<tr><td>tramp2_start</td><td>&nbsp;</td></tr>
+<tr><td>tramp2_duration</td><td>&nbsp;</td></tr>
+<tr><td>tramp3_start</td><td>&nbsp;</td></tr>
+<tr><td>tramp3_duration</td><td>&nbsp;</td></tr>
+<tr><td>tramp4_start</td><td>&nbsp;</td></tr>
+<tr><td>tramp4_duration</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> EventTriggerSnapshotScenario
-  <span class="ModelicaComment">&quot;Trigger snapshot saving at specific points of the simulation&quot;</span>
-
-  Real x <span class="ModelicaComment">&quot;Copy of the time variable for checking timings for snapshots&quot;</span>;
-
-  <span class="ModelicaKeyword">parameter </span>Real talpha = 0 <span class="ModelicaComment">&quot;start of the scenario&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real t2p5 = 150 <span class="ModelicaComment">&quot;Ramping interval (default 2.5 min)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real t5p0 = 300 <span class="ModelicaComment">&quot;Probing interval (default 5.0 min)&quot;</span>;
-
-  <span class="ModelicaKeyword">parameter </span>Real tnin_start = talpha + t2p5;
-  <span class="ModelicaKeyword">parameter </span>Real tnin_duration = t2p5;
-
-  <span class="ModelicaKeyword">parameter </span>Real tramp1_start=t2p5;
-  <span class="ModelicaKeyword">parameter </span>Real tramp1_duration=tnin_start + tnin_duration;
-
-  <span class="ModelicaKeyword">parameter </span>Real tA_start = tramp1_start + tramp1_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tA_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tB_start = tA_start + tA_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tB_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tC_start = tB_start + tB_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tC_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tramp2_start=tC_start + tC_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tramp2_duration=t2p5;
-
-  <span class="ModelicaKeyword">parameter </span>Real tbeta = tramp2_start + tramp2_duration;
-
-  <span class="ModelicaKeyword">parameter </span>Real tD_start = tbeta + t2p5;
-  <span class="ModelicaKeyword">parameter </span>Real tD_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tE_start = tD_start + tD_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tE_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tramp3_start = tE_start + tE_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tramp3_duration = t2p5;
-
-  <span class="ModelicaKeyword">parameter </span>Real tgamma = tramp3_start + tramp3_duration;
-
-  <span class="ModelicaKeyword">parameter </span>Real tF_start = tgamma + t2p5;
-  <span class="ModelicaKeyword">parameter </span>Real tF_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tG_start = tF_start + tF_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tG_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tramp4_start = tG_start + tG_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tramp4_duration = t2p5;
-
-  <span class="ModelicaKeyword">parameter </span>Real tdelta = tramp4_start + tramp4_duration;
-
-  <span class="ModelicaKeyword">parameter </span>Real tH_start = tdelta + t2p5;
-  <span class="ModelicaKeyword">parameter </span>Real tH_duration = t5p0;
-
-  <span class="ModelicaKeyword">parameter </span>Real tI_start = tH_start + tH_duration;
-  <span class="ModelicaKeyword">parameter </span>Real tI_duration = t5p0;
-
-<span class="ModelicaKeyword">equation </span>
-  x = time;
-
-    <span class="ModelicaKeyword">when </span>x &gt;= tA_start<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tB_start<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tC_start<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tD_start<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tF_start<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tG_start<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-    <span class="ModelicaKeyword">end when</span>;
-<span class="ModelicaKeyword">end </span>EventTriggerSnapshotScenario;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE EventTriggerSnapshot<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -229,22 +144,8 @@ pre {white-space: pre; overflow-x : hidden;}
 <p>
 <span class="ModelicaDescription">Trigger snapshot saving at specific points of the simulation</span>
 </p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> EventTriggerSnapshot
-  <span class="ModelicaComment">&quot;Trigger snapshot saving at specific points of the simulation&quot;</span>
-  Real x;
-<span class="ModelicaKeyword">equation </span>
-  x = time;
-  <span class="ModelicaKeyword">when </span>x &gt;= 1230<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-  <span class="ModelicaKeyword">elsewhen </span>x&gt;=1245<span class="ModelicaKeyword"> then</span>
-    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
-  <span class="ModelicaKeyword">end when</span>;
-<span class="ModelicaKeyword">end </span>EventTriggerSnapshot;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:50 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:37 2024.
 </address>
 </body>
 </html>

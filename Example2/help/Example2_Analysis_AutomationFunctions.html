@@ -52,8 +52,7 @@ pre {white-space: pre; overflow-x : hidden;}
 <p>This package contains functions that automate the simulation, plotting and linearization of the models under <a href="Example2_Analysis.html#Example2.Analysis"
 >Example2.Analysis</a>.</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_FunctionsPackage.html#Modelica.Icons.FunctionsPackage"
->Modelica.Icons.FunctionsPackage</a> (Icon for packages containing functions).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.FunctionsPackage (Icon for packages containing functions).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -79,7 +78,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Function to linearize the model KchangeLinRamping at any point in time.</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE simulate_and_plot_ramping<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -94,40 +92,15 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><i><b>Usage:</b></i></p>
 <ol>
 <li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/simulate_and_plot_fun.png"/></p>
+<p><img src="../Resources/simulate_and_plot_fun.png"/></p>
 <li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
 <li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
 </ol>
 <p><br><i><b>Sample Output:</b></i></p>
 <p>Running the function will result in the following plot.</p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/simulate_and_plot_ramping.png"/></p>
+<p><img src="../Resources/simulate_and_plot_ramping.png"/></p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a> (Icon for functions).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">function</span> simulate_and_plot_ramping
-  <span class="ModelicaComment">&quot;Simulates and plots the \&quot;Ramping\&quot; model&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a>;
-<span class="ModelicaKeyword">algorithm </span>
-  <span class="ModelicaComment">// turn on flags to speed up the simulation</span>
-  <span class="ModelicaFunction">Example2.Utilities.SetupSolverSettings.On</span>();
-  <span class="ModelicaComment">// run the simulation</span>
-  <span class="ModelicaFunction">simulateModel</span>(
-    &quot;Example2.Analysis.Ramping&quot;,
-    stopTime=4050,
-    numberOfIntervals=5000,
-    tolerance=1e-06,
-    resultFile=&quot;Ramping&quot;);
-  <span class="ModelicaComment">// plot</span>
-  <span class="ModelicaFunction">removePlots</span>(false);
-  Advanced.FilenameInLegend :=true;
-  Advanced.FilesToKeep :=10;
-  <span class="ModelicaFunction">createPlot</span>(id=2, position={158, 148, 744, 455}, y={&quot;plant.P&quot;}, range={0.0, 70.0, 6.800000000000001, 8.4}, grid=true, filename=&quot;Ramping.mat&quot;, colors={{28,108,200}}, timeUnit=&quot;min&quot;, displayUnits={&quot;1&quot;});
-
-<span class="ModelicaKeyword">end </span>simulate_and_plot_ramping;
-</div>
-<hr>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Function (Icon for functions).</span></p>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE simulate_and_plot_inputs<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -142,14 +115,14 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><i><b>Usage:</b></i></p>
 <ol>
 <li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window. </li>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/corenum.png"/></p>
+<p><img src="../Resources/corenum.png"/></p>
 <li>Enter the desired number of cores to use in &quot;corenum&quot;. The number of cores to use depends on your computer&apos;s resources. , if your computer has more than 12 cores, you can enter the desired number of cores to use in the function&apos;s main window. Note that it will take some trial an error to find a trade off on the number of cores to use in your system as per <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl&apos;s law</a>. See the note below the sample output for more details.</li>
 <li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
 <li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
 </ol>
 <p><br><i><b>Sample output:</b></i></p>
 <p>Running the function will result in the following plot.</p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/simulate_and_plot_inputs.png"/></p>
+<p><img src="../Resources/simulate_and_plot_inputs.png"/></p>
 <p><i><b>Note:</b></i></p>
 <p>Please observe that running this function involves simulating the <a href="Example2_Analysis.html#Example2.Analysis.RampingRandomLoadAndInput"
 >Example2.Analysis.RampingRandomLoadAndInput</a> model, which takes subtantially more time compared to example&nbsp;<a href="Example2_Analysis.html#Example2.Analysis.Ramping"
@@ -179,38 +152,12 @@ pre {white-space: pre; overflow-x : hidden;}
 <p>Recall that the purpose of this simulation is to use it as input for system identification purposes as explained in [2]. If this is not necessary for your purposes, it is recommended that you run instead the function <a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping"
 >Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a>, which takes substantially less time to execute.</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a> (Icon for functions).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Function (Icon for functions).</span></p>
 <h3>Inputs</h3>
 <table summary="Inputs" class="ModelicaTableInputs">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td>Integer</td><td>corenum</td><td>12</td><td>Number of processor cores to use</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>corenum</td><td>Number of processor cores to use</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">function</span> simulate_and_plot_inputs
-  <span class="ModelicaComment">&quot;Simulates and plots the \&quot;RampingRandomLoadAndInput\&quot; model to reproduce the results in Fig. 4 of [2].&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a>;
-  <span class="ModelicaKeyword">input </span>Integer corenum = 12 <span class="ModelicaComment">&quot;Number of processor cores to use&quot;</span>;
-<span class="ModelicaKeyword">algorithm </span>
-  <span class="ModelicaComment">// turn on flags to speed up the simulation</span>
-  <span class="ModelicaFunction">Example2.Utilities.SetupSolverSettings.On</span>(corenum);
-  <span class="ModelicaComment">// run the simulation</span>
-  <span class="ModelicaFunction">simulateModel</span>(
-    &quot;Example2.Analysis.RampingRandomLoadAndInput&quot;,
-    stopTime=4050,
-    numberOfIntervals=5000,
-    tolerance=1e-06,
-    resultFile=&quot;RampingRandomLoadAndInput&quot;);
-  <span class="ModelicaComment">// plot</span>
-  <span class="ModelicaFunction">removePlots</span>(false);
-  Advanced.FilenameInLegend :=true;
-  Advanced.FilesToKeep :=10;
-  <span class="ModelicaFunction">createPlot</span>(id=2, position={158, 148, 744, 455}, y={&quot;plant.P&quot;}, range={0.0, 70.0, 6.800000000000001, 8.4}, grid=true, filename=&quot;RampingRandomLoadAndInput.mat&quot;, colors={{28,108,200}}, timeUnit=&quot;min&quot;, displayUnits={&quot;1&quot;});
-
-<span class="ModelicaKeyword">end </span>simulate_and_plot_inputs;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE linearize_KchangeLinRamping<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -225,7 +172,7 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><i><b>Usage:</b></i></p>
 <ol>
 <li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window. </li>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/linfun.png"/></p>
+<p><img src="../Resources/linfun.png"/></p>
 <li>Enter the time for linearization, <span style="font-family: Courier New;"><a href="Example2_Analysis.html#Example2.Analysis.KchangeLinRamping"
 >Example2.Analysis.KchangeLinRamping</a></span> will be simulated until that point in time and linearized.</li>
 <li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
@@ -534,61 +481,20 @@ pre {white-space: pre; overflow-x : hidden;}
 </tr>
 </table>
 <p><br>The following pole plot is generated in the Simulation tab:</p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/linearize_KchangeLinRamping.png"/> </p><p><b>Post-processing in MATLAB:</b> </p>
+<p><img src="../Resources/linearize_KchangeLinRamping.png"/> </p><p><b>Post-processing in MATLAB:</b> </p>
 <p>The obtained linear model can be used in any other environment. The linear model is available in the file, <span style="font-family: Courier New;">dslin.mat</span>, that will appear under your Dymola working directory. It can be loaded in MATLAB using the function:</p>
 <p><span style="font-family: Courier New;">[A,B,C,D,xName,uName,yName] = tloadlin(&apos;dslin.mat&apos;)</span></p>
 <p>To use this function, add to the MATLAB workspace the directory and sub-directories under: <span style="font-family: Courier New;">C:\Program Files\Dymola 2024x\Mfiles</span> </p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a> (Icon for functions).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Function (Icon for functions).</span></p>
 <h3>Inputs</h3>
 <table summary="Inputs" class="ModelicaTableInputs">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td>Real</td><td>tlin</td><td>600</td><td>[s], time for linearization.</td></tr>
-<tr><td>String</td><td>pathToNonlinearPlantModel</td><td title=""Example2.Analysis.KchangeLinRamping"">&quot;Example2.Analysis.KchangeLi...</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>tlin</td><td>[s], time for linearization.</td></tr>
+<tr><td>pathToNonlinearPlantModel</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">function</span> linearize_KchangeLinRamping
-  <span class="ModelicaComment">&quot;Function to linearize the model KchangeLinRamping at any point in time.&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a>;
-  <span class="ModelicaKeyword">input </span>Real tlin = 600 <span class="ModelicaComment">&quot;[s], time for linearization.&quot;</span>;
-  <span class="ModelicaKeyword">input </span>String pathToNonlinearPlantModel = &quot;Example2.Analysis.KchangeLinRamping&quot;;
-<span class="ModelicaKeyword">algorithm </span>
-  <span class="ModelicaComment">// turn off flags to avoid issues in the generated linear model</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Setting up things...&quot;);
-  <span class="ModelicaFunction">Example2.Utilities.SetupSolverSettings.Off</span>();
-  Advanced.SparseActivate :=false;
-  Advanced.Translation.SparseActivateIntegrator :=false;
-  Advanced.Translation.SparseActivateSystems :=false;
-  OutputCPUtime :=false;<span class="ModelicaComment"> // disable cpu time output so it doesn&#39;t screw up the sizes of the outputs</span>
-
-  <span class="ModelicaComment">// linearize</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Starting simulation and linearization...&quot;);
-
-ss :=<span class="ModelicaFunction"> Modelica_LinearSystems2.ModelAnalysis.Linearize</span>(
-  pathToNonlinearPlantModel, simulationSetup=
-  <span class="ModelicaFunction">Modelica_LinearSystems2.Records.SimulationOptionsForLinearization</span>(
-  linearizeAtInitial=false,
-  t_linearize=tlin));
-
-  <span class="ModelicaComment">// print the results</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(<span class="ModelicaFunction">String</span>(ss));
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;The linear model is in your working directory.&quot;);
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Open the dslin.mat file following the instructions in the documentation.&quot;);
-
-  <span class="ModelicaComment"> // plot the poles</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;You can also analyze the linear model using Dymola, for example typing in the commands window
-  Modelica_LinearSystems2.StateSpace.Plot.polesAndZeros(ss, zeros=false, print=true);
-  will give you the polte plot shown in the Simulation tab and printed below.&quot;);
-
-  <span class="ModelicaFunction">Modelica_LinearSystems2.StateSpace.Plot.polesAndZeros</span>(ss, zeros=false, print=true);
-<span class="ModelicaComment">//annotate(preferredView=&quot;text&quot;);</span>
-<span class="ModelicaKeyword">end </span>linearize_KchangeLinRamping;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:48 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:35 2024.
 </address>
 </body>
 </html>

@@ -51,8 +51,7 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <p>Models to test the base clases.</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_ExamplesPackage.html#Modelica.Icons.ExamplesPackage"
->Modelica.Icons.ExamplesPackage</a> (Icon for packages containing runnable examples).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.ExamplesPackage (Icon for packages containing runnable examples).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -78,7 +77,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Test model for Example1.Base.Networks.BasePFnFault</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE testBase<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -87,33 +85,18 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Networks.Tests</a>.testBase</h2>
 <p>
 <span class="ModelicaDescription">Tes model for Base network</span>
-<br>
-<br><img src="Example1.Base.Networks.Tests.testBaseD.png" alt="Example1.Base.Networks.Tests.testBase">
 </p>
 <h3>Information</h3>
 
 <p>Tests <span style="font-family: Courier New;">Example1.Base.Networks.Base</span></p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples), <a href="Example1_Base_Networks.html#Example1.Base.Networks.Base"
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples), <a href="Example1_Base_Networks.html#Example1.Base.Networks.Base"
 >Base</a> (Partial model containing basic network elements and SysData component).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> testBase <span class="ModelicaComment">&quot;Tes model for Base network&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Base_Networks.html#Example1.Base.Networks.Base"
->Base</a>(SysData(S_b=2220000000, fn=60));
-  <a href="Example1_Base_Plants.html#Example1.Base.Plants.inf"
->Plants.inf</a> infiniteBus1(
-    P_0=100000000,
-    Q_0=25000000,
-    v_0=1.5,
-    angle_0=0.26179938779915);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(infiniteBus1.pwPin, B1.p);
-<span class="ModelicaKeyword">end </span>testBase;
-</div>
-<hr>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>SysData</td><td>&nbsp;</td></tr>
+</table>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE testBaseWithPF<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -122,49 +105,19 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Networks.Tests</a>.testBaseWithPF</h2>
 <p>
 <span class="ModelicaDescription">Tes model for BaseWithPF network</span>
-<br>
-<br><img src="Example1.Base.Networks.Te9993afabdda5be6aithPFD.png" alt="Example1.Base.Networks.Tests.testBaseWithPF">
 </p>
 <h3>Information</h3>
 
 <p>Tests <span style="font-family: Courier New;">Example1.Base.Networks.BaseWithPF</span></p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples), <a href="Example1_Base_Networks.html#Example1.Base.Networks.BaseWithPF"
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples), <a href="Example1_Base_Networks.html#Example1.Base.Networks.BaseWithPF"
 >BaseWithPF</a> (Partial SMIB Model with power flow data, system data block and a load.).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> testBaseWithPF <span class="ModelicaComment">&quot;Tes model for BaseWithPF network&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Base_Networks.html#Example1.Base.Networks.BaseWithPF"
->BaseWithPF</a>(inf(
-      P_0=pf.machines.PG2,
-      Q_0=pf.machines.QG2,
-      v_0=pf.bus.V3,
-      angle_0=pf.bus.A3), pf(
-      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Bus = <a href="Example1_PFData_Data_BusData.html#Example1.PFData.Data.BusData.PF_Bus_5"
->Example1.PFData.Data.BusData.PF_Bus_5</a>,
-      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Loads = <a href="Example1_PFData_Data_LoadData.html#Example1.PFData.Data.LoadData.PF_Loads_5"
->Example1.PFData.Data.LoadData.PF_Loads_5</a>,
-      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Trafos = <a href="Example1_PFData_Data_TrafoData.html#Example1.PFData.Data.TrafoData.PF_Trafos_5"
->Example1.PFData.Data.TrafoData.PF_Trafos_5</a>,
-      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Machines =
-          <a href="Example1_PFData_Data_MachineData.html#Example1.PFData.Data.MachineData.PF_Machines_5"
->Example1.PFData.Data.MachineData.PF_Machines_5</a>));
-  <a href="Example1_Base_Plants.html#Example1.Base.Plants.inf"
->Plants.inf</a> infiniteBus1(
-    P_0=pf.machines.PG1,
-    Q_0=pf.machines.PG1,
-    v_0=pf.bus.V1,
-    angle_0=pf.bus.A1);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> const(k=0);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(infiniteBus1.pwPin, B1.p);
-  <span class="ModelicaFunction">connect</span>(const.y, load.u);
-<span class="ModelicaKeyword">end </span>testBaseWithPF;
-</div>
-<hr>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>inf</td><td>&nbsp;</td></tr>
+<tr><td>pf</td><td>Specify power flow data to derive star values</td></tr>
+</table>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE testPFandFault<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -173,43 +126,15 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Networks.Tests</a>.testPFandFault</h2>
 <p>
 <span class="ModelicaDescription">Test model for Example1.Base.Networks.BasePFnFault</span>
-<br>
-<br><img src="Example1.Base.Networks.Tedc6dc02f795d2a4aFaultD.png" alt="Example1.Base.Networks.Tests.testPFandFault">
 </p>
 <h3>Information</h3>
 
 <p>Tests <span style="font-family: Courier New;">Example1.Base.Networks.BasePFnFault</span></p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples), <a href="Example1_Base_Networks.html#Example1.Base.Networks.BasePFnFault"
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples), <a href="Example1_Base_Networks.html#Example1.Base.Networks.BasePFnFault"
 >Example1.Base.Networks.BasePFnFault</a> (Partial SMIB Model with power flow data and a fault component).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> testPFandFault <span class="ModelicaComment">&quot;Test model for Example1.Base.Networks.BasePFnFault&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Base_Networks.html#Example1.Base.Networks.BasePFnFault"
->Example1.Base.Networks.BasePFnFault</a>;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
->Modelica.Blocks.Sources.Pulse</a>    pulse(
-    amplitude=0.01,
-    width=50,
-    period=0.1,
-    nperiod=1,
-    startTime=5);
-  <a href="Example1_Base_Plants.html#Example1.Base.Plants.inf"
->Plants.inf</a> infiniteBus2(
-    P_0=pf.machines.PG1,
-    Q_0=pf.machines.PG1,
-    v_0=pf.bus.V1,
-    angle_0=pf.bus.A1);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(pulse.y, load.u);
-  <span class="ModelicaFunction">connect</span>(infiniteBus2.pwPin, B1.p);
-<span class="ModelicaKeyword">end </span>testPFandFault;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:01 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:10 2024.
 </address>
 </body>
 </html>

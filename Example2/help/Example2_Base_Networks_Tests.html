@@ -51,8 +51,7 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <p>Includes test models for base networks.</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_ExamplesPackage.html#Modelica.Icons.ExamplesPackage"
->Modelica.Icons.ExamplesPackage</a> (Icon for packages containing runnable examples).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.ExamplesPackage (Icon for packages containing runnable examples).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -66,7 +65,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Tests the base network model</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE TestBase<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -75,80 +73,27 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example2.Base.Networks.Tests</a>.TestBase</h2>
 <p>
 <span class="ModelicaDescription">Tests the base network model</span>
-<br>
-<br><img src="Example2.Base.Networks.Tests.TestBaseD.png" alt="Example2.Base.Networks.Tests.TestBase">
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples), <a href="Example2_Base_Networks.html#Example2.Base.Networks.Base"
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples), <a href="Example2_Base_Networks.html#Example2.Base.Networks.Base"
 >Example2.Base.Networks.Base</a> (Base network model, 11-buses, loads, and power flow data).</span></p>
 <h3>Parameters</h3>
 <table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td>Real</td><td>r</td><td>0.0001</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>x</td><td>0.001</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>b</td><td>0.00175*0.5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>percent</td><td>0.75</td><td>&nbsp;</td></tr>
-<tr><td><a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
->PF0</a></td><td>PF_results</td><td>redeclare Data.PF0 PF_results</td><td>&nbsp;</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->Time</a></td><td>t1</td><td>Modelica.Constants.inf</td><td>[s]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Bus Fault Parameters</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->PerUnit</a></td><td>R</td><td>0</td><td>Resistance [1]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->PerUnit</a></td><td>X</td><td>1e-5</td><td>Reactance [1]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->Time</a></td><td>t1busfault</td><td>Modelica.Constants.inf</td><td>Start time of the fault [s]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->Time</a></td><td>t2busfault</td><td>Modelica.Constants.inf</td><td>End time of the fault [s]</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>r</td><td>&nbsp;</td></tr>
+<tr><td>x</td><td>&nbsp;</td></tr>
+<tr><td>b</td><td>&nbsp;</td></tr>
+<tr><td>percent</td><td>&nbsp;</td></tr>
+<tr><td>PF_results</td><td>&nbsp;</td></tr>
+<tr><td>t1</td><td>[s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Bus Fault Parameters</td></tr>
+<tr><td>R</td><td>Resistance [1]</td></tr>
+<tr><td>X</td><td>Reactance [1]</td></tr>
+<tr><td>t1busfault</td><td>Start time of the fault [s]</td></tr>
+<tr><td>t2busfault</td><td>End time of the fault [s]</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> TestBase <span class="ModelicaComment">&quot;Tests the base network model&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <span class="ModelicaKeyword">extends </span><a href="Example2_Base_Networks.html#Example2.Base.Networks.Base"
->Example2.Base.Networks.Base</a>;
-  <a href="Example2_Base_Plants.html#Example2.Base.Plants.inf"
->Plants.inf</a>          g1(
-    v_0=PF_results.voltages.V1,
-    angle_0=PF_results.voltages.A1,
-    P_0=PF_results.machines.P1_1,
-    Q_0=PF_results.machines.Q1_1);
-  <a href="Example2_Base_Plants.html#Example2.Base.Plants.inf"
->Plants.inf</a> g2(
-    v_0=PF_results.voltages.V2,
-    angle_0=PF_results.voltages.A2,
-    P_0=PF_results.machines.P2_1,
-    Q_0=PF_results.machines.Q2_1);
-  <a href="Example2_Base_Plants.html#Example2.Base.Plants.inf"
->Plants.inf</a> g3(
-    v_0=PF_results.voltages.V3,
-    angle_0=PF_results.voltages.A3,
-    P_0=PF_results.machines.P3_1,
-    Q_0=PF_results.machines.Q3_1);
-  <a href="Example2_Base_Plants.html#Example2.Base.Plants.inf"
->Plants.inf</a> g4(
-    v_0=PF_results.voltages.V4,
-    angle_0=PF_results.voltages.A4,
-    P_0=PF_results.machines.P4_1,
-    Q_0=PF_results.machines.Q4_1);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> const(k=0);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> const1(k=0);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(g1.pwPin, bus1.p);
-  <span class="ModelicaFunction">connect</span>(g2.pwPin, bus2.p);
-  <span class="ModelicaFunction">connect</span>(g3.pwPin, bus3.p);
-  <span class="ModelicaFunction">connect</span>(bus4.p, g4.pwPin);
-  <span class="ModelicaFunction">connect</span>(const.y, Load7.u);
-  <span class="ModelicaFunction">connect</span>(const1.y, Load9.u);
-<span class="ModelicaKeyword">end </span>TestBase;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:45 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:34 2024.
 </address>
 </body>
 </html>

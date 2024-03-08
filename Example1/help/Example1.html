@@ -128,7 +128,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>&nbsp;</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE Readme<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -141,10 +140,9 @@ pre {white-space: pre; overflow-x : hidden;}
 <h3>Information</h3>
 
 <p>The models in this package were originally developed using similar component models and parameters as the single-machine infinite bus (SMIB) model used in the Example 13.2 in [3], pp. 864-869, implemented using the OpenIPSL&nbsp;library.</p>
-<p>This implementation has been carried out to illustrate Modelica and OpenIPSL features useful for identification and control applications [1,2], and as such, is set up a bit differently from models typically used only for simulation puroses in power system analysis. A similar implementation with much narrower scope (i.e., only time-domain simulation) is included in OpenIPSL, which can be found under: <span style="font-family: Courier New;"><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Examples_KundurSMIB.html#OpenIPSL.Examples.KundurSMIB"
->OpenIPSL.Examples.KundurSMIB</a></span></p>
+<p>This implementation has been carried out to illustrate Modelica and OpenIPSL features useful for identification and control applications [1,2], and as such, is set up a bit differently from models typically used only for simulation puroses in power system analysis. A similar implementation with much narrower scope (i.e., only time-domain simulation) is included in OpenIPSL, which can be found under: <span style="font-family: Courier New;">OpenIPSL.Examples.KundurSMIB</a></span></p>
 <p>To meet the needs of the work in [1,2], the model was built with input and output interfaces as shown in the figure below (see more details in [1], Figs. 3 and 4). </p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/syssmall.png"/></p>
+<p><img src="../Resources/Images/syssmall.png"/></p>
 <p>Let us first describe the figure enclosed by a dashed blue line, i.e. (A), this corresponds to the <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
 >Example1.Base.Systems.gridIO</a> model within this package:</p>
 <ul>
@@ -154,7 +152,7 @@ pre {white-space: pre; overflow-x : hidden;}
 >output interface</a> and linked to variables of the <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
 >gridIO</a> model within it&apos;s text layer.</li>
 <li>The main generator unit, G1, is built from multiple components from OpenIPSL, as shown in the figure below, including a 4th order synchronous machine model, an excitation control system and a PSS. Comparing the figure below with the one in (A), it can be seen that uPSS provides a direct input to the PSS, uPm provides an input to the mechanical power reference of the machine, pm, and uvs provides an input into the error signal between the PSS and AVR. This is the point where an input signal is injected for closed loop identification as discussed in [2].</li>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/plantsmall.jpg"/></p>
+<p><img src="../Resources/Images/plantsmall.jpg"/></p>
 <li>The model shown in (A) can be used for both simulation and linearization purposes. For simulation, inputs have to be provided, as shown in (B), where the load input (uPload) is connected to a pulse, while the others are set to zero.</li>
 </ul>
 <p>To get started using these models and facilitate simulation/linearization workflows, the <a href="Example1_Analysis.html#Example1.Analysis"
@@ -172,12 +170,6 @@ pre {white-space: pre; overflow-x : hidden;}
 </ul>
 <p><br>To better understand how the model is built please refer to [1]. Meanwhile, to find the applications in identification and control where this model was used, you can find more details in [2].</p>
 
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">class</span> Readme <span class="ModelicaComment">&quot;Summary: modeling aspects and how to use this package&quot;</span>
-
-<span class="ModelicaKeyword">end </span>Readme;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE Copyright<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -192,15 +184,8 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><span style="font-family: Courier New;">(c) 2024. All rights reserved.</span></p>
 <p><span style="font-family: Courier New;">Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Christopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</span></p>
 
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">class</span> Copyright <span class="ModelicaComment">&quot;Copyright&quot;</span>
-
-
-<span class="ModelicaKeyword">end </span>Copyright;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:01 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:10 2024.
 </address>
 </body>
 </html>

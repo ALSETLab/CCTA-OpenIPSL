@@ -48,8 +48,7 @@ pre {white-space: pre; overflow-x : hidden;}
 <span class="ModelicaDescription">Package with test models for custom components</span>
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_ExamplesPackage.html#Modelica.Icons.ExamplesPackage"
->Modelica.Icons.ExamplesPackage</a> (Icon for packages containing runnable examples).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.ExamplesPackage (Icon for packages containing runnable examples).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -87,7 +86,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Test EvenTriggerSnapshot model</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE TestTimedNoiseInjection<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -96,53 +94,14 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.CustomComponents.TestCustomComponents</a>.TestTimedNoiseInjection</h2>
 <p>
 <span class="ModelicaDescription">Test the TimedNoiseInjection block</span>
-<br>
-<br><img src="Example1.CustomComponents0f24865d4c23027bctionD.png" alt="Example1.CustomComponents.TestCustomComponents.TestTimedNoiseInjection">
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples).</span></p>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>y1</td><td>Connector of Real output signal</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>y1</td><td>Connector of Real output signal</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> TestTimedNoiseInjection <span class="ModelicaComment">&quot;Test the TimedNoiseInjection block&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <a href="Example1_CustomComponents.html#Example1.CustomComponents.TimedNoiseInjection"
->TimedNoiseInjection</a>              timedNoiseInjection;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Add3"
->Modelica.Blocks.Math.Add3</a> add3_1(k3=-1);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
->Modelica.Blocks.Sources.Pulse</a> pulseup(
-    amplitude=0.4,
-    width=100,
-    period=1/60,
-    nperiod=1,
-    offset=0,
-    startTime=1290);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
->Modelica.Blocks.Sources.Pulse</a> pulsedown(
-    amplitude=0.4,
-    width=100,
-    period=1/60,
-    nperiod=1,
-    offset=0,
-    startTime=1290 + 2*3/60);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> y1
-                          <span class="ModelicaComment">&quot;Connector of Real output signal&quot;</span>;
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(add3_1.u1,timedNoiseInjection. y);
-  <span class="ModelicaFunction">connect</span>(pulseup.y,add3_1. u2);
-  <span class="ModelicaFunction">connect</span>(pulsedown.y,add3_1. u3);
-  <span class="ModelicaFunction">connect</span>(add3_1.y, y1);
-<span class="ModelicaKeyword">end </span>TestTimedNoiseInjection;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE TestTimedInput<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -151,21 +110,9 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.CustomComponents.TestCustomComponents</a>.TestTimedInput</h2>
 <p>
 <span class="ModelicaDescription">Test the TimedInputInjection block</span>
-<br>
-<br><img src="Example1.CustomComponents4a6147e60c7ee596InputD.png" alt="Example1.CustomComponents.TestCustomComponents.TestTimedInput">
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> TestTimedInput <span class="ModelicaComment">&quot;Test the TimedInputInjection block&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <a href="Example1_CustomComponents.html#Example1.CustomComponents.TimedInputInjection"
->TimedInputInjection</a> timedInputInjection;
-<span class="ModelicaKeyword">end </span>TestTimedInput;
-</div>
-<hr>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples).</span></p>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE TestInputData<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -174,32 +121,14 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.CustomComponents.TestCustomComponents</a>.TestInputData</h2>
 <p>
 <span class="ModelicaDescription">Test the InputData block</span>
-<br>
-<br><img src="Example1.CustomComponentsebf384b971654684tDataD.png" alt="Example1.CustomComponents.TestCustomComponents.TestInputData">
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples).</span></p>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>y1[1]</td><td>Connector of Real output signals</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>y1[1]</td><td>Connector of Real output signals</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> TestInputData <span class="ModelicaComment">&quot;Test the InputData block&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <a href="Example1_CustomComponents.html#Example1.CustomComponents.InputData"
->InputData</a> inputData(nout=1);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> y1[1]
-                     <span class="ModelicaComment">&quot;Connector of Real output signals&quot;</span>;
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(inputData.y, y1);
-<span class="ModelicaKeyword">end </span>TestInputData;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE TestDeMultiplex7<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -208,53 +137,21 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.CustomComponents.TestCustomComponents</a>.TestDeMultiplex7</h2>
 <p>
 <span class="ModelicaDescription">Tes the DeMultiplex7 block</span>
-<br>
-<br><img src="Example1.CustomComponentscc0182a3adae8349plex7D.png" alt="Example1.CustomComponents.TestCustomComponents.TestDeMultiplex7">
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples), <a href="Example1_Interfaces.html#Example1.Interfaces.OutputsInterfaceWEfdAndAVRout"
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples), <a href="Example1_Interfaces.html#Example1.Interfaces.OutputsInterfaceWEfdAndAVRout"
 >Example1.Interfaces.OutputsInterfaceWEfdAndAVRout</a>.</span></p>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Vt</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Q</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>P</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>delta</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>Vt</td><td>&nbsp;</td></tr>
+<tr><td>Q</td><td>&nbsp;</td></tr>
+<tr><td>P</td><td>&nbsp;</td></tr>
+<tr><td>w</td><td>&nbsp;</td></tr>
+<tr><td>delta</td><td>&nbsp;</td></tr>
+<tr><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><td>AVRout</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> TestDeMultiplex7 <span class="ModelicaComment">&quot;Tes the DeMultiplex7 block&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Interfaces.html#Example1.Interfaces.OutputsInterfaceWEfdAndAVRout"
->Example1.Interfaces.OutputsInterfaceWEfdAndAVRout</a>;
-  <a href="Example1_CustomComponents.html#Example1.CustomComponents.DeMultiplex7"
->DeMultiplex7</a> deMultiplex7_1;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Ramp"
->Modelica.Blocks.Sources.Ramp</a> ramp[7](<span class="ModelicaKeyword">each </span>duration=5, <span class="ModelicaKeyword">each </span>startTime=1);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(deMultiplex7_1.u, ramp.y);
-  <span class="ModelicaFunction">connect</span>(deMultiplex7_1.y1[1], Vt);
-  <span class="ModelicaFunction">connect</span>(deMultiplex7_1.y2[1], P);
-  <span class="ModelicaFunction">connect</span>(w, deMultiplex7_1.y4[1]);
-  <span class="ModelicaFunction">connect</span>(Q, deMultiplex7_1.y3[1]);
-  <span class="ModelicaFunction">connect</span>(delta, deMultiplex7_1.y5[1]);
-  <span class="ModelicaFunction">connect</span>(AVRin, deMultiplex7_1.y6[1]);
-  <span class="ModelicaFunction">connect</span>(AVRout, deMultiplex7_1.y7[1]);
-<span class="ModelicaKeyword">end </span>TestDeMultiplex7;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE TestEvenTriggerSnapshot<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -263,23 +160,11 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.CustomComponents.TestCustomComponents</a>.TestEvenTriggerSnapshot</h2>
 <p>
 <span class="ModelicaDescription">Test EvenTriggerSnapshot model</span>
-<br>
-<br><img src="Example1.CustomComponents1f92bd0365a8e8f0pshotD.png" alt="Example1.CustomComponents.TestCustomComponents.TestEvenTriggerSnapshot">
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> TestEvenTriggerSnapshot <span class="ModelicaComment">&quot;Test EvenTriggerSnapshot model&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <a href="Example1_CustomComponents.html#Example1.CustomComponents.EventTriggerSnapshot"
->EventTriggerSnapshot</a> eventTriggerSnapshot;
-<span class="ModelicaKeyword">end </span>TestEvenTriggerSnapshot;
-</div>
-<hr>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples).</span></p>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:13 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:17 2024.
 </address>
 </body>
 </html>

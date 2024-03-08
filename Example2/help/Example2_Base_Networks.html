@@ -51,8 +51,7 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <p>Partial network model comprised of buses, transmission lines and loads.</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_BasesPackage.html#Modelica.Icons.BasesPackage"
->Modelica.Icons.BasesPackage</a> (Icon for packages containing base classes).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.BasesPackage (Icon for packages containing base classes).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -72,7 +71,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Tests for base models</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE Base<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -80,247 +78,27 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example2.Base.Networks</a>.Base</h2>
 <p>
 <span class="ModelicaDescription">Base network model, 11-buses, loads, and power flow data</span>
-<br>
-<br><img src="Example2.Base.Networks.BaseD.png" alt="Example2.Base.Networks.Base">
 </p>
 <h3>Information</h3>
 
 
 <h3>Parameters</h3>
 <table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td>Real</td><td>r</td><td>0.0001</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>x</td><td>0.001</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>b</td><td>0.00175*0.5</td><td>&nbsp;</td></tr>
-<tr><td>Real</td><td>percent</td><td>0.75</td><td>&nbsp;</td></tr>
-<tr><td><a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
->PF0</a></td><td>PF_results</td><td>redeclare Data.PF0 PF_results</td><td>&nbsp;</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->Time</a></td><td>t1</td><td>Modelica.Constants.inf</td><td>[s]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Bus Fault Parameters</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->PerUnit</a></td><td>R</td><td>0</td><td>Resistance [1]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->PerUnit</a></td><td>X</td><td>1e-5</td><td>Reactance [1]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->Time</a></td><td>t1busfault</td><td>Modelica.Constants.inf</td><td>Start time of the fault [s]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->Time</a></td><td>t2busfault</td><td>Modelica.Constants.inf</td><td>End time of the fault [s]</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>r</td><td>&nbsp;</td></tr>
+<tr><td>x</td><td>&nbsp;</td></tr>
+<tr><td>b</td><td>&nbsp;</td></tr>
+<tr><td>percent</td><td>&nbsp;</td></tr>
+<tr><td>PF_results</td><td>&nbsp;</td></tr>
+<tr><td>t1</td><td>[s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Bus Fault Parameters</td></tr>
+<tr><td>R</td><td>Resistance [1]</td></tr>
+<tr><td>X</td><td>Reactance [1]</td></tr>
+<tr><td>t1busfault</td><td>Start time of the fault [s]</td></tr>
+<tr><td>t2busfault</td><td>End time of the fault [s]</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">model</span> Base
-  <span class="ModelicaComment">&quot;Base network model, 11-buses, loads, and power flow data&quot;</span>
-  <span class="ModelicaKeyword">parameter </span>Real r=0.0001;
-  <span class="ModelicaKeyword">parameter </span>Real x=0.001;
-  <span class="ModelicaKeyword">parameter </span>Real b=0.00175*0.5;
-  <span class="ModelicaKeyword">parameter </span>Real percent = 0.75;
-  <span class="ModelicaKeyword">replaceable </span><a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
->Data.PF0</a> PF_results <span class="ModelicaKeyword">constrainedby </span><a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
->Data.PF0</a>;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus1;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus2;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus3;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus4;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus5;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus6;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus7;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus8;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus9;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus10;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a> bus11;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line5_6(
-    R=r*25,
-    X=x*25,
-    G=0,
-    B=b*25);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line7_8_1(
-    R=r*110,
-    X=x*110,
-    G=0,
-    B=b*110);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line7_8_2(
-    R=r*110,
-    X=x*110,
-    G=0,
-    B=b*110);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line8_9_2(
-    R=r*110,
-    X=x*110,
-    G=0,
-    B=b*110);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line8_9_1(
-    R=r*110,
-    X=x*110,
-    G=0,
-    B=b*110);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line9_10_A0(
-    R=r*10,
-    X=x*10,
-    G=0,
-    B=b*10);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line10_11(
-    R=r*25,
-    X=x*25,
-    G=0,
-    B=b*25);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Events.html#OpenIPSL.Electrical.Events.PwFault"
->OpenIPSL.Electrical.Events.PwFault</a> pwFault(
-    X=X,
-    R=R,
-    t1=t1busfault,
-    t2=t2busfault);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Loads_PSSE.html#OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput"
->OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput</a>
-                                      Load7(
-    PQBRAK=0.7,
-    v_0=PF_results.voltages.V7,
-    angle_0=PF_results.voltages.A7,
-    P_0=PF_results.loads.PL7_1,
-    Q_0=PF_results.loads.QL7_1,
-    d_P=0,
-    t1=Modelica.Constants.inf,
-    d_t=Modelica.Constants.inf);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Loads_PSSE.html#OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput"
->OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput</a>
-                                      Load9(
-    PQBRAK=0.7,
-    v_0=PF_results.voltages.V9,
-    angle_0=PF_results.voltages.A9,
-    P_0=PF_results.loads.PL9_1,
-    Q_0=PF_results.loads.QL9_1,
-    d_P=0,
-    t1=Modelica.Constants.inf,
-    d_t=Modelica.Constants.inf);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line5_1(
-    G=0,
-    R=0,
-    X=0.01667,
-    B=0);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line5_2(
-    G=0,
-    R=0,
-    X=0.01667*(1 - percent),
-    B=0);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line5_3(
-    G=0,
-    R=0,
-    X=0.01667,
-    B=0);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line5_4(
-    G=0,
-    R=0,
-    X=0.01667,
-    B=0);
-  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical.html#OpenIPSL.Electrical.SystemBase"
->OpenIPSL.Electrical.SystemBase</a> SysData(fn=60);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line6_7_A2(
-    R=0,
-    X=(5)*x*10*percent,
-    G=0,
-    B=0,
-    t1=Modelica.Constants.inf);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line6_7_A1(
-    R=0,
-    X=(5/4)*x*10*percent,
-    G=0,
-    B=0);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line6_7_A0(
-    R=r*10,
-    X=x*10*(1 - percent),
-    G=0,
-    B=b*10);
-  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->OpenIPSL.Types.Time</a> t1=Modelica.Constants.inf;
-
-  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->OpenIPSL.Types.PerUnit</a> R=0 <span class="ModelicaComment">&quot;Resistance&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->OpenIPSL.Types.PerUnit</a> X=1e-5 <span class="ModelicaComment">&quot;Reactance&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->OpenIPSL.Types.Time</a> t1busfault=Modelica.Constants.inf
-    <span class="ModelicaComment">&quot;Start time of the fault&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
->OpenIPSL.Types.Time</a> t2busfault=Modelica.Constants.inf
-    <span class="ModelicaComment">&quot;End time of the fault&quot;</span>;
-
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line5_2B(
-    G=0,
-    R=0,
-    X=0.01667*(5)*percent,
-    B=0,
-    t1=t1,
-    opening=1);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> Line5_2A(
-    G=0,
-    R=0,
-    X=0.01667*(5/4)*percent,
-    B=0);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(Line5_6.n,bus6. p);
-  <span class="ModelicaFunction">connect</span>(Line5_6.p,bus5. p);
-  <span class="ModelicaFunction">connect</span>(Line8_9_2.n,bus9. p);
-  <span class="ModelicaFunction">connect</span>(Line8_9_1.n,bus9. p);
-  <span class="ModelicaFunction">connect</span>(Line8_9_2.p,bus8. p);
-  <span class="ModelicaFunction">connect</span>(Line8_9_1.p,bus8. p);
-  <span class="ModelicaFunction">connect</span>(Line7_8_2.n,bus8. p);
-  <span class="ModelicaFunction">connect</span>(Line7_8_1.n,bus8. p);
-  <span class="ModelicaFunction">connect</span>(Line7_8_1.p,bus7. p);
-  <span class="ModelicaFunction">connect</span>(Line9_10_A0.n, bus10.p);
-  <span class="ModelicaFunction">connect</span>(bus10.p,Line10_11. p);
-  <span class="ModelicaFunction">connect</span>(Line10_11.n,bus11. p);
-  <span class="ModelicaFunction">connect</span>(pwFault.p,bus8. p);
-  <span class="ModelicaFunction">connect</span>(bus1.p,Line5_1. p);
-  <span class="ModelicaFunction">connect</span>(bus5.p,Line5_1. n);
-  <span class="ModelicaFunction">connect</span>(bus2.p,Line5_2. p);
-  <span class="ModelicaFunction">connect</span>(bus11.p,Line5_3. p);
-  <span class="ModelicaFunction">connect</span>(Line5_3.n,bus3. p);
-  <span class="ModelicaFunction">connect</span>(bus4.p,Line5_4. n);
-  <span class="ModelicaFunction">connect</span>(Line5_4.p,Line10_11. p);
-  <span class="ModelicaFunction">connect</span>(Load9.p,bus9. p);
-  <span class="ModelicaFunction">connect</span>(Line7_8_2.p, bus7.p);
-  <span class="ModelicaFunction">connect</span>(Load7.p, bus7.p);
-  <span class="ModelicaFunction">connect</span>(Line6_7_A0.n,Line6_7_A1. p);
-  <span class="ModelicaFunction">connect</span>(Line6_7_A2.p,Line6_7_A1. p);
-  <span class="ModelicaFunction">connect</span>(Line6_7_A0.p, bus6.p);
-  <span class="ModelicaFunction">connect</span>(Line6_7_A1.n, bus7.p);
-  <span class="ModelicaFunction">connect</span>(Line6_7_A2.n, bus7.p);
-  <span class="ModelicaFunction">connect</span>(Line9_10_A0.p, bus9.p);
-  <span class="ModelicaFunction">connect</span>(Line5_2A.p, Line5_2B.p);
-  <span class="ModelicaFunction">connect</span>(Line5_2A.n, Line5_2B.n);
-  <span class="ModelicaFunction">connect</span>(bus6.p, Line5_2B.n);
-  <span class="ModelicaFunction">connect</span>(Line5_2.n, Line5_2B.p);
-<span class="ModelicaKeyword">end </span>Base;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:44 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:34 2024.
 </address>
 </body>
 </html>

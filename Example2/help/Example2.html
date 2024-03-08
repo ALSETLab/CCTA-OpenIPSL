@@ -122,7 +122,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Various utility functions and models enabling Dymola-specific options and commonly used icons.</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE Readme<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -144,7 +143,7 @@ pre {white-space: pre; overflow-x : hidden;}
 <li>Power System Stabilizer: PSSTypeII - single input stabilizer, <span style="font-family: Courier New;">OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</span></li>
 </ul>
 <p>These components are used to build the generator unit models for g1, g2, g3 and g4, shown in the figure below. You can also refer to the diagram layer of <span style="font-family: Courier New;">Example2.Base.Systems.sys. </span>Each of the generator units are built as follows:</p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/sys.png"/></p>
+<p><img src="../Resources/sys.png"/></p>
 <ul>
 <li>Generator g1,<span style="font-family: Courier New;"> Example2.Base.Plants.G1</span>, includes a turbine and governor system (TGTypeII), an excitation system (SEXS) and a specialized custom PSS. The PSS component is composed internally by five different PSS models (PSSTypeII). The output of each of them is enabled or disabled through a TimedInputInjectionOnOff component such that only the output of one of them is injected. This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</li>
 <li>Generator g2, <span style="font-family: Courier New;">Example2.Base.Plants.G2</span>, includes a SEXS excitation system, no turbine governor are included.</li>
@@ -152,22 +151,16 @@ pre {white-space: pre; overflow-x : hidden;}
 <li>Generator g4, <span style="font-family: Courier New;">Example2.Base.Plants.G4</span>, is configured just as g2.</li>
 </ul>
 <p>To create the multiple operating points using the model above, g1 (via uPm) and the load at bus 9 (via uLoad9) increase/decrease their active power generated and consumed, respectively. Consequently, there is a corresponding change in the speed deviation at all generators, and the turbine and governor in g1 and g3 were included to both keep the system stable and to facilitate the transition to new operating points. This is achieved in the examples within the package: <span style="font-family: Courier New;">Example2.Analysis</span>. The package includes the examples &quot;Ramping&quot;, &quot;RampingRandmLoadAndInput&quot; and &quot;KchangeLinRamping&quot;, as well as some functions that automate the running and plotting. Inspecting the model <span style="font-family: Courier New;">Example2.Analysis.Ramping</span>, shows how the changes in uPm and uLoad9 on the figure above are applied. As shown in the figure below, the component &quot;ramping&quot; is applied to both the input uPm (top connector to &quot;plant&quot;) and uLoad9 (bottom connector).</p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/Ramping.png"/></p>
+<p><img src="../Resources/Ramping.png"/></p>
 <p>To simulate and plot the results shown below, execute the the function <span style="font-family: Courier New;"><a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping"
 >Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a>,</span>following the instructions below.</p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example2/Resources/simulate_and_plot_ramping.png"/></p>
+<p><img src="../Resources/simulate_and_plot_ramping.png"/></p>
 <p>Observe that the plot above is very similar to that in Fig. 4 of [2]. To reproduce the results in Fig. 4 of [2], execute the function <span style="font-family: Courier New;"><a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs"
 >Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</a></span> , which runs the model <span style="font-family: Courier New;">Example2.Analysis.RampingRandomLoadAndInput</span>.</p>
 <p><span style="color: #ee2e2f;">Please note that running this model takes substantial time</span> compared to the &quot;Ramping&quot; example, the reason is that both random load and probing signals are added to the simulation which results in an additional computation burden. </p>
 <p>An additional function, <span style="font-family: Courier New;"><a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions.linearize_KchangeLinRamping"
 >Example2.Analysis.AutomationFunctions.linearize_KchangeLinRamping</a></span>, allows to linearize the model <span style="font-family: Courier New;">Example2.Analysis.KchangeLinRamping</span> at any point in time while at the same time running the same simulation scenario as in the &quot;Ramping&quot; example above. Running the function outputs a linear model.</p>
 
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">class</span> Readme <span class="ModelicaComment">&quot;Summary: modeling aspects and how to use this package&quot;</span>
-
-<span class="ModelicaKeyword">end </span>Readme;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE Copyright<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -182,15 +175,8 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><span style="font-family: Courier New;">(c) 2024. All rights reserved.</span></p>
 <p><span style="font-family: Courier New;">Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Christopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</span></p>
 
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">class</span> Copyright <span class="ModelicaComment">&quot;Copyright&quot;</span>
-
-
-<span class="ModelicaKeyword">end </span>Copyright;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:44 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:34 2024.
 </address>
 </body>
 </html>

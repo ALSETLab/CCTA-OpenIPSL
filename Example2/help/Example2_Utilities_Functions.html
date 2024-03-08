@@ -60,7 +60,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>&nbsp;</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE storeforinitial<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -76,28 +75,15 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><br><i>Usage:</i></p>
 <p>The user can run the model up to any point in time and execute this function to store the snapshot.</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a> (Icon for functions).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Function (Icon for functions).</span></p>
 <h3>Inputs</h3>
 <table summary="Inputs" class="ModelicaTableInputs">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td>String</td><td>dsName</td><td>&quot;dsin.txt&quot;</td><td>file name to assign to dsName in exportInitial</td></tr>
-<tr><td>String</td><td>scriptName</td><td>&quot;scriptInitial.mo&quot;</td><td>script name to assgine to scriptName in exportInitial</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>dsName</td><td>file name to assign to dsName in exportInitial</td></tr>
+<tr><td>scriptName</td><td>script name to assgine to scriptName in exportInitial</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">function</span> storeforinitial
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
->Modelica.Icons.Function</a>;
-  <span class="ModelicaKeyword">input </span>String dsName=&quot;dsin.txt&quot; <span class="ModelicaComment">&quot;file name to assign to dsName in exportInitial&quot;</span>;
-  <span class="ModelicaKeyword">input </span>String scriptName=&quot;scriptInitial.mo&quot; <span class="ModelicaComment">&quot;script name to assgine to scriptName in exportInitial&quot;</span>;
-<span class="ModelicaKeyword">algorithm </span>
-  <span class="ModelicaFunction">  Modelica.Utilities.Streams.print</span>(&quot;Saving file for initialization at given snapshot.&quot;);
-  <span class="ModelicaFunction">  DymolaCommands.SimulatorAPI.exportInitial</span>(dsName,scriptName);
-<span class="ModelicaKeyword">end </span>storeforinitial;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:50 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:37 2024.
 </address>
 </body>
 </html>

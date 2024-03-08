@@ -50,8 +50,7 @@ pre {white-space: pre; overflow-x : hidden;}
 <h3>Information</h3>
 
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_BasesPackage.html#Modelica.Icons.BasesPackage"
->Modelica.Icons.BasesPackage</a> (Icon for packages containing base classes).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.BasesPackage (Icon for packages containing base classes).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -89,7 +88,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Test models for plant models</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE Gen<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -98,129 +96,50 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Plants</a>.Gen</h2>
 <p>
 <span class="ModelicaDescription">Generator with AVR and PSS</span>
-<br>
-<br><img src="Example1.Base.Plants.GenD.png" alt="Example1.Base.Plants.Gen">
 </p>
 <h3>Information</h3>
 
 <p>Generator model with exciter and PSS for simulation purposes. To be compared with: <span style="font-family: Courier New;">Example1.Base.Plants.GenIO</span></p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.Generator"
->OpenIPSL.Interfaces.Generator</a> (Interface for a generator which provides the PwPin).</span></p>
+<p><span class="ModelicaBaseClass">Extends from OpenIPSL.Interfaces.Generator (Interface for a generator which provides the PwPin).</span></p>
 <h3>Parameters</h3>
 <table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Power flow data</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ApparentPower"
->ApparentPower</a></td><td>S_b</td><td>SysData.S_b</td><td>System base power [V.A]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Voltage"
->Voltage</a></td><td>V_b</td><td>400e3</td><td>Base voltage of the bus [V]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Frequency"
->Frequency</a></td><td>fn</td><td>SysData.fn</td><td>System frequency [Hz]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ActivePower"
->ActivePower</a></td><td>P_0</td><td>1e6</td><td>Initial active power [W]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ReactivePower"
->ReactivePower</a></td><td>Q_0</td><td>0</td><td>Initial reactive power [var]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->PerUnit</a></td><td>v_0</td><td>1</td><td>Initial voltage magnitude [1]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Angle"
->Angle</a></td><td>angle_0</td><td>0</td><td>Initial voltage angle [rad]</td></tr>
-<tr><td>Boolean</td><td>displayPF</td><td>false</td><td>Display power flow:</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS</td></tr>
-<tr><td>Real</td><td>Kw</td><td>9.5</td><td>Stabilizer gain (pu/pu)</td></tr>
-<tr><td>Real</td><td>Tw</td><td>1.41</td><td>Wash-out time constant (s)</td></tr>
-<tr><td>Real</td><td>T1</td><td>0</td><td>First stabilizer time constant (s)</td></tr>
-<tr><td>Real</td><td>T2</td><td>0</td><td>Second stabilizer time constant (s)</td></tr>
-<tr><td>Real</td><td>T3</td><td>0</td><td>Third stabilizer time constant (s)</td></tr>
-<tr><td>Real</td><td>T4</td><td>0</td><td>Fourth stabilizer time constant (s)</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">AVR</td></tr>
-<tr><td>Real</td><td>vfmax</td><td>7.0</td><td>max lim.</td></tr>
-<tr><td>Real</td><td>vfmin</td><td>-6.40</td><td>min lim.</td></tr>
-<tr><td>Real</td><td>K0</td><td>200</td><td>regulator gain</td></tr>
-<tr class="ModelicaVariability::ParameterTab"><td colspan="4">Parameter mask</td></tr>
-<tr><td>Boolean</td><td>enableS_b</td><td>true</td><td>Enable S_b in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableV_b</td><td>false</td><td>Enable V_b in parameter list</td></tr>
-<tr><td>Boolean</td><td>enablefn</td><td>false</td><td>Enable fn in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableP_0</td><td>true</td><td>Enable P_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableQ_0</td><td>true</td><td>Enable Q_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enablev_0</td><td>true</td><td>Enable v_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableangle_0</td><td>true</td><td>Enable angle_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enabledisplayPF</td><td>true</td><td>Enable displayPF in parameter list</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Power flow data</td></tr>
+<tr><td>S_b</td><td>System base power [V.A]</td></tr>
+<tr><td>V_b</td><td>Base voltage of the bus [V]</td></tr>
+<tr><td>fn</td><td>System frequency [Hz]</td></tr>
+<tr><td>P_0</td><td>Initial active power [W]</td></tr>
+<tr><td>Q_0</td><td>Initial reactive power [var]</td></tr>
+<tr><td>v_0</td><td>Initial voltage magnitude [1]</td></tr>
+<tr><td>angle_0</td><td>Initial voltage angle [rad]</td></tr>
+<tr><td>displayPF</td><td>Display power flow:</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS</td></tr>
+<tr><td>Kw</td><td>Stabilizer gain (pu/pu)</td></tr>
+<tr><td>Tw</td><td>Wash-out time constant (s)</td></tr>
+<tr><td>T1</td><td>First stabilizer time constant (s)</td></tr>
+<tr><td>T2</td><td>Second stabilizer time constant (s)</td></tr>
+<tr><td>T3</td><td>Third stabilizer time constant (s)</td></tr>
+<tr><td>T4</td><td>Fourth stabilizer time constant (s)</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">AVR</td></tr>
+<tr><td>vfmax</td><td>max lim.</td></tr>
+<tr><td>vfmin</td><td>min lim.</td></tr>
+<tr><td>K0</td><td>regulator gain</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="2">Parameter mask</td></tr>
+<tr><td>enableS_b</td><td>Enable S_b in parameter list</td></tr>
+<tr><td>enableV_b</td><td>Enable V_b in parameter list</td></tr>
+<tr><td>enablefn</td><td>Enable fn in parameter list</td></tr>
+<tr><td>enableP_0</td><td>Enable P_0 in parameter list</td></tr>
+<tr><td>enableQ_0</td><td>Enable Q_0 in parameter list</td></tr>
+<tr><td>enablev_0</td><td>Enable v_0 in parameter list</td></tr>
+<tr><td>enableangle_0</td><td>Enable angle_0 in parameter list</td></tr>
+<tr><td>enabledisplayPF</td><td>Enable displayPF in parameter list</td></tr>
 </table>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.PwPin"
->PwPin</a></td><td>pwPin</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>pwPin</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> Gen <span class="ModelicaComment">&quot;Generator with AVR and PSS&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.Generator"
->OpenIPSL.Interfaces.Generator</a>;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Machines_PSAT.html#OpenIPSL.Electrical.Machines.PSAT.Order6"
->OpenIPSL.Electrical.Machines.PSAT.Order6</a> machine(
-    v_0=v_0,
-    Vn=400000,
-    V_b=V_b,
-    ra=0.003,
-    xd=1.81,
-    xq=1.76,
-    x1d=0.3,
-    x1q=0.65,
-    x2d=0.23,
-    x2q=0.25,
-    T1d0=8,
-    T1q0=1,
-    T2d0=0.03,
-    T2q0=0.07,
-    M=7,
-    D=0,
-    P_0=P_0,
-    Q_0=Q_0,
-    angle_0=angle_0,
-    Sn=2220000000,
-    Taa=0);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.PwPin"
->OpenIPSL.Interfaces.PwPin</a> pwPin;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_AVR.html#OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII"
->OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII</a> avr(
-    vfmax=vfmax,
-    vfmin=vfmin,
-    K0=K0,
-    T2=1,
-    T1=1,
-    Te=0.0001,
-    Tr=0.015);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
->OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pss(
-    vsmax=0.2,
-    vsmin=-0.2,
-    Kw=Kw,
-    Tw=Tw,
-    T1=T1,
-    T2=T2,
-    T3=T3,
-    T4=T4);
-  <span class="ModelicaKeyword">parameter </span>Real Kw=9.5 <span class="ModelicaComment">&quot;Stabilizer gain (pu/pu)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real Tw=1.41 <span class="ModelicaComment">&quot;Wash-out time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T1=0 <span class="ModelicaComment">&quot;First stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T2=0 <span class="ModelicaComment">&quot;Second stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T3=0 <span class="ModelicaComment">&quot;Third stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T4=0 <span class="ModelicaComment">&quot;Fourth stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real vfmax=7.0 <span class="ModelicaComment">&quot;max lim.&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real vfmin=-6.40 <span class="ModelicaComment">&quot;min lim.&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real K0=200 <span class="ModelicaComment">&quot;regulator gain&quot;</span>;
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(machine.p, pwPin);
-  <span class="ModelicaFunction">connect</span>(avr.vf, machine.vf);
-  <span class="ModelicaFunction">connect</span>(machine.vf0, avr.vf0);
-  <span class="ModelicaFunction">connect</span>(avr.v, machine.v);
-  <span class="ModelicaFunction">connect</span>(pss.vSI, machine.w);
-  <span class="ModelicaFunction">connect</span>(machine.pm0, machine.pm);
-  <span class="ModelicaFunction">connect</span>(pss.vs, avr.vs);
-<span class="ModelicaKeyword">end </span>Gen;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE GenIO<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -229,8 +148,6 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Plants</a>.GenIO</h2>
 <p>
 <span class="ModelicaDescription">Generator with AVR and PSS and input/output interfaces for linearization</span>
-<br>
-<br><img src="Example1.Base.Plants.GenIOD.png" alt="Example1.Base.Plants.GenIO">
 </p>
 <h3>Information</h3>
 
@@ -253,165 +170,50 @@ pre {white-space: pre; overflow-x : hidden;}
 </tr>
 </table>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.Generator"
->OpenIPSL.Interfaces.Generator</a> (Interface for a generator which provides the PwPin).</span></p>
+<p><span class="ModelicaBaseClass">Extends from OpenIPSL.Interfaces.Generator (Interface for a generator which provides the PwPin).</span></p>
 <h3>Parameters</h3>
 <table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Power flow data</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ApparentPower"
->ApparentPower</a></td><td>S_b</td><td>SysData.S_b</td><td>System base power [V.A]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Voltage"
->Voltage</a></td><td>V_b</td><td>400e3</td><td>Base voltage of the bus [V]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Frequency"
->Frequency</a></td><td>fn</td><td>SysData.fn</td><td>System frequency [Hz]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ActivePower"
->ActivePower</a></td><td>P_0</td><td>1e6</td><td>Initial active power [W]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ReactivePower"
->ReactivePower</a></td><td>Q_0</td><td>0</td><td>Initial reactive power [var]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->PerUnit</a></td><td>v_0</td><td>1</td><td>Initial voltage magnitude [1]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Angle"
->Angle</a></td><td>angle_0</td><td>0</td><td>Initial voltage angle [rad]</td></tr>
-<tr><td>Boolean</td><td>displayPF</td><td>false</td><td>Display power flow:</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS</td></tr>
-<tr><td>Real</td><td>Kw</td><td>9.5</td><td>Stabilizer gain (pu/pu)</td></tr>
-<tr><td>Real</td><td>Tw</td><td>1.41</td><td>Wash-out time constant (s)</td></tr>
-<tr><td>Real</td><td>T1</td><td>0</td><td>First stabilizer time constant (s)</td></tr>
-<tr><td>Real</td><td>T2</td><td>0</td><td>Second stabilizer time constant (s)</td></tr>
-<tr><td>Real</td><td>T3</td><td>0</td><td>Third stabilizer time constant (s)</td></tr>
-<tr><td>Real</td><td>T4</td><td>0</td><td>Fourth stabilizer time constant (s)</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">AVR</td></tr>
-<tr><td>Real</td><td>vfmax</td><td>7.0</td><td>max lim.</td></tr>
-<tr><td>Real</td><td>vfmin</td><td>-6.40</td><td>min lim.</td></tr>
-<tr><td>Real</td><td>K0</td><td>200</td><td>regulator gain</td></tr>
-<tr class="ModelicaVariability::ParameterTab"><td colspan="4">Parameter mask</td></tr>
-<tr><td>Boolean</td><td>enableS_b</td><td>true</td><td>Enable S_b in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableV_b</td><td>false</td><td>Enable V_b in parameter list</td></tr>
-<tr><td>Boolean</td><td>enablefn</td><td>false</td><td>Enable fn in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableP_0</td><td>true</td><td>Enable P_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableQ_0</td><td>true</td><td>Enable Q_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enablev_0</td><td>true</td><td>Enable v_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableangle_0</td><td>true</td><td>Enable angle_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enabledisplayPF</td><td>true</td><td>Enable displayPF in parameter list</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Power flow data</td></tr>
+<tr><td>S_b</td><td>System base power [V.A]</td></tr>
+<tr><td>V_b</td><td>Base voltage of the bus [V]</td></tr>
+<tr><td>fn</td><td>System frequency [Hz]</td></tr>
+<tr><td>P_0</td><td>Initial active power [W]</td></tr>
+<tr><td>Q_0</td><td>Initial reactive power [var]</td></tr>
+<tr><td>v_0</td><td>Initial voltage magnitude [1]</td></tr>
+<tr><td>angle_0</td><td>Initial voltage angle [rad]</td></tr>
+<tr><td>displayPF</td><td>Display power flow:</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS</td></tr>
+<tr><td>Kw</td><td>Stabilizer gain (pu/pu)</td></tr>
+<tr><td>Tw</td><td>Wash-out time constant (s)</td></tr>
+<tr><td>T1</td><td>First stabilizer time constant (s)</td></tr>
+<tr><td>T2</td><td>Second stabilizer time constant (s)</td></tr>
+<tr><td>T3</td><td>Third stabilizer time constant (s)</td></tr>
+<tr><td>T4</td><td>Fourth stabilizer time constant (s)</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">AVR</td></tr>
+<tr><td>vfmax</td><td>max lim.</td></tr>
+<tr><td>vfmin</td><td>min lim.</td></tr>
+<tr><td>K0</td><td>regulator gain</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="2">Parameter mask</td></tr>
+<tr><td>enableS_b</td><td>Enable S_b in parameter list</td></tr>
+<tr><td>enableV_b</td><td>Enable V_b in parameter list</td></tr>
+<tr><td>enablefn</td><td>Enable fn in parameter list</td></tr>
+<tr><td>enableP_0</td><td>Enable P_0 in parameter list</td></tr>
+<tr><td>enableQ_0</td><td>Enable Q_0 in parameter list</td></tr>
+<tr><td>enablev_0</td><td>Enable v_0 in parameter list</td></tr>
+<tr><td>enableangle_0</td><td>Enable angle_0 in parameter list</td></tr>
+<tr><td>enabledisplayPF</td><td>Enable displayPF in parameter list</td></tr>
 </table>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.PwPin"
->PwPin</a></td><td>pwPin</td><td>&nbsp;</td></tr>
-<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->RealInput</a></td><td>uPSS</td><td>&nbsp;</td></tr>
-<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->RealInput</a></td><td>upm</td><td>&nbsp;</td></tr>
-<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->RealInput</a></td><td>uvsAVR</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>pwPin</td><td>&nbsp;</td></tr>
+<tr><td>uPSS</td><td>&nbsp;</td></tr>
+<tr><td>upm</td><td>&nbsp;</td></tr>
+<tr><td>uvsAVR</td><td>&nbsp;</td></tr>
+<tr><td>AVRout</td><td>&nbsp;</td></tr>
+<tr><td>AVRin</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> GenIO
-  <span class="ModelicaComment">&quot;Generator with AVR and PSS and input/output interfaces for linearization&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.Generator"
->OpenIPSL.Interfaces.Generator</a>;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Machines_PSAT.html#OpenIPSL.Electrical.Machines.PSAT.Order6"
->OpenIPSL.Electrical.Machines.PSAT.Order6</a> machine(
-    Vn=400000,
-    V_b=V_b,
-    ra=0.003,
-    xd=1.81,
-    xq=1.76,
-    x1d=0.3,
-    x1q=0.65,
-    x2d=0.23,
-    x2q=0.25,
-    T1d0=8,
-    T1q0=1,
-    T2d0=0.03,
-    T2q0=0.07,
-    M=7,
-    D=0,
-    P_0=P_0,
-    Q_0=Q_0,
-    angle_0=angle_0,
-    Sn=2220000000,
-    Taa=0);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.PwPin"
->OpenIPSL.Interfaces.PwPin</a> pwPin;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_AVR.html#OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII"
->OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII</a> avr(
-    vfmax=vfmax,
-    vfmin=vfmin,
-    K0=K0,
-    T2=1,
-    T1=1,
-    Te=0.0001,
-    Tr=0.015);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
->OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pss(
-    vsmax=0.2,
-    vsmin=-0.2,
-    Kw=Kw,
-    Tw=Tw,
-    T1=T1,
-    T2=T2,
-    T3=T3,
-    T4=T4);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->Modelica.Blocks.Interfaces.RealInput</a> uPSS;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Feedback"
->Modelica.Blocks.Math.Feedback</a> feedbackPSS;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Gain"
->Modelica.Blocks.Math.Gain</a> gain_uPSS(k=-1);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Gain"
->Modelica.Blocks.Math.Gain</a> pmInputGain(k=-1);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Feedback"
->Modelica.Blocks.Math.Feedback</a> pm_fdbck;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->Modelica.Blocks.Interfaces.RealInput</a> upm;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Feedback"
->Modelica.Blocks.Math.Feedback</a> feedbackAVR;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Gain"
->Modelica.Blocks.Math.Gain</a> gain_uAVR(k=-1);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->Modelica.Blocks.Interfaces.RealInput</a> uvsAVR;
-  <span class="ModelicaKeyword">parameter </span>Real Kw=9.5 <span class="ModelicaComment">&quot;Stabilizer gain (pu/pu)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real Tw=1.41 <span class="ModelicaComment">&quot;Wash-out time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T1=0 <span class="ModelicaComment">&quot;First stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T2=0 <span class="ModelicaComment">&quot;Second stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T3=0 <span class="ModelicaComment">&quot;Third stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real T4=0 <span class="ModelicaComment">&quot;Fourth stabilizer time constant (s)&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real vfmax=7.0 <span class="ModelicaComment">&quot;max lim.&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real vfmin=-6.40 <span class="ModelicaComment">&quot;min lim.&quot;</span>;
-  <span class="ModelicaKeyword">parameter </span>Real K0=200 <span class="ModelicaComment">&quot;regulator gain&quot;</span>;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> AVRout;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> AVRin;
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(machine.p, pwPin);
-  <span class="ModelicaFunction">connect</span>(avr.vf, machine.vf);
-  <span class="ModelicaFunction">connect</span>(machine.vf0, avr.vf0);
-  <span class="ModelicaFunction">connect</span>(feedbackPSS.y, pss.vSI);
-  <span class="ModelicaFunction">connect</span>(machine.w, gain_uPSS.u);
-  <span class="ModelicaFunction">connect</span>(pm_fdbck.y, machine.pm);
-  <span class="ModelicaFunction">connect</span>(pmInputGain.y, pm_fdbck.u2);
-  <span class="ModelicaFunction">connect</span>(upm, pm_fdbck.u1);
-  <span class="ModelicaFunction">connect</span>(pmInputGain.u, machine.pm0);
-  <span class="ModelicaFunction">connect</span>(pss.vs, feedbackAVR.u1);
-  <span class="ModelicaFunction">connect</span>(avr.vs, feedbackAVR.y);
-  <span class="ModelicaFunction">connect</span>(avr.v, machine.v);
-  <span class="ModelicaFunction">connect</span>(gain_uPSS.y, feedbackPSS.u2);
-  <span class="ModelicaFunction">connect</span>(uPSS, feedbackPSS.u1);
-  <span class="ModelicaFunction">connect</span>(gain_uAVR.y, feedbackAVR.u2);
-  <span class="ModelicaFunction">connect</span>(uvsAVR, gain_uAVR.u);
-  <span class="ModelicaFunction">connect</span>(AVRout, machine.vf);
-  <span class="ModelicaFunction">connect</span>(AVRin, feedbackAVR.y);
-<span class="ModelicaKeyword">end </span>GenIO;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE inf<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -420,60 +222,38 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Plants</a>.inf</h2>
 <p>
 <span class="ModelicaDescription">Infinite bus wrapper</span>
-<br>
-<br><img src="Example1.Base.Plants.infD.png" alt="Example1.Base.Plants.inf">
 </p>
 <h3>Information</h3>
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.Generator"
->OpenIPSL.Interfaces.Generator</a> (Interface for a generator which provides the PwPin).</span></p>
+<p><span class="ModelicaBaseClass">Extends from OpenIPSL.Interfaces.Generator (Interface for a generator which provides the PwPin).</span></p>
 <h3>Parameters</h3>
 <table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Power flow data</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ApparentPower"
->ApparentPower</a></td><td>S_b</td><td>SysData.S_b</td><td>System base power [V.A]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Voltage"
->Voltage</a></td><td>V_b</td><td>400e3</td><td>Base voltage of the bus [V]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Frequency"
->Frequency</a></td><td>fn</td><td>SysData.fn</td><td>System frequency [Hz]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ActivePower"
->ActivePower</a></td><td>P_0</td><td>1e6</td><td>Initial active power [W]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.ReactivePower"
->ReactivePower</a></td><td>Q_0</td><td>0</td><td>Initial reactive power [var]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
->PerUnit</a></td><td>v_0</td><td>1</td><td>Initial voltage magnitude [1]</td></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Angle"
->Angle</a></td><td>angle_0</td><td>0</td><td>Initial voltage angle [rad]</td></tr>
-<tr><td>Boolean</td><td>displayPF</td><td>false</td><td>Display power flow:</td></tr>
-<tr class="ModelicaVariability::ParameterTab"><td colspan="4">Parameter mask</td></tr>
-<tr><td>Boolean</td><td>enableS_b</td><td>true</td><td>Enable S_b in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableV_b</td><td>false</td><td>Enable V_b in parameter list</td></tr>
-<tr><td>Boolean</td><td>enablefn</td><td>false</td><td>Enable fn in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableP_0</td><td>true</td><td>Enable P_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableQ_0</td><td>true</td><td>Enable Q_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enablev_0</td><td>true</td><td>Enable v_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enableangle_0</td><td>true</td><td>Enable angle_0 in parameter list</td></tr>
-<tr><td>Boolean</td><td>enabledisplayPF</td><td>true</td><td>Enable displayPF in parameter list</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Power flow data</td></tr>
+<tr><td>S_b</td><td>System base power [V.A]</td></tr>
+<tr><td>V_b</td><td>Base voltage of the bus [V]</td></tr>
+<tr><td>fn</td><td>System frequency [Hz]</td></tr>
+<tr><td>P_0</td><td>Initial active power [W]</td></tr>
+<tr><td>Q_0</td><td>Initial reactive power [var]</td></tr>
+<tr><td>v_0</td><td>Initial voltage magnitude [1]</td></tr>
+<tr><td>angle_0</td><td>Initial voltage angle [rad]</td></tr>
+<tr><td>displayPF</td><td>Display power flow:</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="2">Parameter mask</td></tr>
+<tr><td>enableS_b</td><td>Enable S_b in parameter list</td></tr>
+<tr><td>enableV_b</td><td>Enable V_b in parameter list</td></tr>
+<tr><td>enablefn</td><td>Enable fn in parameter list</td></tr>
+<tr><td>enableP_0</td><td>Enable P_0 in parameter list</td></tr>
+<tr><td>enableQ_0</td><td>Enable Q_0 in parameter list</td></tr>
+<tr><td>enablev_0</td><td>Enable v_0 in parameter list</td></tr>
+<tr><td>enableangle_0</td><td>Enable angle_0 in parameter list</td></tr>
+<tr><td>enabledisplayPF</td><td>Enable displayPF in parameter list</td></tr>
 </table>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.PwPin"
->PwPin</a></td><td>pwPin</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>pwPin</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> inf <span class="ModelicaComment">&quot;Infinite bus wrapper&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Interfaces.html#OpenIPSL.Interfaces.Generator"
->OpenIPSL.Interfaces.Generator</a>;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.InfiniteBus"
->OpenIPSL.Electrical.Buses.InfiniteBus</a> infinite_bus(v_0=v_0, angle_0=angle_0);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(infinite_bus.p, pwPin);
-<span class="ModelicaKeyword">end </span>inf;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:02 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:11 2024.
 </address>
 </body>
 </html>

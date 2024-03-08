@@ -89,7 +89,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>These models are not to be used for any purpose other than presenting figures in documentation.</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE NonlinModel_for_Linearization<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -98,8 +97,6 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Analysis.LinearAnalysis</a>.NonlinModel_for_Linearization</h2>
 <p>
 <span class="ModelicaDescription">Non-linear model for linearization</span>
-<br>
-<br><img src="Example1.Analysis.LinearAbd905bf9e8caf384ationD.png" alt="Example1.Analysis.LinearAnalysis.NonlinModel_for_Linearization">
 </p>
 <h3>Information</h3>
 
@@ -169,75 +166,19 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Utilities.Icons.ModelForLinearization</a> (This model is used for linearization.).</span></p>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Vt</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Q</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>P</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>delta</td><td>&nbsp;</td></tr>
-<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->RealInput</a></td><td>uPSS</td><td>&nbsp;</td></tr>
-<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->RealInput</a></td><td>uPm</td><td>&nbsp;</td></tr>
-<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->RealInput</a></td><td>uPload</td><td>&nbsp;</td></tr>
-<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->RealInput</a></td><td>uvsAVR</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>Vt</td><td>&nbsp;</td></tr>
+<tr><td>Q</td><td>&nbsp;</td></tr>
+<tr><td>P</td><td>&nbsp;</td></tr>
+<tr><td>w</td><td>&nbsp;</td></tr>
+<tr><td>delta</td><td>&nbsp;</td></tr>
+<tr><td>uPSS</td><td>&nbsp;</td></tr>
+<tr><td>uPm</td><td>&nbsp;</td></tr>
+<tr><td>uPload</td><td>&nbsp;</td></tr>
+<tr><td>uvsAVR</td><td>&nbsp;</td></tr>
+<tr><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><td>AVRout</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> NonlinModel_for_Linearization <span class="ModelicaComment">&quot;Non-linear model for linearization&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Utilities_Icons.html#Example1.Utilities.Icons.ModelForLinearization"
->Example1.Utilities.Icons.ModelForLinearization</a>;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> Vt;
-<span class="ModelicaKeyword">public </span>
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> Q;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> P;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> w;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> delta;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->Modelica.Blocks.Interfaces.RealInput</a> uPSS;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->Modelica.Blocks.Interfaces.RealInput</a> uPm;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->Modelica.Blocks.Interfaces.RealInput</a> uPload;
-  <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
->Example1.Base.Systems.gridIO</a> Plant(t1=0.5, opening=2);
-
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
->Modelica.Blocks.Interfaces.RealInput</a> uvsAVR;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> AVRin;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> AVRout;
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(Plant.Vt, Vt);
-  <span class="ModelicaFunction">connect</span>(Plant.P, P);
-  <span class="ModelicaFunction">connect</span>(Q, Plant.Q);
-  <span class="ModelicaFunction">connect</span>(w, Plant.w);
-  <span class="ModelicaFunction">connect</span>(delta, Plant.delta);
-  <span class="ModelicaFunction">connect</span>(Plant.uvs, uvsAVR);
-  <span class="ModelicaFunction">connect</span>(Plant.uPload, uPload);
-  <span class="ModelicaFunction">connect</span>(Plant.uPm, uPm);
-  <span class="ModelicaFunction">connect</span>(Plant.uPSS, uPSS);
-  <span class="ModelicaFunction">connect</span>(Plant.AVRin, AVRin);
-  <span class="ModelicaFunction">connect</span>(AVRout, Plant.AVRout);
-<span class="ModelicaKeyword">end </span>NonlinModel_for_Linearization;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE NonlinModel_for_NonlinExperiment<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -246,8 +187,6 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Analysis.LinearAnalysis</a>.NonlinModel_for_NonlinExperiment</h2>
 <p>
 <span class="ModelicaDescription">Non-linear model for simulation</span>
-<br>
-<br><img src="Example1.Analysis.LinearA027e7acf9bd7f13dimentD.png" alt="Example1.Analysis.LinearAnalysis.NonlinModel_for_NonlinExperiment">
 </p>
 <h3>Information</h3>
 
@@ -256,82 +195,18 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><i><b>Individual Usage:</b></i></p>
 <p>To use this model on its own to perform a simulation, right click on the model and select &quot;Simulation Model&quot;. Then go to the Simulation tab and click on &quot;Simulate&quot;.</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Example (Icon for runnable examples).</span></p>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Vt</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Q</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>P</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>delta</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>Vt</td><td>&nbsp;</td></tr>
+<tr><td>Q</td><td>&nbsp;</td></tr>
+<tr><td>P</td><td>&nbsp;</td></tr>
+<tr><td>w</td><td>&nbsp;</td></tr>
+<tr><td>delta</td><td>&nbsp;</td></tr>
+<tr><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><td>AVRout</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> NonlinModel_for_NonlinExperiment <span class="ModelicaComment">&quot;Non-linear model for simulation&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
->Modelica.Icons.Example</a>;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> Vt;
-<span class="ModelicaKeyword">public </span>
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> Q;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> P;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> w;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> delta;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> PSSchange(k=0);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> Pmchange(k=0);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Step"
->Modelica.Blocks.Sources.Step</a>     Ploadchange(
-    height=0.1,
-    offset=0,
-    startTime=30.5);
-  <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
->Example1.Base.Systems.gridIO</a> Plant(t1=0.5, opening=1,
-    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Bus = <a href="Example1_PFData_Data_BusData.html#Example1.PFData.Data.BusData.PF_Bus_0"
->Example1.PFData.Data.BusData.PF_Bus_0</a>,
-    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Loads = <a href="Example1_PFData_Data_LoadData.html#Example1.PFData.Data.LoadData.PF_Loads_0"
->Example1.PFData.Data.LoadData.PF_Loads_0</a>,
-    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Trafos = <a href="Example1_PFData_Data_TrafoData.html#Example1.PFData.Data.TrafoData.PF_Trafos_0"
->Example1.PFData.Data.TrafoData.PF_Trafos_0</a>,
-    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Machines =
-        <a href="Example1_PFData_Data_MachineData.html#Example1.PFData.Data.MachineData.PF_Machines_0"
->Example1.PFData.Data.MachineData.PF_Machines_0</a>);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> AVRchange(k=0);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> AVRin;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->Modelica.Blocks.Interfaces.RealOutput</a> AVRout;
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(Plant.uPSS, PSSchange.y);
-  <span class="ModelicaFunction">connect</span>(Plant.uPm, Pmchange.y);
-  <span class="ModelicaFunction">connect</span>(Plant.uPload, Ploadchange.y);
-  <span class="ModelicaFunction">connect</span>(Plant.Vt, Vt);
-  <span class="ModelicaFunction">connect</span>(Plant.P, P);
-  <span class="ModelicaFunction">connect</span>(Plant.Q, Q);
-  <span class="ModelicaFunction">connect</span>(Plant.w, w);
-  <span class="ModelicaFunction">connect</span>(Plant.delta, delta);
-  <span class="ModelicaFunction">connect</span>(AVRchange.y, Plant.uvs);
-  <span class="ModelicaFunction">connect</span>(AVRin, Plant.AVRin);
-  <span class="ModelicaFunction">connect</span>(AVRout, Plant.AVRout);
-<span class="ModelicaKeyword">end </span>NonlinModel_for_NonlinExperiment;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE LinearModelGeneral<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -340,8 +215,6 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Analysis.LinearAnalysis</a>.LinearModelGeneral</h2>
 <p>
 <span class="ModelicaDescription">Generic linear model for simulation, is simulated by running the function &quot;LinearizeAndCompare&quot;.</span>
-<br>
-<br><img src="Example1.Analysis.LinearA7778666aed6c3342neralD.png" alt="Example1.Analysis.LinearAnalysis.LinearModelGeneral">
 </p>
 <h3>Information</h3>
 
@@ -355,90 +228,24 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Interfaces.OutputsInterfaceWEfdAndAVRout</a>.</span></p>
 <h3>Parameters</h3>
 <table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td>Real</td><td>y0[:]</td><td title="vector(DataFiles.readMATmatrix("MyData.mat", "y0_beforedist"))">vector(DataFiles.readMATmatr...</td><td>&nbsp;</td></tr>
-<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica_LinearSystems2%202.4.0/help/Modelica_LinearSystems2.html#Modelica_LinearSystems2.StateSpace"
->StateSpace</a></td><td>ss</td><td title="StateSpace.Import.fromFile("MyData.mat", "ABCD")">StateSpace.Import.fromFile(&quot;...</td><td>&nbsp;</td></tr>
-<tr><td>Integer</td><td>ny</td><td>size(ss.C, 1)</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>y0[:]</td><td>&nbsp;</td></tr>
+<tr><td>ss</td><td>&nbsp;</td></tr>
+<tr><td>ny</td><td>&nbsp;</td></tr>
 </table>
 <h3>Connectors</h3>
 <table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Vt</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>Q</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>P</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>delta</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
-<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
->RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>Vt</td><td>&nbsp;</td></tr>
+<tr><td>Q</td><td>&nbsp;</td></tr>
+<tr><td>P</td><td>&nbsp;</td></tr>
+<tr><td>w</td><td>&nbsp;</td></tr>
+<tr><td>delta</td><td>&nbsp;</td></tr>
+<tr><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><td>AVRout</td><td>&nbsp;</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> LinearModelGeneral
-  <span class="ModelicaComment">&quot;Generic linear model for simulation, is simulated by running the function \&quot;LinearizeAndCompare\&quot;.&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Utilities_Icons.html#Example1.Utilities.Icons.FunctionDependentExample"
->Example1.Utilities.Icons.FunctionDependentExample</a>;
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Interfaces.html#Example1.Interfaces.OutputsInterfaceWEfdAndAVRout"
->Example1.Interfaces.OutputsInterfaceWEfdAndAVRout</a>;
-  <span class="ModelicaComment">// The following definitions are very important to couple the linear model</span>
-  <span class="ModelicaComment">// to the linearization of the nonlinear model and the simulation</span>
-  <span class="ModelicaKeyword">parameter </span>Real[:] y0=<span class="ModelicaFunction">vector</span>(<span class="ModelicaFunction">DataFiles.readMATmatrix</span>(&quot;MyData.mat&quot;, &quot;y0_beforedist&quot;));
-  <span class="ModelicaComment">// The following has to be imported in order to be able to interpret and manipulate the StateSpace types</span>
-  <span class="ModelicaKeyword">import </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica_LinearSystems2%202.4.0/help/Modelica_LinearSystems2.html#Modelica_LinearSystems2.StateSpace"
->Modelica_LinearSystems2.StateSpace</a>;
-  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica_LinearSystems2%202.4.0/help/Modelica_LinearSystems2.html#Modelica_LinearSystems2.StateSpace"
->StateSpace</a> ss=<span class="ModelicaFunction">StateSpace.Import.fromFile</span>(&quot;MyData.mat&quot;, &quot;ABCD&quot;);
-  <span class="ModelicaKeyword">parameter </span>Integer ny=<span class="ModelicaFunction">size</span>(ss.C, 1);
-  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica_LinearSystems2%202.4.0/help/Modelica_LinearSystems2_Controller.html#Modelica_LinearSystems2.Controller.SampleClock"
->Modelica_LinearSystems2.Controller.SampleClock</a> sampleClock;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Routing.html#Modelica.Blocks.Routing.Multiplex4"
->Modelica.Blocks.Routing.Multiplex4</a> multiplex4_2(n1=1, n2=1);
-  <a href="Example1_CustomComponents.html#Example1.CustomComponents.DeMultiplex7"
->Example1.CustomComponents.DeMultiplex7</a> demultiplex2_2;
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Add"
->Modelica.Blocks.Math.Add</a> addy[ny];
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> Pmchange(k=0);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> y0_initial[ny](k=y0);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica_LinearSystems2%202.4.0/help/Modelica_LinearSystems2_Controller.html#Modelica_LinearSystems2.Controller.StateSpace"
->Modelica_LinearSystems2.Controller.StateSpace</a> stateSpace(system=ss);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> PSSchange(k=0);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Step"
->Modelica.Blocks.Sources.Step</a>     Ploadchange(
-    height=0.1,
-    offset=0,
-    startTime=30.5);
-  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
->Modelica.Blocks.Sources.Constant</a> AVRchange(k=0);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(addy.y, demultiplex2_2.u);
-  <span class="ModelicaFunction">connect</span>(Pmchange.y,multiplex4_2. u2[1]);
-  <span class="ModelicaFunction">connect</span>(y0_initial.y, addy.u2);
-  <span class="ModelicaFunction">connect</span>(multiplex4_2.y, stateSpace.u);
-  <span class="ModelicaFunction">connect</span>(stateSpace.y, addy.u1);
-  <span class="ModelicaFunction">connect</span>(PSSchange.y,multiplex4_2. u1[1]);
-  <span class="ModelicaFunction">connect</span>(Ploadchange.y,multiplex4_2. u3[1]);
-  <span class="ModelicaFunction">connect</span>(AVRchange.y, multiplex4_2.u4[1]);
-  <span class="ModelicaFunction">connect</span>(demultiplex2_2.y1[1], Vt);
-  <span class="ModelicaFunction">connect</span>(demultiplex2_2.y2[1], Q);
-  <span class="ModelicaFunction">connect</span>(P, demultiplex2_2.y3[1]);
-  <span class="ModelicaFunction">connect</span>(w, demultiplex2_2.y4[1]);
-  <span class="ModelicaFunction">connect</span>(delta, demultiplex2_2.y5[1]);
-  <span class="ModelicaFunction">connect</span>(AVRin, demultiplex2_2.y6[1]);
-  <span class="ModelicaFunction">connect</span>(AVRout, demultiplex2_2.y7[1]);
-<span class="ModelicaKeyword">end </span>LinearModelGeneral;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:09 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:15 2024.
 </address>
 </body>
 </html>

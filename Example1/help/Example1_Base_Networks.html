@@ -51,8 +51,7 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <p>Partial network models</p>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_BasesPackage.html#Modelica.Icons.BasesPackage"
->Modelica.Icons.BasesPackage</a> (Icon for packages containing base classes).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.BasesPackage (Icon for packages containing base classes).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -84,7 +83,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Test models for base network models.</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE Base<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -92,8 +90,6 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Networks</a>.Base</h2>
 <p>
 <span class="ModelicaDescription">Partial model containing basic network elements and SysData component</span>
-<br>
-<br><img src="Example1.Base.Networks.BaseD.png" alt="Example1.Base.Networks.Base">
 </p>
 <h3>Information</h3>
 
@@ -116,62 +112,6 @@ pre {white-space: pre; overflow-x : hidden;}
 </tr>
 </table>
 
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">model</span> Base
-  <span class="ModelicaComment">&quot;Partial model containing basic network elements and SysData component&quot;</span>
-  <span class="ModelicaKeyword">import </span>Modelica.Constants.pi;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches_PSAT.html#OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer"
->OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer</a> transf(
-    Sn=2220000000,
-    V_b=400000,
-    Vn=400000,
-    rT=0.0,
-    xT=0.15,
-    m=1.0);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> line_1(
-    R=Modelica.Constants.eps,
-    G=Modelica.Constants.eps,
-    B=Modelica.Constants.eps,
-    X=0.5);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> line_2(
-    R=Modelica.Constants.eps,
-    G=Modelica.Constants.eps,
-    B=Modelica.Constants.eps,
-    X=0.93/2);
-  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical.html#OpenIPSL.Electrical.SystemBase"
->OpenIPSL.Electrical.SystemBase</a> SysData(S_b=2220000000,
-                                                         fn=60);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
->OpenIPSL.Electrical.Branches.PwLine</a> line_3(
-    R=Modelica.Constants.eps,
-    G=Modelica.Constants.eps,
-    B=Modelica.Constants.eps,
-    X=0.93/2,
-    opening=1);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a>    B1(V_b=400);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a>    B2(
-    V_b=400);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a>    B3(V_b=400);
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
->OpenIPSL.Electrical.Buses.Bus</a>    B4(
-    V_b=400);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(line_2.p, line_1.p);
-  <span class="ModelicaFunction">connect</span>(transf.n, B2.p);
-  <span class="ModelicaFunction">connect</span>(B2.p, line_1.p);
-  <span class="ModelicaFunction">connect</span>(line_1.n, B3.p);
-  <span class="ModelicaFunction">connect</span>(line_3.n, B3.p);
-  <span class="ModelicaFunction">connect</span>(B4.p, line_3.p);
-  <span class="ModelicaFunction">connect</span>(B4.p, line_2.n);
-  <span class="ModelicaFunction">connect</span>(B1.p, transf.p);
-<span class="ModelicaKeyword">end </span>Base;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE BaseWithPF<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -179,8 +119,6 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Networks</a>.BaseWithPF</h2>
 <p>
 <span class="ModelicaDescription">Partial SMIB Model with power flow data, system data block and a load.</span>
-<br>
-<br><img src="Example1.Base.Networks.BaseWithPFD.png" alt="Example1.Base.Networks.BaseWithPF">
 </p>
 <h3>Information</h3>
 
@@ -188,37 +126,14 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <p><span class="ModelicaBaseClass">Extends from <a href="Example1_Base_Networks.html#Example1.Base.Networks.Base"
 >Base</a> (Partial model containing basic network elements and SysData component).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">model</span> BaseWithPF <span class="ModelicaComment">&quot;Partial SMIB Model with power flow data, system data block and a load.&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Base_Networks.html#Example1.Base.Networks.Base"
->Base</a>(
-    B2(v_0=pf.bus.V2, angle_0=pf.bus.A2),
-    B1(v_0=pf.bus.V1, angle_0=pf.bus.A1),
-    B3(v_0=pf.bus.V3, angle_0=pf.bus.A3),
-    B4(v_0=pf.bus.V4, angle_0=pf.bus.A4));
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Loads_PSSE.html#OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput"
->OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput</a> load(
-    v_0=pf.bus.V4,
-    angle_0=pf.bus.A4,
-    P_0=pf.loads.PL1,
-    Q_0=pf.loads.QL1,
-    d_P=Modelica.Constants.eps,
-    t1=Modelica.Constants.inf,
-    d_t=Modelica.Constants.eps);
-  <a href="Example1_Base_Plants.html#Example1.Base.Plants.inf"
->Plants.inf</a> inf(
-    P_0=pf.machines.PG2,
-    Q_0=pf.machines.QG2,
-    v_0=pf.bus.V3,
-    angle_0=pf.bus.A3);
-  <a href="Example1_PFData.html#Example1.PFData.PFScenarios"
->PFData.PFScenarios</a> pf <span class="ModelicaComment">&quot;Specify power flow data to derive star values&quot;</span>;
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(load.p, line_2.n);
-  <span class="ModelicaFunction">connect</span>(inf.pwPin, B3.p);
-<span class="ModelicaKeyword">end </span>BaseWithPF;
-</div>
-<hr>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>B1</td><td>&nbsp;</td></tr>
+<tr><td>B2</td><td>&nbsp;</td></tr>
+<tr><td>B3</td><td>&nbsp;</td></tr>
+<tr><td>B4</td><td>&nbsp;</td></tr>
+</table>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE BasePFnFault<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -226,8 +141,6 @@ pre {white-space: pre; overflow-x : hidden;}
 >Example1.Base.Networks</a>.BasePFnFault</h2>
 <p>
 <span class="ModelicaDescription">Partial SMIB Model with power flow data and a fault component</span>
-<br>
-<br><img src="Example1.Base.Networks.BasePFnFaultD.png" alt="Example1.Base.Networks.BasePFnFault">
 </p>
 <h3>Information</h3>
 
@@ -235,24 +148,8 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <p><span class="ModelicaBaseClass">Extends from <a href="Example1_Base_Networks.html#Example1.Base.Networks.BaseWithPF"
 >BaseWithPF</a> (Partial SMIB Model with power flow data, system data block and a load.).</span></p>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">model</span> BasePFnFault
-  <span class="ModelicaComment">&quot;Partial SMIB Model with power flow data and a fault component&quot;</span>
-  <span class="ModelicaKeyword">extends </span><a href="Example1_Base_Networks.html#Example1.Base.Networks.BaseWithPF"
->BaseWithPF</a>;
-  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Events.html#OpenIPSL.Electrical.Events.PwFault"
->OpenIPSL.Electrical.Events.PwFault</a> fault(
-    R=0,
-    t1=0.5,
-    t2=0.57,
-    X=1e-5);
-<span class="ModelicaKeyword">equation </span>
-  <span class="ModelicaFunction">connect</span>(fault.p, B4.p);
-<span class="ModelicaKeyword">end </span>BasePFnFault;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:01 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:10 2024.
 </address>
 </body>
 </html>

@@ -55,8 +55,7 @@ pre {white-space: pre; overflow-x : hidden;}
 <li>Extended linearization workflow: <span style="font-family: Courier New;">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare</span></li>
 </ul>
 
-<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_FunctionsPackage.html#Modelica.Icons.FunctionsPackage"
->Modelica.Icons.FunctionsPackage</a> (Icon for packages containing functions).</span></p>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.FunctionsPackage (Icon for packages containing functions).</span></p>
 <h3>Package Content</h3>
 <table summary="Package Content" class="ModelicaTablePackageContent">
 <tr>
@@ -76,7 +75,6 @@ pre {white-space: pre; overflow-x : hidden;}
 <td>Linearize the model, simulate the linear model obtained and compare with the nonlinear model response.</td>
 </tr>
 </table>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE LinearizeSimple<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -96,7 +94,7 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><i><b><span style="font-family: Arial;">Usage</span></b></i></p>
 <ol>
 <li><span style="font-family: Arial;">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/linsimple%20(Small).png"/></p>
+<p><img src="../Resources/Images/linsimple%20(Small).png"/></p>
 <li><span style="font-family: Arial;">Leave the default parameters on first use. Alternatively, modify the tlin and tsim parameters, note that tsim should be greater or equal to tlin.</span></li>
 <li><span style="font-family: Arial;">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
 <li><span style="font-family: Arial;">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span> </li>
@@ -187,92 +185,23 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <h3>Inputs</h3>
 <table summary="Inputs" class="ModelicaTableInputs">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Time</a></td><td>tlin</td><td>40</td><td>t for model linearization [s]</td></tr>
-<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Time</a></td><td>tsim</td><td>40</td><td>Simulation time [s]</td></tr>
-<tr><td>String</td><td>pathToNonlinearPlantModel</td><td title=""Example1.Analysis.LinearAnalysis.NonlinModel_for_Linearization"">&quot;Example1.Analysis.LinearAna...</td><td>Nonlinear model for linearization</td></tr>
-<tr><td>String</td><td>pathToNonlinearExperiment</td><td title=""Example1.Analysis.LinearAnalysis.NonlinModel_for_NonlinExperiment"">&quot;Example1.Analysis.LinearAna...</td><td>Nonlinear Model for simulation</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>tlin</td><td>t for model linearization [s]</td></tr>
+<tr><td>tsim</td><td>Simulation time [s]</td></tr>
+<tr><td>pathToNonlinearPlantModel</td><td>Nonlinear model for linearization</td></tr>
+<tr><td>pathToNonlinearExperiment</td><td>Nonlinear Model for simulation</td></tr>
 </table>
 <h3>Outputs</h3>
 <table summary="Outputs" class="ModelicaTableOutputs">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>Real</td><td>A[:, :]</td><td>A-matrix</td></tr>
-<tr><td>Real</td><td>B[:, :]</td><td>B-matrix</td></tr>
-<tr><td>Real</td><td>C[:, :]</td><td>C-matrix</td></tr>
-<tr><td>Real</td><td>D[:, :]</td><td>D-matrix</td></tr>
-<tr><td>String</td><td>inputNames[:]</td><td>Modelica names of inputs</td></tr>
-<tr><td>String</td><td>outputNames[:]</td><td>Modelica names of outputs</td></tr>
-<tr><td>String</td><td>stateNames[:]</td><td>Modelica names of states</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>A[:, :]</td><td>A-matrix</td></tr>
+<tr><td>B[:, :]</td><td>B-matrix</td></tr>
+<tr><td>C[:, :]</td><td>C-matrix</td></tr>
+<tr><td>D[:, :]</td><td>D-matrix</td></tr>
+<tr><td>inputNames[:]</td><td>Modelica names of inputs</td></tr>
+<tr><td>outputNames[:]</td><td>Modelica names of outputs</td></tr>
+<tr><td>stateNames[:]</td><td>Modelica names of states</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">function</span> LinearizeSimple
-  <span class="ModelicaComment">&quot;Linearize the model at any point in time tlin&quot;</span>
-  <span class="ModelicaComment">// Import things needed for the calculations</span>
-  <span class="ModelicaKeyword">import </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica_LinearSystems2%202.4.0/help/Modelica_LinearSystems2.html#Modelica_LinearSystems2.StateSpace"
->Modelica_LinearSystems2.StateSpace</a>;<span class="ModelicaComment"> // to create and manipulate state space objects</span>
-  <span class="ModelicaComment">// Declare outputs to display</span>
-  <span class="ModelicaKeyword">output </span>Real A[:,:] <span class="ModelicaComment">&quot;A-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>Real B[:,:] <span class="ModelicaComment">&quot;B-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>Real C[:,:] <span class="ModelicaComment">&quot;C-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>Real D[:,:] <span class="ModelicaComment">&quot;D-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>String inputNames[:] <span class="ModelicaComment">&quot;Modelica names of inputs&quot;</span>;
-  <span class="ModelicaKeyword">output </span>String outputNames[:] <span class="ModelicaComment">&quot;Modelica names of outputs&quot;</span>;
-  <span class="ModelicaKeyword">output </span>String stateNames[:] <span class="ModelicaComment">&quot;Modelica names of states&quot;</span>;
-  <span class="ModelicaComment">// Declare reconfigurable inputs</span>
-  <span class="ModelicaKeyword">input </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Modelica.Units.SI.Time</a> tlin=40 <span class="ModelicaComment">&quot;t for model linearization&quot;</span>;
-  <span class="ModelicaKeyword">input </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Modelica.Units.SI.Time</a> tsim=40 <span class="ModelicaComment">&quot;Simulation time&quot;</span>;
-  <span class="ModelicaKeyword">input </span>String pathToNonlinearPlantModel = &quot;Example1.Analysis.LinearAnalysis.NonlinModel_for_Linearization&quot; <span class="ModelicaComment">&quot;Nonlinear model for linearization&quot;</span>;
-  <span class="ModelicaKeyword">input </span>String pathToNonlinearExperiment = &quot;Example1.Analysis.LinearAnalysis.NonlinModel_for_NonlinExperiment&quot; <span class="ModelicaComment">&quot;Nonlinear Model for simulation&quot;</span>;
-<span class="ModelicaKeyword">algorithm </span>
-  <span class="ModelicaComment">// Make sure DAE mode is off!</span>
-  Advanced.Define.DAEsolver := false;
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;DAE Mode is turned off.&quot;);
-  Advanced.Define.GlobalOptimizations :=0;
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Global optimization is disabled.&quot;);
-  Advanced.SparseActivate :=false;
-  Advanced.Translation.SparseActivateIntegrator :=false;
-  Advanced.Translation.SparseActivateSystems :=false;
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Sparse options disabled.&quot;);
-  OutputCPUtime :=false;<span class="ModelicaComment"> // disable cpu time output so it doesn&#39;t scre up the sizes of the outputs</span>
-  <span class="ModelicaComment">// Start the linearization process</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Linearization and Nonlinear Model Comparison is starting...&quot;);
-  <span class="ModelicaComment">// Compute and display the ABCD matrices, etc</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Linearized Model&quot;);
-  (A,B,C,D,inputNames,outputNames,stateNames) :=
-    <span class="ModelicaFunction">Modelica_LinearSystems2.Utilities.Import.linearize</span>(
-    pathToNonlinearPlantModel,tlin);
-  nx :=<span class="ModelicaFunction"> size</span>(A, 1);<span class="ModelicaComment"> //number of states</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Number of states: &quot; +<span class="ModelicaFunction"> String</span>(nx));
-  <span class="ModelicaComment">// Now we want to extract the initial value of the outputs to use it in our</span>
-  <span class="ModelicaComment">// linear model response</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Simulating nonlinear model&quot;);
-  <span class="ModelicaFunction">simulateModel</span>(
-    pathToNonlinearExperiment,
-    stopTime=tsim,
-    numberOfIntervals=1000, tolerance = 1e-6,
-    resultFile=&quot;res_nl&quot;);
-   ylen :=<span class="ModelicaFunction">DymolaCommands.Trajectories.readTrajectorySize</span>(&quot;res_nl.mat&quot;);
-   ny :=<span class="ModelicaFunction"> size</span>(C, 1);
-   y0 :=<span class="ModelicaFunction"> DymolaCommands.Trajectories.readTrajectory</span>(
-     &quot;res_nl.mat&quot;,
-     {outputNames[i] <span class="ModelicaKeyword">for </span>i<span class="ModelicaKeyword"> in </span>1:ny},
-     <span class="ModelicaFunction">DymolaCommands.Trajectories.readTrajectorySize</span>(&quot;res_nl.mat&quot;));
-  <span class="ModelicaFunction"> DataFiles.writeMATmatrix</span>(
-     &quot;MyData.mat&quot;,
-     &quot;y0&quot;,
-     [y0[1:ny,ylen]],
-     append=true);
-  <span class="ModelicaComment">// Print y0&#39;s last values which is needed for the linear response model</span>
-  y0out := y0[:,ylen];<span class="ModelicaComment"> // we only want the last few elements</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;y0 = &quot;);
-  <span class="ModelicaFunction">Modelica.Math.Vectors.toString</span>(y0out,name=&quot;y0 = &quot;,significantDigits=24);
-<span class="ModelicaKeyword">end </span>LinearizeSimple;
-</div>
-<hr>
 <!--[if supportFields]><span style="mso-element:field-begin"></span>
 <span style="mso-spacerun:yes"></span>XE LinearizeAndCompare<![endif]-->
 <!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
@@ -308,14 +237,14 @@ pre {white-space: pre; overflow-x : hidden;}
 <p><i><b><span style="font-family: Arial;">Usage</span></b></i></p>
 <ol>
 <li><span style="font-family: Arial;">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/lincompare%20(Small).png"/></p>
+<p><img src="../Resources/Images/lincompare%20(Small).png"/></p>
 <li><span style="font-family: Arial;">Leave the default parameters on first use. Alternatively, modify the tlin and tsim parameters, note that tsim should be greater or equal to tlin.</span></li>
 <li><span style="font-family: Arial;">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
 <li><span style="font-family: Arial;">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span> </li>
 </ol>
 <p><br><i><b>Sample Output</b></i></p>
 <p>Executing the function gives the following plot is produced in the &quot;Simulation&quot; window and the following results in the &quot;Commands&quot; window.</p>
-<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/LinearizeAndCompare.png"/></p>
+<p><img src="../Resources/Images/LinearizeAndCompare.png"/></p>
 <p style="margin-left: 30px;"><br><span style="font-family: Courier New; font-size: 10pt;">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare();</span></p>
 <p style="margin-left: 30px;"><span style="font-family: Courier New; font-size: 10pt;">DAE&nbsp;Mode&nbsp;is&nbsp;turned&nbsp;off.</span></p>
 <p style="margin-left: 30px;"><span style="font-family: Courier New; font-size: 10pt;">Global&nbsp;optimization&nbsp;is&nbsp;disabled.</span></p>
@@ -413,163 +342,30 @@ pre {white-space: pre; overflow-x : hidden;}
 
 <h3>Inputs</h3>
 <table summary="Inputs" class="ModelicaTableInputs">
-<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Time</a></td><td>tlin</td><td>30.5</td><td>t for model linearization [s]</td></tr>
-<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Time</a></td><td>tsim</td><td>40</td><td>Simulation time [s]</td></tr>
-<tr><td>Real</td><td>numberOfIntervalsin</td><td>10000</td><td>No. of intervals</td></tr>
-<tr><td>String</td><td>methodin</td><td>&quot;DASSL&quot;</td><td>Solver</td></tr>
-<tr><td>Real</td><td>fixedstepsizein</td><td>1e-6</td><td>Time step - needed only for fixed time step solvers</td></tr>
-<tr><td>String</td><td>pathToNonlinearPlantModel</td><td title=""Example1.Analysis.LinearAnalysis.NonlinModel_for_Linearization"">&quot;Example1.Analysis.LinearAna...</td><td>Nonlinear plant model</td></tr>
-<tr><td>String</td><td>pathToNonlinearExperiment</td><td title=""Example1.Analysis.LinearAnalysis.NonlinModel_for_NonlinExperiment"">&quot;Example1.Analysis.LinearAna...</td><td>Nonlinear experiment model</td></tr>
-<tr><td>String</td><td>pathToLinearExperiment</td><td title=""Example1.Analysis.LinearAnalysis.LinearModelGeneral"">&quot;Example1.Analysis.LinearAna...</td><td>Linear model for simulation</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>tlin</td><td>t for model linearization [s]</td></tr>
+<tr><td>tsim</td><td>Simulation time [s]</td></tr>
+<tr><td>numberOfIntervalsin</td><td>No. of intervals</td></tr>
+<tr><td>methodin</td><td>Solver</td></tr>
+<tr><td>fixedstepsizein</td><td>Time step - needed only for fixed time step solvers</td></tr>
+<tr><td>pathToNonlinearPlantModel</td><td>Nonlinear plant model</td></tr>
+<tr><td>pathToNonlinearExperiment</td><td>Nonlinear experiment model</td></tr>
+<tr><td>pathToLinearExperiment</td><td>Linear model for simulation</td></tr>
 </table>
 <h3>Outputs</h3>
 <table summary="Outputs" class="ModelicaTableOutputs">
-<tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>Real</td><td>A[:, :]</td><td>A-matrix</td></tr>
-<tr><td>Real</td><td>B[:, :]</td><td>B-matrix</td></tr>
-<tr><td>Real</td><td>C[:, :]</td><td>C-matrix</td></tr>
-<tr><td>Real</td><td>D[:, :]</td><td>D-matrix</td></tr>
-<tr><td>String</td><td>inputNames[:]</td><td>Modelica names of inputs</td></tr>
-<tr><td>String</td><td>outputNames[:]</td><td>Modelica names of outputs</td></tr>
-<tr><td>String</td><td>stateNames[:]</td><td>Modelica names of states</td></tr>
-<tr><td>Real</td><td>y0out[:]</td><td>Initial value of the output variables</td></tr>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>A[:, :]</td><td>A-matrix</td></tr>
+<tr><td>B[:, :]</td><td>B-matrix</td></tr>
+<tr><td>C[:, :]</td><td>C-matrix</td></tr>
+<tr><td>D[:, :]</td><td>D-matrix</td></tr>
+<tr><td>inputNames[:]</td><td>Modelica names of inputs</td></tr>
+<tr><td>outputNames[:]</td><td>Modelica names of outputs</td></tr>
+<tr><td>stateNames[:]</td><td>Modelica names of states</td></tr>
+<tr><td>y0out[:]</td><td>Initial value of the output variables</td></tr>
 </table>
-<h3>Modelica definition</h3>
-<div class="modelica"><span class="ModelicaKeyword">function</span> LinearizeAndCompare
-  <span class="ModelicaComment">&quot;Linearize the model, simulate the linear model obtained and compare with the nonlinear model response.&quot;</span>
-  <span class="ModelicaComment">// See the Documentation for an explanation of the goals.</span>
-  <span class="ModelicaComment">// IMPORTING FUNCTIONS</span>
-  <span class="ModelicaComment">// Import things needed for the calculations</span>
-  <span class="ModelicaKeyword">import </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica_LinearSystems2%202.4.0/help/Modelica_LinearSystems2.html#Modelica_LinearSystems2.StateSpace"
->Modelica_LinearSystems2.StateSpace</a>;<span class="ModelicaComment"> // to create and manipulate state space objects</span>
-  <span class="ModelicaComment">// OUTPUTS OF THEFUNCTION - FOR DISPLAY</span>
-  <span class="ModelicaComment">// Declare outputs to display</span>
-  <span class="ModelicaKeyword">output </span>Real A[:,:] <span class="ModelicaComment">&quot;A-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>Real B[:,:] <span class="ModelicaComment">&quot;B-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>Real C[:,:] <span class="ModelicaComment">&quot;C-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>Real D[:,:] <span class="ModelicaComment">&quot;D-matrix&quot;</span>;
-  <span class="ModelicaKeyword">output </span>String inputNames[:] <span class="ModelicaComment">&quot;Modelica names of inputs&quot;</span>;
-  <span class="ModelicaKeyword">output </span>String outputNames[:] <span class="ModelicaComment">&quot;Modelica names of outputs&quot;</span>;
-  <span class="ModelicaKeyword">output </span>String stateNames[:] <span class="ModelicaComment">&quot;Modelica names of states&quot;</span>;
-  <span class="ModelicaKeyword">output </span>Real y0out[:] <span class="ModelicaComment">&quot;Initial value of the output variables&quot;</span>;
-  <span class="ModelicaComment">// INPUTS TO THE FUNCTION</span>
-  <span class="ModelicaComment">// Declare reconfigurable simulation parameters</span>
-  <span class="ModelicaKeyword">input </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Modelica.Units.SI.Time</a> tlin=30.5 <span class="ModelicaComment">&quot;t for model linearization&quot;</span>;
-  <span class="ModelicaKeyword">input </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
->Modelica.Units.SI.Time</a> tsim=40 <span class="ModelicaComment">&quot;Simulation time&quot;</span>;
-  <span class="ModelicaKeyword">input </span>Real numberOfIntervalsin=10000 <span class="ModelicaComment">&quot;No. of intervals&quot;</span>;
-  <span class="ModelicaKeyword">input </span>String methodin = &quot;DASSL&quot; <span class="ModelicaComment">&quot;Solver&quot;</span>;
-  <span class="ModelicaKeyword">input </span>Real fixedstepsizein= 1e-6 <span class="ModelicaComment">&quot;Time step - needed only for fixed time step solvers&quot;</span>;
-  <span class="ModelicaComment">//</span>
-  <span class="ModelicaComment">// DEFINING THE NONLINEAR PLANT, NONLINEAR EXPERIMENT, AND LINEAR EXPERIMENT MODELS</span>
-  <span class="ModelicaComment">//</span>
-  <span class="ModelicaComment">// 1) NONLINEAR PLANT:</span>
-  <span class="ModelicaComment">// This is the model that will be linearized, i.e. the nonlinear plant model</span>
-   <span class="ModelicaKeyword">input </span>String pathToNonlinearPlantModel = &quot;Example1.Analysis.LinearAnalysis.NonlinModel_for_Linearization&quot; <span class="ModelicaComment">&quot;Nonlinear plant model&quot;</span>;
-  <span class="ModelicaComment">//</span>
-  <span class="ModelicaComment">//</span>
-  <span class="ModelicaComment">// 2) NONLINEAR EXPERIMENT: this is a model which applies a change to the input of the nonlinear model.</span>
-  <span class="ModelicaComment">// It must match the nonlinar plant above.</span>
-  <span class="ModelicaComment">// This model will be simulated, and the simulation results will be compared to the simulation of the corresponding linearized model.</span>
-  <span class="ModelicaKeyword">input </span>String pathToNonlinearExperiment= &quot;Example1.Analysis.LinearAnalysis.NonlinModel_for_NonlinExperiment&quot; <span class="ModelicaComment">&quot;Nonlinear experiment model&quot;</span>;
-  <span class="ModelicaComment">//</span>
-  <span class="ModelicaComment">//</span>
-  <span class="ModelicaComment">// 3) LINEAR EXPERIMENT: this is a template that can be used for all three cases, so it is not necessary to create other cases here</span>
-  <span class="ModelicaKeyword">input </span>String pathToLinearExperiment = &quot;Example1.Analysis.LinearAnalysis.LinearModelGeneral&quot; <span class="ModelicaComment">&quot;Linear model for simulation&quot;</span>;
-
-<span class="ModelicaKeyword">algorithm </span>
-  <span class="ModelicaComment">// Make sure DAE mode is off!</span>
-  Advanced.Define.DAEsolver := false;
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;DAE Mode is turned off.&quot;);
-  Advanced.Define.GlobalOptimizations :=0;
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Global optimization is disabled.&quot;);
-  Advanced.SparseActivate :=false;
-  Advanced.Translation.SparseActivateIntegrator :=false;
-  Advanced.Translation.SparseActivateSystems :=false;
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Sparse options disabled.&quot;);
-  OutputCPUtime :=false;<span class="ModelicaComment"> // disable cpu time output so it doesn&#39;t scre up the sizes of the outputs</span>
-  <span class="ModelicaComment">// Start the linearization process</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Linearization and Nonlinear Model Comparison is starting...&quot;);
-  <span class="ModelicaComment">// Compute and display the ABCD matrices, etc</span>
-  (A,B,C,D,inputNames,outputNames,stateNames) :=
-    <span class="ModelicaFunction">Modelica_LinearSystems2.Utilities.Import.linearize</span>(
-    pathToNonlinearPlantModel,tlin);
-  <span class="ModelicaComment">// LINEARIZE plant model at t_lin</span>
-  <span class="ModelicaComment">// This is the same as above, however, it stores it in a StateSpace object</span>
-  ss :=<span class="ModelicaFunction"> Modelica_LinearSystems2.ModelAnalysis.Linearize</span>(
-    pathToNonlinearPlantModel, simulationSetup=
-    <span class="ModelicaFunction">Modelica_LinearSystems2.Records.SimulationOptionsForLinearization</span>(
-    linearizeAtInitial=false, t_linearize=tlin));
-  <span class="ModelicaComment">// SAVE the data in a mat file</span>
-  <span class="ModelicaFunction">DataFiles.writeMATmatrix</span>(
-    &quot;MyData.mat&quot;,
-    &quot;ABCD&quot;,
-    [ss.A, ss.B; ss.C, ss.D],
-    append=false);
-  nx :=<span class="ModelicaFunction"> size</span>(ss.A, 1);
-  <span class="ModelicaFunction">DataFiles.writeMATmatrix</span>(
-    &quot;MyData.mat&quot;,
-    &quot;nx&quot;,
-    [nx],
-    append=true);
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Simulating nonlinear model&quot;);
-  <span class="ModelicaFunction">simulateModel</span>(
-    pathToNonlinearExperiment,
-    stopTime=tsim,
-    numberOfIntervals=numberOfIntervalsin, method = methodin, fixedstepsize=fixedstepsizein,
-    resultFile=&quot;res_nl&quot;);
-
-  <span class="ModelicaFunction"> simulateModel</span>(
-     pathToNonlinearExperiment,
-     stopTime=tlin,
-     numberOfIntervals=numberOfIntervalsin, method = methodin, fixedstepsize=fixedstepsizein,
-     resultFile=&quot;res_nl_beforedist&quot;);
-    ny :=<span class="ModelicaFunction"> size</span>(ss.C, 1);
-    ylen :=<span class="ModelicaFunction">DymolaCommands.Trajectories.readTrajectorySize</span>(&quot;res_nl_beforedist.mat&quot;);
-    y0 :=<span class="ModelicaFunction"> DymolaCommands.Trajectories.readTrajectory</span>(
-      &quot;res_nl_beforedist.mat&quot;,
-      {ss.yNames[i] <span class="ModelicaKeyword">for </span>i<span class="ModelicaKeyword"> in </span>1:ny},
-      <span class="ModelicaFunction">DymolaCommands.Trajectories.readTrajectorySize</span>(&quot;res_nl_beforedist.mat&quot;));
-  <span class="ModelicaFunction">  DataFiles.writeMATmatrix</span>(
-      &quot;MyData.mat&quot;,
-      &quot;y0_beforedist&quot;,
-      [y0[1:ny,ylen-100]],
-      append=true);
-
-  <span class="ModelicaComment">// Print y0&#39;s first values which is needed for the linear response model</span>
-  y0out := y0[1:ny,ylen];<span class="ModelicaComment"> // we only want the elements at ylen</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;y0 before disturbance =&quot;);
-  <span class="ModelicaFunction">Modelica.Math.Vectors.toString</span>(y0out);
-  <span class="ModelicaComment">//</span>
-  <span class="ModelicaComment">// We now simulate the linear model, which requires y0</span>
-  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Simulating linear model&quot;);
-  <span class="ModelicaFunction">simulateModel</span>(
-    pathToLinearExperiment,
-    stopTime=tsim,
-    numberOfIntervals=numberOfIntervalsin, method = methodin, fixedstepsize=fixedstepsizein,
-    resultFile=&quot;res_lin&quot;);
-  <span class="ModelicaComment">  // Plot</span>
-<span class="ModelicaFunction">removePlots</span>(true);
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;Vt&quot;}, range={0.0, 20.0, 0.998, 1.002}, grid=true, filename=&quot;res_nl.mat&quot;, colors={{28,108,200}}, displayUnits={&quot;1&quot;});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;Q&quot;}, range={0.0, 20.0, 0.18, 0.21}, grid=true, subPlot=102, colors={{28,108,200}}, displayUnits={&quot;1&quot;});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;P&quot;}, range={0.0, 20.0, 0.86, 0.94}, grid=true, subPlot=103, colors={{28,108,200}}, displayUnits={&quot;1&quot;});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;w&quot;}, range={0.0, 20.0, 0.9996, 1.0004}, grid=true, subPlot=104, colors={{28,108,200}}, displayUnits={&quot;1&quot;});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;delta&quot;}, range={0.0, 20.0, 1.27, 1.3}, grid=true, subPlot=105, colors={{28,108,200}}, displayUnits={&quot;rad&quot;});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;Vt&quot;}, range={0.0, 20.0, 0.998, 1.002}, erase=false, grid=true, filename=&quot;res_lin.mat&quot;, colors={{238,46,47}});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;Q&quot;}, range={0.0, 20.0, 0.18, 0.21}, erase=false, grid=true, subPlot=102, colors={{238,46,47}});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;P&quot;}, range={0.0, 20.0, 0.86, 0.94}, erase=false, grid=true, subPlot=103, colors={{238,46,47}});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;w&quot;}, range={0.0, 20.0, 0.9996, 1.0004}, erase=false, grid=true, subPlot=104, colors={{238,46,47}});
-<span class="ModelicaFunction">createPlot</span>(id=1, position={-2, 1, 584, 782}, y={&quot;delta&quot;}, range={0.0, 20.0, 1.27, 1.3}, erase=false, grid=true, subPlot=105, colors={{238,46,47}});
-
-<span class="ModelicaKeyword">end </span>LinearizeAndCompare;
-</div>
-<hr>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:09 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:16 2024.
 </address>
 </body>
 </html>
