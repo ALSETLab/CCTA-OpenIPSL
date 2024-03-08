@@ -10,7 +10,7 @@ annotation(preferredView = "info",
       OpenIPSL(version="3.0.1")),
   version="3",
   Documentation(info="<html>
-<p><br>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; by Luigi Vanfretti and Chrisopher R. Laughman, submitted for review to the IEEE CCTA 2024.</p>
+<p>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; by Luigi Vanfretti and Chrisopher R. Laughman, submitted for review to the IEEE CCTA 2024.</p>
 <p>The models have the following dependencies:</p>
 <ul>
 <li>Modelica Standard Library v.4.0.0, </li>

@@ -1,5 +1,5 @@
 within Example2;
-package CustomComponents
+package CustomComponents "Customized component models and blocks developed for this model."
     extends Modelica.Icons.VariantsPackage;
 
   annotation (Documentation(info="<html>
