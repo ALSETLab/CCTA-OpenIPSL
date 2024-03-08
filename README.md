@@ -9,7 +9,7 @@ You can find a pre-print of the paper on ResearchGate, [here](http://dx.doi.org/
 The models were developed and tested with [Dymola 2024X](https://www.3ds.com/products/catia/dymola) under MS Windows 11.
 
 The models have the following dependencies:
-- [OpenIPSL v.3.0.1](https://github.com/OpenIPSL/OpenIPSL/releases/tag/v3.0.1)
+- [OpenIPSL v.3.0.1](https://github.com/OpenIPSL/OpenIPSL), please download it from this version's library release, [here](https://github.com/OpenIPSL/OpenIPSL/releases/tag/v3.0.1) 
 - [Modelica Standard Library v.4.0.0](https://doc.modelica.org/) (shipped with Dymola 2024X)
 - [Modelica_LinearSystems2 v2.4.0](https://github.com/modelica/Modelica_LinearSystems2) (shipped with Dymola 2024X)
 - DataFiles v1.1.0 (shipped with Dymola 2024X)
