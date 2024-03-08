@@ -23,7 +23,11 @@ public
     annotation (Placement(transformation(extent={{-100,36},{-80,56}})));
   Modelica.Blocks.Sources.Constant Pmchange(k=0)
     annotation (Placement(transformation(extent={{-100,6},{-80,26}})));
-  Example1.Base.Systems.gridIO Plant(t1=0.5, t2=Modelica.Constants.inf)
+  Example1.Base.Systems.gridIO Plant(t1=0.5, t2=Modelica.Constants.inf,
+    redeclare record Bus = Example1.PFData.Data.BusData.PF_Bus_10,
+    redeclare record Loads = Example1.PFData.Data.LoadData.PF_Loads_10,
+    redeclare record Trafos = Example1.PFData.Data.TrafoData.PF_Trafos_10,
+    redeclare record Machines = Example1.PFData.Data.MachineData.PF_Machines_10)
     annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false)
@@ -39,7 +43,7 @@ public
   Modelica.Blocks.Math.Add uload annotation (Placement(transformation(
           extent={{-120,-22},{-100,-2}})));
   Modelica.Blocks.Sources.Pulse uloaddist(
-    amplitude=1.25,
+    amplitude=1.05,
     width=100,
     period=8/60,
     nperiod=1,
@@ -88,7 +92,7 @@ Click on the \"Plant\" block to specify controller parameters.",
           horizontalAlignment=TextAlignment.Left)}),
     experiment(
       StopTime=1320,
-      Interval=60,
+      __Dymola_NumberOfIntervals=10000,
       __Dymola_fixedstepsize=0.01,
       __Dymola_Algorithm="Dassl"),preferredView="diagram");
 end A_randomload_and_lowimpactmultisine;

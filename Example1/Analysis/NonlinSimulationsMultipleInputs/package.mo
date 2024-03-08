@@ -58,15 +58,7 @@ package NonlinSimulationsMultipleInputs "Example nonlinear time simulations with
 <li>Re-design 1 obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-6GfUUJy2.png\" alt=\"gamma = 0.025\"/> has parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-uRaInKme.png\" alt=\"k_w = 22.4455\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-b4mgrEyi.png\" alt=\"t_w = 0.5217\"/> sec.</li>
 <li>Re-design 2 obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-xYLZp3n1.png\" alt=\"gamma = 0.05\"/> has parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-Tv6HYrxI.png\" alt=\"k_w = 12.6924\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-QwYVSX78.png\" alt=\"t_w = 0.5602\"/> sec.</li>
 </ul>
-<p><br>The other models are variants where inputs are set to zero when compared to the case above. They are useful to compare against the above model, for example, the simulation of model &quot;<span style=\"font-family: Courier New;\">B_noise_...</span>&quot; can be compared to the one above to understand the impact of the input signal compared to only the random noise of the loads, etc. See the &quot;Package Contents&quot; below for information on each case.</p>
-<p><br>In addition, to perform run any simulation and plot the following function is provided:</p>
-<p><span style=\"font-family: Courier New;\">Example1.Analysis.ExcitationInputSimulations.simulate_and_plot</span></p>
-<p><i><b>Usage of the *.simulate_and_plot function:</b></i></p>
-<ol>
-<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
-<li>Modify the input string &quot;modelname&quot; by entering any of the other model names within quotes, for example, to simulate the second model in this package, insert the string: <span style=\"font-family: Courier New;\">&quot;Example1.Analysis.ExcitationInputSimulations.B_noise_random_load_and_load_disturbance&quot;</span>, note that the quotes have to be included. Leave the default parameters on first use.</li>
-<li>Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</li>
-<li>Go back to the function&apos;s own window and click on &quot;Close&quot;.</li>
-</ol>
+<p>The other models are variants where inputs are set to zero when compared to the case above. They are useful to compare against the above model, for example, the simulation of model &quot;<span style=\"font-family: Courier New;\">B_noise_...</span>&quot; can be compared to the one above to understand the impact of the input signal compared to only the random noise of the loads, etc. See the &quot;Package Contents&quot; below for information on each case.</p>
+<p><br>In addition, to perform run any simulation and plot the following function is provided: <span style=\"font-family: Courier New;\"><a href=\"Example1.Analysis.ExcitationInputSimulations.simulate_and_plot\">Example1.Analysis.ExcitationInputSimulations.simulate_and_plot</a></span></p>
 </html>"));
 end NonlinSimulationsMultipleInputs;

@@ -36,7 +36,7 @@ public
   Modelica.Blocks.Math.Add uload annotation (Placement(transformation(
           extent={{-120,-22},{-100,-2}})));
   Modelica.Blocks.Sources.Pulse uloaddist(
-    amplitude=1.25,
+    amplitude=1.05,
     width=100,
     period=8/60,
     nperiod=1,

@@ -41,7 +41,7 @@ public
   Modelica.Blocks.Sources.Constant uAVR(k=0)
     annotation (Placement(transformation(extent={{-100,-50},{-80,-30}})));
   Modelica.Blocks.Sources.Pulse uloaddist(
-    amplitude=1.25,
+    amplitude=1.05,
     width=100,
     period=8/60,
     nperiod=1,

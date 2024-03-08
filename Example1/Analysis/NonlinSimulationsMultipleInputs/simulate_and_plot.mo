@@ -6,14 +6,14 @@ function simulate_and_plot
 //  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.B_randomload_and_loaddisturbance" "Model to simulate.";
 
 algorithm
-  // Using DAE mode for model "A_" will result in the simulation halting, therefore is disabled with the function above in case it has been activated by the user.
-  Example1.Utilities.DAEMode.DAEModeOff();
+  // Setup solver.
+  Example1.Utilities.SetupSolverSettings.On();
   // Simulate the model
   simulateModel(
   modelname,
   stopTime=1260,
   tolerance = 1e-3,
-  fixedstepsize=1e-4,
+  fixedstepsize=0.1,
   numberOfIntervals=10000,
   resultFile="res_nonlinmultipleinputs");
   // Plot
@@ -28,9 +28,13 @@ algorithm
 <p><i><b><span style=\"font-family: Arial;\">Usage</span></b></i></p>
 <ol>
 <li><span style=\"font-family: Arial;\">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
+<p><img src=\"modelica://Example1/Resources/Images/sinulate_and_plot (Small).png\"/></p>
 <li><span style=\"font-family: Arial;\">Modify the input string &quot;modelname&quot; by entering any of the other model names within quotes, for example, to simulate the second model in this package, insert the string:&nbsp;</span><span style=\"font-family: Courier New;\">&quot;Example1.Analysis.NonlinSimulationsMultipleInputs.B_randomload_and_loaddisturbance&quot;</span><span style=\"font-family: Arial;\">, note that the quotes have to be included. Leave the default parameters on first use.</span></li>
-<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
+<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;.</span></li>
 <li><span style=\"font-family: Arial;\">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span></li>
 </ol>
+<p><br><i><b>Sample Output</b></i></p>
+<p>Executing the function will result in the following plots.</p>
+<p><img src=\"modelica://Example1/Resources/Images/vt-simulate_and_plot (Small).png\"/><img src=\"modelica://Example1/Resources/Images/w-simulate_and_plot (Small).png\"/></p>
 </html>"));
 end simulate_and_plot;

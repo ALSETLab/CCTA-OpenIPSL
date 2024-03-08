@@ -47,10 +47,14 @@ package RedesignedControllerVerification
 <p><i><b><span style=\"font-family: Arial;\">Usage</span></b></i></p>
 <ol>
 <li><span style=\"font-family: Arial;\">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
+<p><img src=\"modelica://Example1/Resources/Images/c012_simulate_plot_compare (Small).png\"/></p>
 <li><span style=\"font-family: Arial;\">Leave the default model names without change, these correspond to the three models within the package.</span></li>
-<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
+<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;.</span></li>
 <li><span style=\"font-family: Arial;\">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span></li>
 </ol>
+<p><br><i><b>Sample Output</b></i></p>
+<p>Executing the function will produce the following plot.</p>
+<p><img src=\"modelica://Example1/Resources/Images/C012_simulate_plot_compare_output.png\"/></p>
 </html>"));
   end C012_simulate_plot_compare;
 
@@ -385,16 +389,8 @@ Click on the \"Plant\" block to specify controller parameters.",
 <li>Re-design 2: <span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C2_8cycles</span>. This design was obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-xYLZp3n1.png\" alt=\"gamma = 0.05\"/>, resulting in parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-Tv6HYrxI.png\" alt=\"k_w = 12.6924\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-QwYVSX78.png\" alt=\"t_w = 0.5602\"/> sec. </li>
 </ul>
 <p><br>To compare the different control designs the following function is provided:</p>
-<p><span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare</span></p>
+<p><span style=\"font-family: Courier New;\"><a href=\"Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare
+\">Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare</a></span></p>
 <p>Executing this function results in a plot of the terminal voltage and speed similar to that in Fig. 10 of [2], with the main difference being that the random load has been removed to speed up the simulations. Note that the all three cases above are simulated, so if a change is made in one of them, it should be also applied to the others so that running the function gives a plot for useful comparisons.</p>
-<p><br><i><b>Usage of the </b></i><span style=\"font-family: Courier New;\">*.C012_simulate_plot_compare</span><i><b> function:</b></i></p>
-<ol>
-<li><ol>
-<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
-<li>Leave the default model names without change, these correspond to the three models within the package.</li>
-<li>Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</li>
-<li>Go back to the function&apos;s own window and click on &quot;Close&quot;.</li>
-</ol></li>
-</ol>
 </html>"));
 end RedesignedControllerVerification;

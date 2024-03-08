@@ -71,7 +71,98 @@ package LinearAnalysis
 <p>The obtained linear model can be used in any other environment. The linear model is available in the file, <span style=\"font-family: Courier New;\">dslin.mat</span>, that will appear under your Dymola working directory. It can be loaded in MATLAB using the Dymola function:</p>
 <p><span style=\"font-family: Courier New;\">[A,B,C,D,xName,uName,yName] = tloadlin(&apos;dslin.mat&apos;)</span></p>
 <p>Add to the MATLAB workspace the directory and sub-directories under: <span style=\"font-family: Courier New;\">C:\\Program Files\\Dymola 2024x\\Mfiles</span></p>
-<p>In addition, the file <span style=\"font-family: Courier New;\">MyData.mat</span> contains the <span style=\"font-family: Courier New;\">y0</span> vector, which corresponds to the output vector at the point in time where linearization is performed.</p>
+<p>In addition, the file <span style=\"font-family: Courier New;\">MyData.mat</span> contains the <span style=\"font-family: Courier New;\">y0</span> vector, which corresponds to the output vector at the point in time where linearization is performed. </p>
+<p><i><b><span style=\"font-family: Arial;\">Usage</span></b></i></p>
+<ol>
+<li><span style=\"font-family: Arial;\">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
+<p><img src=\"modelica://Example1/Resources/Images/linsimple (Small).png\"/></p>
+<li><span style=\"font-family: Arial;\">Leave the default parameters on first use. Alternatively, modify the tlin and tsim parameters, note that tsim should be greater or equal to tlin.</span></li>
+<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
+<li><span style=\"font-family: Arial;\">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span> </li>
+</ol>
+<p><br><i><b>Sample Output</b></i></p>
+<p>Executing the function gives the following results in the &quot;Commands&quot; window.</p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeSimple();</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">DAE&nbsp;Mode&nbsp;is&nbsp;turned&nbsp;off.</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Global&nbsp;optimization&nbsp;is&nbsp;disabled.</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Sparse&nbsp;options&nbsp;disabled.</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Linearization&nbsp;and&nbsp;Nonlinear&nbsp;Model&nbsp;Comparison&nbsp;is&nbsp;starting...</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Linearized&nbsp;Model</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Number&nbsp;of&nbsp;states:&nbsp;12</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Simulating&nbsp;nonlinear&nbsp;model</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Redeclaring&nbsp;variable:&nbsp;Real&nbsp;y0&nbsp;[7,&nbsp;1012];</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Declaring&nbsp;variable:&nbsp;Real&nbsp;y0out&nbsp;[7];</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">y0&nbsp;=&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;&quot;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">y0&nbsp;=&nbsp;&nbsp;=&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.000024318695068359375&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.196186602115631103515625&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.900009691715240478515625&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.28431034088134765625&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.50904435006304993294179e-07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.120034694671630859375&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&quot;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[0.0,&nbsp;376.9911183891212,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-0.17610876763748942,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-0.19586150145880193,&nbsp;0.05515410219837237,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-0.25587785362300375,&nbsp;0.0,&nbsp;-0.12499999997574654,&nbsp;0.0,&nbsp;-0.2667630481888344,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.001159492170868593,&nbsp;0.0,&nbsp;0.0,&nbsp;0.12499999999488744,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.4265899899207167,&nbsp;0.0,&nbsp;0.0,&nbsp;-1.0000000000939857,&nbsp;0.007883244407403102,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-1.4901043751184482,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-3.3690289136967633,&nbsp;0.0,&nbsp;33.3333333351218,&nbsp;0.0,&nbsp;-36.84568272027127,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.015266513308270566,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">2.4254614215865864,&nbsp;0.0,&nbsp;0.0,&nbsp;14.285714287056937,&nbsp;0.04482173884230768,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-22.75799624545071,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-8.934890956417721,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;29.303251383490004,&nbsp;33.12307890942945,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-66.66666667217629,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-1.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;18999999.999786172,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-2000000.0001652886,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;10000.00082740371,&nbsp;-9999.999999590995,&nbsp;0.0,&nbsp;0.0,&nbsp;-18999999.99980534;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.009499999999893087,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-0.001,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.009499999999902671;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.009499999999893087,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-0.001,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.009499999999902671;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.7092198580776662,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.7092198581570424],&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.14285715467719584,&nbsp;-0.03160725649463204,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;-0.04042882695287631,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.10093337277083947,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;-0.532308225276168,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.5738762639698587,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;-1.0247506547026812,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">19000001.57206705,&nbsp;0.0,&nbsp;0.0,&nbsp;2000000.1654807418;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.009500000786033523,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.009500000786033523,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.7092199168371426,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0],&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[-0.13402336434626583,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.43954877075235005,&nbsp;0.4968461836414418,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.3043068141629995,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;1.4537261850177308,&nbsp;0.7665888604391177,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">1.2253264601006595,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;1.3643245623264468,&nbsp;-0.38254244268485077,&nbsp;0.0,</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.9999999998895094,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">1.0000000001010991,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;9.499999999893086,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-9.49999999990267;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.9999999999590995,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0],&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[0.0,&nbsp;0.0,&nbsp;-0.015371259820540216,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.02120334463562301,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.21999579935538804,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">9.500000786033524,&nbsp;0.0,&nbsp;0.0,&nbsp;1.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0],&nbsp;{&quot;uPSS&quot;,&nbsp;&quot;uPm&quot;,&nbsp;&quot;uPload&quot;,&nbsp;&quot;uvsAVR&quot;},&nbsp;{&quot;Vt&quot;,&nbsp;&quot;Q&quot;,&nbsp;&quot;P&quot;,&nbsp;&quot;w&quot;,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&quot;delta&quot;,&nbsp;&quot;AVRin&quot;,&nbsp;&quot;AVRout&quot;},&nbsp;{&quot;Plant.G1.machine.delta&quot;,&nbsp;&quot;Plant.G1.machine.w&quot;,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&quot;Plant.G1.machine.e1q&quot;,&nbsp;&quot;Plant.G1.machine.e1d&quot;,&nbsp;&quot;Plant.G1.machine.e2q&quot;,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&quot;Plant.G1.machine.e2d&quot;,&nbsp;&quot;Plant.G1.avr.vm&quot;,&nbsp;&quot;Plant.G1.avr.vr&quot;,&nbsp;&quot;Plant.G1.avr.vf1&quot;,</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&quot;Plant.G1.pss.imLeadLag.TF.x_scaled[1]&quot;,&nbsp;&quot;Plant.G1.pss.imLeadLag1.TF.x_scaled[1]&quot;,</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&quot;Plant.G1.pss.derivativeLag.TF.x_scaled[1]&quot;}</span></p>
 </html>"),    preferredView = "info");
     end LinearizeSimple;
 
@@ -222,6 +313,111 @@ package LinearAnalysis
 <li><span style=\"font-family: Courier New;\">dslin.mat</span> contains the linear model obtained at the specified point for lineariation.</li>
 <li>The obtained linear model can be used in any other environment. The linear model is available in the file, <span style=\"font-family: Courier New;\">dslin.mat</span>. It can be loaded in MATLAB using the Dymola function <span style=\"font-family: Courier New;\">[A,B,C,D,xName,uName,yName] = tloadlin(&apos;dslin.mat&apos;)</span></li>
 </ul>
+<p><i><b><span style=\"font-family: Arial;\">Usage</span></b></i></p>
+<ol>
+<li><span style=\"font-family: Arial;\">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
+<p><img src=\"modelica://Example1/Resources/Images/lincompare (Small).png\"/></p>
+<li><span style=\"font-family: Arial;\">Leave the default parameters on first use. Alternatively, modify the tlin and tsim parameters, note that tsim should be greater or equal to tlin.</span></li>
+<li><span style=\"font-family: Arial;\">Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</span></li>
+<li><span style=\"font-family: Arial;\">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span> </li>
+</ol>
+<p><br><i><b>Sample Output</b></i></p>
+<p>Executing the function gives the following plot is produced in the &quot;Simulation&quot; window and the following results in the &quot;Commands&quot; window.</p>
+<p><img src=\"modelica://Example1/Resources/Images/LinearizeAndCompare.png\"/></p>
+<p style=\"margin-left: 30px;\"><br><span style=\"font-family: Courier New; font-size: 10pt;\">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare();</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">DAE&nbsp;Mode&nbsp;is&nbsp;turned&nbsp;off.</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Global&nbsp;optimization&nbsp;is&nbsp;disabled.</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Sparse&nbsp;options&nbsp;disabled.</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Linearization&nbsp;and&nbsp;Nonlinear&nbsp;Model&nbsp;Comparison&nbsp;is&nbsp;starting...</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Simulating&nbsp;nonlinear&nbsp;model</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">y0&nbsp;before&nbsp;disturbance&nbsp;=</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;&quot;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.998271&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.203063&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.921617&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.29897&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-3.55698e-11&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.12495&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&quot;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">Simulating&nbsp;linear&nbsp;model</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;true</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;1</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;=&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[0.0,&nbsp;376.99111838906373,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-0.17610876767279915,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-0.19586150142483613,&nbsp;0.05515410219997556,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-0.25587785359503384,&nbsp;0.0,&nbsp;-0.12500000002903436,&nbsp;0.0,&nbsp;-0.2667630481021101,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.001159492170902296,&nbsp;0.0,&nbsp;0.0,&nbsp;0.12500000001466172,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.42658999050935953,&nbsp;0.0,&nbsp;0.0,&nbsp;-0.9999999998908723,&nbsp;0.007883244274318683,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-1.4901043751617613,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-3.369028913176898,&nbsp;0.0,&nbsp;33.33333333281978,&nbsp;0.0,&nbsp;-36.84568271688989,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.015266512953637873,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">2.425461424825778,&nbsp;0.0,&nbsp;0.0,&nbsp;14.285714284155317,&nbsp;0.0448217383657263,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-22.75799624611222,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">-8.934890939628422,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;29.303251372407868,&nbsp;33.1230788990298,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-66.66666667021094,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-1.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;18999999.999783278,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-2000000.0001063284,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;10000.00082740371,&nbsp;-10000.000001172937,&nbsp;0.0,&nbsp;0.0,&nbsp;-18999999.996308953;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.00949999999989164,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-0.001,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.009499999998154478;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.00949999999989164,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;-0.001,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.009499999998154478;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.7092198580775582,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-0.7092198580803518],&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.14285715467719584,&nbsp;-0.03160719305331635,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;-0.040428715930573844,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.10093331725968824,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;-0.5323070687938507,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.5738766604780818,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;-1.024765457676343,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">19000001.57206705,&nbsp;0.0,&nbsp;0.0,&nbsp;2000000.1654807418;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.009500000786033523,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.009500000786033523,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.7092199168371426,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0],&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[-0.1340233640944263,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.43954877058611797,&nbsp;0.496846183485447,&nbsp;0.0,</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.3043068137697762,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;1.4537261847736198,&nbsp;0.7665888603335728,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">1.2253264605206322,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;1.364324561691764,&nbsp;-0.38254244286640693,&nbsp;0.0,</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.9999999998893571,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">1.0000000001610603,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;9.499999999891639,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-9.499999998154477;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;1.0000000001172937,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0],&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">[0.0,&nbsp;0.0,&nbsp;-0.01537148186514514,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.02120284503526193,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.21999546628848066,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">9.500000786033524,&nbsp;0.0,&nbsp;0.0,&nbsp;1.0;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">0.0,&nbsp;0.0,&nbsp;0.0,&nbsp;0.0],&nbsp;{&quot;uPSS&quot;,&nbsp;&quot;uPm&quot;,&nbsp;&quot;uPload&quot;,&nbsp;&quot;uvsAVR&quot;},&nbsp;{&quot;Vt&quot;,&nbsp;&quot;Q&quot;,&nbsp;&quot;P&quot;,&nbsp;&quot;w&quot;,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&quot;delta&quot;,&nbsp;&quot;AVRin&quot;,&nbsp;&quot;AVRout&quot;},&nbsp;{&quot;Plant.G1.machine.delta&quot;,&nbsp;&quot;Plant.G1.machine.w&quot;,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&quot;Plant.G1.machine.e1q&quot;,&nbsp;&quot;Plant.G1.machine.e1d&quot;,&nbsp;&quot;Plant.G1.machine.e2q&quot;,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&quot;Plant.G1.machine.e2d&quot;,&nbsp;&quot;Plant.G1.avr.vm&quot;,&nbsp;&quot;Plant.G1.avr.vr&quot;,&nbsp;&quot;Plant.G1.avr.vf1&quot;,</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&quot;Plant.G1.pss.imLeadLag.TF.x_scaled[1]&quot;,&nbsp;&quot;Plant.G1.pss.imLeadLag1.TF.x_scaled[1]&quot;,</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;&nbsp;&quot;Plant.G1.pss.derivativeLag.TF.x_scaled[1]&quot;},&nbsp;{0.9982708096504211,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;0.20306333899497986,&nbsp;0.9216165542602539,&nbsp;1.0,&nbsp;1.2989709377288818,&nbsp;</span></p>
+<p style=\"margin-left: 30px;\"><span style=\"font-family: Courier New; font-size: 10pt;\">&nbsp;&nbsp;-3.5569769352150615E-11,&nbsp;2.124945878982544}</span></p>
 </html>"),    preferredView="info");
     end LinearizeAndCompare;
 
@@ -746,14 +942,6 @@ This model can only be run by excecuting the function \"LinearizeAndCompare\".")
           extent={{-100,-48},{100,52}},
           textString="Lin")}),
     Documentation(info="<html>
-<p>To perform automated analysis the following function is provided:</p>
-<p><span style=\"font-family: Courier New;\">Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare </span></p>
-<p><i><b>Usage</b></i></p>
-<ol>
-<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
-<li>Modify any of the input parameters or strings, if needed or desired. Leave the default parameters on first use.</li>
-<li>Go to the bottom of the window and click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window.</li>
-<li>Go back to the function&apos;s own window and click on &quot;Close&quot;.</li>
-</ol>
+<p>To perform automated analysis the following function is provided: <span style=\"font-family: Courier New;\"><a href=\"Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare\">LinearizeAndCompare </a></span></p>
 </html>"));
 end LinearAnalysis;
