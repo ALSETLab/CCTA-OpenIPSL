@@ -1,0 +1,495 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Base.Systems</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Systems<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Systems"></a><a href="Example2_Base.html#Example2.Base"
+>Example2.Base</a>.Systems</h2>
+<h3>Information</h3>
+
+<p>Power system models with input/output interfaces for simulation and linearization. See usage in the examples under <a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>.</p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_BasesPackage.html#Modelica.Icons.BasesPackage"
+>Modelica.Icons.BasesPackage</a> (Icon for packages containing base classes).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.Base.Systems.sysS.png" alt="Example2.Base.Systems.sys" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems.html#Example2.Base.Systems.sys"
+>sys</a>
+</td>
+<td>Power system model with input/output interfaces</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE sys<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Base.Systems.sysI.png" alt="Example2.Base.Systems.sys" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Base.Systems.sys"></a><a href="Example2_Base_Systems.html#Example2.Base.Systems"
+>Example2.Base.Systems</a>.sys</h2>
+<p>
+<span class="ModelicaDescription">Power system model with input/output interfaces</span>
+<br>
+<br><img src="Example2.Base.Systems.sysD.png" alt="Example2.Base.Systems.sys">
+</p>
+<h3>Information</h3>
+
+<p>This is the main model used for simulation and linearization purposes. See usage in the examples under <a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>.</p>
+<p>See more information under <a href="Example2.html#Example2.Readme"
+>Example2.Readme</a>.</p>
+<p>In the text layer, under the equation section, the following assignments to the output interface () are made to link g1 variables to the outputs:</p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;<span style="color: #006400;">//&nbsp;Assign&nbsp;outputs&nbsp;to&nbsp;g1&nbsp;variables</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;w&nbsp;=&nbsp;g1.g1.SPEED;<span style="color: #006400;">&nbsp;//&nbsp;Machine&nbsp;speed</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;delta&nbsp;=&nbsp;g1.g1.ANGLE;<span style="color: #006400;">&nbsp;//&nbsp;Machine&nbsp;angle</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;Vt&nbsp;=&nbsp;g1.g1.ETERM;<span style="color: #006400;">&nbsp;//&nbsp;Terminal&nbsp;voltage&nbsp;mangitude</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;P&nbsp;=&nbsp;g1.g1.P;<span style="color: #006400;">&nbsp;//&nbsp;Active&nbsp;power</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;Q&nbsp;=&nbsp;g1.g1.Q;<span style="color: #006400;">&nbsp;//&nbsp;Reactive&nbsp;power</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;AVRin&nbsp;=&nbsp;g1.AVRinput_meas;<span style="color: #006400;">&nbsp;//&nbsp;AVR&nbsp;input,&nbsp;error&nbsp;signal&nbsp;to&nbsp;the&nbsp;avr</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;AVRout&nbsp;=&nbsp;g1.AVRoutput_meas;<span style="color: #006400;">&nbsp;//&nbsp;AVR&nbsp;output,&nbsp;Efd</span></p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Utilities_Icons.html#Example2.Utilities.Icons.ModelForLinearization"
+>Example2.Utilities.Icons.ModelForLinearization</a> (nonlin4lin = for this model, you need to provide inputs or use it as is for linearization), <a href="Example2_Interfaces.html#Example2.Interfaces.OutputsInterface"
+>Example2.Interfaces.OutputsInterface</a> (Partial models for output interfaces).</span></p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>r</td><td>0.0001</td><td>Common resistance value propagated to several line components</td></tr>
+<tr><td>Real</td><td>x</td><td>0.001</td><td>Common reactance value propagated to several line components</td></tr>
+<tr><td>Real</td><td>b</td><td>0.00175*0.5</td><td>Common suceptance value propagated to several line components</td></tr>
+<tr><td>Real</td><td>percent</td><td>0.75</td><td>Scaling value used to modify parameters of several line components</td></tr>
+<tr><td><a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
+>PF0</a></td><td>PF_results</td><td>redeclare Data.PF0 PF_results</td><td>&nbsp;</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Line Removal Parameters</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>t1</td><td>Modelica.Constants.inf</td><td>Time for removal of Line5_2B [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Bus Fault Parameters</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>R</td><td>0</td><td>Resistance [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>X</td><td>1e-5</td><td>Reactance [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>t1busfault</td><td>Modelica.Constants.inf</td><td>Start time of the fault [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>t2busfault</td><td>Modelica.Constants.inf</td><td>End time of the fault [s]</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="4">PSS Parameters</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS Parameter Change Timing</td></tr>
+<tr><td>Real</td><td>t1pssin</td><td>0</td><td>Start time of the injection</td></tr>
+<tr><td>Real</td><td>t2pssin</td><td>30</td><td>Start time of the injection</td></tr>
+<tr><td>Real</td><td>t3pssin</td><td>60</td><td>Start time of the injection</td></tr>
+<tr><td>Real</td><td>t4pssin</td><td>90</td><td>Stop time of the injection</td></tr>
+<tr><td>Real</td><td>t5pssin</td><td>120</td><td>Stop time of the injection</td></tr>
+<tr><td>Real</td><td>t6pssStop</td><td>Modelica.Constants.inf</td><td>Stop time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">All PSS&#39;s Limits</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 1</td></tr>
+<tr><td>Real</td><td>pss1_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 2</td></tr>
+<tr><td>Real</td><td>pss2_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 3</td></tr>
+<tr><td>Real</td><td>pss3_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 4</td></tr>
+<tr><td>Real</td><td>pss4_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 5</td></tr>
+<tr><td>Real</td><td>pss5_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss5_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+</table>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Vt</td><td>Terminal voltage manginte</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Q</td><td>Reactive power</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>P</td><td>Active power</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>w</td><td>Machine speed</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>delta</td><td>Manchine angle</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRin</td><td>AVR input, error signal to the AVR</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRout</td><td>AVR output, Efd</td></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>uPm</td><td>&nbsp;</td></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>uPSS</td><td>&nbsp;</td></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>uAVRin</td><td>Feedback input</td></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>uLoad7</td><td>&nbsp;</td></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>uLoad9</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> sys <span class="ModelicaComment">&quot;Power system model with input/output interfaces&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="Example2_Utilities_Icons.html#Example2.Utilities.Icons.ModelForLinearization"
+>Example2.Utilities.Icons.ModelForLinearization</a>;
+  <span class="ModelicaKeyword">extends </span><a href="Example2_Interfaces.html#Example2.Interfaces.OutputsInterface"
+>Example2.Interfaces.OutputsInterface</a>;
+  <span class="ModelicaKeyword">parameter </span>Real r=0.0001 <span class="ModelicaComment">&quot;Common resistance value propagated to several line components&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real x=0.001 <span class="ModelicaComment">&quot;Common reactance value propagated to several line components&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real b=0.00175*0.5 <span class="ModelicaComment">&quot;Common suceptance value propagated to several line components&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real percent = 0.75 <span class="ModelicaComment">&quot;Scaling value used to modify parameters of several line components&quot;</span>;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> uPm;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> uPSS;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> uAVRin <span class="ModelicaComment">&quot;Feedback input&quot;</span>;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> uLoad7;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> uLoad9;
+  <span class="ModelicaKeyword">replaceable </span><a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
+>Data.PF0</a> PF_results <span class="ModelicaKeyword">constrainedby </span><a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
+>Data.PF0</a>;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus1;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus2;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus3;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus4;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus5;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus6;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus7;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus8;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus9;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus10;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Buses.html#OpenIPSL.Electrical.Buses.Bus"
+>OpenIPSL.Electrical.Buses.Bus</a> bus11;
+  <a href="Example2_Base_Plants.html#Example2.Base.Plants.G1"
+>Plants.G1</a> g1(
+    v_0=PF_results.voltages.V1,
+    angle_0=PF_results.voltages.A1,
+    P_0=PF_results.machines.P1_1,
+    Q_0=PF_results.machines.Q1_1,
+    T3g=Modelica.Constants.small,
+    t1pssin=t1pssin,
+    t2pssin=t2pssin,
+    t3pssin=t3pssin,
+    t4pssin=t4pssin,
+    t5pssin=t5pssin,
+    t6pssStop=t6pssStop,
+    pss_vsmax=pss_vsmax,
+    pss_vsmin=pss_vsmin,
+    pss1_Kw=pss1_Kw,
+    pss1_Tw=pss1_Tw,
+    pss2_Kw=pss2_Kw,
+    pss2_Tw=pss2_Tw,
+    pss3_Kw=pss3_Kw,
+    pss3_Tw=pss3_Tw,
+    pss4_Kw=pss4_Kw,
+    pss4_Tw=pss4_Tw,
+    pss5_Kw=pss5_Kw,
+    pss5_Tw=pss5_Tw);
+  <a href="Example2_Base_Plants.html#Example2.Base.Plants.G2"
+>Plants.G2</a> g2(
+    v_0=PF_results.voltages.V2,
+    angle_0=PF_results.voltages.A2,
+    P_0=PF_results.machines.P2_1,
+    Q_0=PF_results.machines.Q2_1);
+  <a href="Example2_Base_Plants.html#Example2.Base.Plants.G3"
+>Plants.G3</a> g3(
+    v_0=PF_results.voltages.V3,
+    angle_0=PF_results.voltages.A3,
+    P_0=PF_results.machines.P3_1,
+    Q_0=PF_results.machines.Q3_1,
+    Rdroop=0.025,
+    tGTypeII(T3=Modelica.Constants.small));
+  <a href="Example2_Base_Plants.html#Example2.Base.Plants.G4"
+>Plants.G4</a> g4(
+    v_0=PF_results.voltages.V4,
+    angle_0=PF_results.voltages.A4,
+    P_0=PF_results.machines.P4_1,
+    Q_0=PF_results.machines.Q4_1);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line5_6(
+    R=r*25,
+    X=x*25,
+    G=0,
+    B=b*25);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line7_8_1(
+    R=r*110,
+    X=x*110,
+    G=0,
+    B=b*110);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line7_8_2(
+    R=r*110,
+    X=x*110,
+    G=0,
+    B=b*110);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line8_9_2(
+    R=r*110,
+    X=x*110,
+    G=0,
+    B=b*110);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line8_9_1(
+    R=r*110,
+    X=x*110,
+    G=0,
+    B=b*110);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line9_10_A0(
+    R=r*10,
+    X=x*10,
+    G=0,
+    B=b*10);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line10_11(
+    R=r*25,
+    X=x*25,
+    G=0,
+    B=b*25);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Events.html#OpenIPSL.Electrical.Events.PwFault"
+>OpenIPSL.Electrical.Events.PwFault</a> pwFault(
+    X=X,
+    R=R,
+    t1=t1busfault,
+    t2=t2busfault);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Loads_PSSE.html#OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput"
+>OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput</a>
+                                      Load7(
+    PQBRAK=0.7,
+    v_0=PF_results.voltages.V7,
+    angle_0=PF_results.voltages.A7,
+    P_0=PF_results.loads.PL7_1,
+    Q_0=PF_results.loads.QL7_1,
+    d_P=0,
+    t1=Modelica.Constants.inf,
+    d_t=Modelica.Constants.inf);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Loads_PSSE.html#OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput"
+>OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput</a>
+                                      Load9(
+    PQBRAK=0.7,
+    v_0=PF_results.voltages.V9,
+    angle_0=PF_results.voltages.A9,
+    P_0=PF_results.loads.PL9_1,
+    Q_0=PF_results.loads.QL9_1,
+    d_P=0,
+    t1=Modelica.Constants.inf,
+    d_t=Modelica.Constants.inf);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line5_1(
+    G=0,
+    R=0,
+    X=0.01667,
+    B=0);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line5_2(
+    G=0,
+    R=0,
+    X=0.01667*(1 - percent),
+    B=0);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line5_3(
+    G=0,
+    R=0,
+    X=0.01667,
+    B=0);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line5_4(
+    G=0,
+    R=0,
+    X=0.01667,
+    B=0);
+  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical.html#OpenIPSL.Electrical.SystemBase"
+>OpenIPSL.Electrical.SystemBase</a> SysData(fn=60);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line6_7_A2(
+    R=0,
+    X=(5)*x*10*percent,
+    G=0,
+    B=0,
+    t1=Modelica.Constants.inf);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line6_7_A1(
+    R=0,
+    X=(5/4)*x*10*percent,
+    G=0,
+    B=0);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line6_7_A0(
+    R=r*10,
+    X=x*10*(1 - percent),
+    G=0,
+    B=b*10);
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> t1=Modelica.Constants.inf <span class="ModelicaComment">&quot;Time for removal of Line5_2B&quot;</span>;
+
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> R=0 <span class="ModelicaComment">&quot;Resistance&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> X=1e-5 <span class="ModelicaComment">&quot;Reactance&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> t1busfault=Modelica.Constants.inf
+    <span class="ModelicaComment">&quot;Start time of the fault&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> t2busfault=Modelica.Constants.inf
+    <span class="ModelicaComment">&quot;End time of the fault&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t1pssin=0 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t2pssin=30 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t3pssin=60 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t4pssin=90 <span class="ModelicaComment">&quot;Stop time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t5pssin=120 <span class="ModelicaComment">&quot;Stop time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t6pssStop=Modelica.Constants.inf <span class="ModelicaComment">&quot;Stop time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss1_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss2_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss3_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss4_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss5_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss5_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line5_2B(
+    G=0,
+    R=0,
+    X=0.01667*(5)*percent,
+    B=0,
+    t1=t1,
+    opening=1);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> Line5_2A(
+    G=0,
+    R=0,
+    X=0.01667*(5/4)*percent,
+    B=0);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaComment">// Assign outputs to g1 variables</span>
+  w = g1.g1.SPEED;<span class="ModelicaComment"> // Machine speed</span>
+  delta = g1.g1.ANGLE;<span class="ModelicaComment"> // Machine angle</span>
+  Vt = g1.g1.ETERM;<span class="ModelicaComment"> // Terminal voltage mangitude</span>
+  P = g1.g1.P;<span class="ModelicaComment"> // Active power</span>
+  Q = g1.g1.Q;<span class="ModelicaComment"> // Reactive power</span>
+  AVRin = g1.AVRinput_meas;<span class="ModelicaComment"> // AVR input, error signal to the avr</span>
+  AVRout = g1.AVRoutput_meas;<span class="ModelicaComment"> // AVR output, Efd</span>
+  <span class="ModelicaFunction">connect</span>(g1.pwPin,bus1. p);
+  <span class="ModelicaFunction">connect</span>(g2.pwPin, bus2.p);
+  <span class="ModelicaFunction">connect</span>(Line5_6.n,bus6. p);
+  <span class="ModelicaFunction">connect</span>(Line5_6.p,bus5. p);
+  <span class="ModelicaFunction">connect</span>(Line8_9_2.n,bus9. p);
+  <span class="ModelicaFunction">connect</span>(Line8_9_1.n,bus9. p);
+  <span class="ModelicaFunction">connect</span>(Line8_9_2.p,bus8. p);
+  <span class="ModelicaFunction">connect</span>(Line8_9_1.p,bus8. p);
+  <span class="ModelicaFunction">connect</span>(Line7_8_2.n,bus8. p);
+  <span class="ModelicaFunction">connect</span>(Line7_8_1.n,bus8. p);
+  <span class="ModelicaFunction">connect</span>(Line7_8_1.p,bus7. p);
+  <span class="ModelicaFunction">connect</span>(Line9_10_A0.n, bus10.p);
+  <span class="ModelicaFunction">connect</span>(bus10.p,Line10_11. p);
+  <span class="ModelicaFunction">connect</span>(Line10_11.n,bus11. p);
+  <span class="ModelicaFunction">connect</span>(g4.pwPin, bus4.p);
+  <span class="ModelicaFunction">connect</span>(g3.pwPin,bus3. p);
+  <span class="ModelicaFunction">connect</span>(pwFault.p,bus8. p);
+  <span class="ModelicaFunction">connect</span>(bus1.p,Line5_1. p);
+  <span class="ModelicaFunction">connect</span>(bus5.p,Line5_1. n);
+  <span class="ModelicaFunction">connect</span>(bus2.p,Line5_2. p);
+  <span class="ModelicaFunction">connect</span>(bus11.p,Line5_3. p);
+  <span class="ModelicaFunction">connect</span>(Line5_3.n,bus3. p);
+  <span class="ModelicaFunction">connect</span>(bus4.p,Line5_4. n);
+  <span class="ModelicaFunction">connect</span>(Line5_4.p,Line10_11. p);
+  <span class="ModelicaFunction">connect</span>(Load9.p,bus9. p);
+  <span class="ModelicaFunction">connect</span>(Line7_8_2.p, bus7.p);
+  <span class="ModelicaFunction">connect</span>(Load7.p, bus7.p);
+  <span class="ModelicaFunction">connect</span>(Line6_7_A0.n,Line6_7_A1. p);
+  <span class="ModelicaFunction">connect</span>(Line6_7_A2.p,Line6_7_A1. p);
+  <span class="ModelicaFunction">connect</span>(Line6_7_A0.p, bus6.p);
+  <span class="ModelicaFunction">connect</span>(Line6_7_A1.n, bus7.p);
+  <span class="ModelicaFunction">connect</span>(Line6_7_A2.n, bus7.p);
+  <span class="ModelicaFunction">connect</span>(g1.uPm, uPm);
+  <span class="ModelicaFunction">connect</span>(g1.uPSS, uPSS);
+  <span class="ModelicaFunction">connect</span>(g1.uVsAVR, uAVRin);
+  <span class="ModelicaFunction">connect</span>(Line9_10_A0.p, bus9.p);
+  <span class="ModelicaFunction">connect</span>(Line5_2A.p, Line5_2B.p);
+  <span class="ModelicaFunction">connect</span>(Line5_2A.n, Line5_2B.n);
+  <span class="ModelicaFunction">connect</span>(bus6.p, Line5_2B.n);
+  <span class="ModelicaFunction">connect</span>(Line5_2.n, Line5_2B.p);
+  <span class="ModelicaFunction">connect</span>(uLoad9, Load9.u);
+  <span class="ModelicaFunction">connect</span>(uLoad7, Load7.u);
+<span class="ModelicaKeyword">end </span>sys;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:46 2024.
+</address>
+</body>
+</html>

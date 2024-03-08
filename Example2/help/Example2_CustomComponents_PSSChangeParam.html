@@ -1,0 +1,651 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.CustomComponents.PSSChangeParam</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;PSS Model with 4 or 5 different stages that have different parameters triggered at different times&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PSSChangeParam<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.CustomComponents.PSSChangeParam"></a><a href="Example2_CustomComponents.html#Example2.CustomComponents"
+>Example2.CustomComponents</a>.PSSChangeParam</h2>
+<p>
+<span class="ModelicaDescription">PSS Model with 4 or 5 different stages that have different parameters triggered at different times</span>
+</p>
+<h3>Information</h3>
+
+<p>Specialized custom PSS models. </p>
+<p>The PSS components in this package are composed internally by four or five different PSS models (PSSTypeII) internally. </p>
+<p>The output of each of them is enabled or disabled through a <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
+<p>This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_Package.html#Modelica.Icons.Package"
+>Modelica.Icons.Package</a> (Icon for standard packages).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.CustomComponentsbb816e5d4826110ctagesS.png" alt="Example2.CustomComponents.PSSChangeParam.PSS4Stages" width="20" height="20" align="top">&nbsp;<a href="Example2_CustomComponents_PSSChangeParam.html#Example2.CustomComponents.PSSChangeParam.PSS4Stages"
+>PSS4Stages</a>
+</td>
+<td>PSS Model with 4 different stages that have different parameters triggered at different times</td>
+</tr>
+<tr>
+<td><img src="Example2.CustomComponents70340a360826110ctagesS.png" alt="Example2.CustomComponents.PSSChangeParam.PSS5Stages" width="20" height="20" align="top">&nbsp;<a href="Example2_CustomComponents_PSSChangeParam.html#Example2.CustomComponents.PSSChangeParam.PSS5Stages"
+>PSS5Stages</a>
+</td>
+<td>PSS Model with 5 different stages that have different parameters triggered at different times</td>
+</tr>
+<tr>
+<td><img src="Example2.Base.Networks.TestsS.png" alt="Example2.CustomComponents.PSSChangeParam.Test" width="20" height="20" align="top">&nbsp;<a href="Example2_CustomComponents_PSSChangeParam_Test.html#Example2.CustomComponents.PSSChangeParam.Test"
+>Test</a>
+</td>
+<td>Package to test the PSS components</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PSS4Stages<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.CustomComponentsbb816e5d4826110ctagesI.png" alt="Example2.CustomComponents.PSSChangeParam.PSS4Stages" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.CustomComponents.PSSChangeParam.PSS4Stages"></a><a href="Example2_CustomComponents_PSSChangeParam.html#Example2.CustomComponents.PSSChangeParam"
+>Example2.CustomComponents.PSSChangeParam</a>.PSS4Stages</h2>
+<p>
+<span class="ModelicaDescription">PSS Model with 4 different stages that have different parameters triggered at different times</span>
+<br>
+<br><img src="Example2.CustomComponentsbb816e5d4826110ctagesD.png" alt="Example2.CustomComponents.PSSChangeParam.PSS4Stages">
+</p>
+<h3>Information</h3>
+
+<p>Specialized custom PSS model with Four Stages </p>
+<p>This PSS is comprised of four different PSS models (PSSTypeII) internally. </p>
+<p>The output of each of them is enabled or disabled through a <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
+<p>This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</p>
+
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 1 Output Timing </td></tr>
+<tr><td>Real</td><td>t1</td><td>0</td><td>Start time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 2 Output Timing </td></tr>
+<tr><td>Real</td><td>t2</td><td>30</td><td>Start time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 3 Output Timing </td></tr>
+<tr><td>Real</td><td>t3</td><td>60</td><td>Start time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 4 Output Timing</td></tr>
+<tr><td>Real</td><td>t4</td><td>90</td><td>Stop time of the injection</td></tr>
+<tr><td>Real</td><td>t5</td><td>Modelica.Constants.inf</td><td>Stop time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="4">PSS Parameters</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 1</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss1_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss1_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss1_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 2</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss2_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss2_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss2_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 3</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss3_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss3_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss3_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 4</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss4_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss4_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss4_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+</table>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>vSI</td><td>PSS4Substructures input</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>vs</td><td>PSS4Substructures Output</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> PSS4Stages
+  <span class="ModelicaComment">&quot;PSS Model with 4 different stages that have different parameters triggered at different times&quot;</span>
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS1(
+    vsmax=pss1_vsmax,
+    vsmin=pss1_vsmin,
+    Kw=pss1_Kw,
+    Tw=pss1_Tw,
+    T1=pss1_T1,
+    T2=pss1_T2,
+    T3=pss1_T3,
+    T4=pss1_T4);
+  <span class="ModelicaComment">// Turn on/off PSS outputs for each structure</span>
+  <span class="ModelicaKeyword">parameter </span>Real t1 = 0 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t2 = 30 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t3 = 60 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t4 = 90
+                        <span class="ModelicaComment">&quot;Stop time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t5 = Modelica.Constants.inf <span class="ModelicaComment">&quot;Stop time of the injection&quot;</span>;
+  <span class="ModelicaComment">// Define PSS parameters for propagation</span>
+  <span class="ModelicaComment">// PSS 1</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss1_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss1_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss1_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// PSS 2</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss2_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss2_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss2_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// PSS 3</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss3_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss3_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss3_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// PSS 4</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss4_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss4_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss4_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS2(
+    vsmax=pss2_vsmax,
+    vsmin=pss2_vsmin,
+    Kw=pss2_Kw,
+    Tw=pss2_Tw,
+    T1=pss2_T1,
+    T2=pss2_T2,
+    T3=pss2_T3,
+    T4=pss2_T4);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS3(
+    vsmax=pss3_vsmax,
+    vsmin=pss3_vsmin,
+    Kw=pss3_Kw,
+    Tw=pss3_Tw,
+    T1=pss3_T1,
+    T2=pss3_T2,
+    T3=pss3_T3,
+    T4=pss3_T4);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t1_t2(t_start=t1, t_stop=
+        t2);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS4(
+    vsmax=pss4_vsmax,
+    vsmin=pss4_vsmin,
+    Kw=pss4_Kw,
+    Tw=pss4_Tw,
+    T1=pss4_T1,
+    T2=pss4_T2,
+    T3=pss4_T3,
+    T4=pss4_T4);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> vSI <span class="ModelicaComment">&quot;PSS4Substructures input&quot;</span>;
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t2_t3(t_start=t2, t_stop=
+        t3);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t3_t4(t_start=t3, t_stop=
+        t4);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t4_t5(t_start=t4, t_stop=
+        t5);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Sum"
+>Modelica.Blocks.Math.Sum</a> out(nin=4);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> vs <span class="ModelicaComment">&quot;PSS4Substructures Output&quot;</span>;
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(pSS2.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(pSS1.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(pSS3.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(pSS4.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(t1_t2.u, pSS1.vs);
+  <span class="ModelicaFunction">connect</span>(pSS3.vs, t3_t4.u);
+  <span class="ModelicaFunction">connect</span>(pSS4.vs, t4_t5.u);
+  <span class="ModelicaFunction">connect</span>(pSS2.vs, t2_t3.u);
+  <span class="ModelicaFunction">connect</span>(t1_t2.y, out.u[1]);
+  <span class="ModelicaFunction">connect</span>(t2_t3.y, out.u[2]);
+  <span class="ModelicaFunction">connect</span>(t3_t4.y, out.u[3]);
+  <span class="ModelicaFunction">connect</span>(t4_t5.y, out.u[4]);
+  <span class="ModelicaFunction">connect</span>(out.y, vs);
+<span class="ModelicaKeyword">end </span>PSS4Stages;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PSS5Stages<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.CustomComponents70340a360826110ctagesI.png" alt="Example2.CustomComponents.PSSChangeParam.PSS5Stages" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.CustomComponents.PSSChangeParam.PSS5Stages"></a><a href="Example2_CustomComponents_PSSChangeParam.html#Example2.CustomComponents.PSSChangeParam"
+>Example2.CustomComponents.PSSChangeParam</a>.PSS5Stages</h2>
+<p>
+<span class="ModelicaDescription">PSS Model with 5 different stages that have different parameters triggered at different times</span>
+<br>
+<br><img src="Example2.CustomComponents70340a360826110ctagesD.png" alt="Example2.CustomComponents.PSSChangeParam.PSS5Stages">
+</p>
+<h3>Information</h3>
+
+<p>Specialized custom PSS model with Five Stages </p>
+<p>This PSS is comprised of four different PSS models (PSSTypeII) internally. </p>
+<p>The output of each of them is enabled or disabled through a <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
+<p>This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</p>
+
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 1 Output Timing </td></tr>
+<tr><td>Real</td><td>t1</td><td>0</td><td>Start time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 2 Output Timing </td></tr>
+<tr><td>Real</td><td>t2</td><td>30</td><td>Start time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 3 Output Timing </td></tr>
+<tr><td>Real</td><td>t3</td><td>60</td><td>Start time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 4 Output Timing</td></tr>
+<tr><td>Real</td><td>t4</td><td>90</td><td>Start time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 5 Output Timing</td></tr>
+<tr><td>Real</td><td>t5</td><td>120</td><td>Stop time of the injection</td></tr>
+<tr><td>Real</td><td>t6</td><td>Modelica.Constants.inf</td><td>Stop time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="4">PSS Parameters</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 1</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss1_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss1_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss1_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 2</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss2_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss2_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss2_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 3</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss3_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss3_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss3_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 4</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss4_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss4_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss4_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 5</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss5_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss5_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss5_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss5_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss5_T1</td><td>Modelica.Constants.small</td><td>First stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss5_T2</td><td>Modelica.Constants.small</td><td>Second stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss5_T3</td><td>Modelica.Constants.small</td><td>Third stabilizer time constant [s]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss5_T4</td><td>Modelica.Constants.small</td><td>Fourth stabilizer time constant [s]</td></tr>
+</table>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>vSI</td><td>PSS4Substructures input</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>vs</td><td>PSS4Substructures Output</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> PSS5Stages
+  <span class="ModelicaComment">&quot;PSS Model with 5 different stages that have different parameters triggered at different times&quot;</span>
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS1(
+    vsmax=pss1_vsmax,
+    vsmin=pss1_vsmin,
+    Kw=pss1_Kw,
+    Tw=pss1_Tw,
+    T1=pss1_T1,
+    T2=pss1_T2,
+    T3=pss1_T3,
+    T4=pss1_T4);
+  <span class="ModelicaComment">// Turn on/off PSS outputs for each structure</span>
+  <span class="ModelicaKeyword">parameter </span>Real t1 = 0 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t2 = 30 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t3 = 60 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t4 = 90 <span class="ModelicaComment">&quot;Start time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t5 = 120 <span class="ModelicaComment">&quot;Stop time of the injection&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t6 = Modelica.Constants.inf <span class="ModelicaComment">&quot;Stop time of the injection&quot;</span>;
+  <span class="ModelicaComment">// Define PSS parameters for propagation</span>
+  <span class="ModelicaComment">// PSS 1</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss1_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss1_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss1_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// PSS 2</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss2_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss2_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss2_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// PSS 3</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss3_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss3_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss3_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// PSS 4</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss4_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss4_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss4_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// PSS 5</span>
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss5_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss5_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss5_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss5_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss5_T1=Modelica.Constants.small <span class="ModelicaComment">&quot;First stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss5_T2=Modelica.Constants.small <span class="ModelicaComment">&quot;Second stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss5_T3=Modelica.Constants.small <span class="ModelicaComment">&quot;Third stabilizer time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss5_T4=Modelica.Constants.small <span class="ModelicaComment">&quot;Fourth stabilizer time constant&quot;</span>;
+  <span class="ModelicaComment">// stop defining parameters</span>
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS2(
+    vsmax=pss2_vsmax,
+    vsmin=pss2_vsmin,
+    Kw=pss2_Kw,
+    Tw=pss2_Tw,
+    T1=pss2_T1,
+    T2=pss2_T2,
+    T3=pss2_T3,
+    T4=pss2_T4);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS3(
+    vsmax=pss3_vsmax,
+    vsmin=pss3_vsmin,
+    Kw=pss3_Kw,
+    Tw=pss3_Tw,
+    T1=pss3_T1,
+    T2=pss3_T2,
+    T3=pss3_T3,
+    T4=pss3_T4);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t1_t2(t_start=t1, t_stop=
+        t2);
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS4(
+    vsmax=pss4_vsmax,
+    vsmin=pss4_vsmin,
+    Kw=pss4_Kw,
+    Tw=pss4_Tw,
+    T1=pss4_T1,
+    T2=pss4_T2,
+    T3=pss4_T3,
+    T4=pss4_T4);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> vSI <span class="ModelicaComment">&quot;PSS4Substructures input&quot;</span>;
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t2_t3(t_start=t2, t_stop=
+        t3);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t3_t4(t_start=t3, t_stop=
+        t4);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>Example2.CustomComponents.TimedInputInjectionOnOff</a> t4_t5(t_start=t4, t_stop=
+        t5);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Sum"
+>Modelica.Blocks.Math.Sum</a> out(nin=5);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> vs <span class="ModelicaComment">&quot;PSS4Substructures Output&quot;</span>;
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Controls_PSAT_PSS.html#OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII"
+>OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII</a> pSS5(
+    vsmax=pss5_vsmax,
+    vsmin=pss5_vsmin,
+    Kw=pss5_Kw,
+    Tw=pss5_Tw,
+    T1=pss5_T1,
+    T2=pss5_T2,
+    T3=pss5_T3,
+    T4=pss5_T4);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInputInjectionOnOff"
+>TimedInputInjectionOnOff</a> t5_t6(t_start=t5, t_stop=t6);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(pSS2.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(pSS1.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(pSS3.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(pSS4.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(t1_t2.u, pSS1.vs);
+  <span class="ModelicaFunction">connect</span>(pSS3.vs, t3_t4.u);
+  <span class="ModelicaFunction">connect</span>(pSS4.vs, t4_t5.u);
+  <span class="ModelicaFunction">connect</span>(pSS2.vs, t2_t3.u);
+  <span class="ModelicaFunction">connect</span>(t1_t2.y, out.u[1]);
+  <span class="ModelicaFunction">connect</span>(t2_t3.y, out.u[2]);
+  <span class="ModelicaFunction">connect</span>(t3_t4.y, out.u[3]);
+  <span class="ModelicaFunction">connect</span>(t4_t5.y, out.u[4]);
+  <span class="ModelicaFunction">connect</span>(out.y, vs);
+  <span class="ModelicaFunction">connect</span>(pSS5.vSI, vSI);
+  <span class="ModelicaFunction">connect</span>(pSS5.vs, t5_t6.u);
+  <span class="ModelicaFunction">connect</span>(t5_t6.y, out.u[5]);
+<span class="ModelicaKeyword">end </span>PSS5Stages;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:49 2024.
+</address>
+</body>
+</html>

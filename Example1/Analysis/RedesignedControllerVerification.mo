@@ -388,9 +388,7 @@ Click on the \"Plant\" block to specify controller parameters.",
 <li>Re-design 1: <span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C1_8cycles</span>. This design was obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-6GfUUJy2.png\" alt=\"gamma = 0.025\"/>, resulting in parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-uRaInKme.png\" alt=\"k_w = 22.4455\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-b4mgrEyi.png\" alt=\"t_w = 0.5217\"/> sec.</li>
 <li>Re-design 2: <span style=\"font-family: Courier New;\">Example1.Analysis.RedesignedControllerVerification.C2_8cycles</span>. This design was obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-xYLZp3n1.png\" alt=\"gamma = 0.05\"/>, resulting in parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-Tv6HYrxI.png\" alt=\"k_w = 12.6924\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-QwYVSX78.png\" alt=\"t_w = 0.5602\"/> sec. </li>
 </ul>
-<p><br>To compare the different control designs the following function is provided:</p>
-<p><span style=\"font-family: Courier New;\"><a href=\"Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare
-\">Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare</a></span></p>
+<p><br>To compare the different control designs the following function is provided: <a href=\"Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare\">C012_simulate_plot_compare</a></p>
 <p>Executing this function results in a plot of the terminal voltage and speed similar to that in Fig. 10 of [2], with the main difference being that the random load has been removed to speed up the simulations. Note that the all three cases above are simulated, so if a change is made in one of them, it should be also applied to the others so that running the function gives a plot for useful comparisons.</p>
 </html>"));
 end RedesignedControllerVerification;

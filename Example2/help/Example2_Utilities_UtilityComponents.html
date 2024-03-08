@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Utilities.UtilityComponents</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE UtilityComponents<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Utilities.UtilityComponents"></a><a href="Example2_Utilities.html#Example2.Utilities"
+>Example2.Utilities</a>.UtilityComponents</h2>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.Utilities.Utilit12a7638f94211635ctionS.png" alt="Example2.Utilities.UtilityComponents.DymolaAnnotationSelection" width="20" height="20" align="top">&nbsp;<a href="Example2_Utilities_UtilityComponents.html#Example2.Utilities.UtilityComponents.DymolaAnnotationSelection"
+>DymolaAnnotationSelection</a>
+</td>
+<td>Add to a model the selections with Dymola-specific annotations</td>
+</tr>
+<tr>
+<td><img src="Example2.Utilities.Utilit83e9963000c7ef2enarioS.png" alt="Example2.Utilities.UtilityComponents.EventTriggerSnapshotScenario" width="20" height="20" align="top">&nbsp;<a href="Example2_Utilities_UtilityComponents.html#Example2.Utilities.UtilityComponents.EventTriggerSnapshotScenario"
+>EventTriggerSnapshotScenario</a>
+</td>
+<td>Trigger snapshot saving at specific points of the simulation</td>
+</tr>
+<tr>
+<td><img src="Example2.Utilities.Utilite44b36a0e10c16a7pshotS.png" alt="Example2.Utilities.UtilityComponents.EventTriggerSnapshot" width="20" height="20" align="top">&nbsp;<a href="Example2_Utilities_UtilityComponents.html#Example2.Utilities.UtilityComponents.EventTriggerSnapshot"
+>EventTriggerSnapshot</a>
+</td>
+<td>Trigger snapshot saving at specific points of the simulation</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE DymolaAnnotationSelection<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Utilities.Utilit12a7638f94211635ctionI.png" alt="Example2.Utilities.UtilityComponents.DymolaAnnotationSelection" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Utilities.UtilityComponents.DymolaAnnotationSelection"></a><a href="Example2_Utilities_UtilityComponents.html#Example2.Utilities.UtilityComponents"
+>Example2.Utilities.UtilityComponents</a>.DymolaAnnotationSelection</h2>
+<p>
+<span class="ModelicaDescription">Add to a model the selections with Dymola-specific annotations</span>
+</p>
+<h3>Information</h3>
+
+<p>In this model, the Dymola-specific annotation __Dymola_selections is provided as an example so that the user can configure its own to store the variables preferred.</p>
+<p>Expanding the annotations, the following variables can be found:</p>
+<p><span style="font-family: Courier New;">__Dymola_selections={<span style="color: #ff0000;">Selection</span>(name=&quot;MySelection&quot;,&nbsp;match={<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.Vt&quot;,&nbsp;newName=&quot;Vt&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.Q&quot;,&nbsp;newName=&quot;Q&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.P&quot;,newName=&quot;P&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.w&quot;,newName=&quot;w&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.AVRin&quot;,newName=&quot;u&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.AVRout&quot;,newName=&quot;AVRout&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;timedMultiRamp.y&quot;,newName=&quot;rampY&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.Load9.P&quot;,newName=&quot;Pload&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;r.y&quot;,newName=&quot;r&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;plant.g1.pss.vs&quot;,newName=&quot;pssy&quot;),<span style="font-family: Courier New; color: #ff0000;">MatchVariable</span>(name=&quot;ramping.y&quot;,newName=&quot;rampingy&quot;)})}</p>
+<p>Here several variables from the model used in Example2 are stored.</p>
+<p>Usage:</p>
+<p>This model can be added to a model containing the model Example2.Base.Systems.sys, which is instantiated as &quot;plant&quot;.</p>
+<p>Alternatively the annotation above can be copy/pasted to a model containing Example2.Base.Systems.sys, which should be instantiated as plant.</p>
+
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">model</span> DymolaAnnotationSelection
+  <span class="ModelicaComment">&quot;Add to a model the selections with Dymola-specific annotations&quot;</span>
+
+<span class="ModelicaKeyword">end </span>DymolaAnnotationSelection;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE EventTriggerSnapshotScenario<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Utilities.Utilit83e9963000c7ef2enarioI.png" alt="Example2.Utilities.UtilityComponents.EventTriggerSnapshotScenario" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Utilities.UtilityComponents.EventTriggerSnapshotScenario"></a><a href="Example2_Utilities_UtilityComponents.html#Example2.Utilities.UtilityComponents"
+>Example2.Utilities.UtilityComponents</a>.EventTriggerSnapshotScenario</h2>
+<p>
+<span class="ModelicaDescription">Trigger snapshot saving at specific points of the simulation</span>
+</p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>talpha</td><td>0</td><td>start of the scenario</td></tr>
+<tr><td>Real</td><td>t2p5</td><td>150</td><td>Ramping interval (default 2.5 min)</td></tr>
+<tr><td>Real</td><td>t5p0</td><td>300</td><td>Probing interval (default 5.0 min)</td></tr>
+<tr><td>Real</td><td>tnin_start</td><td>talpha + t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tnin_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tA_start</td><td>tramp1_start + tramp1_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tA_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tB_start</td><td>tA_start + tA_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tB_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tC_start</td><td>tB_start + tB_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tC_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tbeta</td><td>tramp2_start + tramp2_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tD_start</td><td>tbeta + t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tD_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tE_start</td><td>tD_start + tD_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tE_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tgamma</td><td>tramp3_start + tramp3_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tF_start</td><td>tgamma + t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tF_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tG_start</td><td>tF_start + tF_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tG_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tdelta</td><td>tramp4_start + tramp4_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tH_start</td><td>tdelta + t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tH_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tI_start</td><td>tH_start + tH_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tI_duration</td><td>t5p0</td><td>&nbsp;</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Default Ramp Values</td></tr>
+<tr><td>Real</td><td>tramp1_start</td><td>t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tramp1_duration</td><td>tnin_start + tnin_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tramp2_start</td><td>tC_start + tC_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tramp2_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tramp3_start</td><td>tE_start + tE_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tramp3_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tramp4_start</td><td>tG_start + tG_duration</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>tramp4_duration</td><td>t2p5</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> EventTriggerSnapshotScenario
+  <span class="ModelicaComment">&quot;Trigger snapshot saving at specific points of the simulation&quot;</span>
+
+  Real x <span class="ModelicaComment">&quot;Copy of the time variable for checking timings for snapshots&quot;</span>;
+
+  <span class="ModelicaKeyword">parameter </span>Real talpha = 0 <span class="ModelicaComment">&quot;start of the scenario&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t2p5 = 150 <span class="ModelicaComment">&quot;Ramping interval (default 2.5 min)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real t5p0 = 300 <span class="ModelicaComment">&quot;Probing interval (default 5.0 min)&quot;</span>;
+
+  <span class="ModelicaKeyword">parameter </span>Real tnin_start = talpha + t2p5;
+  <span class="ModelicaKeyword">parameter </span>Real tnin_duration = t2p5;
+
+  <span class="ModelicaKeyword">parameter </span>Real tramp1_start=t2p5;
+  <span class="ModelicaKeyword">parameter </span>Real tramp1_duration=tnin_start + tnin_duration;
+
+  <span class="ModelicaKeyword">parameter </span>Real tA_start = tramp1_start + tramp1_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tA_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tB_start = tA_start + tA_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tB_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tC_start = tB_start + tB_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tC_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tramp2_start=tC_start + tC_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tramp2_duration=t2p5;
+
+  <span class="ModelicaKeyword">parameter </span>Real tbeta = tramp2_start + tramp2_duration;
+
+  <span class="ModelicaKeyword">parameter </span>Real tD_start = tbeta + t2p5;
+  <span class="ModelicaKeyword">parameter </span>Real tD_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tE_start = tD_start + tD_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tE_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tramp3_start = tE_start + tE_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tramp3_duration = t2p5;
+
+  <span class="ModelicaKeyword">parameter </span>Real tgamma = tramp3_start + tramp3_duration;
+
+  <span class="ModelicaKeyword">parameter </span>Real tF_start = tgamma + t2p5;
+  <span class="ModelicaKeyword">parameter </span>Real tF_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tG_start = tF_start + tF_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tG_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tramp4_start = tG_start + tG_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tramp4_duration = t2p5;
+
+  <span class="ModelicaKeyword">parameter </span>Real tdelta = tramp4_start + tramp4_duration;
+
+  <span class="ModelicaKeyword">parameter </span>Real tH_start = tdelta + t2p5;
+  <span class="ModelicaKeyword">parameter </span>Real tH_duration = t5p0;
+
+  <span class="ModelicaKeyword">parameter </span>Real tI_start = tH_start + tH_duration;
+  <span class="ModelicaKeyword">parameter </span>Real tI_duration = t5p0;
+
+<span class="ModelicaKeyword">equation </span>
+  x = time;
+
+    <span class="ModelicaKeyword">when </span>x &gt;= tA_start<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tB_start<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tC_start<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tD_start<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tF_start<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+    <span class="ModelicaKeyword">elsewhen </span>x &gt;= tG_start<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+    <span class="ModelicaKeyword">end when</span>;
+<span class="ModelicaKeyword">end </span>EventTriggerSnapshotScenario;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE EventTriggerSnapshot<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Utilities.Utilite44b36a0e10c16a7pshotI.png" alt="Example2.Utilities.UtilityComponents.EventTriggerSnapshot" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Utilities.UtilityComponents.EventTriggerSnapshot"></a><a href="Example2_Utilities_UtilityComponents.html#Example2.Utilities.UtilityComponents"
+>Example2.Utilities.UtilityComponents</a>.EventTriggerSnapshot</h2>
+<p>
+<span class="ModelicaDescription">Trigger snapshot saving at specific points of the simulation</span>
+</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> EventTriggerSnapshot
+  <span class="ModelicaComment">&quot;Trigger snapshot saving at specific points of the simulation&quot;</span>
+  Real x;
+<span class="ModelicaKeyword">equation </span>
+  x = time;
+  <span class="ModelicaKeyword">when </span>x &gt;= 1230<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+  <span class="ModelicaKeyword">elsewhen </span>x&gt;=1245<span class="ModelicaKeyword"> then</span>
+    <span class="ModelicaFunction">Dymola.Simulation.TriggerResultSnapshot</span>();
+  <span class="ModelicaKeyword">end when</span>;
+<span class="ModelicaKeyword">end </span>EventTriggerSnapshot;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:50 2024.
+</address>
+</body>
+</html>

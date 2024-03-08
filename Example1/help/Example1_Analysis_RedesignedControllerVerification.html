@@ -1,0 +1,461 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example1.Analysis.RedesignedControllerVerification</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Controller verification simulation examples.&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE RedesignedControllerVerification<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example1.Analysis.RedesignedControllerVerification"></a><a href="Example1_Analysis.html#Example1.Analysis"
+>Example1.Analysis</a>.RedesignedControllerVerification</h2>
+<p>
+<span class="ModelicaDescription">Controller verification simulation examples.</span>
+</p>
+<h3>Information</h3>
+
+<p>This package is configured to simulate the response to an 8-cycle load disturbance and to compare the default PSS control design with the two redesigned controllers presented in [2]. </p>
+<ul>
+<li>Default/original design: <span style="font-family: Courier New;">Example1.Analysis.RedesignedControllerVerification.C0_8cycles,</span>is configured to simulate the default PSS control design with <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-clBCuWQf.png" alt="k_w = 9.5"/> and <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-RmsQjcZ0.png" alt="t_w = 1.41"/> sec. </li>
+<li>Re-design 1: <span style="font-family: Courier New;">Example1.Analysis.RedesignedControllerVerification.C1_8cycles</span>. This design was obtained using <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-6GfUUJy2.png" alt="gamma = 0.025"/>, resulting in parameters <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-uRaInKme.png" alt="k_w = 22.4455"/> and <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-b4mgrEyi.png" alt="t_w = 0.5217"/> sec.</li>
+<li>Re-design 2: <span style="font-family: Courier New;">Example1.Analysis.RedesignedControllerVerification.C2_8cycles</span>. This design was obtained using <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-xYLZp3n1.png" alt="gamma = 0.05"/>, resulting in parameters <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-Tv6HYrxI.png" alt="k_w = 12.6924"/> and <img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/equations/equation-QwYVSX78.png" alt="t_w = 0.5602"/> sec. </li>
+</ul>
+<p><br>To compare the different control designs the following function is provided: <a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare"
+>C012_simulate_plot_compare</a></p>
+<p>Executing this function results in a plot of the terminal voltage and speed similar to that in Fig. 10 of [2], with the main difference being that the random load has been removed to speed up the simulations. Note that the all three cases above are simulated, so if a change is made in one of them, it should be also applied to the others so that running the function gives a plot for useful comparisons.</p>
+
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example1.Base.Systems.Tesc3d7474dbe415b4aOsisoS.png" alt="Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare" width="20" height="20" align="top">&nbsp;<a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare"
+>C012_simulate_plot_compare</a>
+</td>
+<td>Simulates and plots the response of three models with different control designs.</td>
+</tr>
+<tr>
+<td><img src="Example1.Analysis.LinearA027e7acf9bd7f13dimentS.png" alt="Example1.Analysis.RedesignedControllerVerification.C0_8cycles" width="20" height="20" align="top">&nbsp;<a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification.C0_8cycles"
+>C0_8cycles</a>
+</td>
+<td>Default controller with kw=9.5 and tw=1.41.</td>
+</tr>
+<tr>
+<td><img src="Example1.Analysis.LinearA027e7acf9bd7f13dimentS.png" alt="Example1.Analysis.RedesignedControllerVerification.C1_8cycles" width="20" height="20" align="top">&nbsp;<a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification.C1_8cycles"
+>C1_8cycles</a>
+</td>
+<td>Re-designed controller 1 with k2=22.4455 and tw=0.5217.</td>
+</tr>
+<tr>
+<td><img src="Example1.Analysis.LinearA027e7acf9bd7f13dimentS.png" alt="Example1.Analysis.RedesignedControllerVerification.C2_8cycles" width="20" height="20" align="top">&nbsp;<a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification.C2_8cycles"
+>C2_8cycles</a>
+</td>
+<td>Re-designed controller 2 with kw=12.6924 and tw=0.5602.</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE C012_simulate_plot_compare<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Base.Systems.Tesc3d7474dbe415b4aOsisoI.png" alt="Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare"></a><a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification"
+>Example1.Analysis.RedesignedControllerVerification</a>.C012_simulate_plot_compare</h2>
+<p>
+<span class="ModelicaDescription">Simulates and plots the response of three models with different control designs.</span>
+</p>
+<h3>Information</h3>
+
+<p><i><b><span style="font-family: Arial;">Usage</span></b></i></p>
+<ol>
+<li><span style="font-family: Arial;">In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</span></li>
+<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/c012_simulate_plot_compare%20(Small).png"/></p>
+<li><span style="font-family: Arial;">Leave the default model names without change, these correspond to the three models within the package.</span></li>
+<li><span style="font-family: Arial;">Go to the bottom of the window and click on &quot;Execute&quot;.</span></li>
+<li><span style="font-family: Arial;">Go back to the function&apos;s own window and click on &quot;Close&quot;.</span></li>
+</ol>
+<p><br><i><b>Sample Output</b></i></p>
+<p>Executing the function will produce the following plot.</p>
+<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/C012_simulate_plot_compare_output.png"/></p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
+>Modelica.Icons.Function</a> (Icon for functions).</span></p>
+<h3>Inputs</h3>
+<table summary="Inputs" class="ModelicaTableInputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>String</td><td>modelname1</td><td title=""Example1.Analysis.RedesignedControllerVerification.C0_8cycles"">&quot;Example1.Analysis.Redesigne...</td><td>Model name - default controller</td></tr>
+<tr><td>String</td><td>modelname2</td><td title=""Example1.Analysis.RedesignedControllerVerification.C1_8cycles"">&quot;Example1.Analysis.Redesigne...</td><td>Model name - controller re-design 1</td></tr>
+<tr><td>String</td><td>modelname3</td><td title=""Example1.Analysis.RedesignedControllerVerification.C2_8cycles"">&quot;Example1.Analysis.Redesigne...</td><td>Model name - controller re-design 2</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">function</span> C012_simulate_plot_compare
+  <span class="ModelicaComment">&quot;Simulates and plots the response of three models with different control designs.&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
+>Modelica.Icons.Function</a>;
+  <span class="ModelicaKeyword">input </span>String modelname1 = &quot;Example1.Analysis.RedesignedControllerVerification.C0_8cycles&quot; <span class="ModelicaComment">&quot;Model name - default controller&quot;</span>;
+  <span class="ModelicaKeyword">input </span>String modelname2 = &quot;Example1.Analysis.RedesignedControllerVerification.C1_8cycles&quot; <span class="ModelicaComment">&quot;Model name - controller re-design 1&quot;</span>;
+  <span class="ModelicaKeyword">input </span>String modelname3 = &quot;Example1.Analysis.RedesignedControllerVerification.C2_8cycles&quot; <span class="ModelicaComment">&quot;Model name - controller re-design 2&quot;</span>;
+
+<span class="ModelicaKeyword">algorithm </span>
+  <span class="ModelicaComment">// turn of DAE mode et al</span>
+  <span class="ModelicaFunction">Example1.Utilities.SetupSolverSettings.On</span>();
+  <span class="ModelicaComment">// Simulate the model</span>
+  <span class="ModelicaFunction">simulateModel</span>(
+  modelname1,
+  stopTime=1260,
+  numberOfIntervals=20000,
+  tolerance=1e-03,
+  resultFile=&quot;C0_8cycles&quot;);
+  <span class="ModelicaComment">// Simulate the model</span>
+  <span class="ModelicaFunction">simulateModel</span>(
+  modelname2,
+  stopTime=1260,
+  numberOfIntervals=20000,
+  tolerance=1e-03,
+  resultFile=&quot;C1_8cycles&quot;);
+  <span class="ModelicaComment">// Simulate the model</span>
+  <span class="ModelicaFunction">simulateModel</span>(
+  modelname3,
+  stopTime=1260,
+  numberOfIntervals=20000,
+  tolerance=1e-03,
+  resultFile=&quot;C2_8cycles&quot;);
+  <span class="ModelicaComment">// Plot</span>
+<span class="ModelicaFunction">removePlots</span>(false);
+Advanced.FilenameInLegend :=true;
+Advanced.FilesToKeep :=10;
+<span class="ModelicaFunction">createPlot</span>(id=1, position={40, 40, 826, 766}, y={&quot;Vt&quot;}, range={1240.0, 1260.0, 0.8500000000000001, 1.05}, autoscale=false, grid=true, filename=&quot;C0_8cycles.mat&quot;, subPlot=101, colors={{28,108,200}}, timeUnit=&quot;s&quot;, displayUnits={&quot;1&quot;});
+<span class="ModelicaFunction">createPlot</span>(id=1, position={40, 40, 826, 766}, y={&quot;w&quot;}, range={1240.0, 1260.0, 0.994, 1.006}, autoscale=false, grid=true, subPlot=102, colors={{28,108,200}}, timeUnit=&quot;s&quot;, displayUnits={&quot;1&quot;});
+<span class="ModelicaFunction">createPlot</span>(id=1, position={40, 40, 826, 766}, y={&quot;Vt&quot;}, range={1240.0, 1260.0, 0.8500000000000001, 1.05}, erase=false, autoscale=false, grid=true, filename=&quot;C1_8cycles.mat&quot;, subPlot=101, colors={{238,46,47}}, timeUnit=&quot;s&quot;, displayUnits={&quot;1&quot;});
+<span class="ModelicaFunction">createPlot</span>(id=1, position={40, 40, 826, 766}, y={&quot;w&quot;}, range={1240.0, 1260.0, 0.994, 1.006}, erase=false, autoscale=false, grid=true, subPlot=102, colors={{238,46,47}}, timeUnit=&quot;s&quot;, displayUnits={&quot;1&quot;});
+<span class="ModelicaFunction">createPlot</span>(id=1, position={40, 40, 826, 766}, y={&quot;Vt&quot;}, range={1240.0, 1260.0, 0.8500000000000001, 1.05}, erase=false, autoscale=false, grid=true, filename=&quot;C2_8cycles.mat&quot;, subPlot=101, colors={{0,140,72}}, timeUnit=&quot;s&quot;, displayUnits={&quot;1&quot;});
+<span class="ModelicaFunction">createPlot</span>(id=1, position={40, 40, 826, 766}, y={&quot;w&quot;}, range={1240.0, 1260.0, 0.994, 1.006}, erase=false, autoscale=false, grid=true, subPlot=102, colors={{0,140,72}}, timeUnit=&quot;s&quot;, displayUnits={&quot;1&quot;});
+<span class="ModelicaKeyword">end </span>C012_simulate_plot_compare;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE C0_8cycles<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Analysis.LinearA027e7acf9bd7f13dimentI.png" alt="Example1.Analysis.RedesignedControllerVerification.C0_8cycles" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Analysis.RedesignedControllerVerification.C0_8cycles"></a><a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification"
+>Example1.Analysis.RedesignedControllerVerification</a>.C0_8cycles</h2>
+<p>
+<span class="ModelicaDescription">Default controller with kw=9.5 and tw=1.41.</span>
+<br>
+<br><img src="Example1.Analysis.Redesig0aa43d1343f0e670yclesD.png" alt="Example1.Analysis.RedesignedControllerVerification.C0_8cycles">
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Vt</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Q</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>P</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>delta</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> C0_8cycles <span class="ModelicaComment">&quot;Default controller with kw=9.5 and tw=1.41.&quot;</span>
+
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> Vt;
+<span class="ModelicaKeyword">public </span>
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> Q;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> P;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> w;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> delta;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> PSSchange(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> Pmchange(k=0);
+  <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
+>Example1.Base.Systems.gridIO</a> Plant(
+    t1=0.5, t2=Modelica.Constants.inf);
+  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Noise.html#Modelica.Blocks.Noise.GlobalSeed"
+>Modelica.Blocks.Noise.GlobalSeed</a> globalSeed(useAutomaticSeed=
+        false);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> AVRin;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> AVRout;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> loadnoise(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Add"
+>Modelica.Blocks.Math.Add</a> uload;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> uARVinput(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
+>Modelica.Blocks.Sources.Pulse</a> uloaddist(
+    amplitude=1.25,
+    width=100,
+    period=8/60,
+    nperiod=1,
+    offset=0,
+    startTime=1245);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(Plant.uPSS, PSSchange.y);
+  <span class="ModelicaFunction">connect</span>(Plant.uPm, Pmchange.y);
+  <span class="ModelicaFunction">connect</span>(Plant.Vt, Vt);
+  <span class="ModelicaFunction">connect</span>(Plant.P, P);
+  <span class="ModelicaFunction">connect</span>(Plant.Q, Q);
+  <span class="ModelicaFunction">connect</span>(Plant.w, w);
+  <span class="ModelicaFunction">connect</span>(Plant.delta, delta);
+  <span class="ModelicaFunction">connect</span>(AVRin, Plant.AVRin);
+  <span class="ModelicaFunction">connect</span>(AVRout, Plant.AVRout);
+  <span class="ModelicaFunction">connect</span>(uload.u1, loadnoise.y);
+  <span class="ModelicaFunction">connect</span>(uload.y, Plant.uPload);
+  <span class="ModelicaFunction">connect</span>(uARVinput.y, Plant.uvs);
+  <span class="ModelicaFunction">connect</span>(uloaddist.y, uload.u2);
+<span class="ModelicaKeyword">end </span>C0_8cycles;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE C1_8cycles<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Analysis.LinearA027e7acf9bd7f13dimentI.png" alt="Example1.Analysis.RedesignedControllerVerification.C1_8cycles" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Analysis.RedesignedControllerVerification.C1_8cycles"></a><a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification"
+>Example1.Analysis.RedesignedControllerVerification</a>.C1_8cycles</h2>
+<p>
+<span class="ModelicaDescription">Re-designed controller 1 with k2=22.4455 and tw=0.5217.</span>
+<br>
+<br><img src="Example1.Analysis.Redesig0aa43d1343f0e670yclesD.png" alt="Example1.Analysis.RedesignedControllerVerification.C1_8cycles">
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Vt</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Q</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>P</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>delta</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> C1_8cycles <span class="ModelicaComment">&quot;Re-designed controller 1 with k2=22.4455 and tw=0.5217.&quot;</span>
+
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> Vt;
+<span class="ModelicaKeyword">public </span>
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> Q;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> P;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> w;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> delta;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> PSSchange(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> Pmchange(k=0);
+  <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
+>Example1.Base.Systems.gridIO</a> Plant(
+    t1=0.5,
+    t2=Modelica.Constants.inf,
+    Kw=22.4455,
+    Tw=0.5217);
+  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Noise.html#Modelica.Blocks.Noise.GlobalSeed"
+>Modelica.Blocks.Noise.GlobalSeed</a> globalSeed(useAutomaticSeed=
+        false);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> AVRin;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> AVRout;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> loadnoise(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Add"
+>Modelica.Blocks.Math.Add</a> uload;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
+>Modelica.Blocks.Sources.Pulse</a> uloaddist(
+    amplitude=1.25,
+    width=100,
+    period=8/60,
+    nperiod=1,
+    offset=0,
+    startTime=1245);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> uARVinput(k=0);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(Plant.uPSS, PSSchange.y);
+  <span class="ModelicaFunction">connect</span>(Plant.uPm, Pmchange.y);
+  <span class="ModelicaFunction">connect</span>(Plant.Vt, Vt);
+  <span class="ModelicaFunction">connect</span>(Plant.P, P);
+  <span class="ModelicaFunction">connect</span>(Plant.Q, Q);
+  <span class="ModelicaFunction">connect</span>(Plant.w, w);
+  <span class="ModelicaFunction">connect</span>(Plant.delta, delta);
+  <span class="ModelicaFunction">connect</span>(AVRin, Plant.AVRin);
+  <span class="ModelicaFunction">connect</span>(AVRout, Plant.AVRout);
+  <span class="ModelicaFunction">connect</span>(uload.u1, loadnoise.y);
+  <span class="ModelicaFunction">connect</span>(uloaddist.y, uload.u2);
+  <span class="ModelicaFunction">connect</span>(uload.y, Plant.uPload);
+  <span class="ModelicaFunction">connect</span>(uARVinput.y, Plant.uvs);
+<span class="ModelicaKeyword">end </span>C1_8cycles;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE C2_8cycles<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Analysis.LinearA027e7acf9bd7f13dimentI.png" alt="Example1.Analysis.RedesignedControllerVerification.C2_8cycles" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Analysis.RedesignedControllerVerification.C2_8cycles"></a><a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification"
+>Example1.Analysis.RedesignedControllerVerification</a>.C2_8cycles</h2>
+<p>
+<span class="ModelicaDescription">Re-designed controller 2 with kw=12.6924 and tw=0.5602.</span>
+<br>
+<br><img src="Example1.Analysis.Redesig3cc6c85543f0e470yclesD.png" alt="Example1.Analysis.RedesignedControllerVerification.C2_8cycles">
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Vt</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>Q</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>P</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>delta</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRin</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>AVRout</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> C2_8cycles <span class="ModelicaComment">&quot;Re-designed controller 2 with kw=12.6924 and tw=0.5602.&quot;</span>
+
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> Vt;
+<span class="ModelicaKeyword">public </span>
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> Q;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> P;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> w;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> delta;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> PSSchange(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> Pmchange(k=0);
+  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Noise.html#Modelica.Blocks.Noise.GlobalSeed"
+>Modelica.Blocks.Noise.GlobalSeed</a> globalSeed(useAutomaticSeed=
+        false);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> AVRin;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> AVRout;
+  <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
+>Example1.Base.Systems.gridIO</a> Plant(
+    t1=0.5,
+    t2=Modelica.Constants.inf,
+    Kw=12.6924,
+    Tw=0.5602);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> loadnoise(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Add"
+>Modelica.Blocks.Math.Add</a> uload;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> uARVinput(k=0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
+>Modelica.Blocks.Sources.Pulse</a> uloaddist(
+    amplitude=1.25,
+    width=100,
+    period=8/60,
+    nperiod=1,
+    offset=0,
+    startTime=1245);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(Plant.uPSS, PSSchange.y);
+  <span class="ModelicaFunction">connect</span>(Plant.uPm, Pmchange.y);
+  <span class="ModelicaFunction">connect</span>(Plant.Vt, Vt);
+  <span class="ModelicaFunction">connect</span>(Plant.P, P);
+  <span class="ModelicaFunction">connect</span>(Plant.Q, Q);
+  <span class="ModelicaFunction">connect</span>(Plant.w, w);
+  <span class="ModelicaFunction">connect</span>(Plant.delta, delta);
+  <span class="ModelicaFunction">connect</span>(AVRin, Plant.AVRin);
+  <span class="ModelicaFunction">connect</span>(AVRout, Plant.AVRout);
+  <span class="ModelicaFunction">connect</span>(uload.u1, loadnoise.y);
+  <span class="ModelicaFunction">connect</span>(uload.y, Plant.uPload);
+  <span class="ModelicaFunction">connect</span>(uARVinput.y, Plant.uvs);
+  <span class="ModelicaFunction">connect</span>(uloaddist.y, uload.u2);
+<span class="ModelicaKeyword">end </span>C2_8cycles;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:11 2024.
+</address>
+</body>
+</html>

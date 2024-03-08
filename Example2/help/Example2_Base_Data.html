@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Base.Data</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Power flow data records for network initialization&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Data<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Data"></a><a href="Example2_Base.html#Example2.Base"
+>Example2.Base</a>.Data</h2>
+<p>
+<span class="ModelicaDescription">Power flow data records for network initialization</span>
+</p>
+<h3>Information</h3>
+
+<p>This package contains four different sets of data records that can be used to initialize the power network on an initial operating point.</p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_RecordsPackage.html#Modelica.Icons.RecordsPackage"
+>Modelica.Icons.RecordsPackage</a> (Icon for package containing records).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.Base.Data.PF0S.png" alt="Example2.Base.Data.PF0" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Data.html#Example2.Base.Data.PF0"
+>PF0</a>
+</td>
+<td>Power flow data record, Case 00</td>
+</tr>
+<tr>
+<td><img src="Example2.Base.Data.PF0S.png" alt="Example2.Base.Data.PF1" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Data.html#Example2.Base.Data.PF1"
+>PF1</a>
+</td>
+<td>Power flow data record, Case 01</td>
+</tr>
+<tr>
+<td><img src="Example2.Base.Data.PF0S.png" alt="Example2.Base.Data.PF_TwoAreas" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>PF_TwoAreas</a>
+</td>
+<td>Template data record used to store power flow results for initialization</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PF0<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Data.PF0"></a><a href="Example2_Base_Data.html#Example2.Base.Data"
+>Example2.Base.Data</a>.PF0</h2>
+<p>
+<span class="ModelicaDescription">Power flow data record, Case 00</span>
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>PF_TwoAreas</a> (Template data record used to store power flow results for initialization).</span></p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">record</span> PF0 <span class="ModelicaComment">&quot;Power flow data record, Case 00&quot;</span>
+  <span class="ModelicaKeyword">import </span>Modelica.Constants.pi;
+  <span class="ModelicaKeyword">extends </span><a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>PF_TwoAreas</a>(
+    voltages(
+      V1=1.03,
+      A1=0.35378975855,
+      V2=1.01,
+      A2=0.18336917813,
+      V3=1.03,
+      A3=-0.11868238913,
+      V4=1.01,
+      A4=-0.29656809182,
+      V5=1.0069,
+      A5=0.24064774259,
+      V6=0.97914,
+      A6=0.06483200039,
+      V7=0.9610106,
+      A7=-0.08179502992,
+      V8=0.94828,
+      A8=-0.32311454975,
+      V9=0.9713628,
+      A9=-0.56119369128,
+      V10=0.98486,
+      A10=-0.41387167085,
+      V11=1.0088,
+      A11=-0.23424936555),
+    machines(
+      P1_1=700000000,
+      Q1_1=185029600,
+      P2_1=700000000,
+      Q2_1=234611300,
+      P3_1=719094100,
+      Q3_1=176026200,
+      P4_1=700000000,
+      Q4_1=202082700),
+    loads(
+      PL7_1=967000000,
+      QL7_1=-84700000,
+      PL9_1=1767000000,
+      QL9_1=-230200000));
+
+<span class="ModelicaKeyword">end </span>PF0;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PF1<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Data.PF1"></a><a href="Example2_Base_Data.html#Example2.Base.Data"
+>Example2.Base.Data</a>.PF1</h2>
+<p>
+<span class="ModelicaDescription">Power flow data record, Case 01</span>
+</p>
+<h3>Information</h3>
+
+
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>PF_TwoAreas</a> (Template data record used to store power flow results for initialization).</span></p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">record</span> PF1 <span class="ModelicaComment">&quot;Power flow data record, Case 01&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>PF_TwoAreas</a>(
+    voltages(
+      V1=1.02999997139,
+      A1=0.68800303338,
+      V2=1.04999995232,
+      A2=0.39702884899,
+      V3=1.02999997139,
+      A3=-0.12217305596,
+      V4=1.00999999046,
+      A4=-0.30613562704,
+      V5=1.0069,
+      A5=0.24064774259,
+      V6=0.97914,
+      A6=0.06483200039,
+      V7=1.01935839653,
+      A7=0.11458134909,
+      V8=0.94828,
+      A8=-0.32311454975,
+      V9=0.960842967033,
+      A9=-0.54923815925,
+      V10=0.98486,
+      A10=-0.41387167085,
+      V11=1.0088,
+      A11=-0.23424936555),
+    machines(
+      P1_1=1100000000,
+      Q1_1=187957901.001,
+      P2_1=700000000,
+      Q2_1=260817138.672,
+      P3_1=757885437.012,
+      Q3_1=218426849.365,
+      P4_1=300000000,
+      Q4_1=112581405.64),
+    loads(
+      PL7_1=1166999877.934,
+      QL7_1=-523454879.7604,
+      PL9_1=1567000000,
+      QL9_1=-223126708.9844));
+<span class="ModelicaKeyword">end </span>PF1;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PF_TwoAreas<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Data.PF_TwoAreas"></a><a href="Example2_Base_Data.html#Example2.Base.Data"
+>Example2.Base.Data</a>.PF_TwoAreas</h2>
+<p>
+<span class="ModelicaDescription">Template data record used to store power flow results for initialization</span>
+</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">record</span> PF_TwoAreas
+  <span class="ModelicaComment">&quot;Template data record used to store power flow results for initialization&quot;</span>
+  <span class="ModelicaKeyword">record</span> Voltages <span class="ModelicaComment">&quot;Template data record for voltage magnitudes and angles&quot;</span>
+    <span class="ModelicaComment">// Bus number 1</span>
+    <span class="ModelicaKeyword">parameter </span>Real V1;
+    <span class="ModelicaKeyword">parameter </span>Real A1;
+    <span class="ModelicaComment">// Bus number 2</span>
+    <span class="ModelicaKeyword">parameter </span>Real V2;
+    <span class="ModelicaKeyword">parameter </span>Real A2;
+    <span class="ModelicaComment">// Bus number 3</span>
+    <span class="ModelicaKeyword">parameter </span>Real V3;
+    <span class="ModelicaKeyword">parameter </span>Real A3;
+    <span class="ModelicaComment">// Bus number 4</span>
+    <span class="ModelicaKeyword">parameter </span>Real V4;
+    <span class="ModelicaKeyword">parameter </span>Real A4;
+    <span class="ModelicaComment">// Bus number 5</span>
+    <span class="ModelicaKeyword">parameter </span>Real V5;
+    <span class="ModelicaKeyword">parameter </span>Real A5;
+    <span class="ModelicaComment">// Bus number 6</span>
+    <span class="ModelicaKeyword">parameter </span>Real V6;
+    <span class="ModelicaKeyword">parameter </span>Real A6;
+    <span class="ModelicaComment">// Bus number 7</span>
+    <span class="ModelicaKeyword">parameter </span>Real V7;
+    <span class="ModelicaKeyword">parameter </span>Real A7;
+    <span class="ModelicaComment">// Bus number 8</span>
+    <span class="ModelicaKeyword">parameter </span>Real V8;
+    <span class="ModelicaKeyword">parameter </span>Real A8;
+    <span class="ModelicaComment">// Bus number 9</span>
+    <span class="ModelicaKeyword">parameter </span>Real V9;
+    <span class="ModelicaKeyword">parameter </span>Real A9;
+    <span class="ModelicaComment">// Bus number 10</span>
+    <span class="ModelicaKeyword">parameter </span>Real V10;
+    <span class="ModelicaKeyword">parameter </span>Real A10;
+    <span class="ModelicaComment">// Bus number 11</span>
+    <span class="ModelicaKeyword">parameter </span>Real V11;
+    <span class="ModelicaKeyword">parameter </span>Real A11;
+
+  <span class="ModelicaKeyword">end </span>Voltages;
+
+  <span class="ModelicaKeyword">record</span> Machines <span class="ModelicaComment">&quot;Template data record for active and reactive power from generation units&quot;</span>
+    <span class="ModelicaComment">// Gen at bus 1</span>
+    <span class="ModelicaKeyword">parameter </span>Real P1_1;
+    <span class="ModelicaKeyword">parameter </span>Real Q1_1;
+    <span class="ModelicaComment">// Gen at bus 2</span>
+    <span class="ModelicaKeyword">parameter </span>Real P2_1;
+    <span class="ModelicaKeyword">parameter </span>Real Q2_1;
+    <span class="ModelicaComment">// Gen at bus 3</span>
+    <span class="ModelicaKeyword">parameter </span>Real P3_1;
+    <span class="ModelicaKeyword">parameter </span>Real Q3_1;
+    <span class="ModelicaComment">// Gen at bus 4</span>
+    <span class="ModelicaKeyword">parameter </span>Real P4_1;
+    <span class="ModelicaKeyword">parameter </span>Real Q4_1;
+
+  <span class="ModelicaKeyword">end </span>Machines;
+
+  <span class="ModelicaKeyword">record</span> Loads <span class="ModelicaComment">&quot;Template data record for active and reactive power consumed by loads&quot;</span>
+    <span class="ModelicaComment">// Gen at bus 1</span>
+    <span class="ModelicaKeyword">parameter </span>Real PL7_1;
+    <span class="ModelicaKeyword">parameter </span>Real QL7_1;
+    <span class="ModelicaComment">// Gen at bus 2</span>
+    <span class="ModelicaKeyword">parameter </span>Real PL9_1;
+    <span class="ModelicaKeyword">parameter </span>Real QL9_1;
+
+  <span class="ModelicaKeyword">end </span>Loads;
+
+  <a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas.Voltages"
+>Voltages</a> voltages;
+  <a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas.Machines"
+>Machines</a> machines;
+  <a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas.Loads"
+>Loads</a> loads;
+<span class="ModelicaKeyword">end </span>PF_TwoAreas;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Voltages<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Data.PF_TwoAreas.Voltages"></a><a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>Example2.Base.Data.PF_TwoAreas</a>.Voltages</h2>
+<p>
+<span class="ModelicaDescription">Template data record for voltage magnitudes and angles</span>
+</p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>V1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V3</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A3</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V4</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A4</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V5</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A5</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V6</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A6</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V7</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A7</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V8</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A8</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V9</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A9</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V10</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A10</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>V11</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>A11</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">record</span> Voltages <span class="ModelicaComment">&quot;Template data record for voltage magnitudes and angles&quot;</span>
+  <span class="ModelicaComment">// Bus number 1</span>
+  <span class="ModelicaKeyword">parameter </span>Real V1;
+  <span class="ModelicaKeyword">parameter </span>Real A1;
+  <span class="ModelicaComment">// Bus number 2</span>
+  <span class="ModelicaKeyword">parameter </span>Real V2;
+  <span class="ModelicaKeyword">parameter </span>Real A2;
+  <span class="ModelicaComment">// Bus number 3</span>
+  <span class="ModelicaKeyword">parameter </span>Real V3;
+  <span class="ModelicaKeyword">parameter </span>Real A3;
+  <span class="ModelicaComment">// Bus number 4</span>
+  <span class="ModelicaKeyword">parameter </span>Real V4;
+  <span class="ModelicaKeyword">parameter </span>Real A4;
+  <span class="ModelicaComment">// Bus number 5</span>
+  <span class="ModelicaKeyword">parameter </span>Real V5;
+  <span class="ModelicaKeyword">parameter </span>Real A5;
+  <span class="ModelicaComment">// Bus number 6</span>
+  <span class="ModelicaKeyword">parameter </span>Real V6;
+  <span class="ModelicaKeyword">parameter </span>Real A6;
+  <span class="ModelicaComment">// Bus number 7</span>
+  <span class="ModelicaKeyword">parameter </span>Real V7;
+  <span class="ModelicaKeyword">parameter </span>Real A7;
+  <span class="ModelicaComment">// Bus number 8</span>
+  <span class="ModelicaKeyword">parameter </span>Real V8;
+  <span class="ModelicaKeyword">parameter </span>Real A8;
+  <span class="ModelicaComment">// Bus number 9</span>
+  <span class="ModelicaKeyword">parameter </span>Real V9;
+  <span class="ModelicaKeyword">parameter </span>Real A9;
+  <span class="ModelicaComment">// Bus number 10</span>
+  <span class="ModelicaKeyword">parameter </span>Real V10;
+  <span class="ModelicaKeyword">parameter </span>Real A10;
+  <span class="ModelicaComment">// Bus number 11</span>
+  <span class="ModelicaKeyword">parameter </span>Real V11;
+  <span class="ModelicaKeyword">parameter </span>Real A11;
+
+<span class="ModelicaKeyword">end </span>Voltages;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Machines<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Data.PF_TwoAreas.Machines"></a><a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>Example2.Base.Data.PF_TwoAreas</a>.Machines</h2>
+<p>
+<span class="ModelicaDescription">Template data record for active and reactive power from generation units</span>
+</p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>P1_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>Q1_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>P2_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>Q2_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>P3_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>Q3_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>P4_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>Q4_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">record</span> Machines <span class="ModelicaComment">&quot;Template data record for active and reactive power from generation units&quot;</span>
+  <span class="ModelicaComment">// Gen at bus 1</span>
+  <span class="ModelicaKeyword">parameter </span>Real P1_1;
+  <span class="ModelicaKeyword">parameter </span>Real Q1_1;
+  <span class="ModelicaComment">// Gen at bus 2</span>
+  <span class="ModelicaKeyword">parameter </span>Real P2_1;
+  <span class="ModelicaKeyword">parameter </span>Real Q2_1;
+  <span class="ModelicaComment">// Gen at bus 3</span>
+  <span class="ModelicaKeyword">parameter </span>Real P3_1;
+  <span class="ModelicaKeyword">parameter </span>Real Q3_1;
+  <span class="ModelicaComment">// Gen at bus 4</span>
+  <span class="ModelicaKeyword">parameter </span>Real P4_1;
+  <span class="ModelicaKeyword">parameter </span>Real Q4_1;
+
+<span class="ModelicaKeyword">end </span>Machines;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Loads<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Data.PF_TwoAreas.Loads"></a><a href="Example2_Base_Data.html#Example2.Base.Data.PF_TwoAreas"
+>Example2.Base.Data.PF_TwoAreas</a>.Loads</h2>
+<p>
+<span class="ModelicaDescription">Template data record for active and reactive power consumed by loads</span>
+</p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>PL7_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>QL7_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>PL9_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>QL9_1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">record</span> Loads <span class="ModelicaComment">&quot;Template data record for active and reactive power consumed by loads&quot;</span>
+  <span class="ModelicaComment">// Gen at bus 1</span>
+  <span class="ModelicaKeyword">parameter </span>Real PL7_1;
+  <span class="ModelicaKeyword">parameter </span>Real QL7_1;
+  <span class="ModelicaComment">// Gen at bus 2</span>
+  <span class="ModelicaKeyword">parameter </span>Real PL9_1;
+  <span class="ModelicaKeyword">parameter </span>Real QL9_1;
+
+<span class="ModelicaKeyword">end </span>Loads;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:46 2024.
+</address>
+</body>
+</html>

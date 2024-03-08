@@ -59,6 +59,6 @@ package NonlinSimulationsMultipleInputs "Example nonlinear time simulations with
 <li>Re-design 2 obtained using <img src=\"modelica://Example1/Resources/Images/equations/equation-xYLZp3n1.png\" alt=\"gamma = 0.05\"/> has parameters <img src=\"modelica://Example1/Resources/Images/equations/equation-Tv6HYrxI.png\" alt=\"k_w = 12.6924\"/> and <img src=\"modelica://Example1/Resources/Images/equations/equation-QwYVSX78.png\" alt=\"t_w = 0.5602\"/> sec.</li>
 </ul>
 <p>The other models are variants where inputs are set to zero when compared to the case above. They are useful to compare against the above model, for example, the simulation of model &quot;<span style=\"font-family: Courier New;\">B_noise_...</span>&quot; can be compared to the one above to understand the impact of the input signal compared to only the random noise of the loads, etc. See the &quot;Package Contents&quot; below for information on each case.</p>
-<p><br>In addition, to perform run any simulation and plot the following function is provided: <span style=\"font-family: Courier New;\"><a href=\"Example1.Analysis.ExcitationInputSimulations.simulate_and_plot\">Example1.Analysis.ExcitationInputSimulations.simulate_and_plot</a></span></p>
+<p><br>In addition, to perform run any simulation and plot the following function is provided: <a href=\"Example1.Analysis.NonlinSimulationsMultipleInputs.simulate_and_plot\">simulate_and_plot</a></p>
 </html>"));
 end NonlinSimulationsMultipleInputs;

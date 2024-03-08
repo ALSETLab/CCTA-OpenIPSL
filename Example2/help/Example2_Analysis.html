@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Analysis</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Models for simulation and linearization at multiple operating points through ramping of generation and load&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Analysis<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Analysis"></a><a href="Example2.html#Example2"
+>Example2</a>.Analysis</h2>
+<p>
+<span class="ModelicaDescription">Models for simulation and linearization at multiple operating points through ramping of generation and load</span>
+</p>
+<h3>Information</h3>
+
+<p>This package includes the main examples for linear analysis and simulation.</p>
+<p>It includes three models and a sub-package.</p>
+<p><i><b>Models:</b></i></p>
+<ol>
+<li><span style="font-family: Courier New;">Example2.Analysis.Ramping</span>, illustrates how to simulate multiple operating conditions by ramping g1 and Load9 in Example2.Base.Systems.sys</li>
+<li><span style="font-family: Courier New;">Example2.Analysis.RampingRandomLoadAndInput,</span> illustrates how to add multisine input signal and random load variations (in addition to ramping) to the system in Example2.Base.Systems.sys.</li>
+<li><span style="font-family: Courier New;">Example2.Analysis.KchangeLinRamping</span>, designed to linearize the model Example2.Base.Systems.sys at any point in time while considering ramping as in Example2.Analysis.Ramping</li>
+</ol>
+<p><br><i><b>Sub-package:</b></i> <a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions"
+>Example2.Analysis.AutomationFunctions</a></p>
+<p>This sub-package contains three functions to automate the simulations of models 1 and 2, and to automate the linearization of model 3. See the documentation/info layer of each of the functions for more information.</p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Utilities_Icons_PackageWithSimAndLinModels.html#Example2.Utilities.Icons.PackageWithSimAndLinModels"
+>Example2.Utilities.Icons.PackageWithSimAndLinModels</a> (Package that contains both simulation and linearization models).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.Base.Networks.Tests.TestBaseS.png" alt="Example2.Analysis.Ramping" width="20" height="20" align="top">&nbsp;<a href="Example2_Analysis.html#Example2.Analysis.Ramping"
+>Ramping</a>
+</td>
+<td>Model for simulation used to illustrate how ramping is applied to move the system to multiple operating points.</td>
+</tr>
+<tr>
+<td><img src="Example2.Base.Networks.Tests.TestBaseS.png" alt="Example2.Analysis.RampingRandomLoadAndInput" width="20" height="20" align="top">&nbsp;<a href="Example2_Analysis.html#Example2.Analysis.RampingRandomLoadAndInput"
+>RampingRandomLoadAndInput</a>
+</td>
+<td>Model to perform blind estimation with default controller and re-design</td>
+</tr>
+<tr>
+<td><img src="Example2.Analysis.KchangeLinRampingS.png" alt="Example2.Analysis.KchangeLinRamping" width="20" height="20" align="top">&nbsp;<a href="Example2_Analysis.html#Example2.Analysis.KchangeLinRamping"
+>KchangeLinRamping</a>
+</td>
+<td>Model to perform blind estimation with default controller and re-design</td>
+</tr>
+<tr>
+<td><img src="Example2.Analysis.AutomationFunctionsS.png" alt="Example2.Analysis.AutomationFunctions" width="20" height="20" align="top">&nbsp;<a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions"
+>AutomationFunctions</a>
+</td>
+<td>Provides functions for automation of simulation and linearization using the models of the upper layer package</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Ramping<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Base.Networks.Tests.TestBaseI.png" alt="Example2.Analysis.Ramping" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Analysis.Ramping"></a><a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>.Ramping</h2>
+<p>
+<span class="ModelicaDescription">Model for simulation used to illustrate how ramping is applied to move the system to multiple operating points.</span>
+<br>
+<br><img src="Example2.Analysis.RampingD.png" alt="Example2.Analysis.Ramping">
+</p>
+<h3>Information</h3>
+
+<p>This model illustrates how ramping is applied to move the system to multiple operating points.</p><p>To simulate this model and plot the results, execute the function <a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping"
+>Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a> , which sets up the adequate solver settings to minimize run time.</p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="4">PSS Parameters</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 1</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss_vsmax</td><td>0.2</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>PerUnit</a></td><td>pss_vsmin</td><td>-0.2</td><td>Min stabilizer output signal [1]</td></tr>
+<tr><td>Real</td><td>pss1_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss1_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 2</td></tr>
+<tr><td>Real</td><td>pss2_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss2_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 3</td></tr>
+<tr><td>Real</td><td>pss3_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss3_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS 4</td></tr>
+<tr><td>Real</td><td>pss4_Kw</td><td>5</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>Time</a></td><td>pss4_Tw</td><td>5</td><td>Wash-out time constant [s]</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> Ramping
+  <span class="ModelicaComment">&quot;Model for simulation used to illustrate how ramping is applied to move the system to multiple operating points.&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+  <a href="Example2_Base_Systems.html#Example2.Base.Systems.sys"
+>Example2.Base.Systems.sys</a> plant(
+    g1(Rdroop=0.025),
+    t2pssin=1200,
+    t3pssin=2100,
+    g3(pss(
+        Kw=40,
+        Tw=10,
+        T1=0.5336,
+        T2=0.0942,
+        T3=0.5336,
+        T4=0.0942), sEXS(K=200)),
+    pss2_Kw=48.660727200594167,
+    pss2_Tw=0.355570139928890,
+    pss3_Kw=48.660727200594167,
+    pss3_Tw=0.355570139928890,
+    pss4_Kw=48.660727200594167,
+    pss4_Tw=0.355570139928890,
+    pss5_Kw=48.660727200594167,
+    pss5_Tw=0.355570139928890);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> r(k=0);
+
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedMultiRamp"
+>Example2.CustomComponents.TimedMultiRamp</a> ramping(
+    rampA_height=0.2,
+    rampB_height=0.125,
+    rampC_height=-0.075,
+    rampD_height=-0.075);
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss_vsmax=0.2 <span class="ModelicaComment">&quot;Max stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.PerUnit"
+>OpenIPSL.Types.PerUnit</a> pss_vsmin=-0.2 <span class="ModelicaComment">&quot;Min stabilizer output signal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss1_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss1_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss2_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss2_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss3_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss3_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real pss4_Kw=5 <span class="ModelicaComment">&quot;Stabilizer gain [pu/pu]&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Types.html#OpenIPSL.Types.Time"
+>OpenIPSL.Types.Time</a> pss4_Tw=5 <span class="ModelicaComment">&quot;Wash-out time constant&quot;</span>;
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(r.y, plant.uLoad7);
+  <span class="ModelicaFunction">connect</span>(ramping.y, plant.uPm);
+  <span class="ModelicaFunction">connect</span>(plant.uLoad9, ramping.y);
+  <span class="ModelicaFunction">connect</span>(plant.uPSS, r.y);
+  <span class="ModelicaFunction">connect</span>(plant.uAVRin, r.y);
+  <span class="ModelicaComment">                                                          //,</span>
+<span class="ModelicaComment">//     __Dymola_selections={Selection(name=&quot;MySelection&quot;, match={MatchVariable(name=&quot;plant.Vt&quot;, newName=&quot;Vt&quot;),MatchVariable(name=&quot;plant.Q&quot;, newName=&quot;Q&quot;),MatchVariable(name=&quot;plant.P&quot;,newName=&quot;P&quot;),MatchVariable(name=&quot;plant.w&quot;,newName=&quot;w&quot;),MatchVariable(name=&quot;plant.AVRin&quot;,newName=&quot;u&quot;),MatchVariable(name=&quot;plant.AVRout&quot;,newName=&quot;AVRout&quot;),MatchVariable(name=&quot;timedMultiRamp.y&quot;,newName=&quot;rampY&quot;),MatchVariable(name=&quot;plant.Load9.P&quot;,newName=&quot;Pload&quot;),MatchVariable(name=&quot;r.y&quot;,newName=&quot;r&quot;),MatchVariable(name=&quot;plant.g1.pss.vs&quot;,newName=&quot;pssy&quot;),MatchVariable(name=&quot;ramping.y&quot;,newName=&quot;rampingy&quot;)})});</span>
+<span class="ModelicaKeyword">end </span>Ramping;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE RampingRandomLoadAndInput<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Base.Networks.Tests.TestBaseI.png" alt="Example2.Analysis.RampingRandomLoadAndInput" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Analysis.RampingRandomLoadAndInput"></a><a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>.RampingRandomLoadAndInput</h2>
+<p>
+<span class="ModelicaDescription">Model to perform blind estimation with default controller and re-design</span>
+<br>
+<br><img src="Example2.Analysis.Rampingd50c0110650090c9InputD.png" alt="Example2.Analysis.RampingRandomLoadAndInput">
+</p>
+<h3>Information</h3>
+
+<p>Main model used for simulation in [1] and [2]. </p>
+<p>To reproduce the results in Fig. 4 of [2], execute the function <a href="Example2_Analysis_AutomationFunctions.html#Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs"
+>Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</a> , which sets up the adequate solver settings to minimize run time.</p>
+<p>Please note that running this model takes substantial time compared to example <a href="Example2_Analysis.html#Example2.Analysis.Ramping"
+>Example2.Analysis.Ramping</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden. </p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> RampingRandomLoadAndInput
+  <span class="ModelicaComment">&quot;Model to perform blind estimation with default controller and re-design&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+  <a href="Example2_Base_Systems.html#Example2.Base.Systems.sys"
+>Example2.Base.Systems.sys</a> plant(
+    g1(Rdroop=0.025),
+    t2pssin=1200,
+    t3pssin=2100,
+    t4pssin=3000,
+    t5pssin=3900,
+    g3(pss(
+        Kw=40,
+        Tw=10,
+        T1=0.5336,
+        T2=0.0942,
+        T3=0.5336,
+        T4=0.0942), sEXS(K=200)),
+    pss2_Kw=47.627315837430373,
+    pss2_Tw=0.380100702453755,
+    pss3_Kw=47.627315837430373,
+    pss3_Tw=0.380100702453755,
+    pss4_Kw=47.627315837430373,
+    pss4_Tw=0.380100702453755,
+    pss5_Kw=47.627315837430373,
+    pss5_Tw=0.380100702453755);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> zeroInputs(k=0);
+
+  <span class="ModelicaKeyword">inner </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Noise.html#Modelica.Blocks.Noise.GlobalSeed"
+>Modelica.Blocks.Noise.GlobalSeed</a> globalSeed(useAutomaticSeed=false);
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedInjectionOnOffTableData"
+>Example2.CustomComponents.TimedInjectionOnOffTableData</a> r;
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedNoiseInjection"
+>Example2.CustomComponents.TimedNoiseInjection</a> uL7(
+    samplePeriod=0.01,
+    sigma=0.1*0.25,
+    threshold=30.0);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.RealExpression"
+>Modelica.Blocks.Sources.RealExpression</a> rampingLoad(y=ramping.y);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Add"
+>Modelica.Blocks.Math.Add</a> add;
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedMultiRamp"
+>Example2.CustomComponents.TimedMultiRamp</a> ramping(
+    rampA_height=0.2,
+    rampB_height=0.125,
+    rampC_height=-0.075,
+    rampD_height=-0.075);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(zeroInputs.y, plant.uPSS);
+  <span class="ModelicaFunction">connect</span>(uL7.y, plant.uLoad7);
+  <span class="ModelicaFunction">connect</span>(rampingLoad.y,add. u2);
+  <span class="ModelicaFunction">connect</span>(add.y, plant.uLoad9);
+  <span class="ModelicaFunction">connect</span>(r.y, plant.uAVRin);
+  <span class="ModelicaFunction">connect</span>(ramping.y, plant.uPm);
+  <span class="ModelicaFunction">connect</span>(add.u1, zeroInputs.y);
+<span class="ModelicaKeyword">end </span>RampingRandomLoadAndInput;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE KchangeLinRamping<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Analysis.KchangeLinRampingI.png" alt="Example2.Analysis.KchangeLinRamping" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Analysis.KchangeLinRamping"></a><a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>.KchangeLinRamping</h2>
+<p>
+<span class="ModelicaDescription">Model to perform blind estimation with default controller and re-design</span>
+<br>
+<br><img src="Example2.Analysis.KchangeLinRampingD.png" alt="Example2.Analysis.KchangeLinRamping">
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Utilities_Icons.html#Example2.Utilities.Icons.ModelForLinearization"
+>Example2.Utilities.Icons.ModelForLinearization</a> (nonlin4lin = for this model, you need to provide inputs or use it as is for linearization).</span></p>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>r</td><td>&nbsp;</td></tr>
+<tr><td>output <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>RealOutput</a></td><td>w</td><td>&nbsp;</td></tr>
+<tr><td>input <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>RealInput</a></td><td>uLoad7</td><td>&nbsp;</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> KchangeLinRamping
+  <span class="ModelicaComment">&quot;Model to perform blind estimation with default controller and re-design&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="Example2_Utilities_Icons.html#Example2.Utilities.Icons.ModelForLinearization"
+>Example2.Utilities.Icons.ModelForLinearization</a>;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a>          r;
+  <a href="Example2_Base_Systems.html#Example2.Base.Systems.sys"
+>Example2.Base.Systems.sys</a> plant(
+    g1(Rdroop=0.025),
+    t2pssin=1200,
+    t3pssin=2100,
+    t4pssin=3000,
+    t5pssin=3900,
+    g3(pss(
+        Kw=40,
+        Tw=10,
+        T1=0.5336,
+        T2=0.0942,
+        T3=0.5336,
+        T4=0.0942), sEXS(K=200)),
+    pss2_Kw=47.627315837430373,
+    pss2_Tw=0.380100702453755,
+    pss3_Kw=47.627315837430373,
+    pss3_Tw=0.380100702453755,
+    pss4_Kw=47.627315837430373,
+    pss4_Tw=0.380100702453755,
+    pss5_Kw=47.627315837430373,
+    pss5_Tw=0.380100702453755);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> zeroInputs(k=0);
+
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.RealExpression"
+>Modelica.Blocks.Sources.RealExpression</a> rampingLoad(y=ramping.y);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Add"
+>Modelica.Blocks.Math.Add</a> add;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput"
+>Modelica.Blocks.Interfaces.RealOutput</a> w;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput"
+>Modelica.Blocks.Interfaces.RealInput</a> uLoad7;
+  <a href="Example2_CustomComponents.html#Example2.CustomComponents.TimedMultiRamp"
+>Example2.CustomComponents.TimedMultiRamp</a> ramping(
+    rampA_height=0.2,
+    rampB_height=0.125,
+    rampC_height=-0.075,
+    rampD_height=-0.075);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(zeroInputs.y, plant.uPSS);
+  <span class="ModelicaFunction">connect</span>(rampingLoad.y,add. u2);
+  <span class="ModelicaFunction">connect</span>(add.y, plant.uLoad9);
+  <span class="ModelicaFunction">connect</span>(r, plant.uAVRin);
+  <span class="ModelicaFunction">connect</span>(plant.w, w);
+  <span class="ModelicaFunction">connect</span>(add.u1, zeroInputs.y);
+  <span class="ModelicaFunction">connect</span>(plant.uLoad7, uLoad7);
+  <span class="ModelicaFunction">connect</span>(plant.uPm, ramping.y);
+
+<span class="ModelicaKeyword">end </span>KchangeLinRamping;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:53:47 2024.
+</address>
+</body>
+</html>

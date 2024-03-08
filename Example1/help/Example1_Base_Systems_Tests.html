@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example1.Base.Systems.Tests</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Test models for gridIO block&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Tests<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example1.Base.Systems.Tests"></a><a href="Example1_Base_Systems.html#Example1.Base.Systems"
+>Example1.Base.Systems</a>.Tests</h2>
+<p>
+<span class="ModelicaDescription">Test models for gridIO block</span>
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons_ExamplesPackage.html#Modelica.Icons.ExamplesPackage"
+>Modelica.Icons.ExamplesPackage</a> (Icon for packages containing runnable examples).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example1.Base.Systems.Tests.testgridIOS.png" alt="Example1.Base.Systems.Tests.testgridIO" width="20" height="20" align="top">&nbsp;<a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests.testgridIO"
+>testgridIO</a>
+</td>
+<td>gridIO special test model, made by stripping the interfaces manually after the model was verified to work with the interfaces.</td>
+</tr>
+<tr>
+<td><img src="Example1.Base.Networks.Tests.testBaseS.png" alt="Example1.Base.Systems.Tests.testGridIOasBlock" width="20" height="20" align="top">&nbsp;<a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests.testGridIOasBlock"
+>testGridIOasBlock</a>
+</td>
+<td>Test the gridIO model</td>
+</tr>
+<tr>
+<td><img src="Example1.Base.Networks.Tests.testBaseS.png" alt="Example1.Base.Systems.Tests.testGridIOsiso" width="20" height="20" align="top">&nbsp;<a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests.testGridIOsiso"
+>testGridIOsiso</a>
+</td>
+<td>Test the gridIOsiso model</td>
+</tr>
+<tr>
+<td><img src="Example1.Base.Systems.Tesc3d7474dbe415b4aOsisoS.png" alt="Example1.Base.Systems.Tests.bodeplot_gridIOsiso" width="20" height="20" align="top">&nbsp;<a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests.bodeplot_gridIOsiso"
+>bodeplot_gridIOsiso</a>
+</td>
+<td>Produces the Bode plot for the &quot;grdIOsiso&quot; model</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE testgridIO<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Base.Systems.Tests.testgridIOI.png" alt="Example1.Base.Systems.Tests.testgridIO" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Base.Systems.Tests.testgridIO"></a><a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests"
+>Example1.Base.Systems.Tests</a>.testgridIO</h2>
+<p>
+<span class="ModelicaDescription">gridIO special test model, made by stripping the interfaces manually after the model was verified to work with the interfaces.</span>
+<br>
+<br><img src="Example1.Base.Systems.Tests.testgridIOD.png" alt="Example1.Base.Systems.Tests.testgridIO">
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="Example1_Base_Networks.html#Example1.Base.Networks.BasePFnFault"
+>Base.Networks.BasePFnFault</a> (Partial SMIB Model with power flow data and a fault component), <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">Line Removal Parameters</td></tr>
+<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
+>Time</a></td><td>t1</td><td>Modelica.Constants.inf</td><td>Time of line removal [s]</td></tr>
+<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
+>Time</a></td><td>t2</td><td>Modelica.Constants.inf</td><td>Line re-insertion time [s]</td></tr>
+<tr><td>Integer</td><td>opening</td><td>1</td><td>Type of opening (1: removes both ends at same time, 2: removes sending end, 3: removes receiving end)</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">PSS</td></tr>
+<tr><td>Real</td><td>Kw</td><td>9.5</td><td>Stabilizer gain (pu/pu)</td></tr>
+<tr><td>Real</td><td>Tw</td><td>1.41</td><td>Wash-out time constant (s)</td></tr>
+<tr><td>Real</td><td>T1</td><td>0</td><td>First stabilizer time constant (s)</td></tr>
+<tr><td>Real</td><td>T2</td><td>0</td><td>Second stabilizer time constant (s)</td></tr>
+<tr><td>Real</td><td>T3</td><td>0</td><td>Third stabilizer time constant (s)</td></tr>
+<tr><td>Real</td><td>T4</td><td>0</td><td>Fourth stabilizer time constant (s)</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="4">AVR</td></tr>
+<tr><td>Real</td><td>vfmax</td><td>7.0</td><td>max lim.</td></tr>
+<tr><td>Real</td><td>vfmin</td><td>-6.40</td><td>min lim.</td></tr>
+<tr><td>Real</td><td>K0</td><td>200</td><td>regulator gain</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> testgridIO
+  <span class="ModelicaComment">&quot;gridIO special test model, made by stripping the interfaces manually after the model was verified to work with the interfaces.&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="Example1_Base_Networks.html#Example1.Base.Networks.BasePFnFault"
+>Base.Networks.BasePFnFault</a>(
+    pf(
+      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Bus = <a href="Example1_PFData_Data_BusData.html#Example1.PFData.Data.BusData.PF_Bus_10"
+>Example1.PFData.Data.BusData.PF_Bus_10</a>,
+      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Loads = <a href="Example1_PFData_Data_LoadData.html#Example1.PFData.Data.LoadData.PF_Loads_10"
+>Example1.PFData.Data.LoadData.PF_Loads_10</a>,
+      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Trafos = <a href="Example1_PFData_Data_TrafoData.html#Example1.PFData.Data.TrafoData.PF_Trafos_10"
+>Example1.PFData.Data.TrafoData.PF_Trafos_10</a>,
+      <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Machines =
+          <a href="Example1_PFData_Data_MachineData.html#Example1.PFData.Data.MachineData.PF_Machines_10"
+>Example1.PFData.Data.MachineData.PF_Machines_10</a>),
+    line_1(
+      R=Modelica.Constants.eps,
+           X=3.25,
+      G=Modelica.Constants.eps,
+      B=Modelica.Constants.eps),
+    line_2(t1=Modelica.Constants.inf),
+    fault(
+      R=Modelica.Constants.eps,
+          t1=Modelica.Constants.inf, t2=Modelica.Constants.inf));
+  <span class="ModelicaKeyword">import </span>Modelica.Constants.pi;
+  <a href="Example1_Base_Plants.html#Example1.Base.Plants.GenIO"
+>Plants.GenIO</a> G1(
+    P_0=pf.machines.PG1,
+    Q_0=pf.machines.QG1,
+    v_0=pf.bus.V1,
+    angle_0=pf.bus.A1,
+    Kw=Kw,
+    Tw=Tw,
+    T1=T1,
+    T2=T2,
+    T3=T3,
+    T4=T4,
+    vfmax=vfmax,
+    vfmin=vfmin,
+    K0=K0);
+
+  <a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Electrical_Branches.html#OpenIPSL.Electrical.Branches.PwLine"
+>OpenIPSL.Electrical.Branches.PwLine</a> line_4(
+    R=Modelica.Constants.eps,
+    G=Modelica.Constants.eps,
+    B=Modelica.Constants.eps,
+    X=3.25/5.5,
+    t1=t1,
+    t2=t2,
+    opening=opening);
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
+>Modelica.Units.SI.Time</a> t1=Modelica.Constants.inf
+    <span class="ModelicaComment">&quot;Time of line removal&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
+>Modelica.Units.SI.Time</a> t2=Modelica.Constants.inf
+    <span class="ModelicaComment">&quot;Line re-insertion time&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Integer opening=1
+    <span class="ModelicaComment">&quot;Type of opening (1: removes both ends at same time, 2: removes sending end, 3: removes receiving end)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real Kw=9.5 <span class="ModelicaComment">&quot;Stabilizer gain (pu/pu)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real Tw=1.41 <span class="ModelicaComment">&quot;Wash-out time constant (s)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real T1=0 <span class="ModelicaComment">&quot;First stabilizer time constant (s)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real T2=0 <span class="ModelicaComment">&quot;Second stabilizer time constant (s)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real T3=0 <span class="ModelicaComment">&quot;Third stabilizer time constant (s)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real T4=0 <span class="ModelicaComment">&quot;Fourth stabilizer time constant (s)&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real vfmax=7.0 <span class="ModelicaComment">&quot;max lim.&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real vfmin=-6.40 <span class="ModelicaComment">&quot;min lim.&quot;</span>;
+  <span class="ModelicaKeyword">parameter </span>Real K0=200 <span class="ModelicaComment">&quot;regulator gain&quot;</span>;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Constant"
+>Modelica.Blocks.Sources.Constant</a> const(k=0);
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
+>Modelica.Blocks.Sources.Pulse</a>    pulse(
+    amplitude=0.01,
+    width=50,
+    period=0.1,
+    nperiod=1,
+    startTime=5);
+<span class="ModelicaKeyword">protected </span>
+  <span class="ModelicaKeyword">parameter </span>Real S_b=SysData.S_b;
+<span class="ModelicaKeyword">equation </span>
+<span class="ModelicaComment">//   w = G1.machine.w;</span>
+<span class="ModelicaComment">//   delta = G1.machine.delta;</span>
+<span class="ModelicaComment">//   Vt = G1.machine.v;</span>
+<span class="ModelicaComment">//   P = G1.machine.P;</span>
+<span class="ModelicaComment">//   Q = G1.machine.Q;</span>
+<span class="ModelicaComment">//   AVRin = G1.feedbackAVR.y; // AVR input, error signal to the avr</span>
+<span class="ModelicaComment">//   AVRout = G1.avr.vf; // AVR output, Efd</span>
+  <span class="ModelicaFunction">connect</span>(G1.pwPin, B1.p);
+  <span class="ModelicaFunction">connect</span>(line_4.n, line_1.n);
+  <span class="ModelicaFunction">connect</span>(line_4.p, line_1.p);
+  <span class="ModelicaFunction">connect</span>(const.y, G1.uPSS);
+  <span class="ModelicaFunction">connect</span>(G1.upm, const.y);
+  <span class="ModelicaFunction">connect</span>(G1.uvsAVR, const.y);
+  <span class="ModelicaFunction">connect</span>(pulse.y, load.u);
+<span class="ModelicaKeyword">end </span>testgridIO;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE testGridIOasBlock<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Base.Networks.Tests.testBaseI.png" alt="Example1.Base.Systems.Tests.testGridIOasBlock" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Base.Systems.Tests.testGridIOasBlock"></a><a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests"
+>Example1.Base.Systems.Tests</a>.testGridIOasBlock</h2>
+<p>
+<span class="ModelicaDescription">Test the gridIO model</span>
+<br>
+<br><img src="Example1.Base.Systems.Tes0dc80d30d811d0f6BlockD.png" alt="Example1.Base.Systems.Tests.testGridIOasBlock">
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> testGridIOasBlock <span class="ModelicaComment">&quot;Test the gridIO model&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+  <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
+>gridIO</a> grid(
+    t1=7.5,
+    t2=Modelica.Constants.inf,
+    t1fault=0.5,
+    t2fault=0.57,
+    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Bus = <a href="Example1_PFData_Data_BusData.html#Example1.PFData.Data.BusData.PF_Bus_12"
+>Example1.PFData.Data.BusData.PF_Bus_12</a>,
+    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Loads = <a href="Example1_PFData_Data_LoadData.html#Example1.PFData.Data.LoadData.PF_Loads_12"
+>Example1.PFData.Data.LoadData.PF_Loads_12</a>,
+    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Trafos = <a href="Example1_PFData_Data_TrafoData.html#Example1.PFData.Data.TrafoData.PF_Trafos_12"
+>Example1.PFData.Data.TrafoData.PF_Trafos_12</a>,
+    <span class="ModelicaKeyword">redeclare </span><span class="ModelicaKeyword">record</span> Machines = <a href="Example1_PFData_Data_MachineData.html#Example1.PFData.Data.MachineData.PF_Machines_12"
+>Example1.PFData.Data.MachineData.PF_Machines_12</a>);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
+>Modelica.Blocks.Sources.Pulse</a>    pulse(
+    amplitude=1,
+    width=50,
+    period=0.1,
+    nperiod=1,
+    startTime=20);
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.RealExpression"
+>Modelica.Blocks.Sources.RealExpression</a> zero;
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(pulse.y, grid.uPload);
+  <span class="ModelicaFunction">connect</span>(zero.y, grid.uPSS);
+  <span class="ModelicaFunction">connect</span>(grid.uPm, zero.y);
+  <span class="ModelicaFunction">connect</span>(grid.uvs, zero.y);
+<span class="ModelicaKeyword">end </span>testGridIOasBlock;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE testGridIOsiso<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Base.Networks.Tests.testBaseI.png" alt="Example1.Base.Systems.Tests.testGridIOsiso" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Base.Systems.Tests.testGridIOsiso"></a><a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests"
+>Example1.Base.Systems.Tests</a>.testGridIOsiso</h2>
+<p>
+<span class="ModelicaDescription">Test the gridIOsiso model</span>
+<br>
+<br><img src="Example1.Base.Systems.Tes10fc0911c1eede03OsisoD.png" alt="Example1.Base.Systems.Tests.testGridIOsiso">
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a> (Icon for runnable examples).</span></p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">model</span> testGridIOsiso <span class="ModelicaComment">&quot;Test the gridIOsiso model&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Example"
+>Modelica.Icons.Example</a>;
+  <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIOsiso"
+>gridIOsiso</a>
+         grid;
+  <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Blocks_Sources.html#Modelica.Blocks.Sources.Pulse"
+>Modelica.Blocks.Sources.Pulse</a>    pulse(
+    amplitude=1,
+    width=50,
+    period=0.1,
+    nperiod=1,
+    startTime=20);
+<span class="ModelicaKeyword">equation </span>
+  <span class="ModelicaFunction">connect</span>(pulse.y, grid.uvs);
+<span class="ModelicaKeyword">end </span>testGridIOsiso;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE bodeplot_gridIOsiso<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.Base.Systems.Tesc3d7474dbe415b4aOsisoI.png" alt="Example1.Base.Systems.Tests.bodeplot_gridIOsiso" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Base.Systems.Tests.bodeplot_gridIOsiso"></a><a href="Example1_Base_Systems_Tests.html#Example1.Base.Systems.Tests"
+>Example1.Base.Systems.Tests</a>.bodeplot_gridIOsiso</h2>
+<p>
+<span class="ModelicaDescription">Produces the Bode plot for the &quot;grdIOsiso&quot; model</span>
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
+>Modelica.Icons.Function</a> (Icon for functions).</span></p>
+<h3>Inputs</h3>
+<table summary="Inputs" class="ModelicaTableInputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
+>Time</a></td><td>tlin</td><td>30</td><td>[s]</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">function</span> bodeplot_gridIOsiso
+  <span class="ModelicaComment">&quot;Produces the Bode plot for the \&quot;grdIOsiso\&quot; model&quot;</span>
+  <span class="ModelicaKeyword">extends </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Icons.html#Modelica.Icons.Function"
+>Modelica.Icons.Function</a>;
+  <span class="ModelicaKeyword">input </span><a href="file:///C:/Program%20Files/Dymola%202024x/Modelica/Library/Modelica%204.0.0/help/Modelica_Units_SI.html#Modelica.Units.SI.Time"
+>Modelica.Units.SI.Time</a> tlin = 30;
+<span class="ModelicaKeyword">algorithm </span>
+
+  <span class="ModelicaComment">// turn off flags to avoid issues in the generated linear model</span>
+  <span class="ModelicaFunction">Modelica.Utilities.Streams.print</span>(&quot;Setting up things...&quot;);
+  <span class="ModelicaFunction">Example2.Utilities.SetupSolverSettings.Off</span>();
+  Advanced.SparseActivate :=false;
+  Advanced.Translation.SparseActivateIntegrator :=false;
+  Advanced.Translation.SparseActivateSystems :=false;
+  OutputCPUtime :=false;<span class="ModelicaComment"> // disable cpu time output so it doesn&#39;t screw up the sizes of the outputs</span>
+
+  <span class="ModelicaComment">// linearize and plot</span>
+  <span class="ModelicaFunction">Modelica_LinearSystems2.ModelAnalysis.TransferFunctions</span>(
+  &quot;Example1.Base.Systems.gridIOsiso&quot;, simulationSetup=
+  <span class="ModelicaFunction">Modelica_LinearSystems2.Records.SimulationOptionsForLinearization</span>(
+  linearizeAtInitial=false,
+  t_linearize=tlin));
+<span class="ModelicaKeyword">end </span>bodeplot_gridIOsiso;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:04 2024.
+</address>
+</body>
+</html>

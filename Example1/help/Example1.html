@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example1</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;This package contains the power system models used in Example 1 of the paper \&quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL\&quot;&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Example1<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example1"></a>Example1</h2>
+<p>
+<span class="ModelicaDescription">This package contains the power system models used in Example 1 of the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot;</span>
+</p>
+<h3>Information</h3>
+
+<p>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; by Luigi Vanfretti and Chrisopher R. Laughman, submitted for review to the IEEE CCTA 2024.</p>
+<p>The models have the following dependencies:</p>
+<ul>
+<li>Modelica Standard Library v.4.0.0, </li>
+<li>Modelica_LinearSystems2 v2.4.0, </li>
+<li>DataFiles v1.1.0, </li>
+<li>DymolaCommands v1.16, </li>
+<li>LinearAnalysis v1.0.1, </li>
+<li>OpenIPSL v.3.0.1</li>
+</ul>
+<p><br>The models were developed and tested with Dymola 2024X under MS Windows 11.</p>
+<p><br>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</p>
+
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example1.ReadmeS.png" alt="Example1.Readme" width="20" height="20" align="top">&nbsp;<a href="Example1.html#Example1.Readme"
+>Readme</a>
+</td>
+<td>Summary: modeling aspects and how to use this package</td>
+</tr>
+<tr>
+<td><img src="Example1.ReferencesS.png" alt="Example1.References" width="20" height="20" align="top">&nbsp;<a href="Example1_References.html#Example1.References"
+>References</a>
+</td>
+<td>Reference papers.</td>
+</tr>
+<tr>
+<td><img src="Example1.ContactS.png" alt="Example1.Contact" width="20" height="20" align="top">&nbsp;<a href="Example1_Contact.html#Example1.Contact"
+>Contact</a>
+</td>
+<td>Contact</td>
+</tr>
+<tr>
+<td><img src="Example1.CopyrightS.png" alt="Example1.Copyright" width="20" height="20" align="top">&nbsp;<a href="Example1.html#Example1.Copyright"
+>Copyright</a>
+</td>
+<td>Copyright</td>
+</tr>
+<tr>
+<td><img src="Example1.BaseS.png" alt="Example1.Base" width="20" height="20" align="top">&nbsp;<a href="Example1_Base.html#Example1.Base"
+>Base</a>
+</td>
+<td>Partial Models (for inheritance, not to be individiually simulated)</td>
+</tr>
+<tr>
+<td><img src="Example1.InterfacesS.png" alt="Example1.Interfaces" width="20" height="20" align="top">&nbsp;<a href="Example1_Interfaces.html#Example1.Interfaces"
+>Interfaces</a>
+</td>
+<td>Partial models for output interfaces.</td>
+</tr>
+<tr>
+<td><img src="Example1.PFDataS.png" alt="Example1.PFData" width="20" height="20" align="top">&nbsp;<a href="Example1_PFData.html#Example1.PFData"
+>PFData</a>
+</td>
+<td>Records with power flow data to simulate various scenarios.</td>
+</tr>
+<tr>
+<td><img src="Example1.AnalysisS.png" alt="Example1.Analysis" width="20" height="20" align="top">&nbsp;<a href="Example1_Analysis.html#Example1.Analysis"
+>Analysis</a>
+</td>
+<td>Simulation and linearization models.</td>
+</tr>
+<tr>
+<td><img src="Example1.CustomComponentsS.png" alt="Example1.CustomComponents" width="20" height="20" align="top">&nbsp;<a href="Example1_CustomComponents.html#Example1.CustomComponents"
+>CustomComponents</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="Example1.UtilitiesS.png" alt="Example1.Utilities" width="20" height="20" align="top">&nbsp;<a href="Example1_Utilities.html#Example1.Utilities"
+>Utilities</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Readme<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.ReadmeI.png" alt="Example1.Readme" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Readme"></a><a href="Example1.html#Example1"
+>Example1</a>.Readme</h2>
+<p>
+<span class="ModelicaDescription">Summary: modeling aspects and how to use this package</span>
+</p>
+<h3>Information</h3>
+
+<p>The models in this package were originally developed using similar component models and parameters as the single-machine infinite bus (SMIB) model used in the Example 13.2 in [3], pp. 864-869, implemented using the OpenIPSL&nbsp;library.</p>
+<p>This implementation has been carried out to illustrate Modelica and OpenIPSL features useful for identification and control applications [1,2], and as such, is set up a bit differently from models typically used only for simulation puroses in power system analysis. A similar implementation with much narrower scope (i.e., only time-domain simulation) is included in OpenIPSL, which can be found under: <span style="font-family: Courier New;"><a href="file:///C:/Users/vanfretti/Documents/Github/OpenIPSL/OpenIPSL/help/OpenIPSL_Examples_KundurSMIB.html#OpenIPSL.Examples.KundurSMIB"
+>OpenIPSL.Examples.KundurSMIB</a></span></p>
+<p>To meet the needs of the work in [1,2], the model was built with input and output interfaces as shown in the figure below (see more details in [1], Figs. 3 and 4). </p>
+<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/syssmall.png"/></p>
+<p>Let us first describe the figure enclosed by a dashed blue line, i.e. (A), this corresponds to the <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
+>Example1.Base.Systems.gridIO</a> model within this package:</p>
+<ul>
+<li>In (A), the whole single-machine infinite bus (SMIB) model is shown, it is composed by the main power plant (also called generator unit), G1, a transformer, trans, several buses, lines, etc. </li>
+<li>The inputs to the system are inclosed in a solid green line and labeled &quot;Input(s)&quot;. They include, uPSS, uPm and uvs in the main generator, G1, and uPload in the load.</li>
+<li>The outputs are enclosed in a solid light-blue line in (A), and include, Vt, P, Q, etc. These are inherited from an <a href="Example1_Interfaces.html#Example1.Interfaces.OutputsInterfaceWEfdAndAVRout"
+>output interface</a> and linked to variables of the <a href="Example1_Base_Systems.html#Example1.Base.Systems.gridIO"
+>gridIO</a> model within it&apos;s text layer.</li>
+<li>The main generator unit, G1, is built from multiple components from OpenIPSL, as shown in the figure below, including a 4th order synchronous machine model, an excitation control system and a PSS. Comparing the figure below with the one in (A), it can be seen that uPSS provides a direct input to the PSS, uPm provides an input to the mechanical power reference of the machine, pm, and uvs provides an input into the error signal between the PSS and AVR. This is the point where an input signal is injected for closed loop identification as discussed in [2].</li>
+<p><img src="file:///C:/Users/vanfretti/Documents/Github/CCTA-OpenIPSL/Example1/Resources/Images/plantsmall.jpg"/></p>
+<li>The model shown in (A) can be used for both simulation and linearization purposes. For simulation, inputs have to be provided, as shown in (B), where the load input (uPload) is connected to a pulse, while the others are set to zero.</li>
+</ul>
+<p>To get started using these models and facilitate simulation/linearization workflows, the <a href="Example1_Analysis.html#Example1.Analysis"
+>Example1.Analysis</a> package consists of three sub-packages that provide different model variants and functions to perform the following studies:</p>
+<ul>
+<li><a href="Example1_Analysis_LinearAnalysis.html#Example1.Analysis.LinearAnalysis"
+>Example1.Analysis.LinearAnalysis</a>, provides models and functions to illustrate how to perform linearization on a model, simulate the linear model and compare it against the response of a nonlinear model. These tasks are automated executing the function <a href="Example1_Analysis_LinearAnalysis_CustomFunctions.html#Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare"
+>LinearizeAndCompare</a>, which will help to reproduce the results shown in Fig. 6 of [1]. See more information in the documentation/info layer of the function.</li>
+<li><a href="Example1_Analysis_NonlinSimulationsMultipleInputs.html#Example1.Analysis.NonlinSimulationsMultipleInputs"
+>Example1.Analysis.NonlinSimulationsMultipleInputs</a> illustrates how to provide input signals to the model. The main model that can be used to reproduce the simulations presented in [2] is <span style="font-family: Courier New;">A_randomload_and_lowimpactmultisine</span>. Running that model will help produce the data presented in Figs. 6 and 10 of [2]. To facilitate simulation and plotting of any of the model variants under this package, executing the function <a href="Example1_Analysis_NonlinSimulationsMultipleInputs.html#Example1.Analysis.NonlinSimulationsMultipleInputs.simulate_and_plot"
+>simulate_and_plot</a>, will produce the plot below. To simulate other cases, the name/path of the model can be provided as a string input into the function, see more information in the documentation/info layer of the function.</li>
+<li><a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification"
+>Example1.Analysis.RedesignedControllerVerification</a>, is configured to simulate the response to an 8-cycle load disturbance and to compare the default PSS control design with the two redesigned controllers presented in [2]. There are three models with different control designs that need to be simulated and compared, to facilitate analysis and reproduce a similar figure to Fig. 10 in [2], the <a href="Example1_Analysis_RedesignedControllerVerification.html#Example1.Analysis.RedesignedControllerVerification.C012_simulate_plot_compare"
+>C012_simulate_plot_compare</a> function can be executed. See more information in the documentation/info layer of the function.</li>
+</ul>
+<p><br>To better understand how the model is built please refer to [1]. Meanwhile, to find the applications in identification and control where this model was used, you can find more details in [2].</p>
+
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">partial </span><span class="ModelicaKeyword">class</span> Readme <span class="ModelicaComment">&quot;Summary: modeling aspects and how to use this package&quot;</span>
+
+<span class="ModelicaKeyword">end </span>Readme;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Copyright<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example1.CopyrightI.png" alt="Example1.Copyright" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example1.Copyright"></a><a href="Example1.html#Example1"
+>Example1</a>.Copyright</h2>
+<p>
+<span class="ModelicaDescription">Copyright</span>
+</p>
+<h3>Information</h3>
+
+<p><span style="font-family: Courier New;">(c) 2024. All rights reserved.</span></p>
+<p><span style="font-family: Courier New;">Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Christopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</span></p>
+
+<h3>Modelica definition</h3>
+<div class="modelica"><span class="ModelicaKeyword">class</span> Copyright <span class="ModelicaComment">&quot;Copyright&quot;</span>
+
+
+<span class="ModelicaKeyword">end </span>Copyright;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 12:46:01 2024.
+</address>
+</body>
+</html>
