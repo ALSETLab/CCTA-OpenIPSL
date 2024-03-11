@@ -84,9 +84,6 @@ package RedesignedControllerVerification
     Example1.Base.Systems.gridIO Plant(
       t1=0.5, t2=Modelica.Constants.inf)
       annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
-    inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
-          false)
-      annotation (Placement(transformation(extent={{-96,72},{-76,92}})));
     Modelica.Blocks.Interfaces.RealOutput AVRin annotation (Placement(
           transformation(extent={{100,-110},{120,-90}}),
           iconTransformation(extent={{100,-90},{120,-70}})));
@@ -135,8 +132,8 @@ package RedesignedControllerVerification
     connect(uloaddist.y, uload.u2) annotation (Line(points={{-139,-30},{-132,-30},
             {-132,-18},{-122,-18}}, color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-          coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -140},{100,100}}), graphics={Text(
+          coordinateSystem(preserveAspectRatio=false, extent={{-180,-140},{100,100}}),
+                                 graphics={Text(
             extent={{-100,-80},{40,-102}},
             lineColor={162,29,33},
             textString="Note: see the block uloaddist on the load disturbance data specification.
@@ -179,9 +176,6 @@ Click on the \"Plant\" block to specify controller parameters.",
       Kw=22.4455,
       Tw=0.5217)
       annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
-    inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
-          false)
-      annotation (Placement(transformation(extent={{-96,72},{-76,92}})));
     Modelica.Blocks.Interfaces.RealOutput AVRin annotation (Placement(
           transformation(extent={{100,-110},{120,-90}}),
           iconTransformation(extent={{100,-90},{120,-70}})));
@@ -230,8 +224,8 @@ Click on the \"Plant\" block to specify controller parameters.",
     connect(uARVinput.y, Plant.uvs) annotation (Line(points={{-81,-40},{-64,-40},{
             -64,-36},{-44,-36}},                 color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-          coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -140},{100,100}}), graphics={Text(
+          coordinateSystem(preserveAspectRatio=false, extent={{-180,-140},{100,100}}),
+                                 graphics={Text(
             extent={{-100,-80},{40,-102}},
             lineColor={162,29,33},
             textString="Note: see the block uloaddist on the load disturbance data specification.
@@ -267,9 +261,6 @@ Click on the \"Plant\" block to specify controller parameters.",
       annotation (Placement(transformation(extent={{-100,36},{-80,56}})));
     Modelica.Blocks.Sources.Constant Pmchange(k=0)
       annotation (Placement(transformation(extent={{-100,6},{-80,26}})));
-    inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
-          false)
-      annotation (Placement(transformation(extent={{-96,72},{-76,92}})));
     Modelica.Blocks.Interfaces.RealOutput AVRin annotation (Placement(
           transformation(extent={{100,-110},{120,-90}}),
           iconTransformation(extent={{100,-90},{120,-70}})));
@@ -324,8 +315,8 @@ Click on the \"Plant\" block to specify controller parameters.",
     connect(uloaddist.y, uload.u2) annotation (Line(points={{-139,-30},{-134,-30},
             {-134,-18},{-122,-18}}, color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-          coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -140},{100,100}}), graphics={Text(
+          coordinateSystem(preserveAspectRatio=false, extent={{-180,-140},{100,100}}),
+                                 graphics={Text(
             extent={{-100,-80},{40,-102}},
             lineColor={162,29,33},
             textString="Note: see the block uloaddist on the load disturbance data specification.

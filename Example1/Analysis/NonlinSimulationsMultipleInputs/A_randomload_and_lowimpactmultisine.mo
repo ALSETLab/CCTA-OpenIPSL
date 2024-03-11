@@ -52,8 +52,6 @@ public
             -38},{-140,-18}})));
   CustomComponents.TimedInputInjection timedInputInjection_LowImpact
     annotation (Placement(transformation(extent={{-100,-60},{-80,-40}})));
-  CustomComponents.EventTriggerSnapshot eventTriggerSnapshot
-    annotation (Placement(transformation(extent={{-100,-120},{-80,-100}})));
 equation
   connect(Plant.uPSS, PSSchange.y) annotation (Line(points={{-44,36},{
           -62.8572,36},{-62.8572,46},{-79,46}},      color={0,0,127}));
@@ -83,8 +81,8 @@ equation
       Line(points={{-79,-50},{-62,-50},{-62,-36},{-44,-36}},
         color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -140},{100,100}}), graphics={Text(
+        coordinateSystem(preserveAspectRatio=false, extent={{-180,-140},{100,100}}),
+                               graphics={Text(
           extent={{-96,-80},{44,-102}},
           lineColor={162,29,33},
           textString="Note: see the block uloaddist on the load disturbance data specification.

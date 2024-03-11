@@ -45,8 +45,6 @@ public
             -38},{-138,-18}})));
   Modelica.Blocks.Sources.Constant uARVinput(k=0) annotation (
       Placement(transformation(extent={{-102,-50},{-82,-30}})));
-  CustomComponents.EventTriggerSnapshot eventTriggerSnapshot
-    annotation (Placement(transformation(extent={{-100,-120},{-80,-100}})));
 equation
   connect(Plant.uPSS, PSSchange.y) annotation (Line(points={{-44,36},{-62.8572,36},
           {-62.8572,46},{-79,46}},                   color={0,0,127}));
@@ -75,8 +73,8 @@ equation
   connect(uARVinput.y, Plant.uvs) annotation (Line(points={{-81,-40},{-64,-40},{
           -64,-36},{-44,-36}},                 color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -140},{100,100}}), graphics={Text(
+        coordinateSystem(preserveAspectRatio=false, extent={{-180,-140},{100,100}}),
+                               graphics={Text(
           extent={{-98,-78},{42,-100}},
           lineColor={162,29,33},
           textString="Note: see the block uloaddist on the load disturbance data specification.
