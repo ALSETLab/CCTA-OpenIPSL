@@ -49,10 +49,10 @@ model RampingRandomLoadAndInput
         extent={{-20,-20},{20,20}},
         origin={0,122})));
 equation
-  connect(zeroInputs.y, plant.uPSS) annotation (Line(points={{-100,80},{-26,80},
-          {-26,17.1429},{53.7143,17.1429}},                                                       color={0,0,127}));
-  connect(uL7.y, plant.uLoad7) annotation (Line(points={{-95.9,-57},{-95.9,-60},
-          {-80,-60},{-80,-17.1429},{53.7143,-17.1429}},                                              color={0,0,127}));
+  connect(zeroInputs.y, plant.uPSS) annotation (Line(points={{-100,80},{-26,80},{-26,17.1429},{53.7143,17.1429}},
+                                                                                                  color={0,0,127}));
+  connect(uL7.y, plant.uLoad7) annotation (Line(points={{-95.9,-57},{-95.9,-60},{-80,-60},{-80,-17.1429},{53.7143,-17.1429}},
+                                                                                                     color={0,0,127}));
   connect(rampingLoad.y,add. u2) annotation (Line(
       points={{-137,-167},{-124,-167},{-124,-152},{-114,-152}},
       color={238,46,47},
