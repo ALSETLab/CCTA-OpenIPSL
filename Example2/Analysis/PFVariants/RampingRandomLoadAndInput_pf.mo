@@ -80,7 +80,7 @@ equation
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram",
     Documentation(info="<html>
 <p>Main model used for simulation in [1] and [2]. </p>
-<p>To reproduce the results in Fig. 4 of [2], execute the function <a href=\"Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs\">Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</a> , which sets up the adequate solver settings to minimize run time.</p>
-<p>Please note that running this model takes substantial time compared to example <a href=\"Example2.Analysis.Ramping\">Example2.Analysis.Ramping</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden. </p>
+<p>To reproduce the results in Fig. 4 of [2], execute the function <a href=\"modelica://Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs\">Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</a> , which sets up the adequate solver settings to minimize run time.</p>
+<p>Please note that running this model takes substantial time compared to example <a href=\"modelica://Example2.Analysis.Ramping\">Example2.Analysis.Ramping</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden. </p>
 </html>"),preferredView="diagram");
 end RampingRandomLoadAndInput_pf;

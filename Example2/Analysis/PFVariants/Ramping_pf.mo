@@ -24,7 +24,8 @@ model Ramping_pf
     redeclare record Bus = Example2.PFData.Data.BusData.PF_Bus_0,
     redeclare record Loads = Example2.PFData.Data.LoadData.PF_Loads_0,
     redeclare record Trafos = Example2.PFData.Data.TrafoData.PF_Trafos_0,
-    redeclare record Machines = Example2.PFData.Data.MachineData.PF_Machines_0)
+    redeclare record Machines =
+        Example2.PFData.Data.MachineData.PF_Machines_0)
     annotation (Placement(transformation(extent={{58,-40},{138,40}})));
   Modelica.Blocks.Sources.Constant r(k=0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
@@ -74,6 +75,6 @@ equation
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram",
     Documentation(info="<html>
-<p>This model illustrates how ramping is applied to move the system to multiple operating points.</p><p>To simulate this model and plot the results, execute the function <a href=\"Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping\">Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a> , which sets up the adequate solver settings to minimize run time.</p>
+<p>This model illustrates how ramping is applied to move the system to multiple operating points.</p><p>To simulate this model and plot the results, execute the function <a href=\"modelica://Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping\">Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a> , which sets up the adequate solver settings to minimize run time.</p>
 </html>"));
 end Ramping_pf;

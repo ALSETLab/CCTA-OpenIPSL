@@ -381,7 +381,7 @@ has \"t1\" propagated.",
 <p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;Q&nbsp;=&nbsp;g1.g1.Q;<span style=\"color: #006400;\">&nbsp;//&nbsp;Reactive&nbsp;power</span></p>
 <p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;AVRin&nbsp;=&nbsp;g1.AVRinput_meas;<span style=\"color: #006400;\">&nbsp;//&nbsp;AVR&nbsp;input,&nbsp;error&nbsp;signal&nbsp;to&nbsp;the&nbsp;avr</span></p>
 <p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;AVRout&nbsp;=&nbsp;g1.AVRoutput_meas;<span style=\"color: #006400;\">&nbsp;//&nbsp;AVR&nbsp;output,&nbsp;Efd</span></p>
-<p>This model includes redeclarable power flow structures for top-level re-parametrization using the <a href=\"Example2.PFData\">Example2.PFData</a> package.</p>
+<p>This model includes redeclarable power flow structures for top-level re-parametrization using the <a href=\"modelica://Example2.PFData\">Example2.PFData</a> package.</p>
 </html>"),
     experiment(
       StopTime=600,

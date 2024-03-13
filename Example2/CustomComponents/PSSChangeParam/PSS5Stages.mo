@@ -216,7 +216,7 @@ equation
     Documentation(info="<html>
 <p>Specialized custom PSS model with Five Stages </p>
 <p>This PSS is comprised of four different PSS models (PSSTypeII) internally. </p>
-<p>The output of each of them is enabled or disabled through a <a href=\"Example2.CustomComponents.TimedInputInjectionOnOff\">Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
+<p>The output of each of them is enabled or disabled through a <a href=\"modelica://Example2.CustomComponents.TimedInputInjectionOnOff\">Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
 <p>This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</p>
 </html>"));
 end PSS5Stages;

@@ -49,7 +49,7 @@ package PSSChangeParam "PSS Model with 4 or 5 different stages that have differe
           textStyle={TextStyle.Bold})}), Documentation(info="<html>
 <p>Specialized custom PSS models. </p>
 <p>The PSS components in this package are composed internally by four or five different PSS models (PSSTypeII) internally. </p>
-<p>The output of each of them is enabled or disabled through a <a href=\"Example2.CustomComponents.TimedInputInjectionOnOff\">Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
+<p>The output of each of them is enabled or disabled through a <a href=\"modelica://Example2.CustomComponents.TimedInputInjectionOnOff\">Example2.CustomComponents.TimedInputInjectionOnOff</a> component such that only the output of one of them is injected. </p>
 <p>This allows to &quot;emulate&quot; the change of parameters of a conventional PSS that would be represented by a single &quot;structure&quot;, i.e., the block diagram of PSSTypeII, for a user-specified time-period.</p>
 </html>"));
 end PSSChangeParam;
