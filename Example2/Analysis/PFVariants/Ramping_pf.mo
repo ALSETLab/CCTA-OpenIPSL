@@ -75,6 +75,7 @@ equation
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram",
     Documentation(info="<html>
-<p>This model illustrates how ramping is applied to move the system to multiple operating points.</p><p>To simulate this model and plot the results, execute the function <a href=\"modelica://Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping\">Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a> , which sets up the adequate solver settings to minimize run time.</p>
+<p>This model illustrates how ramping is applied to move the system to multiple operating points.</p>
+<p>To simulate this model and plot the results, execute the function <a href=\"Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf\">Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf</a> , which sets up the adequate solver settings to minimize run time.</p>
 </html>"));
 end Ramping_pf;
