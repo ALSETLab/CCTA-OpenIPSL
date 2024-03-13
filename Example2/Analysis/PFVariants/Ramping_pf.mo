@@ -1,8 +1,8 @@
-within Example2.Analysis;
-model Ramping
+within Example2.Analysis.PFVariants;
+model Ramping_pf
   "Model for simulation used to illustrate how ramping is applied to move the system to multiple operating points."
   extends Modelica.Icons.Example;
-  Base.Systems.Basic.sys plant(
+  Base.Systems.PFVariants.syspf plant(
     g1(Rdroop=0.025),
     t2pssin=1200,
     t3pssin=2100,
@@ -20,7 +20,11 @@ model Ramping
     pss4_Kw=48.660727200594167,
     pss4_Tw=0.355570139928890,
     pss5_Kw=48.660727200594167,
-    pss5_Tw=0.355570139928890)
+    pss5_Tw=0.355570139928890,
+    redeclare record Bus = Example2.PFData.Data.BusData.PF_Bus_0,
+    redeclare record Loads = Example2.PFData.Data.LoadData.PF_Loads_0,
+    redeclare record Trafos = Example2.PFData.Data.TrafoData.PF_Trafos_0,
+    redeclare record Machines = Example2.PFData.Data.MachineData.PF_Machines_0)
     annotation (Placement(transformation(extent={{58,-40},{138,40}})));
   Modelica.Blocks.Sources.Constant r(k=0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
@@ -72,4 +76,4 @@ equation
     Documentation(info="<html>
 <p>This model illustrates how ramping is applied to move the system to multiple operating points.</p><p>To simulate this model and plot the results, execute the function <a href=\"Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping\">Example2.Analysis.AutomationFunctions.simulate_and_plot_ramping</a> , which sets up the adequate solver settings to minimize run time.</p>
 </html>"));
-end Ramping;
+end Ramping_pf;

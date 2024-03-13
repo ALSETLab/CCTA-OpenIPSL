@@ -4,7 +4,11 @@ model gridIOsiso "Single input single output variant of gridIO"
   Systems.gridIO gridIO(
     t1=t1,
     t2=t2,
-    opening=opening)
+    opening=opening,
+    redeclare record Bus = Example1.PFData.Data.BusData.PF_Bus_10,
+    redeclare record Loads = Example1.PFData.Data.LoadData.PF_Loads_10,
+    redeclare record Trafos = Example1.PFData.Data.TrafoData.PF_Trafos_10,
+    redeclare record Machines = Example1.PFData.Data.MachineData.PF_Machines_10)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Sources.RealExpression zeros
     annotation (Placement(transformation(extent={{-60,8},{-40,28}})));
@@ -19,6 +23,15 @@ model gridIOsiso "Single input single output variant of gridIO"
     annotation (Placement(transformation(extent={{100,6},{120,26}})));
   Modelica.Blocks.Interfaces.RealInput uvs
     annotation (Placement(transformation(extent={{-140,-38},{-100,2}})));
+  // allow replaceable records for power flow data
+  replaceable record Bus = PFData.Data.BusData.PF_Bus_10 constrainedby Example1.PFData.Data.BusData.Bus_Template annotation (
+      choicesAllMatching=true,Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
+  replaceable record Loads = PFData.Data.LoadData.PF_Loads_10 constrainedby Example1.PFData.Data.LoadData.Loads_Template annotation (
+      choicesAllMatching=true,Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
+  replaceable record Trafos = PFData.Data.TrafoData.PF_Trafos_10 constrainedby Example1.PFData.Data.TrafoData.Trafos_Template annotation (
+      choicesAllMatching=true,Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
+  replaceable record Machines = PFData.Data.MachineData.PF_Machines_10 constrainedby Example1.PFData.Data.MachineData.Machines_Template
+    annotation (choicesAllMatching=true,Dialog(group="Power Flow Data", tab="Power Flow Scenario"));
 equation
   connect(gridIO.Vt, Vt)
     annotation (Line(points={{21,16},{110,16}}, color={0,0,127}));

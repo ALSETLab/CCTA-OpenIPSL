@@ -1,12 +1,22 @@
-within Example2.Base.Networks;
-partial model Base
-  "Base network model, 11-buses, loads, and power flow data"
-  parameter Real r=0.0001;
-  parameter Real x=0.001;
-  parameter Real b=0.00175*0.5;
-  parameter Real percent = 0.75;
-  replaceable Systems.Basic.Data.PF0 PF_results constrainedby
-    Systems.Basic.Data.PF0
+within Example2.Base.Systems.Basic;
+model sys "Power system model with input/output interfaces"
+  extends Example2.Utilities.Icons.ModelForLinearization;
+  extends Example2.Interfaces.OutputsInterface;
+  parameter Real r=0.0001 "Common resistance value propagated to several line components";
+  parameter Real x=0.001 "Common reactance value propagated to several line components";
+  parameter Real b=0.00175*0.5 "Common suceptance value propagated to several line components";
+  parameter Real percent = 0.75 "Scaling value used to modify parameters of several line components";
+  Modelica.Blocks.Interfaces.RealInput uPm
+    annotation (Placement(transformation(extent={{-318,100},{-278,140}}), iconTransformation(extent={{-180,100},{-140,140}})));
+  Modelica.Blocks.Interfaces.RealInput uPSS
+    annotation (Placement(transformation(extent={{-320,40},{-280,80}}), iconTransformation(extent={{-182,40},{-142,80}})));
+  Modelica.Blocks.Interfaces.RealInput uAVRin "Feedback input"
+    annotation (Placement(transformation(extent={{-320,-20},{-280,20}}), iconTransformation(extent={{-182,-20},{-142,20}})));
+  Modelica.Blocks.Interfaces.RealInput uLoad7
+    annotation (Placement(transformation(extent={{-320,-80},{-280,-40}}), iconTransformation(extent={{-182,-80},{-142,-40}})));
+  Modelica.Blocks.Interfaces.RealInput uLoad9
+    annotation (Placement(transformation(extent={{-320,-140},{-280,-100}}), iconTransformation(extent={{-182,-140},{-142,-100}})));
+  replaceable Basic.Data.PF0 PF_results constrainedby Basic.Data.PF0
     annotation (Placement(transformation(extent={{0,-114},{20,-94}})));
   OpenIPSL.Electrical.Buses.Bus bus1
     annotation (Placement(transformation(extent={{-230,6},{-210,26}})));
@@ -30,6 +40,55 @@ partial model Base
     annotation (Placement(transformation(extent={{150,6},{170,26}})));
   OpenIPSL.Electrical.Buses.Bus bus11
     annotation (Placement(transformation(extent={{190,6},{210,26}})));
+  Plants.G1 g1(
+    v_0=PF_results.voltages.V1,
+    angle_0=PF_results.voltages.A1,
+    P_0=PF_results.machines.P1_1,
+    Q_0=PF_results.machines.Q1_1,
+    T3g=Modelica.Constants.small,
+    t1pssin=t1pssin,
+    t2pssin=t2pssin,
+    t3pssin=t3pssin,
+    t4pssin=t4pssin,
+    t5pssin=t5pssin,
+    t6pssStop=t6pssStop,
+    pss_vsmax=pss_vsmax,
+    pss_vsmin=pss_vsmin,
+    pss1_Kw=pss1_Kw,
+    pss1_Tw=pss1_Tw,
+    pss2_Kw=pss2_Kw,
+    pss2_Tw=pss2_Tw,
+    pss3_Kw=pss3_Kw,
+    pss3_Tw=pss3_Tw,
+    pss4_Kw=pss4_Kw,
+    pss4_Tw=pss4_Tw,
+    pss5_Kw=pss5_Kw,
+    pss5_Tw=pss5_Tw)
+    annotation (Placement(transformation(extent={{-240,60},{-212,90}})));
+  Plants.G2 g2(
+    v_0=PF_results.voltages.V2,
+    angle_0=PF_results.voltages.A2,
+    P_0=PF_results.machines.P2_1,
+    Q_0=PF_results.machines.Q2_1)
+    annotation (Placement(transformation(extent={{-248,-24},{-228,-4}})));
+  Plants.G3 g3(
+    v_0=PF_results.voltages.V3,
+    angle_0=PF_results.voltages.A3,
+    P_0=PF_results.machines.P3_1,
+    Q_0=PF_results.machines.Q3_1,
+    Rdroop=0.025,
+    tGTypeII(T3=Modelica.Constants.small)) annotation (Placement(transformation(
+        extent={{-6,-6},{6,6}},
+        rotation=180,
+        origin={268,16})));
+  Plants.G4 g4(
+    v_0=PF_results.voltages.V4,
+    angle_0=PF_results.voltages.A4,
+    P_0=PF_results.machines.P4_1,
+    Q_0=PF_results.machines.Q4_1) annotation (Placement(transformation(
+        extent={{-6,-6},{6,6}},
+        rotation=180,
+        origin={268,-24})));
   OpenIPSL.Electrical.Branches.PwLine Line5_6(
     R=r*25,
     X=x*25,
@@ -135,7 +194,7 @@ partial model Base
     X=x*10*(1 - percent),
     G=0,
     B=b*10) annotation (Placement(transformation(extent={{-128,6},{-108,26}})));
-  parameter OpenIPSL.Types.Time t1=Modelica.Constants.inf;
+  parameter OpenIPSL.Types.Time t1=Modelica.Constants.inf "Time for removal of Line5_2B" annotation (Dialog(group="Line Removal Parameters"));
 
   parameter OpenIPSL.Types.PerUnit R=0 "Resistance"
     annotation (Dialog(group="Bus Fault Parameters"));
@@ -145,7 +204,24 @@ partial model Base
     "Start time of the fault" annotation (Dialog(group="Bus Fault Parameters"));
   parameter OpenIPSL.Types.Time t2busfault=Modelica.Constants.inf
     "End time of the fault" annotation (Dialog(group="Bus Fault Parameters"));
-
+  parameter Real t1pssin=0 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
+  parameter Real t2pssin=30 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
+  parameter Real t3pssin=60 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
+  parameter Real t4pssin=90 "Stop time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
+  parameter Real t5pssin=120 "Stop time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
+  parameter Real t6pssStop=Modelica.Constants.inf "Stop time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
+  parameter OpenIPSL.Types.PerUnit pss_vsmax=0.2 "Max stabilizer output signal" annotation (Dialog(tab="PSS Parameters", group="All PSS's Limits"));
+  parameter OpenIPSL.Types.PerUnit pss_vsmin=-0.2 "Min stabilizer output signal" annotation (Dialog(tab="PSS Parameters", group="All PSS's Limits"));
+  parameter Real pss1_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 1"));
+  parameter OpenIPSL.Types.Time pss1_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 1"));
+  parameter Real pss2_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 2"));
+  parameter OpenIPSL.Types.Time pss2_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 2"));
+  parameter Real pss3_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 3"));
+  parameter OpenIPSL.Types.Time pss3_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 3"));
+  parameter Real pss4_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 4"));
+  parameter OpenIPSL.Types.Time pss4_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 4"));
+  parameter Real pss5_Kw=5 "Stabilizer gain [pu/pu]" annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
+  parameter OpenIPSL.Types.Time pss5_Tw=5 "Wash-out time constant" annotation (Dialog(tab="PSS Parameters", group="PSS 5"));
   OpenIPSL.Electrical.Branches.PwLine Line5_2B(
     G=0,
     R=0,
@@ -159,6 +235,19 @@ partial model Base
     X=0.01667*(5/4)*percent,
     B=0) annotation (Placement(transformation(extent={{-176,-42},{-156,-22}})));
 equation
+  // Assign outputs to g1 variables
+  w = g1.g1.SPEED; // Machine speed
+  delta = g1.g1.ANGLE; // Machine angle
+  Vt = g1.g1.ETERM; // Terminal voltage mangitude
+  P = g1.g1.P; // Active power
+  Q = g1.g1.Q; // Reactive power
+  AVRin = g1.AVRinput_meas; // AVR input, error signal to the avr
+  AVRout = g1.AVRoutput_meas; // AVR output, Efd
+  connect(g1.pwPin,bus1. p) annotation (Line(points={{-210.6,75},{-198,75},{
+          -198,32},{-238,32},{-238,16},{-220,16}},
+                color={0,0,255}));
+  connect(g2.pwPin, bus2.p)
+    annotation (Line(points={{-227,-14},{-220,-14}}, color={0,0,255}));
   connect(Line5_6.n,bus6. p) annotation (Line(points={{-151,16},{-140,16}},
                 color={0,0,255}));
   connect(Line5_6.p,bus5. p) annotation (Line(points={{-169,16},{-180,16}},
@@ -184,6 +273,10 @@ equation
     annotation (Line(points={{160,16},{171,16}}, color={0,0,255}));
   connect(Line10_11.n,bus11. p) annotation (Line(points={{189,16},{200,16}},
                 color={0,0,255}));
+  connect(g4.pwPin, bus4.p)
+    annotation (Line(points={{261.4,-24},{240,-24}}, color={0,0,255}));
+  connect(g3.pwPin,bus3. p)
+    annotation (Line(points={{261.4,16},{240,16}}, color={0,0,255}));
   connect(pwFault.p,bus8. p)
     annotation (Line(points={{0,-22.3333},{0,16}},        color={0,0,255}));
   connect(bus1.p,Line5_1. p)
@@ -222,32 +315,63 @@ equation
           16},{-60,16}}, color={0,0,255}));
   connect(Line6_7_A2.n, bus7.p) annotation (Line(points={{-79,6},{-74,6},{-74,
           16},{-60,16}}, color={0,0,255}));
+  connect(g1.uPm, uPm) annotation (Line(
+      points={{-249.8,81},{-249.8,82},{-270,82},{-270,120},{-298,120}},
+      color={0,0,127},
+      smooth=Smooth.Bezier));
+  connect(g1.uPSS, uPSS) annotation (Line(
+      points={{-249.8,75},{-249.8,76},{-274,76},{-274,60},{-300,60}},
+      color={0,0,127},
+      smooth=Smooth.Bezier));
+  connect(g1.uVsAVR, uAVRin) annotation (Line(
+      points={{-249.8,69},{-249.8,2},{-274,2},{-274,0},{-300,0}},
+      color={0,0,127},
+      smooth=Smooth.Bezier));
   connect(Line9_10_A0.p, bus9.p) annotation (Line(points={{129,16},{60,16}}, color={0,0,255}));
   connect(Line5_2A.p, Line5_2B.p) annotation (Line(points={{-175,-32},{-184,-32},{-184,-44},{-175,-44}}, color={0,0,255}));
   connect(Line5_2A.n, Line5_2B.n) annotation (Line(points={{-157,-32},{-148,-32},{-148,-44},{-157,-44}}, color={0,0,255}));
   connect(bus6.p, Line5_2B.n) annotation (Line(points={{-140,16},{-140,-38},{-148,-38},{-148,-44},{-157,-44}}, color={0,0,255}));
   connect(Line5_2.n, Line5_2B.p) annotation (Line(points={{-197,-14},{-192,-14},
           {-192,-38},{-184,-38},{-184,-44},{-175,-44}},                                                                       color={0,0,255}));
+  connect(uLoad9, Load9.u) annotation (Line(points={{-300,-120},{106,-120},{106,
+          -19.85},{77.15,-19.85}}, color={0,0,127}));
+  connect(uLoad7, Load7.u) annotation (Line(points={{-300,-60},{-100,-60},{-100,
+          -19.85},{-75.34,-19.85}}, color={0,0,127}));
     annotation (Dialog(group="Line Trip Parameters"),
                preferredView = "diagram",
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-280,-140},{280,140}}),
                     graphics={Text(
-          extent={{-58,130},{222,96}},
+          extent={{-200,-88},{-100,-108}},
           textColor={238,46,47},
-          textString="In this setup, these two lines can be removed by choosing which one has \"t1\" propagated."),
-                                                             Line(
-          points={{-58,96},{-86,10}},
-          color={238,46,47},
-          thickness=1,
-          arrow={Arrow.None,Arrow.Filled}),                  Line(
-          points={{-64,98},{-154,-42}},
+          textString="Note: In this setup, this line can be
+removed by choosing which one
+has \"t1\" propagated.",
+          horizontalAlignment=TextAlignment.Left),           Line(
+          points={{-168,-80},{-168,-52}},
           color={238,46,47},
           thickness=1,
           arrow={Arrow.None,Arrow.Filled})}),
     Documentation(info="<html>
+<p>This is the main model used for simulation and linearization purposes. See usage in the examples under <a href=\"modelica://Example2.Analysis\">Example2.Analysis</a>.</p>
+<p>See more information under <a href=\"modelica://Example2.Readme\">Example2.Readme</a>.</p>
+<p>In the text layer, under the equation section, the following assignments to the output interface () are made to link g1 variables to the outputs:</p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;<span style=\"color: #006400;\">//&nbsp;Assign&nbsp;outputs&nbsp;to&nbsp;g1&nbsp;variables</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;w&nbsp;=&nbsp;g1.g1.SPEED;<span style=\"color: #006400;\">&nbsp;//&nbsp;Machine&nbsp;speed</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;delta&nbsp;=&nbsp;g1.g1.ANGLE;<span style=\"color: #006400;\">&nbsp;//&nbsp;Machine&nbsp;angle</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;Vt&nbsp;=&nbsp;g1.g1.ETERM;<span style=\"color: #006400;\">&nbsp;//&nbsp;Terminal&nbsp;voltage&nbsp;mangitude</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;P&nbsp;=&nbsp;g1.g1.P;<span style=\"color: #006400;\">&nbsp;//&nbsp;Active&nbsp;power</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;Q&nbsp;=&nbsp;g1.g1.Q;<span style=\"color: #006400;\">&nbsp;//&nbsp;Reactive&nbsp;power</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;AVRin&nbsp;=&nbsp;g1.AVRinput_meas;<span style=\"color: #006400;\">&nbsp;//&nbsp;AVR&nbsp;input,&nbsp;error&nbsp;signal&nbsp;to&nbsp;the&nbsp;avr</span></p>
+<p><span style=\"font-family: Courier New;\">&nbsp;&nbsp;AVRout&nbsp;=&nbsp;g1.AVRoutput_meas;<span style=\"color: #006400;\">&nbsp;//&nbsp;AVR&nbsp;output,&nbsp;Efd</span></p>
 </html>"),
     experiment(
       StopTime=600,
       __Dymola_NumberOfIntervals=10000,
-      __Dymola_Algorithm="Dassl"));
-end Base;
+      __Dymola_Algorithm="Dassl"),
+    Icon(coordinateSystem(extent={{-140,-140},{140,140}}),
+         graphics={
+        Rectangle(
+          lineColor={200,200,200},
+          extent={{-140,-140},{140,140}},
+          radius=25.0)}));
+end sys;

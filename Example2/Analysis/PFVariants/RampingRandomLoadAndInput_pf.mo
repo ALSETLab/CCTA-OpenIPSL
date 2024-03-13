@@ -1,8 +1,8 @@
-within Example2.Analysis;
-model RampingRandomLoadAndInput
+within Example2.Analysis.PFVariants;
+model RampingRandomLoadAndInput_pf
   "Model to perform blind estimation with default controller and re-design"
   extends Modelica.Icons.Example;
-  Example2.Base.Systems.Basic.sys plant(
+  Base.Systems.PFVariants.syspf plant(
     g1(Rdroop=0.025),
     t2pssin=1200,
     t3pssin=2100,
@@ -49,10 +49,10 @@ model RampingRandomLoadAndInput
         extent={{-20,-20},{20,20}},
         origin={0,122})));
 equation
-  connect(zeroInputs.y, plant.uPSS) annotation (Line(points={{-100,80},{-26,80},{-26,17.1429},{53.7143,17.1429}},
-                                                                                                  color={0,0,127}));
-  connect(uL7.y, plant.uLoad7) annotation (Line(points={{-95.9,-57},{-95.9,-60},{-80,-60},{-80,-17.1429},{53.7143,-17.1429}},
-                                                                                                     color={0,0,127}));
+  connect(zeroInputs.y, plant.uPSS) annotation (Line(points={{-100,80},{-26,80},
+          {-26,17.1429},{53.7143,17.1429}},                                                       color={0,0,127}));
+  connect(uL7.y, plant.uLoad7) annotation (Line(points={{-95.9,-57},{-95.9,-60},
+          {-80,-60},{-80,-17.1429},{53.7143,-17.1429}},                                              color={0,0,127}));
   connect(rampingLoad.y,add. u2) annotation (Line(
       points={{-137,-167},{-124,-167},{-124,-152},{-114,-152}},
       color={238,46,47},
@@ -83,4 +83,4 @@ equation
 <p>To reproduce the results in Fig. 4 of [2], execute the function <a href=\"Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs\">Example2.Analysis.AutomationFunctions.simulate_and_plot_inputs</a> , which sets up the adequate solver settings to minimize run time.</p>
 <p>Please note that running this model takes substantial time compared to example <a href=\"Example2.Analysis.Ramping\">Example2.Analysis.Ramping</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden. </p>
 </html>"),preferredView="diagram");
-end RampingRandomLoadAndInput;
+end RampingRandomLoadAndInput_pf;
