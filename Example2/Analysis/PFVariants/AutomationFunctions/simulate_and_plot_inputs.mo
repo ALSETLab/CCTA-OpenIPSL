@@ -8,7 +8,7 @@ algorithm
   Example2.Utilities.SetupSolverSettings.On(corenum);
   // run the simulation
   simulateModel(
-    "Example2.Analysis.RampingRandomLoadAndInput",
+    "Example2.Analysis.PFVariants.RampingRandomLoadAndInput_pf",
     stopTime=4050,
     numberOfIntervals=5000,
     tolerance=1e-06,

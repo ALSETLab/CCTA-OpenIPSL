@@ -3,7 +3,7 @@ function linearize_KchangeLinRamping
   "Function to linearize the model KchangeLinRamping at any point in time."
   extends Modelica.Icons.Function;
   input Real tlin = 600 "[s], time for linearization.";
-  input String pathToNonlinearPlantModel = "Example2.Analysis.KchangeLinRamping";
+  input String pathToNonlinearPlantModel = "Example2.Analysis.PFVariants.KchangeLinRamping_pf";
 algorithm
   // turn off flags to avoid issues in the generated linear model
   Modelica.Utilities.Streams.print("Setting up things...");
@@ -39,7 +39,7 @@ ss := Modelica_LinearSystems2.ModelAnalysis.Linearize(
 <ol>
 <li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window. </li>
 <p><img src=\"modelica://Example2/Resources/linfun.png\"/></p>
-<li>Enter the time for linearization, <span style=\"font-family: Courier New;\"><a href=\"Example2.Analysis.KchangeLinRamping\">Example2.Analysis.KchangeLinRamping</a></span> will be simulated until that point in time and linearized.</li>
+<li>Enter the time for linearization, <span style=\"font-family: Courier New;\"><a href=\"modelica://Example2.Analysis.KchangeLinRamping\">Example2.Analysis.KchangeLinRamping</a></span> will be simulated until that point in time and linearized.</li>
 <li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
 <li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
 </ol>

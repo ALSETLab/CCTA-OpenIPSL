@@ -7,7 +7,7 @@ algorithm
   Example2.Utilities.SetupSolverSettings.On();
   // run the simulation
   simulateModel(
-    "Example2.Analysis.Ramping",
+    "Example2.Analysis.PFVariants.Ramping_pf",
     stopTime=4050,
     numberOfIntervals=5000,
     tolerance=1e-06,
