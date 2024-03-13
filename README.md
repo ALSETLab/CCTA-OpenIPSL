@@ -17,9 +17,9 @@ The models have the following dependencies:
 - LinearAnalysis v1.0.1 (Shipped with Dymola 2024X),
 
 ### Quickstart Guide - Dymola
-Obtain a copy of Dymola from [Dassault Systems](https://discover.3ds.com/free-trial-version-of-dymola-for-windows). The trial version from Dassault Systems will not be sufficient to run the models. To obtain a standard license, contact Dassault Systems, or a reseller such as [Barcroft](https://www.3ds.com/partners/partner-details/200000000025397_BARCROFT_TECHNOLOGY_LLC).
-
 See the quickstart guide to use the packages in Dymola [here](./QuickstartGuides/Quickstart-Dymola.md).
+
+Obtain a copy of Dymola from [Dassault Systems](https://discover.3ds.com/free-trial-version-of-dymola-for-windows). The trial version from Dassault Systems will not be sufficient to run the models. To obtain a standard license, contact Dassault Systems, or a reseller such as [Barcroft](https://www.3ds.com/partners/partner-details/200000000025397_BARCROFT_TECHNOLOGY_LLC).
 
 ### Other Modelica Tools
 Some non-rigurous testing was carried out and it was found that time-simulation models can be run with in [OpenModelica](https://openmodelica.org/), [Wolfram SystemModeler](https://www.wolfram.com/system-modeler/), and [Modelon Impact](https://modelon.com/modelon-impact/) too. 
@@ -43,9 +43,11 @@ For further information on the models uses and applications, please refer to the
   3. X. Bombois and L. Vanfretti, “Performance monitoring and redesign of power system stabilizers based on system identification techniques,” Sustainable Energy, Grids and Networks, Volume 38, 2024, 101278, ISSN 2352-4677, [https://doi.org/10.1016/j.segan.2024.101278](https://doi.org/10.1016/j.segan.2024.101278). Author’s Copy: [https://hal.science/hal-04338856](https://hal.science/hal-04338856)  
 
 ## Quickstart Guides
-- Dymola: See the quickstart guide to use the packages in Dymola [here](./QuickstartGuides/Quickstart-Dymola.md).
-- OpenModelica: A limited guide to load the models and run a limited number of simulations with OpenModelica can be found [here](./QuickstartGuides/Quickstart-OpenModelica.md). 
-- Wolfram SystemModeler: if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
-- Modelon Impact: if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
+- Dymola: the quickstart guide to use the packages in Dymola [here](./QuickstartGuides/Quickstart-Dymola.md).
+- OpenModelica: the following guide shows how to load the models and run a limited number of simulations with OpenModelica, click [here](./QuickstartGuides/Quickstart-OpenModelica.md). 
+- Wolfram SystemModeler: TBD. 
+  - If you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
+- Modelon Impact: TBD.
+  - if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
 (c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.
