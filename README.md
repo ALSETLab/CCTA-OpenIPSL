@@ -19,7 +19,7 @@ The models have the following dependencies:
 ### Quickstart Guide - Dymola
 Obtain a copy of Dymola from [Dassault Systems](https://discover.3ds.com/free-trial-version-of-dymola-for-windows). The trial version from Dassault Systems will not be sufficient to run the models. To obtain a standard license, contact Dassault Systems, or a reseller such as [Barcroft](https://www.3ds.com/partners/partner-details/200000000025397_BARCROFT_TECHNOLOGY_LLC).
 
-See the quickstart guide to use the packages in Dymola below.
+See the quickstart guide to use the packages in Dymola [here](./QuickstartGuides/Quickstart-Dymola.md).
 
 ### Other Modelica Tools
 Some non-rigurous testing was carried out and it was found that time-simulation models can be run with in [OpenModelica](https://openmodelica.org/), [Wolfram SystemModeler](https://www.wolfram.com/system-modeler/), and [Modelon Impact](https://modelon.com/modelon-impact/) too. 
@@ -27,6 +27,8 @@ Some non-rigurous testing was carried out and it was found that time-simulation 
 However, the automation functions provided with the packages are not compatible with those tools. In addition, the linearization functions are different in all of them, requiring scripting tools for each, as the [Modelica Linear Systems 2](https://github.com/modelica/Modelica_LinearSystems2) is yet to be fully compliant with the language specification and to be supported by other tools (see [this issue](https://github.com/modelica/Modelica_LinearSystems2/issues/131)). 
 
 Additional support scripts maybe developed in the future to support these tools, if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
+
+A limited guide to load the models and run a limited number of simulations with OpenModelica can be found [here](./QuickstartGuides/Quickstart-OpenModelica.md). Due to tool limitations, some simulations cannot be executed successfully. 
 
 ## Documentation 
 The documentation for each of the models is embedded within the "info" layer of the Modelica models. Using Dymola, you can browse the documentation. Alternatively, the following documentation for each of the examples was generated from Dymola:
@@ -40,27 +42,10 @@ For further information on the models uses and applications, please refer to the
   2. L. Vanfretti and X. Bombois, "Power System Oscillation Monitoring and Damping Control Re-Design under Ambient Conditions and Multiple Operating Points," manuscript submitted to 20th IFAC Symposium on System Identification. Nov. 10, 2023. Pre-print: March 2024, DOI: [10.13140/RG.2.2.22504.28166](http://dx.doi.org/10.13140/RG.2.2.22504.28166) 
   3. X. Bombois and L. Vanfretti, “Performance monitoring and redesign of power system stabilizers based on system identification techniques,” Sustainable Energy, Grids and Networks, Volume 38, 2024, 101278, ISSN 2352-4677, [https://doi.org/10.1016/j.segan.2024.101278](https://doi.org/10.1016/j.segan.2024.101278). Author’s Copy: [https://hal.science/hal-04338856](https://hal.science/hal-04338856)  
 
-## Quickstart Guide - Dymola
-While using these models would require some familiarity with Modelica and Dymola, the packages have been setup so that users without such experience can run some of the default simulations and linearization examples. In the instructions below, we illustrate how to load the OpenIPSL library and the `Example1` & `Example2` packages:
-  1. Download OpenIPSL, [here](https://github.com/OpenIPSL/OpenIPSL/). You can clone it with GIT by using [a8c6758](https://github.com/OpenIPSL/OpenIPSL/commit/a8c6758fffa7bd23f925063e9aa075f271ac71ee). Alternatively, you can download the *.zip file from the release page [here](https://github.com/OpenIPSL/OpenIPSL/releases/tag/v3.0.1).
-  2. Download the files of this repository by cloning with GIT. Alternatively, you can click [here](https://github.com/ALSETLab/CCTA-OpenIPSL/archive/refs/tags/v1.0.1.zip) to download the *.zip file.
-  3. If you have cloned both OpenIPSL's and this repository, navigate to the location where it is stored them. If you have downloaded the *.zip file, uncompress it in a directory to which you have read/write rights, e.g. `C:\Users\myUserName\Documents\Dymola`. You should now have two directories, one called `OpenIPSL-3.0.1` and the other `CCTA-OpenIPSL-1.0.x`, as shown below. Note that `x` denotes the version of the release of this repository.
-  ![Uncompress the *.zip files](./Assets/img/quick_zip.png)
-  4. Launch Dymola 2024X and go to `File > Open > Load`, and navigate the folder `C:\Users\myUserName\Documents\Dymola\OpenIPSL-3.0.1\OpenIPSL-3.0.1\OpenIPSL\`, select the file `package.mo` and click on `Open`
-   ![Dymola Load](./Assets/img/dym_load.png)
-   ![Select package.mo from the directory](./Assets/img/dym_load_openipsl.png)
-   This will load OpenIPSL on Dymola's `Projects` browser as shown below:
-   ![OpenIPSL in Dymola](./Assets/img/dym_packagebrowswer_openipsl.png)
-   5. Repeat step 4, but instead, navigate to the directory `C:\Users\myUserName\Documents\Dymola\CCTA-OpenIPSL-1.0.x\Example1`, select the file `package.mo` and click on `Open`. This will load the package, `Example1` in Dymola's `Projects` browser as shown below.
-   ![OpenIPSL in Dymola](./Assets/img/dym_packagebrowswer_example1.png)
-   6. Repeat step 5, but instead, `C:\Users\myUserName\Documents\Dymola\CCTA-OpenIPSL-1.0.x\Example2`, select the file `package.mo` and click on `Open`. This will load the package, `Example2` in Dymola's `Projects` browser as shown below.
-   ![OpenIPSL in Dymola](./Assets/img/dym_packagebrowswer_example2.png)
-   7. You have now loaded the two packages from this repository in Dymola. You can now click on `Example1 > Readme` or `Example2 > Readme` and follow the instructions on how to run some default examples. 
-      - For example, to reproduce the comparisons between the linear and nonlinear model response of `Example 1` as shown in Fig. 6 of [Reference 1](http://dx.doi.org/10.13140/RG.2.2.17471.11680), follow the instructions [here](https://alsetlab.github.io/CCTA-OpenIPSL/Example1/help/Example1_Analysis_LinearAnalysis_CustomFunctions.html#Example1.Analysis.LinearAnalysis.CustomFunctions.LinearizeAndCompare)
-   8. Explore all other examples in the documentation!
-      * Documentation for Example 1 can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/Example1/help/Example1.html)
-      * Documentation for Example 2 can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/Example2/help/Example2.html)
-
-
+## Quickstart Guides
+- Dymola: See the quickstart guide to use the packages in Dymola [here](./QuickstartGuides/Quickstart-Dymola.md).
+- OpenModelica: A limited guide to load the models and run a limited number of simulations with OpenModelica can be found [here](./QuickstartGuides/Quickstart-OpenModelica.md). 
+- Wolfram SystemModeler: if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
+- Modelon Impact: if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
 (c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.
