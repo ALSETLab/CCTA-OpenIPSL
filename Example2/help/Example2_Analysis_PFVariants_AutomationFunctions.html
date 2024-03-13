@@ -1,0 +1,511 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Analysis.PFVariants.AutomationFunctions</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Provides functions for automation of simulation and linearization using the models of the upper layer package&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE AutomationFunctions<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Analysis.PFVariants.AutomationFunctions"></a><a href="Example2_Analysis_PFVariants.html#Example2.Analysis.PFVariants"
+>Example2.Analysis.PFVariants</a>.AutomationFunctions</h2>
+<p>
+<span class="ModelicaDescription">Provides functions for automation of simulation and linearization using the models of the upper layer package</span>
+</p>
+<h3>Information</h3>
+
+<p>This package contains functions that automate the simulation, plotting and linearization of the models under <a href="Example2_Analysis_PFVariants.html#Example2.Analysis.PFVariants"
+>Example2.Analysis.PFVariants</a>.</p>
+
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.FunctionsPackage (Icon for packages containing functions).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.Analysis.Automat2db31077a9c9a9ebmpingS.png" alt="Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf" width="20" height="20" align="top">&nbsp;<a href="Example2_Analysis_PFVariants_AutomationFunctions.html#Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf"
+>simulate_and_plot_ramping_pf</a>
+</td>
+<td>Simulates and plots the &quot;Ramping_pf&quot; model</td>
+</tr>
+<tr>
+<td><img src="Example2.Analysis.Automat2db31077a9c9a9ebmpingS.png" alt="Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_inputs_pf" width="20" height="20" align="top">&nbsp;<a href="Example2_Analysis_PFVariants_AutomationFunctions.html#Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_inputs_pf"
+>simulate_and_plot_inputs_pf</a>
+</td>
+<td>Simulates and plots the &quot;RampingRandomLoadAndInput_pf&quot; which includes random load and the designed input signal.</td>
+</tr>
+<tr>
+<td><img src="Example2.Analysis.Automat2db31077a9c9a9ebmpingS.png" alt="Example2.Analysis.PFVariants.AutomationFunctions.linearize_KchangeLinRamping_pf" width="20" height="20" align="top">&nbsp;<a href="Example2_Analysis_PFVariants_AutomationFunctions.html#Example2.Analysis.PFVariants.AutomationFunctions.linearize_KchangeLinRamping_pf"
+>linearize_KchangeLinRamping_pf</a>
+</td>
+<td>Function to linearize the model &quot;KchangeLinRamping_pf&quot; at any point in time.</td>
+</tr>
+</table>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE simulate_and_plot_ramping_pf<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Analysis.Automat2db31077a9c9a9ebmpingI.png" alt="Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf"></a><a href="Example2_Analysis_PFVariants_AutomationFunctions.html#Example2.Analysis.PFVariants.AutomationFunctions"
+>Example2.Analysis.PFVariants.AutomationFunctions</a>.simulate_and_plot_ramping_pf</h2>
+<p>
+<span class="ModelicaDescription">Simulates and plots the &quot;Ramping_pf&quot; model</span>
+</p>
+<h3>Information</h3>
+
+<p><i><b>Usage:</b></i></p>
+<ol>
+<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window.</li>
+<p><img src="../Resources/simulate_and_plot_fun_pf.png"/></p>
+<li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
+<li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
+</ol>
+<p><br><i><b>Sample Output:</b></i></p>
+<p>Running the function will result in the following plot.</p>
+<p><img src="../Resources/simulate_and_plot_ramping_pf.png"/></p>
+
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Function (Icon for functions).</span></p>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE simulate_and_plot_inputs_pf<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Analysis.Automat2db31077a9c9a9ebmpingI.png" alt="Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_inputs_pf" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_inputs_pf"></a><a href="Example2_Analysis_PFVariants_AutomationFunctions.html#Example2.Analysis.PFVariants.AutomationFunctions"
+>Example2.Analysis.PFVariants.AutomationFunctions</a>.simulate_and_plot_inputs_pf</h2>
+<p>
+<span class="ModelicaDescription">Simulates and plots the &quot;RampingRandomLoadAndInput_pf&quot; which includes random load and the designed input signal.</span>
+</p>
+<h3>Information</h3>
+
+<p><i><b>Usage:</b></i></p>
+<ol>
+<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window. </li>
+<p><img src="../Resources/simulate_and_plot_fun_inputs_pf.png"/></p>
+<li>Enter the desired number of cores to use in &quot;corenum&quot;. The number of cores to use depends on your computer&apos;s resources. , if your computer has more than 12 cores, you can enter the desired number of cores to use in the function&apos;s main window. Note that it will take some trial an error to find a trade off on the number of cores to use in your system as per <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl&apos;s law</a>. See the note below the sample output for more details.</li>
+<li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
+<li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
+</ol>
+<p><br><i><b>Sample output:</b></i></p>
+<p>Running the function will result in the following plot.</p>
+<p><img src="../Resources/simulate_and_plot_inputs_pf.png"/></p>
+<p><i><b>Note:</b></i></p>
+<p>Please observe that running this function involves simulating the <a href="Example2_Analysis_PFVariants.html#Example2.Analysis.PFVariants.RampingRandomLoadAndInput_pf"
+>Example2.Analysis.PFVariants.RampingRandomLoadAndInput_pf</a> model, which takes subtantially more time compared to example&nbsp;<a href="Example2_Analysis_PFVariants.html#Example2.Analysis.PFVariants.Ramping_pf"
+>Example2.Analysis.PFVariants.Ramping_pf</a>, the reason is that both random load and probing signals are added to the model which results in an additional computation burden.</p>
+<p>This function calls the <a href="Example2_Utilities_SetupSolverSettings.html#Example2.Utilities.SetupSolverSettings.On"
+>Example2.Utilities.SetupSolverSettings.On</a> function that configures several flags to improve simulation speed, however, even by enabling these features, the simulation is time consuming. </p>
+<p>For example, running the model using a computer with an 13th Gen Intel(R) Core(TM) i9-13900K, 3.00 GHz, processor and 128 GB DDR4 RAM, setup to use 12 cores, gave the following metrics:</p>
+<p style="margin-left: 60px;"><span style="font-family: Courier New; font-size: 10pt;">Integration terminated successfully at T = 4050</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">CPU-time for integration : 1.17e+03 seconds</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">CPU-time for one grid interval : 234 milliseconds</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">CPU-time for initialization : 0.005 seconds</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of result points : 959331</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of grid points : 5001</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of accepted steps : 9172936</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of f-evaluations (dynamics) : 18295816</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of crossing function evaluations : 9668298</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of Jacobian-evaluations : 4006190</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of model time events : 476996</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of input time events : 0</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of state events : 2744</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Number of step events : 0</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Minimum integration stepsize : 2.78e-10</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Maximum integration stepsize : 0.00922</span></p>
+<p style="margin-left: 90px;"><span style="font-family: Courier New; font-size: 10pt;">Maximum integration order : 5</span></p>
+<p>Looking at the first two lines of the metrics shows that running the model for 67.5 min (4050 sec.) took 19.5 min (1.17e+03 sec.). </p>
+<p>Naturally, using a computer with a weaker processor and lower memory will lead to longer run times.</p>
+<p>If there is no interest to take into account the random load and probing signal, it is recommended that you run instead the function <a href="Example2_Analysis_PFVariants_AutomationFunctions.html#Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf"
+>Example2.Analysis.PFVariants.AutomationFunctions.simulate_and_plot_ramping_pf</a>, which takes substantially less time to execute.</p>
+
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Function (Icon for functions).</span></p>
+<h3>Inputs</h3>
+<table summary="Inputs" class="ModelicaTableInputs">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>corenum</td><td>Number of processor cores to use</td></tr>
+</table>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE linearize_KchangeLinRamping_pf<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Analysis.Automat2db31077a9c9a9ebmpingI.png" alt="Example2.Analysis.PFVariants.AutomationFunctions.linearize_KchangeLinRamping_pf" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Analysis.PFVariants.AutomationFunctions.linearize_KchangeLinRamping_pf"></a><a href="Example2_Analysis_PFVariants_AutomationFunctions.html#Example2.Analysis.PFVariants.AutomationFunctions"
+>Example2.Analysis.PFVariants.AutomationFunctions</a>.linearize_KchangeLinRamping_pf</h2>
+<p>
+<span class="ModelicaDescription">Function to linearize the model &quot;KchangeLinRamping_pf&quot; at any point in time.</span>
+</p>
+<h3>Information</h3>
+
+<p><i><b>Usage:</b></i></p>
+<ol>
+<li>In the Package Browser, right click on the function and select &quot;Call function...&quot;. This will open the function&apos;s window. </li>
+<p><img src="../Resources/linfun_pf_kchange.png"/></p>
+<li>Enter the time for linearization, <a href="
+Example2.Analysis.PFVariants.KchangeLinRamping_pf">Example2.Analysis.PFVariants.KchangeLinRamping_pf</a> will be simulated until that point in time and linearized.</li>
+<li>In the new function window, click on &quot;Execute&quot;, if successful, messages/results are displayed in the command window and plots will appear in Simulation tab.</li>
+<li>Go back to the function&apos;s own window and click on &quot;Close&quot;. </li>
+</ol>
+<p><br><i><b>Sample Output:</b></i></p>
+<p>Executing the function will produce the following output in the &quot;Commands&quot; window.</p>
+<p><span style="font-family: Courier New; font-size: 10pt;"></p><p>Example2.Analysis.PFVariants.AutomationFunctions.linearize_KchangeLinRamping_pf();</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Setting&nbsp;up&nbsp;things...</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">DAE&nbsp;Mode&nbsp;is&nbsp;turned&nbsp;off.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Global&nbsp;optimization&nbsp;is&nbsp;disabled.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Sparse&nbsp;options&nbsp;disabled.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Number&nbsp;of&nbsp;cores&nbsp;reset&nbsp;to&nbsp;default:1</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Starting&nbsp;simulation&nbsp;and&nbsp;linearization...</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Declaring&nbsp;Modelica_LinearSystems2.StateSpace&nbsp;ss&nbsp;</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">System&nbsp;not&nbsp;printed&nbsp;since&nbsp;too&nbsp;large&nbsp;(only&nbsp;dimensions):</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">&nbsp;&nbsp;&nbsp;ss.A[52,52]</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">&nbsp;&nbsp;&nbsp;ss.B[52,2]</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">&nbsp;&nbsp;&nbsp;ss.C[1,52]</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">&nbsp;&nbsp;&nbsp;ss.D[1,2]</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">The&nbsp;linear&nbsp;model&nbsp;is&nbsp;in&nbsp;your&nbsp;working&nbsp;directory.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Open&nbsp;the&nbsp;dslin.mat&nbsp;file&nbsp;following&nbsp;the&nbsp;instructions&nbsp;in&nbsp;the&nbsp;documentation.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">You&nbsp;can&nbsp;also&nbsp;analyze&nbsp;the&nbsp;linear&nbsp;model&nbsp;using&nbsp;Dymola,&nbsp;for&nbsp;example&nbsp;typing&nbsp;in&nbsp;the&nbsp;commands&nbsp;window</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">&nbsp;&nbsp;Modelica_LinearSystems2.StateSpace.Plot.polesAndZeros(ss,&nbsp;zeros=false,&nbsp;print=true);</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">&nbsp;&nbsp;will&nbsp;give&nbsp;you&nbsp;the&nbsp;polte&nbsp;plot&nbsp;shown&nbsp;in&nbsp;the&nbsp;Simulation&nbsp;tab&nbsp;and&nbsp;printed&nbsp;below.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Must&nbsp;translate&nbsp;function&nbsp;Modelica_LinearSystems2.Math.Matrices.LAPACK.dgeevx_eigenValues.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Compilation&nbsp;of&nbsp;function&nbsp;Modelica_LinearSystems2.Math.Matrices.LAPACK.dgeevx_eigenValues&nbsp;successful.</span></p>
+<p><span style="font-family: Courier New; font-size: 10pt;">Finished&nbsp;</span></p>
+<p style="margin-left: 20px;"><br><span style="font-family: Arial; font-size: 10pt;">Eigenvalues</span></p>
+<table cellspacing="1" cellpadding="3" border="0"><tr>
+<td style="background-color: #e6e6e6"><p><span style="font-family: Arial; font-size: 10pt; background-color: #e6e6e6;">number </span></p></td>
+<td style="background-color: #e6e6e6"><p><span style="font-family: Arial; font-size: 10pt; background-color: #e6e6e6;">eigenvalue</span></p></td>
+<td style="background-color: #e6e6e6"><p><span style="font-family: Arial; font-size: 10pt; background-color: #e6e6e6;">time constant [s] </span></p></td>
+<td style="background-color: #e6e6e6"><p><span style="font-family: Arial; font-size: 10pt; background-color: #e6e6e6;">freq. [Hz] </span></p></td>
+<td style="background-color: #e6e6e6"><p><span style="font-family: Arial; font-size: 10pt; background-color: #e6e6e6;">damping </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -9.6242e+01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0104 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 2 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -3.6655e+01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0273 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 3 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -3.5047e+01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0285 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 4 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -3.1561e+01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0317 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 5 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -3.0650e+01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0326 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 6 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.7641e+01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0362 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 7 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.6939e+01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0371 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 8 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -8.3670e+00 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.1195 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 9 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.9564e+00 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.3383 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 10 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.6309e+00 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.3801 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 11 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.6309e+00 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.3801 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 12 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.6309e+00 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.3801 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 13 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.6309e+00 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.3801 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 14 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.6253e-01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 3.8090 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 15 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.0230e-01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 4.9432 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 16 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0029e-01 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 9.9714 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 17 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 18 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 19 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 20 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 21 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 22 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 23 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 24 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 25 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 26 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 27 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.0000e-03 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1000.0000 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 28 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -2.0208e-11 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 49484936402.3992 </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 29/30 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -5.6534e-01 &plusmn; 6.0529e-01j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.1318 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.6826 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 31/32 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -7.8941e-01 &plusmn; 6.8557e-01j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.1664 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.7550 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 33/34 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.1437e+00 &plusmn; 8.2408e-01j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.2243 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.8113 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 35/36 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -6.0262e+00 &plusmn; 8.5651e-01j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.9687 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.9900 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 37/38 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -3.5830e+01 &plusmn; 1.5444e+00j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 5.7079 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.9991 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 39/40 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -7.7495e+00 &plusmn; 2.2560e+00j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1.2846 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.9601 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 41/42 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -9.0151e-01 &plusmn; 2.2664e+00j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.3882 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.3696 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 43/44 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.9111e+00 &plusmn; 3.2618e+00j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.6017 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.5055 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 45/46 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -6.1276e-01 &plusmn; 4.2935e+00j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.6903 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.1413 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 47/48 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -5.2430e-01 &plusmn; 7.7021e+00j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1.2287 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0679 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 49/50 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -4.4286e-01 &plusmn; 1.2244e+01j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 1.9500 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.0361 </span></p></td>
+</tr>
+<tr>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 51/52 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; -1.9317e+01 &plusmn; 1.5323e+01j </span></p></td>
+<td style="background-color: #ffffff"><p align="center"><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; --- </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 3.9242 </span></p></td>
+<td style="background-color: #ffffff"><p><span style="font-family: Arial; font-size: 10pt; background-color: #ffffff;">&nbsp; 0.7834 </span></p></td>
+</tr>
+</table>
+<p><br><br>The following pole plot is generated in the Simulation tab:</p>
+<p> <img src="../Resources/linearize_KchangeLinRamping_pf.png"/></p>
+<p><b>Post-processing in MATLAB:</b> </p>
+<p>The obtained linear model can be used in any other environment. The linear model is available in the file, <span style="font-family: Courier New;">dslin.mat</span>, that will appear under your Dymola working directory. It can be loaded in MATLAB using the function:</p>
+<p><span style="font-family: Courier New;">[A,B,C,D,xName,uName,yName] = tloadlin(&apos;dslin.mat&apos;)</span></p>
+<p>To use this function, add to the MATLAB workspace the directory and sub-directories under: <span style="font-family: Courier New;">C:\Program Files\Dymola 2024x\Mfiles</span> </p>
+
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Function (Icon for functions).</span></p>
+<h3>Inputs</h3>
+<table summary="Inputs" class="ModelicaTableInputs">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>tlin</td><td>[s], time for linearization.</td></tr>
+<tr><td>pathToNonlinearPlantModel</td><td>&nbsp;</td></tr>
+</table>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Wed Mar 13 11:47:13 2024.
+</address>
+</body>
+</html>

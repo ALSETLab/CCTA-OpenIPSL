@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Analysis.Readme</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Recommended models for derivative work&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Readme<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Analysis.Readme"></a><a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>.Readme</h2>
+<p>
+<span class="ModelicaDescription">Recommended models for derivative work</span>
+</p>
+<h3>Information</h3>
+
+<p>The models in this layer of the package (i.e. <a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>) are intended to reproduce the work in [1] and [2]. </p>
+<p>However, for derivative works the models under the package <a href="Example2_Analysis_PFVariants.html#Example2.Analysis.PFVariants"
+>Example2.Analysis.PFVariants</a> (and associated dependencies) are recommended, as they use OpenIPSL types which implement nominal attributes to help with the intialization process. See more information on this aspect under the information layer of <a href="Example2_PFData.html#Example2.PFData"
+>Example2.PFData</a>.</p>
+<p>The main differences between the examples is:</p>
+<ol>
+<li>In the examples this layer of the package, <a href="
+Example2.Analysis">Example2.Analysis</a>, the power flow intial guess data is provided through the <b>records</b> in <a href="
+Example2.Base.Systems.Basic.Data">Example2.Base.Systems.Basic.Data</a>. To change the data, it is necessary to modify the base model in <a href="
+Example2.Base.Systems.Basic.sys">Example2.Base.Systems.Basic.sys</a> by changing the name of the record in the text layer. This is obviously inconvenient, but also as explained above, the types are generic and do not implement those of OpenIPSL.</li>
+<li>In the examples within the sub-package, <a href="
+Example2.Analysis.PFVariants">Example2.Analysis.PFVariants</a>, the <b>hierarchical replaceable records</b> in <a href="
+Example2.PFData">Example2.PFData</a> are used. The data can then be modified at the top-layer of the model by selecting from the available data sets (and/or providing new ones in <a href="
+Example2.PFData.Data">Example2.PFData.Data</a>) by clicking on the &quot;Power Flow Scenario&quot; tab of the &quot;Plant&quot; (instantiation of <a href="Example2_Base_Systems_PFVariants.html#Example2.Base.Systems.PFVariants.syspf"
+>syspf</a>), as the records have been propagated and configured for this purposes, as shown in the screenshot below.<br><img src="../Resources/pfsys.png"/></li>
+</ol>
+<p><br>It is important to note that even though the models in 1. and 2. above are identical in terms of their equations, the intialization will be different due to the use of the nominal attributes. Read more on this aspect under the information layer of <a href="Example2_PFData.html#Example2.PFData"
+>Example2.PFData</a>.</p>
+
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Information (Icon for general information packages).</span></p>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Wed Mar 13 11:47:12 2024.
+</address>
+</body>
+</html>

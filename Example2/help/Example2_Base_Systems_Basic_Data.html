@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Base.Systems.Basic.Data</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Power flow data records for network initialization without the use of OpenIPSL Types&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Data<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Systems.Basic.Data"></a><a href="Example2_Base_Systems_Basic.html#Example2.Base.Systems.Basic"
+>Example2.Base.Systems.Basic</a>.Data</h2>
+<p>
+<span class="ModelicaDescription">Power flow data records for network initialization without the use of OpenIPSL Types</span>
+</p>
+<h3>Information</h3>
+
+<p>This package contains different sets of data records that can be used to initialize the power network on an initial operating point.</p>
+<p>Note that the templates in this package do not include the type declarations with <span style="font-family: Courier New;">nominal</span> attributes provided by OpenIPSL, which therefore leads to different initialization solutions when the data is used as compared with the package <a href="Example2_PFData.html#Example2.PFData"
+>Example2.PFData</a>. This is used to illustrate the use of types with nominal values, observe that in the templates here, no nominal values are used, as compared with the package <a href="Example2_PFData.html#Example2.PFData"
+>Example2.PFData</a>, where they are. Observe that this is an important aspect as, &quot;the nominal value can be used by an analysis tool to determine appropriate tolerances or epsilons, or may be used for scaling&quot; (see the Modelica Specification, <a href="https://specification.modelica.org/maint/3.5/class-predefined-types-and-declarations.html">Ch.4.8.6</a>).</p>
+<p>For example, in this package the voltage mangitude is defined in <a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data.PF_TwoAreas.Voltages"
+>Example2.Base.Systems.Basic.Data.PF_TwoAreas.Voltages</a> as:</p>
+<p style="margin-left: 30px;"><span style="font-family: Courier New; color: #0000ff;">parameter&nbsp;</span><span style="color: #ff0000;">Real&nbsp;V1;</span></p>
+<p>Meanwhile, for the case of the templates in Example2.PFData, OpenIPSL</p>
+<p style="margin-left: 30px;"><span style="font-family: Courier New; color: #0000ff;">parameter&nbsp;</span><span style="color: #ff0000;">OpenIPSL.Types.PerUnit&nbsp;V1;</span></p>
+<p>where the type declaration is:</p>
+<p style="margin-left: 30px;"><span style="font-family: Courier New; color: #0000ff;">type</span>&nbsp;Voltage&nbsp;=&nbsp;<span style="font-family: Courier New; color: #ff0000;">SI.Voltage</span>(nominal&nbsp;=&nbsp;1e4,&nbsp;displayUnit&nbsp;=&nbsp;&quot;kV&quot;);</p>
+<p>This difference will result in different intialization solutions despite having the same power flow data.</p>
+<p>It is recommended that the solution provided in the package <a href="Example2_PFData.html#Example2.PFData"
+>Example2.PFData</a> is favored.</p>
+
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.RecordsPackage (Icon for package containing records).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.Base.Systems.Basic.Data.PF0S.png" alt="Example2.Base.Systems.Basic.Data.PF0" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data.PF0"
+>PF0</a>
+</td>
+<td>Power flow data record, Case 00</td>
+</tr>
+<tr>
+<td><img src="Example2.Base.Systems.Basic.Data.PF0S.png" alt="Example2.Base.Systems.Basic.Data.PF1" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data.PF1"
+>PF1</a>
+</td>
+<td>Power flow data record, Case 01</td>
+</tr>
+<tr>
+<td><img src="Example2.Base.Systems.Basic.Data.PF0S.png" alt="Example2.Base.Systems.Basic.Data.PF_TwoAreas" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data.PF_TwoAreas"
+>PF_TwoAreas</a>
+</td>
+<td>Template data record used to store power flow results for initialization</td>
+</tr>
+</table>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PF0<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Systems.Basic.Data.PF0"></a><a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data"
+>Example2.Base.Systems.Basic.Data</a>.PF0</h2>
+<p>
+<span class="ModelicaDescription">Power flow data record, Case 00</span>
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data.PF_TwoAreas"
+>PF_TwoAreas</a> (Template data record used to store power flow results for initialization).</span></p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>voltages</td><td>&nbsp;</td></tr>
+<tr><td>machines</td><td>&nbsp;</td></tr>
+<tr><td>loads</td><td>&nbsp;</td></tr>
+</table>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PF1<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Systems.Basic.Data.PF1"></a><a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data"
+>Example2.Base.Systems.Basic.Data</a>.PF1</h2>
+<p>
+<span class="ModelicaDescription">Power flow data record, Case 01</span>
+</p>
+<h3>Information</h3>
+
+
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data.PF_TwoAreas"
+>PF_TwoAreas</a> (Template data record used to store power flow results for initialization).</span></p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>voltages</td><td>&nbsp;</td></tr>
+<tr><td>machines</td><td>&nbsp;</td></tr>
+<tr><td>loads</td><td>&nbsp;</td></tr>
+</table>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PF_TwoAreas<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Systems.Basic.Data.PF_TwoAreas"></a><a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data"
+>Example2.Base.Systems.Basic.Data</a>.PF_TwoAreas</h2>
+<p>
+<span class="ModelicaDescription">Template data record used to store power flow results for initialization</span>
+</p>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Wed Mar 13 11:47:10 2024.
+</address>
+</body>
+</html>

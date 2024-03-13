@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.PFData</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Records with power flow data to simulate various scenarios that use OpenIPSL type declarations.&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PFData<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.PFData"></a><a href="Example2.html#Example2"
+>Example2</a>.PFData</h2>
+<p>
+<span class="ModelicaDescription">Records with power flow data to simulate various scenarios that use OpenIPSL type declarations.</span>
+</p>
+<h3>Information</h3>
+
+<p>This subpackage contains power flow data records to initialize the simulation models.</p>
+<p>Note that the templates in this package make use of the type declarations with <span style="font-family: Courier New;">nominal</span> attributes provided by OpenIPSL, which therefore leads to different initialization solutions when the data is used as compared with the package in <a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data"
+>Example2.Base.Systems.Basic.Data</a>. This is used to illustrate the use of types with nominal values, observe that in the templates here, types with nominal values are used. Observe that this is an important aspect as, &quot;the nominal value can be used by an analysis tool to determine appropriate tolerances or epsilons, or may be used for scaling&quot; (see the Modelica Specification, <a href="https://specification.modelica.org/maint/3.5/class-predefined-types-and-declarations.html">Ch.4.8.6</a>).</p>
+<p>For example, the templates in this package use OpenIPSL types, as in <a href="Example2_PFData_Data_BusData.html#Example2.PFData.Data.BusData.Bus_Template"
+>Example2.PFData.Data.BusData.Bus_Template</a></p>
+<p style="margin-left: 30px;"><span style="font-family: Courier New; color: #0000ff;">parameter&nbsp;</span><span style="color: #ff0000;">OpenIPSL.Types.PerUnit&nbsp;V1;</span></p>
+<p>where the type declaration is:</p>
+<p style="margin-left: 30px;"><span style="font-family: Courier New; color: #0000ff;">type</span>&nbsp;Voltage&nbsp;=&nbsp;<span style="font-family: Courier New; color: #ff0000;">SI.Voltage</span>(nominal&nbsp;=&nbsp;1e4,&nbsp;displayUnit&nbsp;=&nbsp;&quot;kV&quot;);</p>
+<p>In contrast, the voltage mangitude is defined in <a href="Example2_Base_Systems_Basic_Data.html#Example2.Base.Systems.Basic.Data.PF_TwoAreas.Voltages"
+>Example2.Base.Systems.Basic.Data.PF_TwoAreas.Voltages</a> as:</p>
+<p style="margin-left: 30px;"><span style="font-family: Courier New; color: #0000ff;">parameter&nbsp;</span><span style="color: #ff0000;">Real&nbsp;V1;</span></p>
+<p>This difference will result in different intialization solutions despite having the same power flow solution as initial guess data.</p>
+<p>It is recommended that the approach used within this package is favored. The other package (i.e. Example2.Base.Systems.Basic.Data) is used to illustrate the point discussed above and for the sake of reproducibility of the work in [1] and [2].</p>
+
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.RecordsPackage (Icon for package containing records).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.PFDataS.png" alt="Example2.PFData.RecordTemplates" width="20" height="20" align="top">&nbsp;<a href="Example2_PFData_RecordTemplates.html#Example2.PFData.RecordTemplates"
+>RecordTemplates</a>
+</td>
+<td>Contains the templates to organize the data</td>
+</tr>
+<tr>
+<td><img src="Example2.PFDataS.png" alt="Example2.PFData.Data" width="20" height="20" align="top">&nbsp;<a href="Example2_PFData_Data.html#Example2.PFData.Data"
+>Data</a>
+</td>
+<td>Records containing the power flow data</td>
+</tr>
+<tr>
+<td><img src="Example2.PFData.PFScenariosS.png" alt="Example2.PFData.PFScenarios" width="20" height="20" align="top">&nbsp;<a href="Example2_PFData.html#Example2.PFData.PFScenarios"
+>PFScenarios</a>
+</td>
+<td>Drop-in component to select the power flow scenarios</td>
+</tr>
+</table>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PFScenarios<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.PFData.PFScenariosI.png" alt="Example2.PFData.PFScenarios" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.PFData.PFScenarios"></a><a href="Example2_PFData.html#Example2.PFData"
+>Example2.PFData</a>.PFScenarios</h2>
+<p>
+<span class="ModelicaDescription">Drop-in component to select the power flow scenarios</span>
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.Record (Icon for records).</span></p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>replaceable record Bus</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Loads</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Trafos</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Machines</td><td>&nbsp;</td></tr>
+</table>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Wed Mar 13 11:47:11 2024.
+</address>
+</body>
+</html>

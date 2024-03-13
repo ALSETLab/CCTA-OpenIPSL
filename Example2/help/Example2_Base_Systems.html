@@ -56,100 +56,20 @@ pre {white-space: pre; overflow-x : hidden;}
 <th>Description</th>
 </tr>
 <tr>
-<td><img src="Example2.Base.Systems.sysS.png" alt="Example2.Base.Systems.sys" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems.html#Example2.Base.Systems.sys"
->sys</a>
+<td><img src="Example2.BaseS.png" alt="Example2.Base.Systems.Basic" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems_Basic.html#Example2.Base.Systems.Basic"
+>Basic</a>
 </td>
-<td>Power system model with input/output interfaces</td>
+<td>Basic system model with legacy power flow data provisioning without top-level propagation</td>
+</tr>
+<tr>
+<td><img src="Example2.BaseS.png" alt="Example2.Base.Systems.PFVariants" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems_PFVariants.html#Example2.Base.Systems.PFVariants"
+>PFVariants</a>
+</td>
+<td>Basic system model with hierarchical power flow data provisioning allowing top-level propagation</td>
 </tr>
 </table>
-<!--[if supportFields]><span style="mso-element:field-begin"></span>
-<span style="mso-spacerun:yes"></span>XE sys<![endif]-->
-<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
-<h2><img src="Example2.Base.Systems.sysI.png" alt="Example2.Base.Systems.sys" align="right" style="border: 1px solid" width="80" height="80">
-<a name="Example2.Base.Systems.sys"></a><a href="Example2_Base_Systems.html#Example2.Base.Systems"
->Example2.Base.Systems</a>.sys</h2>
-<p>
-<span class="ModelicaDescription">Power system model with input/output interfaces</span>
-</p>
-<h3>Information</h3>
-
-<p>This is the main model used for simulation and linearization purposes. See usage in the examples under <a href="Example2_Analysis.html#Example2.Analysis"
->Example2.Analysis</a>.</p>
-<p>See more information under <a href="Example2.html#Example2.Readme"
->Example2.Readme</a>.</p>
-<p>In the text layer, under the equation section, the following assignments to the output interface () are made to link g1 variables to the outputs:</p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;<span style="color: #006400;">//&nbsp;Assign&nbsp;outputs&nbsp;to&nbsp;g1&nbsp;variables</span></p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;w&nbsp;=&nbsp;g1.g1.SPEED;<span style="color: #006400;">&nbsp;//&nbsp;Machine&nbsp;speed</span></p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;delta&nbsp;=&nbsp;g1.g1.ANGLE;<span style="color: #006400;">&nbsp;//&nbsp;Machine&nbsp;angle</span></p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;Vt&nbsp;=&nbsp;g1.g1.ETERM;<span style="color: #006400;">&nbsp;//&nbsp;Terminal&nbsp;voltage&nbsp;mangitude</span></p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;P&nbsp;=&nbsp;g1.g1.P;<span style="color: #006400;">&nbsp;//&nbsp;Active&nbsp;power</span></p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;Q&nbsp;=&nbsp;g1.g1.Q;<span style="color: #006400;">&nbsp;//&nbsp;Reactive&nbsp;power</span></p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;AVRin&nbsp;=&nbsp;g1.AVRinput_meas;<span style="color: #006400;">&nbsp;//&nbsp;AVR&nbsp;input,&nbsp;error&nbsp;signal&nbsp;to&nbsp;the&nbsp;avr</span></p>
-<p><span style="font-family: Courier New;">&nbsp;&nbsp;AVRout&nbsp;=&nbsp;g1.AVRoutput_meas;<span style="color: #006400;">&nbsp;//&nbsp;AVR&nbsp;output,&nbsp;Efd</span></p>
-
-<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Utilities_Icons.html#Example2.Utilities.Icons.ModelForLinearization"
->Example2.Utilities.Icons.ModelForLinearization</a> (nonlin4lin = for this model, you need to provide inputs or use it as is for linearization), <a href="Example2_Interfaces.html#Example2.Interfaces.OutputsInterface"
->Example2.Interfaces.OutputsInterface</a> (Partial models for output interfaces).</span></p>
-<h3>Parameters</h3>
-<table summary="Parameters" class="ModelicaTableParameters">
-<tr><th>Name</th><th>Description</th></tr>
-<tr><td>r</td><td>Common resistance value propagated to several line components</td></tr>
-<tr><td>x</td><td>Common reactance value propagated to several line components</td></tr>
-<tr><td>b</td><td>Common suceptance value propagated to several line components</td></tr>
-<tr><td>percent</td><td>Scaling value used to modify parameters of several line components</td></tr>
-<tr><td>PF_results</td><td>&nbsp;</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Line Removal Parameters</td></tr>
-<tr><td>t1</td><td>Time for removal of Line5_2B [s]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Bus Fault Parameters</td></tr>
-<tr><td>R</td><td>Resistance [1]</td></tr>
-<tr><td>X</td><td>Reactance [1]</td></tr>
-<tr><td>t1busfault</td><td>Start time of the fault [s]</td></tr>
-<tr><td>t2busfault</td><td>End time of the fault [s]</td></tr>
-<tr class="ModelicaVariability::ParameterTab"><td colspan="2">PSS Parameters</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS Parameter Change Timing</td></tr>
-<tr><td>t1pssin</td><td>Start time of the injection</td></tr>
-<tr><td>t2pssin</td><td>Start time of the injection</td></tr>
-<tr><td>t3pssin</td><td>Start time of the injection</td></tr>
-<tr><td>t4pssin</td><td>Stop time of the injection</td></tr>
-<tr><td>t5pssin</td><td>Stop time of the injection</td></tr>
-<tr><td>t6pssStop</td><td>Stop time of the injection</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">All PSS&#39;s Limits</td></tr>
-<tr><td>pss_vsmax</td><td>Max stabilizer output signal [1]</td></tr>
-<tr><td>pss_vsmin</td><td>Min stabilizer output signal [1]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 1</td></tr>
-<tr><td>pss1_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
-<tr><td>pss1_Tw</td><td>Wash-out time constant [s]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 2</td></tr>
-<tr><td>pss2_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
-<tr><td>pss2_Tw</td><td>Wash-out time constant [s]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 3</td></tr>
-<tr><td>pss3_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
-<tr><td>pss3_Tw</td><td>Wash-out time constant [s]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 4</td></tr>
-<tr><td>pss4_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
-<tr><td>pss4_Tw</td><td>Wash-out time constant [s]</td></tr>
-<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 5</td></tr>
-<tr><td>pss5_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
-<tr><td>pss5_Tw</td><td>Wash-out time constant [s]</td></tr>
-</table>
-<h3>Connectors</h3>
-<table summary="Connectors" class="ModelicaTableConnectors">
-<tr><th>Name</th><th>Description</th></tr>
-<tr><td>Vt</td><td>Terminal voltage manginte</td></tr>
-<tr><td>Q</td><td>Reactive power</td></tr>
-<tr><td>P</td><td>Active power</td></tr>
-<tr><td>w</td><td>Machine speed</td></tr>
-<tr><td>delta</td><td>Manchine angle</td></tr>
-<tr><td>AVRin</td><td>AVR input, error signal to the AVR</td></tr>
-<tr><td>AVRout</td><td>AVR output, Efd</td></tr>
-<tr><td>uPm</td><td>&nbsp;</td></tr>
-<tr><td>uPSS</td><td>&nbsp;</td></tr>
-<tr><td>uAVRin</td><td>Feedback input</td></tr>
-<tr><td>uLoad7</td><td>&nbsp;</td></tr>
-<tr><td>uLoad9</td><td>&nbsp;</td></tr>
-</table>
 <address>
-<a href="http://www.3ds.com/">Automatically generated</a> Fri Mar  8 13:28:35 2024.
+<a href="http://www.3ds.com/">Automatically generated</a> Wed Mar 13 11:47:10 2024.
 </address>
 </body>
 </html>

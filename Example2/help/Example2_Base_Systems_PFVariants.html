@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Example2.Base.Systems.PFVariants</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Basic system model with hierarchical power flow data provisioning allowing top-level propagation&quot;">
+<style type="text/css">
+*       { font-size: 100%; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 90%; font-family: Courier, monospace; white-space: pre; } /* For the Modelica code (in exported html). */
+h4      { font-size: 100%; font-weight: bold; color: green; } 
+h3      { font-size: 110%; font-weight: bold; color: green; }
+h2      { font-size: 130%; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { padding: 2px; vertical-align: top; }
+th      { padding: 2px; vertical-align: top; font-weight: bold; }
+table   { border-collapse: collapse; }
+table[class^="ModelicaTable"] td { border: 1px solid #808080; }
+table[class^="ModelicaTable"] th { border: 1px solid #808080; }
+pre, code {font-family: "Courier New", monospace;}
+pre {white-space: pre; overflow-x : hidden;}
+.ModelicaDescription {font-weight: bold;} /* For the description string of the class. */
+.ModelicaBaseClass {} /* For the list of base-classes at the of the description. */
+.ModelicaKeyword { color: blue; font-weight: normal; font-style: normal; } /* Keywords in Modelica. */
+.ModelicaComment { color: #006400;  font-weight: normal; font-style: normal;} /* All three variants of comments in Modelica.  */
+.ModelicaString { color: #006400;  font-weight: normal; font-style: normal;} /* String constants. */
+.ModelicaClass { color: red; font-weight: normal; font-style: normal;} /* Formatting the names of referenced classes (for base-class and components). */
+.ModelicaFunction { color: red; font-weight: normal; font-style: normal;} /* Formatting for called functions. */
+.ModelicaTablePackageContent { } /* The table of contents for each package. */
+.ModelicaTableCrossReference { } /* The optional cross-reference table. */
+.ModelicaTableInputs {} /* The table of inputs for a function. */
+.ModelicaTableOutputs {} /* The table of outputs for a function. */
+.ModelicaTableParameters {} /* The table of parameters for a model/block. */
+.ModelicaTableConnectors {} /* The table of connectors for a model/block. */
+.ModelicaTableContents {} /* The table of contents for a connector. */
+.ModelicaStartAttribute { font-weight: bold; } /* The formatting used for start-attribute in the table of parameters, to separate them from parameter values. */
+.ModelicaParameterTab { background-color: #c0c0c0; font-weight: bold; } /* The tab-heading in the table of parameters */
+.ModelicaParameterGroup { background-color: #e0e0e0; } /* The group-heading in the table of parameters */
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE PFVariants<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="Example2.Base.Systems.PFVariants"></a><a href="Example2_Base_Systems.html#Example2.Base.Systems"
+>Example2.Base.Systems</a>.PFVariants</h2>
+<p>
+<span class="ModelicaDescription">Basic system model with hierarchical power flow data provisioning allowing top-level propagation</span>
+</p>
+<h3>Information</h3>
+<p><span class="ModelicaBaseClass">Extends from Modelica.Icons.BasesPackage (Icon for packages containing base classes).</span></p>
+<h3>Package Content</h3>
+<table summary="Package Content" class="ModelicaTablePackageContent">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="Example2.Base.Systems.Basic.sysS.png" alt="Example2.Base.Systems.PFVariants.syspf" width="20" height="20" align="top">&nbsp;<a href="Example2_Base_Systems_PFVariants.html#Example2.Base.Systems.PFVariants.syspf"
+>syspf</a>
+</td>
+<td>Power system model with input/output interfaces</td>
+</tr>
+</table>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE syspf<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="Example2.Base.Systems.Basic.sysI.png" alt="Example2.Base.Systems.PFVariants.syspf" align="right" style="border: 1px solid" width="80" height="80">
+<a name="Example2.Base.Systems.PFVariants.syspf"></a><a href="Example2_Base_Systems_PFVariants.html#Example2.Base.Systems.PFVariants"
+>Example2.Base.Systems.PFVariants</a>.syspf</h2>
+<p>
+<span class="ModelicaDescription">Power system model with input/output interfaces</span>
+</p>
+<h3>Information</h3>
+
+<p>This is the main model used for simulation and linearization purposes. See usage in the examples under <a href="Example2_Analysis.html#Example2.Analysis"
+>Example2.Analysis</a>.</p>
+<p>See more information under <a href="Example2.html#Example2.Readme"
+>Example2.Readme</a>.</p>
+<p>In the text layer, under the equation section, the following assignments to the output interface () are made to link g1 variables to the outputs:</p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;<span style="color: #006400;">//&nbsp;Assign&nbsp;outputs&nbsp;to&nbsp;g1&nbsp;variables</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;w&nbsp;=&nbsp;g1.g1.SPEED;<span style="color: #006400;">&nbsp;//&nbsp;Machine&nbsp;speed</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;delta&nbsp;=&nbsp;g1.g1.ANGLE;<span style="color: #006400;">&nbsp;//&nbsp;Machine&nbsp;angle</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;Vt&nbsp;=&nbsp;g1.g1.ETERM;<span style="color: #006400;">&nbsp;//&nbsp;Terminal&nbsp;voltage&nbsp;mangitude</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;P&nbsp;=&nbsp;g1.g1.P;<span style="color: #006400;">&nbsp;//&nbsp;Active&nbsp;power</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;Q&nbsp;=&nbsp;g1.g1.Q;<span style="color: #006400;">&nbsp;//&nbsp;Reactive&nbsp;power</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;AVRin&nbsp;=&nbsp;g1.AVRinput_meas;<span style="color: #006400;">&nbsp;//&nbsp;AVR&nbsp;input,&nbsp;error&nbsp;signal&nbsp;to&nbsp;the&nbsp;avr</span></p>
+<p><span style="font-family: Courier New;">&nbsp;&nbsp;AVRout&nbsp;=&nbsp;g1.AVRoutput_meas;<span style="color: #006400;">&nbsp;//&nbsp;AVR&nbsp;output,&nbsp;Efd</span></p>
+<p>This model includes redeclarable power flow structures for top-level re-parametrization using the <a href="Example2_PFData.html#Example2.PFData"
+>Example2.PFData</a> package.</p>
+
+<p><span class="ModelicaBaseClass">Extends from <a href="Example2_Utilities_Icons.html#Example2.Utilities.Icons.ModelForLinearization"
+>Example2.Utilities.Icons.ModelForLinearization</a> (nonlin4lin = for this model, you need to provide inputs or use it as is for linearization), <a href="Example2_Interfaces.html#Example2.Interfaces.OutputsInterface"
+>Example2.Interfaces.OutputsInterface</a> (Partial models for output interfaces).</span></p>
+<h3>Parameters</h3>
+<table summary="Parameters" class="ModelicaTableParameters">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>r</td><td>Common resistance value propagated to several line components</td></tr>
+<tr><td>x</td><td>Common reactance value propagated to several line components</td></tr>
+<tr><td>b</td><td>Common suceptance value propagated to several line components</td></tr>
+<tr><td>percent</td><td>Scaling value used to modify parameters of several line components</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Line Removal Parameters</td></tr>
+<tr><td>t1</td><td>Time for removal of Line5_2B [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Bus Fault Parameters</td></tr>
+<tr><td>R</td><td>Resistance [1]</td></tr>
+<tr><td>X</td><td>Reactance [1]</td></tr>
+<tr><td>t1busfault</td><td>Start time of the fault [s]</td></tr>
+<tr><td>t2busfault</td><td>End time of the fault [s]</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="2">PSS Parameters</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS Parameter Change Timing</td></tr>
+<tr><td>t1pssin</td><td>Start time of the injection</td></tr>
+<tr><td>t2pssin</td><td>Start time of the injection</td></tr>
+<tr><td>t3pssin</td><td>Start time of the injection</td></tr>
+<tr><td>t4pssin</td><td>Stop time of the injection</td></tr>
+<tr><td>t5pssin</td><td>Stop time of the injection</td></tr>
+<tr><td>t6pssStop</td><td>Stop time of the injection</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">All PSS&#39;s Limits</td></tr>
+<tr><td>pss_vsmax</td><td>Max stabilizer output signal [1]</td></tr>
+<tr><td>pss_vsmin</td><td>Min stabilizer output signal [1]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 1</td></tr>
+<tr><td>pss1_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td>pss1_Tw</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 2</td></tr>
+<tr><td>pss2_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td>pss2_Tw</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 3</td></tr>
+<tr><td>pss3_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td>pss3_Tw</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 4</td></tr>
+<tr><td>pss4_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td>pss4_Tw</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">PSS 5</td></tr>
+<tr><td>pss5_Kw</td><td>Stabilizer gain [pu/pu]</td></tr>
+<tr><td>pss5_Tw</td><td>Wash-out time constant [s]</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="2">Power Flow Scenario</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Power Flow Data</td></tr>
+<tr><td>replaceable record Bus</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Loads</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Trafos</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Machines</td><td>&nbsp;</td></tr>
+</table>
+<h3>Connectors</h3>
+<table summary="Connectors" class="ModelicaTableConnectors">
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td>Vt</td><td>Terminal voltage manginte</td></tr>
+<tr><td>Q</td><td>Reactive power</td></tr>
+<tr><td>P</td><td>Active power</td></tr>
+<tr><td>w</td><td>Machine speed</td></tr>
+<tr><td>delta</td><td>Manchine angle</td></tr>
+<tr><td>AVRin</td><td>AVR input, error signal to the AVR</td></tr>
+<tr><td>AVRout</td><td>AVR output, Efd</td></tr>
+<tr><td>uPm</td><td>&nbsp;</td></tr>
+<tr><td>uPSS</td><td>&nbsp;</td></tr>
+<tr><td>uAVRin</td><td>Feedback input</td></tr>
+<tr><td>uLoad7</td><td>&nbsp;</td></tr>
+<tr><td>uLoad9</td><td>&nbsp;</td></tr>
+<tr class="ModelicaVariability::ParameterTab"><td colspan="2">Power Flow Scenario</td></tr>
+<tr class="ModelicaVariability::ParameterGroup"><td colspan="2">Power Flow Data</td></tr>
+<tr><td>replaceable record Bus</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Loads</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Trafos</td><td>&nbsp;</td></tr>
+<tr><td>replaceable record Machines</td><td>&nbsp;</td></tr>
+</table>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Wed Mar 13 11:47:11 2024.
+</address>
+</body>
+</html>
