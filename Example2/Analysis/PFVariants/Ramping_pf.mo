@@ -21,11 +21,10 @@ model Ramping_pf
     pss4_Tw=0.355570139928890,
     pss5_Kw=48.660727200594167,
     pss5_Tw=0.355570139928890,
-    redeclare record Bus = Example2.PFData.Data.BusData.PF_Bus_0,
-    redeclare record Loads = Example2.PFData.Data.LoadData.PF_Loads_0,
+    redeclare record Bus = Example2.PFData.Data.BusData.PF_Bus_1,
+    redeclare record Loads = Example2.PFData.Data.LoadData.PF_Loads_1,
     redeclare record Trafos = Example2.PFData.Data.TrafoData.PF_Trafos_0,
-    redeclare record Machines =
-        Example2.PFData.Data.MachineData.PF_Machines_0)
+    redeclare record Machines = Example2.PFData.Data.MachineData.PF_Machines_1)
     annotation (Placement(transformation(extent={{58,-40},{138,40}})));
   Modelica.Blocks.Sources.Constant r(k=0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
