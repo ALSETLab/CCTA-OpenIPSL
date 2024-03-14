@@ -1,5 +1,5 @@
 within Example2.PFData.Data.BusData;
-record PF_Bus_0
+record PF_Bus_0 "Case 0: Base Case, 1550 MW Total Generation. Solution obtained manually."
 extends PFData.Data.BusData.Bus_Template(
     V1=1.03,
     A1=0.35378975855,

@@ -6,8 +6,8 @@ annotation (uses(
     DataFiles(version="1.1.0"),
     Modelica_LinearSystems2(version="2.4.0"),
       DymolaCommands(version="1.16"),
-      OpenIPSL(version="3.0.1"),
-      Example1(version="3")),                  Icon(graphics={
+      Example1(version="3"),
+      OpenIPSL(version="3.1.0-dev")),          Icon(graphics={
         Rectangle(
           lineColor={0,140,72},
           fillColor={170,255,85},

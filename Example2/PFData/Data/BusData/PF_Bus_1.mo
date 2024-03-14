@@ -1,5 +1,5 @@
 within Example2.PFData.Data.BusData;
-record PF_Bus_1 "Solution generated through PSAT and exported"
+record PF_Bus_1 "Case 1: Base Case, 1550 MW Total Generation. Solution generated through PSAT and exported"
   extends PFData.Data.BusData.Bus_Template(
 V1 = 1.030000000000000026645353,
 A1 = 0.353381617759011334989339,

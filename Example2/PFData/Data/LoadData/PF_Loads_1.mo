@@ -1,5 +1,5 @@
 within Example2.PFData.Data.LoadData;
-record PF_Loads_1 "Solution generated through PSAT and exported"
+record PF_Loads_1 "Case 1: Base Case, 1550 MW Total Generation. Solution generated through PSAT and exported"
 extends PFData.Data.LoadData.Loads_Template(
 PL7_1 = 1e06*(  967.000000000000000000000000),
 QL7_1 = 1e06*(  -100.000000000000000000000000),

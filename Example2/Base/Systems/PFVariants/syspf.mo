@@ -233,10 +233,10 @@ model syspf "Power system model with input/output interfaces"
     X=0.01667*(5/4)*percent,
     B=0) annotation (Placement(transformation(extent={{-176,-42},{-156,-22}})));
   PFData.PFScenarios pf(
-    redeclare record Bus = Example2.PFData.Data.BusData.PF_Bus_0,
-    redeclare record Loads = Example2.PFData.Data.LoadData.PF_Loads_0,
-    redeclare record Trafos = Example2.PFData.Data.TrafoData.PF_Trafos_0,
-    redeclare record Machines = Example2.PFData.Data.MachineData.PF_Machines_0)
+    redeclare record Bus = Bus,
+    redeclare record Loads = Loads,
+    redeclare record Trafos = Trafos,
+    redeclare record Machines = Machines)
     annotation (choicesAllMatching=true,Placement(transformation(extent={{6,-108},
             {34,-80}})));
   // allow replaceable power flow records

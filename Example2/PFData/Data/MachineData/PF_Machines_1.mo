@@ -1,5 +1,5 @@
 within Example2.PFData.Data.MachineData;
-record PF_Machines_1 "Solution generated through PSAT and exported"
+record PF_Machines_1 "Case 1: Base Case, 1550 MW Total Generation. Solution generated through PSAT and exported"
 extends PFData.Data.MachineData.Machines_Template(
 P1_1 = 1e06*(  699.999999999999317878973670),
 Q1_1 = 1e06*(  182.450226027067287759564351),

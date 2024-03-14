@@ -1,0 +1,13 @@
+within Example2.PFData.Data.MachineData;
+record PF_Machines_2
+  "Case 2: 760 MW Total Generation. Solution generated through PSAT and exported"
+extends PFData.Data.MachineData.Machines_Template(
+P1_1 = 1e06*(  250.000000000000397903932026),
+Q1_1 = 1e06*(  40.508257739099512662050984),
+P2_1 = 1e06*(  249.999999999999801048033987),
+Q2_1 = 1e06*(  -6.706264123356542761200672),
+P3_1 = 1e06*(  11.154654204964604247152238),
+Q3_1 = 1e06*(  43.032214037281391938449815),
+P4_1 = 1e06*(  250.000000000000170530256582),
+Q4_1 = 1e06*(  -5.613829283191996033508531));
+end PF_Machines_2;
