@@ -10,7 +10,7 @@ In the instructions below, we illustrate how to load the OpenIPSL library and th
   - Video: [here](https://youtu.be/Q0lhw19Sl2E)
 
 ## Loading `Example1` & `Example2`
-  1. Download the files of this repository by cloning with GIT. Alternatively, you can click [here](https://github.com/ALSETLab/CCTA-OpenIPSL/archive/refs/tags/v1.0.1.zip) to download the *.zip file.
+  1. Download the files of this repository by cloning with GIT. Alternatively, you can click [here](https://github.com/ALSETLab/CCTA-OpenIPSL/archive/refs/tags/v1.0.2.zip) to download the *.zip file.
   2. If you have cloned this repository, navigate to the location where it is stored. If you have downloaded the *.zip file, uncompress it in a directory to which you have read/write rights, e.g. `C:\Users\myUserName\Documents\OM`. You should now have a folder called `CCTA-OpenIPSL-1.0.x`.
   3. Open OMEdit. If you can't find it, look under `C:\Program Files\OpenModelica1.22.3-64bit\bin` and run `OMEdit.exe` by double-clicking. 
   4. Go to `File > Open Model/Library Files(s) `, and navigate the folder `C:\Users\myUserName\Documents\OM\CCTA-OpenIPSL-1.0.1\CCTA-OpenIPSL-1.0.1\Example1`, select the file `package.mo` and click on OMEdit's `Libraries` browser:
