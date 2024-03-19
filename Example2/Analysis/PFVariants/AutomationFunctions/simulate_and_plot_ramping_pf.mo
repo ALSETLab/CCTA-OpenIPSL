@@ -2,9 +2,10 @@ within Example2.Analysis.PFVariants.AutomationFunctions;
 function simulate_and_plot_ramping_pf
   "Simulates and plots the \"Ramping_pf\" model"
   extends Modelica.Icons.Function;
+  input Integer numcores = 12 "Number of cores used for the simulation";
 algorithm
   // turn on flags to speed up the simulation
-  Example2.Utilities.SetupSolverSettings.On();
+  Example2.Utilities.SetupSolverSettings.On(numcores);
   // run the simulation
   simulateModel(
     "Example2.Analysis.PFVariants.Ramping_pf",

@@ -66,7 +66,7 @@ equation
       StopTime=4050,
       __Dymola_NumberOfIntervals=5000,
       Tolerance=1e-06,
-      __Dymola_Algorithm="Dassl"),
+      __Dymola_Algorithm="Dassl",__Wolfram_Algorithm = "cvodes", __Wolfram_EventHysteresisEpsilon = 1e-7, __Wolfram_NonlinearSolverTolerance = 1e-6),
     Diagram(coordinateSystem(extent={{-200,-200},{200,200}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),preferredView="diagram",
     Documentation(info="<html>

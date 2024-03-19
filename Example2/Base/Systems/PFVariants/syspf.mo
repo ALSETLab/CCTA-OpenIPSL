@@ -151,7 +151,7 @@ model syspf "Power system model with input/output interfaces"
     Q_0=pf.loads.QL7_1,
     d_P=0.0,
     t1=365*24*60*60 + 1,
-    d_t=Modelica.Cosntants.small)
+    d_t=Modelica.Constants.small)
     annotation (Placement(transformation(extent={{80,-40},{50,-14}})));
   OpenIPSL.Electrical.Branches.PwLine Line5_1(
     G=0,
