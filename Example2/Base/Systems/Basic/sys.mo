@@ -140,9 +140,9 @@ model sys "Power system model with input/output interfaces"
     angle_0=PF_results.voltages.A7,
     P_0=PF_results.loads.PL7_1,
     Q_0=PF_results.loads.QL7_1,
-    d_P=0,
-    t1=Modelica.Constants.inf,
-    d_t=Modelica.Constants.inf)
+    d_P=0.0,
+    t1=365*24*60*60,
+    d_t=Modelica.Constants.small)
     annotation (Placement(transformation(extent={{-78,-40},{-50,-14}})));
   OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput
                                       Load9(
@@ -151,9 +151,9 @@ model sys "Power system model with input/output interfaces"
     angle_0=PF_results.voltages.A9,
     P_0=PF_results.loads.PL9_1,
     Q_0=PF_results.loads.QL9_1,
-    d_P=0,
-    t1=Modelica.Constants.inf,
-    d_t=Modelica.Constants.inf)
+    d_P=0.0,
+    t1=365*24*60*60,
+    d_t=Modelica.Constants.small)
     annotation (Placement(transformation(extent={{80,-40},{50,-14}})));
   OpenIPSL.Electrical.Branches.PwLine Line5_1(
     G=0,
@@ -194,15 +194,15 @@ model sys "Power system model with input/output interfaces"
     X=x*10*(1 - percent),
     G=0,
     B=b*10) annotation (Placement(transformation(extent={{-128,6},{-108,26}})));
-  parameter OpenIPSL.Types.Time t1=Modelica.Constants.inf "Time for removal of Line5_2B" annotation (Dialog(group="Line Removal Parameters"));
+  parameter OpenIPSL.Types.Time t1=365*24*60*60+5 "Time for removal of Line5_2B (default to a large value, i.e., no opening applied during intended time of simulation)" annotation (Dialog(group="Line Removal Parameters"));
 
   parameter OpenIPSL.Types.PerUnit R=0 "Resistance"
     annotation (Dialog(group="Bus Fault Parameters"));
   parameter OpenIPSL.Types.PerUnit X=1e-5 "Reactance"
     annotation (Dialog(group="Bus Fault Parameters"));
-  parameter OpenIPSL.Types.Time t1busfault=Modelica.Constants.inf
+  parameter OpenIPSL.Types.Time t1busfault=365*24*60*60+10
     "Start time of the fault" annotation (Dialog(group="Bus Fault Parameters"));
-  parameter OpenIPSL.Types.Time t2busfault=Modelica.Constants.inf
+  parameter OpenIPSL.Types.Time t2busfault=365*24*60*60+10+1/60
     "End time of the fault" annotation (Dialog(group="Bus Fault Parameters"));
   parameter Real t1pssin=0 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
   parameter Real t2pssin=30 "Start time of the injection" annotation (Dialog(tab="PSS Parameters",group="PSS Parameter Change Timing"));
