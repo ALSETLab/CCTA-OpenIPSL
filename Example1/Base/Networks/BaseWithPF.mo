@@ -10,9 +10,9 @@ partial model BaseWithPF "Partial SMIB Model with power flow data, system data b
     angle_0=pf.bus.A4,
     P_0=pf.loads.PL1,
     Q_0=pf.loads.QL1,
-    d_P=Modelica.Constants.eps,
-    t1=Modelica.Constants.inf,
-    d_t=Modelica.Constants.eps)
+    d_P=0.0,
+    t1=365*24*60*60,
+    d_t=Modelica.Constants.small)
     annotation (Placement(transformation(extent={{16,-76},{28,-64}})));
   Plants.inf inf(
     P_0=pf.machines.PG2,

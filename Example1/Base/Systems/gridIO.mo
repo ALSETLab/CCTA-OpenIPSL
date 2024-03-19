@@ -12,7 +12,7 @@ model gridIO
            X=3.25,
       G=Modelica.Constants.eps,
       B=Modelica.Constants.eps),
-    line_2(t1=Modelica.Constants.inf),
+    line_2(t1=365*24*60*60+2),
     fault(
       R=Rfault,
       X=Xfault,
@@ -60,10 +60,10 @@ model gridIO
     annotation (Dialog(group="Line Removal Parameters"));
   parameter Integer opening=1
     "Type of opening (1: removes both ends at same time, 2: removes sending end, 3: removes receiving end)"     annotation (Dialog(group="Line Removal Parameters"));
-  parameter OpenIPSL.Types.Time t1fault=Modelica.Constants.inf
-    "Start time of the fault" annotation (Dialog(group="Fault Parameters"));
-  parameter OpenIPSL.Types.Time t2fault=Modelica.Constants.inf
-    "End time of the fault" annotation (Dialog(group="Fault Parameters"));
+  parameter OpenIPSL.Types.Time t1fault=365*24*60*60
+    "Start time of the fault (default to a large value, i.e., no opening applied during intended time of simulation)" annotation (Dialog(group="Fault Parameters"));
+  parameter OpenIPSL.Types.Time t2fault=t1fault + 1/60
+    "End time of the fault (default to a large value, i.e., no opening applied during intended time of simulation)" annotation (Dialog(group="Fault Parameters"));
   parameter OpenIPSL.Types.PerUnit Rfault=Modelica.Constants.eps "Resistance"
     annotation (Dialog(group="Fault Parameters"));
   parameter OpenIPSL.Types.PerUnit Xfault=1e-5 "Reactance"

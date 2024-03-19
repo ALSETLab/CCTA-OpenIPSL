@@ -2,9 +2,11 @@ within Example1.Analysis.NonlinSimulationsMultipleInputs;
 function simulate_and_plot
   "Run and plot the simulation used for identification and controller verification."
   extends Modelica.Icons.Function;
-  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.A_randomload_and_lowimpactmultisine" "Model to simulate.";
+//  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.A_randomload_and_lowimpactmultisine" "Model to simulate.";
 //  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.B_randomload_and_loaddisturbance" "Model to simulate.";
-
+//  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.C_randomload" "Model to simulate.";
+  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.D_loaddisturbance" "Model to simulate.";
+//  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.E_no_noise_no_inputs" "Model to simulate.";
 algorithm
   // Setup solver.
   Example1.Utilities.SetupSolverSettings.On();
