@@ -48,7 +48,7 @@ For further information on the models uses and applications, please refer to the
 ## Quickstart Guides
 - Dymola: go [here](./QuickstartGuides/Quickstart-Dymola.md).
 - Wolfram SystemModeler: go [here](https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-WSM.html)
-- OpenModelica: the following guide shows how to load the models and run a limited number of simulations with OpenModelica, click [here](.https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-OpenModelica.html). 
+- OpenModelica: the following guide shows how to load the models and run a limited number of simulations with OpenModelica, click [here](https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-OpenModelica.html). 
 - Modelon Impact: TBD.
   - if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
