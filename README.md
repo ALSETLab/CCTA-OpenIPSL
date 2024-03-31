@@ -24,14 +24,14 @@ Obtain a copy of Dymola from [Dassault Systems](https://discover.3ds.com/free-tr
 ### Other Modelica Tools
 Some non-rigurous testing was carried out and it was found that time-simulation models can be run with in [OpenModelica](https://openmodelica.org/), [Wolfram SystemModeler](https://www.wolfram.com/system-modeler/), and [Modelon Impact](https://modelon.com/modelon-impact/) too. 
 
-However, the automation functions provided with the packages are not compatible with those tools. In addition, the linearization functions are different in all of them, requiring scripting tools for each, as the [Modelica Linear Systems 2](https://github.com/modelica/Modelica_LinearSystems2) is yet to be fully compliant with the language specification and to be supported by other tools (see [this issue](https://github.com/modelica/Modelica_LinearSystems2/issues/131)). 
+#### Limitations
+However, the automation functions provided with the packages in this repository are not compatible with those tools. In addition, the linearization functions are different in all of them, requiring scripting tools for each, as the [Modelica Linear Systems 2](https://github.com/modelica/Modelica_LinearSystems2) is yet to be fully compliant with the language specification and to be supported by other tools (see [this issue](https://github.com/modelica/Modelica_LinearSystems2/issues/131)). 
 
 Additional support scripts maybe developed in the future to support these tools, if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
-#### Using other Modelica Tools
-- OpenModelica: A limited guide to load the models and run a limited number of simulations with OpenModelica can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-OpenModelica.html). Due to tool limitations, some simulations cannot be executed successfully. 
+#### Quickstart Guides for other Modelica tools and limitations
 - Wolfram System Modeler: Similarly, Quickstart for WSM can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-WSM.html). Note that although WSM can be used in conjunction with other Wolfram tools to perform linearization, this failed with the developed models due to a bug that the developers of WSM are investigating.
-
+- OpenModelica: A limited guide to load the models and run a limited number of simulations with OpenModelica can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-OpenModelica.html). Due to tool limitations, some simulations cannot be executed successfully to their full extent.
 
 ## Documentation 
 The documentation for each of the models is embedded within the "info" layer of the Modelica models. Using Dymola, you can browse the documentation. Alternatively, the following documentation for each of the examples was generated from Dymola:
@@ -46,10 +46,9 @@ For further information on the models uses and applications, please refer to the
   3. X. Bombois and L. Vanfretti, “Performance monitoring and redesign of power system stabilizers based on system identification techniques,” Sustainable Energy, Grids and Networks, Volume 38, 2024, 101278, ISSN 2352-4677, [https://doi.org/10.1016/j.segan.2024.101278](https://doi.org/10.1016/j.segan.2024.101278). Author’s Copy: [https://hal.science/hal-04338856](https://hal.science/hal-04338856)  
 
 ## Quickstart Guides
-- Dymola: the quickstart guide to use the packages in Dymola [here](./QuickstartGuides/Quickstart-Dymola.md).
-- OpenModelica: the following guide shows how to load the models and run a limited number of simulations with OpenModelica, click [here](./QuickstartGuides/Quickstart-OpenModelica.md). 
-- Wolfram SystemModeler: TBD. 
-  - If you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
+- Dymola: go [here](./QuickstartGuides/Quickstart-Dymola.md).
+- Wolfram SystemModeler: go [here](https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-WSM.html)
+- OpenModelica: the following guide shows how to load the models and run a limited number of simulations with OpenModelica, click [here](.https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-OpenModelica.html). 
 - Modelon Impact: TBD.
   - if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
