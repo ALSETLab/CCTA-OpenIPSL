@@ -40,7 +40,7 @@ Before the models are simulated, is good practice to `Validate` it.
   ![Validate Example2](../Assets/img/wsm/wsm_08_example2_model.png)
   After validating the model, ou should see in the `Translation` message window similar to that shown for Example 1.
 
-#### Setting the correct version of the Modelica Standard Library in case of a fail in validation or simulation
+##### Setting the correct version of the Modelica Standard Library in case of a fail in validation or simulation
 If validation or simulation fail for either of the listed examples above, you must likely do not have loaded the Modelica Standard Library version 4.0.0. To fix this, go to the `Class Browser` and under `Libraries` right click on `Modelica`. In the pop-up context menu that appears, go to `Version` and select `4.0.0`, as shown in the figure below.
   ![Fix MSL Issue](../Assets/img/wsm/wsm_msl_v4.png).
 
