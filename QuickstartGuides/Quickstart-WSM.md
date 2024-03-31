@@ -7,13 +7,13 @@ You will need either a trial version or a license for WSM. To get a trial, follo
 
 WSM runs on Windows, Mac OSX or Linux, see what versions are supported [here](https://www.wolfram.com/system-modeler/system-requirements/).
 
-It is recommended you get familiar with WSM by following [WSM Quick Start](https://www.wolfram.com/wolfram-u/courses/modeling-simulation/system-modeler-quick-start-wsm001/).
+It is recommended you get familiar with WSM by following the [WSM Quick Start](https://www.wolfram.com/wolfram-u/courses/modeling-simulation/system-modeler-quick-start-wsm001/).
 
 ### Quisktart
 
 While using these models would require some familiarity with Modelica and WSM, the packages have been setup so that users without such experience can run some of the default simulations.
 
-#### Loading OpenIPSL and the Examples
+#### A. Part 1:Loading OpenIPSL and the Examples
 In the instructions below, we illustrate how to load the OpenIPSL library and the `Example1` & `Example2` packages:
   1. Download OpenIPSL, [here](https://github.com/OpenIPSL/OpenIPSL/). You can clone it with GIT by using [a8c6758](https://github.com/OpenIPSL/OpenIPSL/commit/a8c6758fffa7bd23f925063e9aa075f271ac71ee). Alternatively, you can download the *.zip file from the release page [here](https://github.com/OpenIPSL/OpenIPSL/releases/tag/v3.0.1), uncompress it to a directory where you have read & write rights. For example, `C:\Users\myUserName\Documents\WSM` in Windows or  `/Users/myUserName/Documents/WSM` or OSX.
   2. Download the files of this repository by cloning with GIT. Alternatively, you can click [here](https://github.com/ALSETLab/CCTA-OpenIPSL/archive/refs/tags/v1.0.3.zip) to download the *.zip file.
@@ -25,18 +25,18 @@ In the instructions below, we illustrate how to load the OpenIPSL library and th
    
   5. Repeat step 4, but instead, navigate to the directory where you uncompressed this repository, e.g., `C:\Users\myUserName\Documents\WSM\CCTA-OpenIPSL-1.0.x\Example1` in Windows or `/Users/myUserName/Documents/WSM/CCTA-OpenIPSL-1.0.x/Example1` in OS X. Then, select the file `package.mo` and click on `Open`. This will load the package, `Example1` in WSM's `Class Browser` browser as shown below.
   ![Example1 in WSM](../Assets/img/wsm/wsm_02_example1_user_classes.png)
- 6. Repeat step 5, but instead, in Windows go to `C:\Users\myUserName\Documents\Dymola\CCTA-OpenIPSL-1.0.x\Example2` or in OSX to `/Users/myUserName/Documents/WSM/CCTA-OpenIPSL-1.0.x/Example2`, select the file `package.mo` and click on `Open`. This will load the package, `Example2` in Dymola's `Projects` browser as shown below.
+  6. Repeat step 5, but instead, in Windows go to `C:\Users\myUserName\Documents\Dymola\CCTA-OpenIPSL-1.0.x\Example2` or in OSX to `/Users/myUserName/Documents/WSM/CCTA-OpenIPSL-1.0.x/Example2`, select the file `package.mo` and click on `Open`. This will load the package, `Example2` in Dymola's `Projects` browser as shown below.
   ![Example2 in WSM](../Assets/img/wsm/wsm_04_wsmuserclasses.png)
 
-#### Validating a Model
+#### B. Validating a Model
 Before the models are simulated, is good practice to `Validate` it.
 
-  7. Click the arrow next to the `Example1` red icon and continue navigating in this way until reaching: `Example1.Analysis.RedesignedControllerVerification.C0_8cycles` as shown in the figure below. 
+  1. Click the arrow next to the `Example1` red icon and continue navigating in this way until reaching: `Example1.Analysis.RedesignedControllerVerification.C0_8cycles` as shown in the figure below. 
   ![Validate Example1](../Assets/img/wsm/wsm_05_example1_model.png)
   Right click on the model `C0_8cycles` and then right click on `Validate`. This should result a message in the `Translation` message window similar to the one in the figure below, note that it indicates `Validation of model .... completed successfully`.
     ![Validate Example1](../Assets/img/wsm/wsm_06_example1_validate.png)
 
-  8. Next, repeat the process for one of the models under the `Example2` package by clicking on the arrow next to the green icon of `Example2` and navigating to `Example2.Analysis.PFVariants.Ramping_pf`.
+  2. Next, repeat the process for one of the models under the `Example2` package by clicking on the arrow next to the green icon of `Example2` and navigating to `Example2.Analysis.PFVariants.Ramping_pf`.
   ![Validate Example2](../Assets/img/wsm/wsm_08_example2_model.png)
   After validating the model, ou should see in the `Translation` message window similar to that shown for Example 1.
 
@@ -44,10 +44,10 @@ Before the models are simulated, is good practice to `Validate` it.
 If validation or simulation fail for either of the listed examples above, you must likely do not have loaded the Modelica Standard Library version 4.0.0. To fix this, go to the `Class Browser` and under `Libraries` right click on `Modelica`. In the pop-up context menu that appears, go to `Version` and select `4.0.0`, as shown in the figure below.
   ![Fix MSL Issue](../Assets/img/wsm/wsm_msl_v4.png).
 
-### Simulating a Model
+### C. Simulating a Model
 Any of the models that have been validated can be simulated. 
   
-  9. Go back to the `C0_8cycles` model in Step 7 and validate it again. After validation, go to the the top of the toolbar and click on the `Simulate Class` button:
+  10. Go back to the `C0_8cycles` model and validate it again. After validation, go to the the top of the toolbar and click on the `Simulate Class` button:
   ![WSM Simulate](../Assets/img/wsm/wsm_11_simulate.png).
   10. This will launch WSM's `Simulation Center`, generate the code for the model, compile it and run the simulation. If successfull, the `Simulation Log` will display the simulation statistics. Furthermore, you can plot the simulation results and zoom-in to a region of interest as shown below. See more on how to use the features of Simulation Center [here](https://reference.wolfram.com/system-modeler/U.serGuide/SimulationCenter.html)
     ![Example 1](../Assets/img/wsm/wsm_07_example1_result.png)
@@ -55,7 +55,7 @@ Any of the models that have been validated can be simulated.
   ![Example 2](../Assets/img/wsm/wsm_09_example2_simulate.png)
   ***Note:*** be patient, this model will take a while to run in WSM!
 
-### Linear Analysis
+### D. Linear Analysis
 Performing model linearization and linear analysis requires the use of [Wolfram Mathematica](https://www.wolfram.com/mathematica/) along with WSM. See an example [here](https://reference.wolfram.com/language/ref/SystemModelLinearize.html).
 
 Nevertheless, at the time of writting this documentation and paper (03/2024), the Wolfram Mathcore team informed us that there is a bug in the current version of WSM (v.14.0.0) that prevent's the models from successfully being linearized. You can reach out to Malte Lenz, maltel@wolfram.com, who is dealing with this issue to check if there is any progress since then.
