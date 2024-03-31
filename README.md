@@ -28,7 +28,10 @@ However, the automation functions provided with the packages are not compatible 
 
 Additional support scripts maybe developed in the future to support these tools, if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
-A limited guide to load the models and run a limited number of simulations with OpenModelica can be found [here](./QuickstartGuides/Quickstart-OpenModelica.md). Due to tool limitations, some simulations cannot be executed successfully. 
+#### Using other Modelica Tools
+- OpenModelica: A limited guide to load the models and run a limited number of simulations with OpenModelica can be found [here](./QuickstartGuides/Quickstart-OpenModelica.md). Due to tool limitations, some simulations cannot be executed successfully. 
+- Wolfram System Modeler: Similarly, Quickstart for WSM can be found [here](./QuickstartGuides/Quickstart-WSM.md). Note that although WSM can be used in conjunction with other Wolfram tools to perform linearization, this failed with the developed models due to a bug that the developers of WSM are investigating.
+
 
 ## Documentation 
 The documentation for each of the models is embedded within the "info" layer of the Modelica models. Using Dymola, you can browse the documentation. Alternatively, the following documentation for each of the examples was generated from Dymola:
