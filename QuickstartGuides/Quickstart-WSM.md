@@ -25,7 +25,7 @@ In the instructions below, we illustrate how to load the OpenIPSL library and th
    
   5. Repeat step 4, but instead, navigate to the directory where you uncompressed this repository, e.g., `C:\Users\myUserName\Documents\WSM\CCTA-OpenIPSL-1.0.x\Example1` in Windows or `/Users/myUserName/Documents/WSM/CCTA-OpenIPSL-1.0.x/Example1` in OS X. Then, select the file `package.mo` and click on `Open`. This will load the package, `Example1` in WSM's `Class Browser` browser as shown below.
   ![Example1 in WSM](../Assets/img/wsm/wsm_02_example1_user_classes.png)
-  6. Repeat step 5, but instead, in Windows go to `C:\Users\myUserName\Documents\Dymola\CCTA-OpenIPSL-1.0.x\Example2` or in OSX to `/Users/myUserName/Documents/WSM/CCTA-OpenIPSL-1.0.x/Example2`, select the file `package.mo` and click on `Open`. This will load the package, `Example2` in Dymola's `Projects` browser as shown below.
+  6. Repeat step 5, but instead, in Windows go to `C:\Users\myUserName\Documents\WSM\CCTA-OpenIPSL-1.0.x\Example2` or in OSX to `/Users/myUserName/Documents/WSM/CCTA-OpenIPSL-1.0.x/Example2`, select the file `package.mo` and click on `Open`. This will load the package, `Example2` in WSM's `User Classes` browser as shown below.
      ![Example2 in WSM](../Assets/img/wsm/wsm_04_wsmuserclasses.png)
 
 #### B. Validating a Model

@@ -25,9 +25,11 @@ Obtain a copy of Dymola from [Dassault Systems](https://discover.3ds.com/free-tr
 Some non-rigurous testing was carried out and it was found that time-simulation models can be run with in [OpenModelica](https://openmodelica.org/), [Wolfram SystemModeler](https://www.wolfram.com/system-modeler/), and [Modelon Impact](https://modelon.com/modelon-impact/) too. 
 
 #### Limitations
-However, the automation functions provided with the packages in this repository are not compatible with those tools. In addition, the linearization functions are different in all of them, requiring scripting tools for each, as the [Modelica Linear Systems 2](https://github.com/modelica/Modelica_LinearSystems2) is yet to be fully compliant with the language specification and to be supported by other tools (see [this issue](https://github.com/modelica/Modelica_LinearSystems2/issues/131)). 
+While the models are inter-operable, the automation functions provided with the packages in this repository are not (this is not part of the Modelica language specification), i.e., are tool-specific and will only work in Dymola. 
 
-Additional support scripts maybe developed in the future to support these tools, if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
+In addition, the linearization functions are different in all of them, requiring scripting tools for each, as the [Modelica Linear Systems 2](https://github.com/modelica/Modelica_LinearSystems2) is yet to be fully compliant with the language specification and to be supported by other tools (see [this issue](https://github.com/modelica/Modelica_LinearSystems2/issues/131)). 
+
+Additional support scripts maybe developed in the future to support tools other than Dymola, if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
 #### Quickstart Guides for other Modelica tools and limitations
 - Wolfram System Modeler: Similarly, Quickstart for WSM can be found [here](https://alsetlab.github.io/CCTA-OpenIPSL/QuickstartGuides/Quickstart-WSM.html). Note that although WSM can be used in conjunction with other Wolfram tools to perform linearization, this failed with the developed models due to a bug that the developers of WSM are investigating.
