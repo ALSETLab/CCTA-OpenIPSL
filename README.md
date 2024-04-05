@@ -25,9 +25,9 @@ Obtain a copy of Dymola from [Dassault Systems](https://discover.3ds.com/free-tr
 Some non-rigurous testing was carried out and it was found that time-simulation models can be run with in [OpenModelica](https://openmodelica.org/), [Wolfram SystemModeler](https://www.wolfram.com/system-modeler/), and [Modelon Impact](https://modelon.com/modelon-impact/) too. 
 
 #### Limitations
-While the models are inter-operable, the automation functions provided with the packages in this repository are not (this is not part of the Modelica language specification), i.e., are tool-specific and will only work in Dymola. 
+While the models are inter-operable, i.e. they can be simulated in several tools, the automation functions provided with the packages in this repository are not, i.e., they have tool-specific dependencies that will only work in Dymola. 
 
-In addition, the linearization functions are different in all of them, requiring scripting tools for each, as the [Modelica Linear Systems 2](https://github.com/modelica/Modelica_LinearSystems2) is yet to be fully compliant with the language specification and to be supported by other tools (see [this issue](https://github.com/modelica/Modelica_LinearSystems2/issues/131)). 
+In addition, the linearization functionalities of each tool are different, requiring scripting tools for each. This might be mitigated in the future, when the [Modelica Linear Systems 2](https://github.com/modelica/Modelica_LinearSystems2) becomes fully compliant with the language specification and supported by other tools (see [this issue](https://github.com/modelica/Modelica_LinearSystems2/issues/131)). 
 
 Additional support scripts maybe developed in the future to support tools other than Dymola, if you are interested in them please open an issue [here](https://github.com/ALSETLab/CCTA-OpenIPSL/issues). Support may be added based-on demand for a specific tool and/or time availability.
 
