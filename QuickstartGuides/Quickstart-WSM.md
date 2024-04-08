@@ -58,6 +58,6 @@ Any of the models that have been validated can be simulated.
 ### D. Linear Analysis
 Performing model linearization and linear analysis requires the use of [Wolfram Mathematica](https://www.wolfram.com/mathematica/) along with WSM. See an example [here](https://reference.wolfram.com/language/ref/SystemModelLinearize.html).
 
-Nevertheless, at the time of writting this documentation and paper (03/2024), the Wolfram Mathcore team informed us that there is a bug in the current version of WSM (v.14.0.0) that prevent's the models from successfully being linearized. You can reach out to Malte Lenz, maltel@wolfram.com, who is dealing with this issue to check if there is any progress since then.
+Nevertheless, at the time of writting this documentation and paper (03/2024), the Wolfram Mathcore team informed us that there is a bug in the current version of WSM (v.14.0.0) that prevent's the models from successfully being linearized. You can reach out to support@wolfram.com, who are dealing with this issue to check if there is any progress since then.
 
 To go back to the main page, click [here](../README.md)
