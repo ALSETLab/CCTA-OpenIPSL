@@ -49,7 +49,7 @@ Any of the models that have been validated can be simulated.
   
   10. Go back to the `C0_8cycles` model and validate it again. After validation, go to the the top of the toolbar and click on the `Simulate Class` button:
   ![WSM Simulate](../Assets/img/wsm/wsm_11_simulate.png).
-  10. This will launch WSM's `Simulation Center`, generate the code for the model, compile it and run the simulation. If successfull, the `Simulation Log` will display the simulation statistics. Furthermore, you can plot the simulation results and zoom-in to a region of interest as shown below. See more on how to use the features of Simulation Center [here](https://reference.wolfram.com/system-modeler/U.serGuide/SimulationCenter.html)
+  10. This will launch WSM's `Simulation Center`, generate the code for the model, compile it and run the simulation. If successfull, the `Simulation Log` will display the simulation statistics. Furthermore, you can plot the simulation results and zoom-in to a region of interest as shown below. See more on how to use the features of Simulation Center [here](https://reference.wolfram.com/system-modeler/UserGuide/SimulationCenter.html)
     ![Example 1](../Assets/img/wsm/wsm_07_example1_result.png)
   11. You can now repeat the same process above for a model under the `Example2` package. Navigate to `Example2.Analysis.PFVariants.Ramping_pf` in WSM's Class Browser, validate the model and click on the `Simulate Class` button. This will launch WSM's `Simulation Center` again, which will execute the process required to obtain the simulation results. Once the results are ready, you can plot the results as whon in the figure below.
   ![Example 2](../Assets/img/wsm/wsm_09_example2_simulate.png)
