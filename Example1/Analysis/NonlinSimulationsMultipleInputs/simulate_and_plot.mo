@@ -7,9 +7,10 @@ function simulate_and_plot
 //  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.C_randomload" "Model to simulate.";
   input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.D_loaddisturbance" "Model to simulate.";
 //  input String modelname = "Example1.Analysis.NonlinSimulationsMultipleInputs.E_no_noise_no_inputs" "Model to simulate.";
+  input Integer numcores = 12 "Number of cores to use during simulation, set to 0 if not sure how many you have in your computer.";
 algorithm
   // Setup solver.
-  Example1.Utilities.SetupSolverSettings.On();
+  Example1.Utilities.SetupSolverSettings.On(numcores);
   // Simulate the model
   simulateModel(
   modelname,
