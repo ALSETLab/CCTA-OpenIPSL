@@ -1,0 +1,7 @@
+﻿// Load OpenIPSL
+openModel("C:\Users\Luigi\Documents\Dymola\LibraryReleases\OpenIPSL-3.0.1\OpenIPSL\package.mo")
+// Load the models
+openModel("C:\Users\Luigi\Documents\Github\CCTA-OpenIPSL\Example1\package.mo")
+openModel("C:\Users\Luigi\Documents\Github\CCTA-OpenIPSL\Example2\package.mo")
+// Change the working directory
+cd("C:\Users\Luigi\Documents\Dymola")
