@@ -1,7 +1,0 @@
-﻿// Load OpenIPSL
-openModel("D:\GIT\dev\OpenIPSL\OpenIPSL\package.mo")
-// Load the models
-openModel("D:\GIT\dev\CCTA-OpenIPSL\Example1\package.mo")
-openModel("D:\GIT\dev\CCTA-OpenIPSL\Example2\package.mo")
-// Change the working directory
-cd("C:\Users\User\Documents\Dymola")
