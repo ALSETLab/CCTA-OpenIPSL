@@ -4,11 +4,11 @@ annotation(preferredView = "info",
   uses(
     LinearAnalysis(version="1.0.1"),
       Modelica(version="4.0.0"),
-      Modelica_LinearSystems2(version="2.4.0"),
+      Modelica_LinearSystems2(version="3.0.0"),
       DataFiles(version="1.1.0"),
       DymolaCommands(version="1.16"),
       OpenIPSL(version="3.0.1")),
-  version="3",
+  version="4",
   Documentation(info="<html>
 <p>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; by Luigi Vanfretti and Chrisopher R. Laughman, submitted for review to the IEEE CCTA 2024.</p>
 <p>The models have the following dependencies:</p>
@@ -98,5 +98,5 @@ annotation(preferredView = "info",
           smooth=Smooth.Bezier,
           origin={-6,17.9},
           rotation=90)}),
-    conversion(noneFromVersion="2"));
+    conversion(noneFromVersion="2", noneFromVersion="3"));
 end Example1;

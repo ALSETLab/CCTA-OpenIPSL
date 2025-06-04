@@ -659,7 +659,7 @@ Click on \"Documentation\" to see the intended usage of this block.")}),
     import Modelica_LinearSystems2.StateSpace;
     parameter StateSpace ss=StateSpace.Import.fromFile("MyData.mat", "ABCD");
     parameter Integer ny=size(ss.C, 1);
-    inner Modelica_LinearSystems2.Controller.SampleClock sampleClock
+    inner Modelica_LinearSystems2.Controllers.SampleClock sampleClock
       annotation (Placement(transformation(extent={{60,60},{80,80}})));
     Modelica.Blocks.Routing.Multiplex4 multiplex4_2(n1=1, n2=1)
       annotation (Placement(transformation(extent={{-76,-10},{-56,10}})));
@@ -674,7 +674,7 @@ Click on \"Documentation\" to see the intended usage of this block.")}),
           extent={{-10,-10},{10,10}},
           rotation=90,
           origin={0,-32})));
-    Modelica_LinearSystems2.Controller.StateSpace stateSpace(system=ss)
+    Modelica_LinearSystems2.Controllers.StateSpace stateSpace(system=ss)
       annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
     Modelica.Blocks.Sources.Constant PSSchange(k=0)
       annotation (Placement(transformation(extent={{-120,20},{-100,40}})));
@@ -806,7 +806,7 @@ This model can only be run by excecuting the function \"LinearizeAndCompare\".")
       import Modelica_LinearSystems2.StateSpace;
       parameter StateSpace ss=StateSpace.Import.fromFile("MyData.mat", "ABCD");
       parameter Integer ny=size(ss.C, 1);
-      inner Modelica_LinearSystems2.Controller.SampleClock sampleClock
+      inner Modelica_LinearSystems2.Controllers.SampleClock sampleClock
         annotation (Placement(transformation(extent={{-40,-24},{-20,-12}})));
       Modelica.Blocks.Routing.Multiplex4 multiplex4_2(n1=1, n2=1)
         annotation (Placement(transformation(extent={{-76,-8},{-56,12}})));
@@ -819,7 +819,7 @@ This model can only be run by excecuting the function \"LinearizeAndCompare\".")
             extent={{-5,-5},{5,5}},
             rotation=90,
             origin={-9,-29})));
-      Modelica_LinearSystems2.Controller.StateSpace stateSpace(system=ss)
+      Modelica_LinearSystems2.Controllers.StateSpace stateSpace(system=ss)
         annotation (Placement(transformation(extent={{-40,-8},{-20,12}})));
       Modelica.Blocks.Sources.RealExpression
                                        PSSchange
