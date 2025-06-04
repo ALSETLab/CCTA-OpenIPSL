@@ -63,11 +63,11 @@ package Utilities
       Modelica.Utilities.Streams.print("DAE Mode is turned on.");
       Advanced.Define.GlobalOptimizations :=2;
       Modelica.Utilities.Streams.print("Global optimization is enabled.");
-      Advanced.SparseActivate :=true;
+      Advanced.Translation.SparseActivate :=true;
       Advanced.Translation.SparseActivateIntegrator :=true;
       Advanced.Translation.SparseActivateSystems :=true;
-      Advanced.SparseMaximumDensity := 25;
-      Advanced.SparseMinimumStates := 50;
+      Advanced.Translation.SparseMaximumDensity := 25;
+      Advanced.Translation.SparseMinimumStates := 50;
       Modelica.Utilities.Streams.print("Sparse options enabled.");
       Advanced.NumberOfCores := corenum;
       Modelica.Utilities.Streams.print("If available, the following number of cores will be used:" + String(corenum));
@@ -80,7 +80,7 @@ package Utilities
       Modelica.Utilities.Streams.print("DAE Mode is turned off.");
       Advanced.Define.GlobalOptimizations :=0;
       Modelica.Utilities.Streams.print("Global optimization is disabled.");
-      Advanced.SparseActivate :=false;
+      Advanced.Translation.SparseActivate :=false;
       Advanced.Translation.SparseActivateIntegrator :=false;
       Advanced.Translation.SparseActivateSystems :=false;
       Modelica.Utilities.Streams.print("Sparse options disabled.");
