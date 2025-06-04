@@ -10,18 +10,22 @@ annotation(preferredView = "info",
       OpenIPSL(version="3.0.1")),
   version="4",
   Documentation(info="<html>
-<p>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; by Luigi Vanfretti and Chrisopher R. Laughman, submitted for review to the IEEE CCTA 2024.</p>
-<p>The models have the following dependencies:</p>
+<p>This package contains the power system models used in the paper &quot;Power System Modeling for Identification and Control Applications using Modelica and OpenIPSL&quot; published in the proceedings of the 2024 IEEE Conference on Control Technology and Applications (CCTA). The paper can be found online in the following websites:</p>
+<ul>
+<li>Publisher&apos;s Website: <a href=\"https://ieeexplore.ieee.org/document/10666594\">https://ieeexplore.ieee.org/document/10666594</a></li>
+<li>Pre-print on ResearchGate: <a href=\"http://dx.doi.org/10.13140/RG.2.2.17471.11680\">http://dx.doi.org/10.13140/RG.2.2.17471.11680</a> </li>
+</ul>
+<p><br>The models have the following dependencies:</p>
 <ul>
 <li>Modelica Standard Library v.4.0.0, </li>
-<li>Modelica_LinearSystems2 v2.4.0, </li>
+<li>Modelica_LinearSystems2 v3.0.0, </li>
 <li>DataFiles v1.1.0, </li>
 <li>DymolaCommands v1.16, </li>
 <li>LinearAnalysis v1.0.1, </li>
 <li>OpenIPSL v.3.0.1</li>
 </ul>
-<p><br>The models were developed and tested with Dymola 2024X under MS Windows 11.</p>
-<p><br>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</p>
+<p><br>The models were developed using Dymola and tested with version 2025X Refresh 1 under MS Windows 11.</p>
+<p><br>(c) 2024-2025, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</p>
 </html>"),
     Icon(graphics={
         Rectangle(
