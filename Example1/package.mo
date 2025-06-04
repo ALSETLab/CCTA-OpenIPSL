@@ -97,6 +97,5 @@ annotation(preferredView = "info",
           color={255,170,255},
           smooth=Smooth.Bezier,
           origin={-6,17.9},
-          rotation=90)}),
-    conversion(noneFromVersion="2", noneFromVersion="3"));
+          rotation=90)}));
 end Example1;

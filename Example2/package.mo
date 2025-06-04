@@ -95,7 +95,5 @@ annotation (uses(
 </ul>
 <p><br>The models were developed and tested with Dymola 2024X under MS Windows 11.</p>
 <p><br>(c) 2024, Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY, USA and Chrisopher R. Laughman, Mitsubishi Electric Research Labs., Cambridge, MA, USA.</p>
-</html>"),preferredView="info",
-    version="1",
-    conversion(noneFromVersion=""));
+</html>"),preferredView="info");
 end Example2;
